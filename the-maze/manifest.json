@@ -49,8 +49,18 @@
       "type": "ascii_sigil",
       "redHerring": false,
       "at": "2026-06-23T01:48:05.690Z"
+    },
+    {
+      "id": "frag-0006",
+      "file": "the-maze/fragments/2026-06-23T0246-frag-0006.md",
+      "sequence": 6,
+      "day": 1,
+      "node": "mirror-hall",
+      "type": "cipher_piece",
+      "redHerring": false,
+      "at": "2026-06-23T02:46:06.153Z"
     }
   ],
-  "lastUpdated": "2026-06-23T01:48:05.690Z",
-  "totalFragments": 5
+  "lastUpdated": "2026-06-23T02:46:06.153Z",
+  "totalFragments": 6
 }
