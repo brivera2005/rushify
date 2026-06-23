@@ -19,8 +19,18 @@
       "type": "path_marker",
       "redHerring": false,
       "at": "2026-06-23T00:26:04.912Z"
+    },
+    {
+      "id": "frag-0003",
+      "file": "the-maze/fragments/2026-06-23T0049-frag-0003.md",
+      "sequence": 3,
+      "day": 1,
+      "node": "null-room",
+      "type": "memory",
+      "redHerring": false,
+      "at": "2026-06-23T00:49:52.882Z"
     }
   ],
-  "lastUpdated": "2026-06-23T00:26:04.913Z",
-  "totalFragments": 2
+  "lastUpdated": "2026-06-23T00:49:52.882Z",
+  "totalFragments": 3
 }
