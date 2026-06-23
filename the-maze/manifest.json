@@ -29,8 +29,18 @@
       "type": "memory",
       "redHerring": false,
       "at": "2026-06-23T00:49:52.882Z"
+    },
+    {
+      "id": "frag-0004",
+      "file": "the-maze/fragments/2026-06-23T0054-frag-0004.md",
+      "sequence": 4,
+      "day": 1,
+      "node": "mirror-hall",
+      "type": "memory",
+      "redHerring": false,
+      "at": "2026-06-23T00:54:05.242Z"
     }
   ],
-  "lastUpdated": "2026-06-23T00:49:52.882Z",
-  "totalFragments": 3
+  "lastUpdated": "2026-06-23T00:54:05.242Z",
+  "totalFragments": 4
 }
