@@ -39,8 +39,18 @@
       "type": "memory",
       "redHerring": false,
       "at": "2026-06-23T00:54:05.242Z"
+    },
+    {
+      "id": "frag-0005",
+      "file": "the-maze/fragments/2026-06-23T0148-frag-0005.md",
+      "sequence": 5,
+      "day": 1,
+      "node": "catacomb-7",
+      "type": "ascii_sigil",
+      "redHerring": false,
+      "at": "2026-06-23T01:48:05.690Z"
     }
   ],
-  "lastUpdated": "2026-06-23T00:54:05.242Z",
-  "totalFragments": 4
+  "lastUpdated": "2026-06-23T01:48:05.690Z",
+  "totalFragments": 5
 }
