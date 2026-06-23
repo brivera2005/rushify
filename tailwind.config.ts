@@ -21,11 +21,12 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "var(--font-inter)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        glow: "0 0 40px rgba(124, 92, 255, 0.12)",
-        "glow-sm": "0 0 24px rgba(124, 92, 255, 0.18)",
+        glow: "0 0 40px rgba(139, 92, 246, 0.14)",
+        "glow-sm": "0 0 24px rgba(139, 92, 246, 0.22)",
       },
     },
   },

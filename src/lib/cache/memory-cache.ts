@@ -48,6 +48,19 @@ export class MemoryCache<T> {
   }
 
   set(key: string, value: T): CacheEntry<T> {
+    const now = Date.now();
+    return this.setWithTimestamps(key, value, {
+      createdAt: now,
+      staleAt: now + this.staleTtlMs,
+      expiresAt: now + this.ttlMs,
+    });
+  }
+
+  setWithTimestamps(
+    key: string,
+    value: T,
+    timestamps: Pick<CacheEntry<T>, "createdAt" | "staleAt" | "expiresAt">,
+  ): CacheEntry<T> {
     if (this.store.size >= this.maxEntries) {
       const oldestKey = this.store.keys().next().value;
       if (oldestKey) {
@@ -55,12 +68,9 @@ export class MemoryCache<T> {
       }
     }
 
-    const now = Date.now();
     const entry: CacheEntry<T> = {
       value,
-      createdAt: now,
-      staleAt: now + this.staleTtlMs,
-      expiresAt: now + this.ttlMs,
+      ...timestamps,
     };
 
     this.store.set(key, entry);

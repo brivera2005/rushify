@@ -1,0 +1,26 @@
+{
+  "fragments": [
+    {
+      "id": "frag-0001",
+      "file": "the-maze/fragments/2026-06-23T0025-frag-0001.md",
+      "sequence": 1,
+      "day": 1,
+      "node": "modem-well",
+      "type": "modem_artifact",
+      "redHerring": false,
+      "at": "2026-06-23T00:25:43.711Z"
+    },
+    {
+      "id": "frag-0002",
+      "file": "the-maze/fragments/2026-06-23T0026-frag-0002.md",
+      "sequence": 2,
+      "day": 1,
+      "node": "static-cathedral",
+      "type": "path_marker",
+      "redHerring": false,
+      "at": "2026-06-23T00:26:04.912Z"
+    }
+  ],
+  "lastUpdated": "2026-06-23T00:26:04.913Z",
+  "totalFragments": 2
+}

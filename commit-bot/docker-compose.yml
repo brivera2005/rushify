@@ -1,0 +1,20 @@
+# Run from commit-bot/ on Synology (Container Manager) or any Docker host.
+# Mount your rushify git clone at /repo and persist bot state in ./data.
+
+services:
+  maze-commit-bot:
+    build: .
+    container_name: maze-commit-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      REPO_PATH: /repo
+      STATE_DIR: /bot/data
+      TZ: ${TZ:-UTC}
+    volumes:
+      - ${REPO_HOST_PATH:-../}:/repo
+      - ./data:/bot/data
+      # Optional: mount deploy key for git push
+      # - ~/.ssh/id_ed25519_maze:/root/.ssh/id_ed25519:ro
+    working_dir: /bot

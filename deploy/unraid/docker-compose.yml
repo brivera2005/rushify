@@ -1,0 +1,48 @@
+# Rushify on unRAID — Caddy on :8096, Rushify internal, Jellyfin on :8097
+# Requires Docker Compose v2 plugin. If unavailable, use deploy.sh.
+
+services:
+  rushify:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: rushify
+    restart: unless-stopped
+    expose:
+      - "3000"
+    env_file:
+      - .env
+    environment:
+      NODE_ENV: production
+      RUSHIFY_CACHE_DIR: /app/cache
+      RUSHIFY_DATA_DIR: /app/data
+      JELLYFIN_SERVER_URL: ${JELLYFIN_SERVER_URL:-http://192.168.0.19:8097}
+    volumes:
+      - ./cache:/app/cache
+      - ./data:/app/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - rushify-net
+
+  caddy:
+    image: caddy:2-alpine
+    container_name: rushify-caddy
+    restart: unless-stopped
+    ports:
+      - "${PUBLIC_PORT:-8096}:8096"
+    volumes:
+      - ./deploy/unraid/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - rushify
+    networks:
+      - rushify-net
+
+networks:
+  rushify-net:
+
+volumes:
+  caddy_data:
+  caddy_config:

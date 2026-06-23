@@ -1,0 +1,16 @@
+{
+  "name": "rushify-maze-commit-bot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Daily scavenger-hunt hint commit bot for The Maze ARG",
+  "scripts": {
+    "start": "node src/index.mjs",
+    "drop": "node src/drop.mjs",
+    "schedule": "node src/schedule.mjs --print",
+    "plan-today": "node src/schedule.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

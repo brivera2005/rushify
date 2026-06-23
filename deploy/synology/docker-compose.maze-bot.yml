@@ -1,0 +1,19 @@
+# Synology compose — use from DSM Container Manager or SSH.
+# Set REPO_HOST_PATH in .env to your NAS clone path.
+
+services:
+  maze-commit-bot:
+    build:
+      context: ../../commit-bot
+      dockerfile: Dockerfile
+    container_name: maze-commit-bot
+    restart: unless-stopped
+    env_file:
+      - ../../commit-bot/.env
+    environment:
+      REPO_PATH: /repo
+      STATE_DIR: /bot/data
+      TZ: ${TZ:-UTC}
+    volumes:
+      - ${REPO_HOST_PATH:-/volume1/docker/rushify}:/repo
+      - ../../commit-bot/data:/bot/data

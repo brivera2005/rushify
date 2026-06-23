@@ -6,11 +6,19 @@ services:
     container_name: rushify
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "${PORT:-3000}:3000"
     env_file:
       - .env
     environment:
       NODE_ENV: production
+      RUSHIFY_CACHE_DIR: /app/cache
+      RUSHIFY_DATA_DIR: /app/data
+      # unRAID + Jellyfin on same tower — use LAN IP or host.docker.internal
+      JELLYFIN_SERVER_URL: ${JELLYFIN_SERVER_URL:-http://192.168.0.19:8096}
+    volumes:
+      - ./cache:/app/cache
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     # Optional future enhancement: external Redis for shared IPTV cache across replicas
     # depends_on:
     #   - redis

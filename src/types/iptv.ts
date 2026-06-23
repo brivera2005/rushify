@@ -2,9 +2,13 @@ export type IptvChannel = {
   id: string;
   name: string;
   group?: string;
+  categoryId?: string;
   logoUrl?: string;
   streamUrl: string;
+  /** Alternate MPEG-TS URL when HLS stalls */
+  fallbackStreamUrl?: string;
   tvgId?: string;
+  channelNumber?: number;
 };
 
 export type IptvProgramme = {

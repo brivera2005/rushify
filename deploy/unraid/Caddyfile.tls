@@ -1,0 +1,39 @@
+# Rushify with TLS on port 8096 (self-signed for LAN, or use RUSHIFY_DOMAIN for LE).
+# Copy to Caddyfile.active when RUSHIFY_TLS=true in .env
+
+{
+	auto_https disable_redirects
+}
+
+:8096 {
+	tls internal
+	encode gzip zstd
+
+	@bots {
+		path /.env* /.git* /wp-admin* /wp-login.php /wp-content* /xmlrpc.php /phpmyadmin* /administrator* /vendor/phpunit* /shell* /cgi-bin* /api/v1* /actuator*
+	}
+	handle @bots {
+		respond "Not Found" 404
+	}
+
+	header {
+		-Server
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		X-Content-Type-Options nosniff
+		X-Frame-Options SAMEORIGIN
+		Referrer-Policy strict-origin-when-cross-origin
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' blob: https:; connect-src 'self' https: wss:; frame-ancestors 'self';"
+	}
+
+	reverse_proxy rushify:3000 {
+		health_uri /api/health
+		health_interval 30s
+	}
+}
+
+# Optional: replace :8096 block with your domain when port-forwarding:
+# rushify.example.com {
+#     tls {$ACME_EMAIL}
+#     reverse_proxy rushify:3000
+# }

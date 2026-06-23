@@ -1,66 +1,17 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 
+import { MainNav } from "@/components/layout/MainNav";
 import { RushifyLogo } from "@/components/layout/RushifyLogo";
-import { cn } from "@/lib/utils/cn";
-import type { RushifyNavItem } from "@/types/rushify";
-
-const navItems: RushifyNavItem[] = [
-  { label: "Home", href: "/", icon: "home" },
-  { label: "Live TV", href: "/live", icon: "live" },
-  { label: "Library", href: "/library", icon: "library" },
-  { label: "Settings", href: "/settings", icon: "settings" },
-];
-
-function NavIcon({ icon }: { icon: RushifyNavItem["icon"] }) {
-  const paths: Record<RushifyNavItem["icon"], string> = {
-    home: "M6 10.5 12 6l6 4.5V18a1.5 1.5 0 0 1-1.5 1.5H7.5A1.5 1.5 0 0 1 6 18v-7.5Z",
-    live: "M8 10.5v7h3v-4.2l4.8 2.8V8.7L11 11.5V7.5H8v3Z M18 8.5h2.5v10H18V8.5Z",
-    library:
-      "M7 8.5h11v11H7V8.5Zm2 2v7h7v-7H9Zm11-2h2.5v11H20v-11Z",
-    settings:
-      "M12 8.25a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Zm8.25 3.75a8.22 8.22 0 0 1-.15 1.5l2.02 1.58-1.5 2.6-2.38-.72a6.2 6.2 0 0 1-1.3.75l-.36 2.45H11.42l-.36-2.45a6.2 6.2 0 0 1-1.3-.75l-2.38.72-1.5-2.6 2.02-1.58a8.22 8.22 0 0 1-.15-1.5c0-.52.05-1.03.15-1.5L5.8 9.67l1.5-2.6 2.38.72c.4-.3.84-.55 1.3-.75l.36-2.45h4.32l.36 2.45c.46.2.9.45 1.3.75l2.38-.72 1.5 2.6-2.02 1.58c.1.47.15.98.15 1.5Z",
-  };
-
-  return (
-    <svg aria-hidden viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-      <path d={paths[icon]} />
-    </svg>
-  );
-}
 
 export function Sidebar() {
-  const pathname = usePathname();
-
   return (
     <aside className="hidden w-72 shrink-0 border-r border-rush-border bg-rush-elevated/70 backdrop-blur-xl lg:flex lg:flex-col">
       <div className="border-b border-rush-border px-6 py-6">
-        <RushifyLogo />
+        <Link href="/">
+          <RushifyLogo />
+        </Link>
       </div>
-      <nav className="flex flex-1 flex-col gap-1 px-4 py-6">
-        {navItems.map((item) => {
-          const active =
-            item.href === "/" ? pathname === "/" : pathname.startsWith(item.href);
-
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition-colors",
-                active
-                  ? "bg-rush-accent/15 text-rush-foreground shadow-glow-sm"
-                  : "text-rush-muted hover:bg-rush-surface hover:text-rush-foreground",
-              )}
-            >
-              <NavIcon icon={item.icon} />
-              {item.label}
-            </Link>
-          );
-        })}
-      </nav>
+      <MainNav variant="sidebar" />
     </aside>
   );
 }

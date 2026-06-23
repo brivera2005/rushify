@@ -3,15 +3,20 @@
 @tailwind utilities;
 
 :root {
-  --rush-canvas: #07080d;
-  --rush-elevated: #0d1018;
-  --rush-surface: #121622;
+  --bg: #141416;
+  --bg-elevated: #1c1c1f;
+  --rush-canvas: var(--bg);
+  --rush-elevated: var(--bg-elevated);
+  --rush-surface: #1c1c1f;
   --rush-border: rgba(255, 255, 255, 0.08);
   --rush-foreground: #f4f6fb;
   --rush-muted: #9aa3b8;
-  --rush-accent: #7c5cff;
-  --rush-accent-secondary: #2fd4ff;
-  --rush-ink: #07080d;
+  --accent-violet: #8b5cf6;
+  --accent-cyan: #38bdf8;
+  --accent: #7c3aed;
+  --rush-accent: var(--accent-violet);
+  --rush-accent-secondary: var(--accent-cyan);
+  --rush-ink: #141416;
 }
 
 * {
@@ -31,19 +36,102 @@ body {
 @layer utilities {
   .bg-hero-glow {
     background:
-      radial-gradient(circle at top left, rgba(124, 92, 255, 0.22), transparent 30%),
-      radial-gradient(circle at top right, rgba(47, 212, 255, 0.16), transparent 28%),
-      radial-gradient(circle at bottom, rgba(124, 92, 255, 0.08), transparent 35%);
+      radial-gradient(circle at top left, rgba(139, 92, 246, 0.24), transparent 32%),
+      radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), transparent 30%),
+      radial-gradient(circle at bottom, rgba(124, 58, 237, 0.1), transparent 36%);
+  }
+
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+  }
+
+  .text-brand-gradient {
+    background: linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1.25;
+    padding-bottom: 0.125rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .shadow-glow {
     box-shadow:
-      0 0 0 1px rgba(124, 92, 255, 0.08),
+      0 0 0 1px rgba(139, 92, 246, 0.1),
       0 20px 60px rgba(0, 0, 0, 0.35),
-      0 0 40px rgba(124, 92, 255, 0.12);
+      0 0 40px rgba(139, 92, 246, 0.14);
   }
 
   .shadow-glow-sm {
-    box-shadow: 0 0 24px rgba(124, 92, 255, 0.18);
+    box-shadow: 0 0 24px rgba(139, 92, 246, 0.22);
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.25s ease-out;
+  }
+
+  .live-hero {
+    background:
+      radial-gradient(circle at top left, rgba(139, 92, 246, 0.16), transparent 42%),
+      radial-gradient(circle at top right, rgba(56, 189, 248, 0.12), transparent 38%);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(139, 92, 246, 0.4) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+    width: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.4);
+    border-radius: 999px;
+  }
+
+  .live-guide-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    .live-guide-grid {
+      grid-template-columns: var(--live-sidebar-width, 360px) minmax(0, 1fr);
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .live-guide-grid {
+      grid-template-columns: var(--live-sidebar-width, 360px) minmax(0, 1fr) var(--live-player-width, 340px);
+    }
+  }
+
+  .live-channels-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    .live-channels-grid {
+      grid-template-columns: var(--live-sidebar-width, 360px) minmax(0, 1fr);
+    }
+  }
+
+  /* RushifyPlayer: hide native video buffering spinner — custom overlay is the only indicator */
+  .rushify-video-stalled::-webkit-media-controls-start-playback-button,
+  .rushify-video-stalled::-webkit-media-controls-overlay-play-button {
+    display: none !important;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

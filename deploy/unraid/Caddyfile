@@ -1,0 +1,37 @@
+# Rushify reverse proxy — port 8096 is the public face of Rushify.
+# Jellyfin API stays on host port 8097 (internal/library only).
+# Login + general rate limits are enforced in Rushify middleware (100 req/min, 5 login/min).
+
+{
+	auto_https off
+}
+
+:8096 {
+	encode gzip zstd
+
+	@bots {
+		path /.env* /.git* /wp-admin* /wp-login.php /wp-content* /xmlrpc.php /phpmyadmin* /administrator* /vendor/phpunit* /shell* /cgi-bin* /api/v1* /actuator*
+	}
+	handle @bots {
+		respond "Not Found" 404
+	}
+
+	header {
+		-Server
+		X-Content-Type-Options nosniff
+		X-Frame-Options SAMEORIGIN
+		Referrer-Policy strict-origin-when-cross-origin
+		Permissions-Policy "camera=(), microphone=(), geolocation=()"
+		Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' blob: https:; connect-src 'self' https: wss:; frame-ancestors 'self';"
+	}
+
+	reverse_proxy rushify:3000 {
+		health_uri /api/health
+		health_interval 30s
+	}
+}
+
+# Optional HTTP basic auth (second password wall — uncomment and set hash):
+# basicauth /* {
+#     admin $2a$14$REPLACE_WITH_CADDY_HASH
+# }

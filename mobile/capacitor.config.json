@@ -1,0 +1,12 @@
+{
+  "appId": "com.rushify.app",
+  "appName": "Rushify",
+  "webDir": "../public",
+  "server": {
+    "url": "http://192.168.0.19:8096",
+    "cleartext": true
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}
