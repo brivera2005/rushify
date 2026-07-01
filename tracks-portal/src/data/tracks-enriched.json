@@ -112,12 +112,18 @@
       }
     ],
     "tags": [
-      "sci-fi",
       "ai",
-      "philosophy",
-      "film",
+      "android",
       "books",
-      "cyberpunk"
+      "consciousness",
+      "cyberpunk",
+      "ethics",
+      "film",
+      "identity",
+      "literary",
+      "philosophy",
+      "robot",
+      "sci-fi"
     ],
     "relatedTrackIds": [
       "existential-ai-v2"
@@ -132,7 +138,9 @@
           "amazonUrl": "https://www.amazon.com/s?k=Detroit%3A%20Become%20Human&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 1
   },
   {
     "id": "surreal-sci-fi",
@@ -208,16 +216,22 @@
       }
     ],
     "tags": [
-      "sci-fi",
-      "surreal",
-      "psychological",
-      "film",
       "books",
-      "mind"
+      "dreamlike",
+      "film",
+      "literary",
+      "mind",
+      "paradox",
+      "psychological",
+      "reality",
+      "sci-fi",
+      "surreal"
     ],
     "relatedTrackIds": [
       "surreal-sci-fi-v2"
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 2
   },
   {
     "id": "dark-fantasy-foundations",
@@ -294,16 +308,22 @@
       }
     ],
     "tags": [
-      "fantasy",
-      "dark",
-      "medieval",
       "books",
+      "dark",
+      "fantasy",
       "film",
+      "grimdark",
+      "medieval",
+      "moral-gray",
+      "sorcery",
+      "sword",
       "tv"
     ],
     "relatedTrackIds": [
       "dark-fantasy-v2"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 23
   },
   {
     "id": "digital-frontier",
@@ -378,16 +398,23 @@
       }
     ],
     "tags": [
-      "cyberpunk",
-      "sci-fi",
-      "hacking",
       "books",
+      "crypto",
+      "cyberpunk",
       "film",
+      "hacker",
+      "hacking",
+      "network",
+      "sci-fi",
+      "surveillance",
+      "techno-thriller",
       "tv"
     ],
     "relatedTrackIds": [
       "digital-frontier-v2"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 24
   },
   {
     "id": "transhuman-ascent",
@@ -459,16 +486,23 @@
       }
     ],
     "tags": [
-      "sci-fi",
       "biology",
-      "longevity",
-      "philosophy",
+      "books",
+      "enhancement",
       "film",
-      "books"
+      "future",
+      "genetics",
+      "immortality",
+      "longevity",
+      "medical",
+      "philosophy",
+      "sci-fi"
     ],
     "relatedTrackIds": [
       "transhuman-ascent-v2"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 25
   },
   {
     "id": "perfect-sound",
@@ -550,16 +584,23 @@
       }
     ],
     "tags": [
-      "music",
       "art",
-      "obsession",
-      "film",
+      "audio",
+      "books",
       "documentary",
-      "books"
+      "film",
+      "music",
+      "musician",
+      "obsession",
+      "producer",
+      "recording",
+      "studio"
     ],
     "relatedTrackIds": [
       "perfect-sound-v2"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 34
   },
   {
     "id": "roots-of-rhythm",
@@ -641,16 +682,23 @@
       }
     ],
     "tags": [
-      "music",
+      "americana",
       "blues",
       "country",
-      "rock",
+      "documentary",
       "film",
-      "documentary"
+      "folk",
+      "guitar",
+      "music",
+      "rock",
+      "roots",
+      "songwriter"
     ],
     "relatedTrackIds": [
       "roots-of-rhythm-v2"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 35
   },
   {
     "id": "sovereign-analytical-edge",
@@ -724,15 +772,21 @@
       }
     ],
     "tags": [
-      "sports",
-      "gambling",
-      "probability",
+      "analytics",
+      "betting",
+      "books",
       "film",
-      "books"
+      "gambling",
+      "odds",
+      "probability",
+      "sports",
+      "statistics"
     ],
     "relatedTrackIds": [
       "sovereign-analytical-v2"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 36
   },
   {
     "id": "anatomy-of-the-job",
@@ -814,16 +868,21 @@
       }
     ],
     "tags": [
+      "books",
+      "caper",
       "crime",
+      "criminal",
+      "film",
       "heist",
       "noir",
-      "film",
-      "books",
+      "robbery",
       "tv"
     ],
     "relatedTrackIds": [
       "anatomy-of-the-job-v2"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 32
   },
   {
     "id": "western-requiem",
@@ -903,16 +962,22 @@
       }
     ],
     "tags": [
-      "western",
       "americana",
-      "violence",
-      "film",
       "books",
-      "tv"
+      "cowboy",
+      "film",
+      "frontier",
+      "outlaw",
+      "revenge",
+      "tv",
+      "violence",
+      "western"
     ],
     "relatedTrackIds": [
       "western-requiem-v2"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 33
   },
   {
     "id": "architecture-of-tragedy",
@@ -993,16 +1058,20 @@
       }
     ],
     "tags": [
-      "history",
-      "war",
-      "holocaust",
       "documentary",
       "film",
-      "tv"
+      "historical",
+      "history",
+      "holocaust",
+      "trauma",
+      "tv",
+      "war"
     ],
     "relatedTrackIds": [
       "architecture-of-tragedy-v2"
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 3
   },
   {
     "id": "cold-war-paranoia",
@@ -1064,13 +1133,18 @@
       }
     ],
     "tags": [
-      "spy",
-      "cold-war",
-      "thriller",
-      "film",
       "books",
+      "cold-war",
+      "conspiracy",
+      "espionage",
+      "film",
+      "nuclear",
+      "spy",
+      "thriller",
       "tv"
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 13
   },
   {
     "id": "cosmic-horror",
@@ -1150,13 +1224,20 @@
       }
     ],
     "tags": [
-      "horror",
-      "sci-fi",
-      "lovecraft",
-      "film",
       "books",
-      "tv"
-    ]
+      "cosmic",
+      "eldritch",
+      "film",
+      "horror",
+      "literary",
+      "lovecraft",
+      "madness",
+      "sci-fi",
+      "tv",
+      "void"
+    ],
+    "tier": 1,
+    "sortOrder": 4
   },
   {
     "id": "craft-and-legacy",
@@ -1230,15 +1311,20 @@
       }
     ],
     "tags": [
-      "craft",
-      "woodworking",
       "architecture",
+      "artisan",
+      "books",
+      "craft",
+      "design",
       "film",
-      "books"
+      "maker",
+      "woodworking"
     ],
     "relatedTrackIds": [
       "craft-legacy-v2"
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 19
   },
   {
     "id": "tech-nomad-cyber-warfare",
@@ -1313,13 +1399,19 @@
       }
     ],
     "tags": [
+      "books",
       "cybersecurity",
+      "film",
       "hacking",
       "homelab",
-      "film",
-      "books",
+      "infosec",
+      "ops",
+      "privacy",
+      "security",
       "tv"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 30
   },
   {
     "id": "imperial-collapse",
@@ -1400,13 +1492,18 @@
       }
     ],
     "tags": [
-      "history",
+      "books",
       "empire",
       "epic",
+      "fall",
       "film",
-      "books",
+      "historical",
+      "history",
+      "rome",
       "tv"
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 12
   },
   {
     "id": "primal-frontier",
@@ -1481,12 +1578,16 @@
       }
     ],
     "tags": [
-      "nature",
-      "survival",
-      "wilderness",
+      "books",
       "film",
-      "books"
-    ]
+      "frontier",
+      "nature",
+      "outdoors",
+      "survival",
+      "wilderness"
+    ],
+    "tier": 2,
+    "sortOrder": 31
   },
   {
     "id": "unreliable-perspective",
@@ -1567,12 +1668,17 @@
       }
     ],
     "tags": [
-      "thriller",
-      "psychological",
-      "film",
       "books",
-      "noir"
-    ]
+      "film",
+      "mystery",
+      "noir",
+      "psychological",
+      "thriller",
+      "twist",
+      "unreliable-narrator"
+    ],
+    "tier": 1,
+    "sortOrder": 14
   },
   {
     "id": "dystopian-bureaucracy",
@@ -1648,13 +1754,18 @@
       }
     ],
     "tags": [
-      "dystopia",
-      "kafka",
-      "satire",
       "books",
+      "bureaucracy",
+      "dystopia",
       "film",
+      "kafka",
+      "literary",
+      "satire",
+      "totalitarian",
       "tv"
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 5
   },
   {
     "id": "ancient-myths-remade",
@@ -1731,12 +1842,17 @@
       }
     ],
     "tags": [
-      "mythology",
-      "fantasy",
-      "classics",
       "books",
-      "film"
-    ]
+      "classics",
+      "fantasy",
+      "film",
+      "greek",
+      "literary",
+      "mythology",
+      "retelling"
+    ],
+    "tier": 1,
+    "sortOrder": 17
   },
   {
     "id": "true-crime-systemic-failure",
@@ -1812,12 +1928,16 @@
       }
     ],
     "tags": [
-      "true-crime",
+      "books",
       "documentary",
       "film",
-      "books",
-      "investigation"
-    ]
+      "investigation",
+      "justice",
+      "nonfiction",
+      "true-crime"
+    ],
+    "tier": 1,
+    "sortOrder": 7
   },
   {
     "id": "cinematic-meta-narrative",
@@ -1897,12 +2017,17 @@
       }
     ],
     "tags": [
-      "film",
-      "cinema",
-      "meta",
       "art",
-      "books"
-    ]
+      "books",
+      "cinema",
+      "director",
+      "film",
+      "filmmaking",
+      "hollywood",
+      "meta"
+    ],
+    "tier": 1,
+    "sortOrder": 11
   },
   {
     "id": "satirical-mirror",
@@ -1976,12 +2101,16 @@
       }
     ],
     "tags": [
-      "satire",
+      "books",
       "comedy",
       "dark-comedy",
-      "books",
-      "film"
-    ]
+      "film",
+      "parody",
+      "satire",
+      "social-commentary"
+    ],
+    "tier": 2,
+    "sortOrder": 37
   },
   {
     "id": "space-opera-scale",
@@ -2058,13 +2187,19 @@
       }
     ],
     "tags": [
+      "adventure",
+      "alien",
+      "books",
+      "epic",
+      "film",
+      "galactic",
       "sci-fi",
       "space",
-      "epic",
-      "books",
-      "film",
+      "starship",
       "tv"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 28
   },
   {
     "id": "time-as-weapon",
@@ -2148,12 +2283,16 @@
       }
     ],
     "tags": [
-      "sci-fi",
-      "time-travel",
-      "film",
       "books",
+      "film",
+      "paradox",
+      "sci-fi",
+      "temporal",
+      "time-travel",
       "tv"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 27
   },
   {
     "id": "noir-shadow",
@@ -2230,12 +2369,17 @@
       }
     ],
     "tags": [
-      "noir",
-      "detective",
+      "books",
+      "classic",
       "crime",
+      "detective",
       "film",
-      "books"
-    ]
+      "mystery",
+      "noir",
+      "shadow"
+    ],
+    "tier": 2,
+    "sortOrder": 26
   },
   {
     "id": "anatomy-of-retribution",
@@ -2315,12 +2459,15 @@
       }
     ],
     "tags": [
-      "revenge",
       "action",
-      "thriller",
+      "books",
       "film",
-      "books"
-    ]
+      "revenge",
+      "thriller",
+      "vigilante"
+    ],
+    "tier": 2,
+    "sortOrder": 41
   },
   {
     "id": "folk-horror-pagan",
@@ -2399,12 +2546,19 @@
       }
     ],
     "tags": [
-      "horror",
-      "folk",
-      "supernatural",
+      "books",
+      "british",
       "film",
-      "books"
-    ]
+      "folk",
+      "horror",
+      "occult",
+      "pagan",
+      "ritual",
+      "rural",
+      "supernatural"
+    ],
+    "tier": 1,
+    "sortOrder": 15
   },
   {
     "id": "subterranean-unconscious",
@@ -2465,12 +2619,17 @@
       }
     ],
     "tags": [
-      "horror",
-      "claustrophobia",
       "adventure",
+      "books",
+      "cave",
+      "claustrophobia",
+      "expedition",
       "film",
-      "books"
-    ]
+      "horror",
+      "underground"
+    ],
+    "tier": 2,
+    "sortOrder": 42
   },
   {
     "id": "silent-apocalypse",
@@ -2545,13 +2704,17 @@
       }
     ],
     "tags": [
+      "books",
+      "collapse",
+      "end-of-world",
+      "film",
       "post-apocalyptic",
       "sci-fi",
       "survival",
-      "film",
-      "books",
       "tv"
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 20
   },
   {
     "id": "corporate-machine",
@@ -2631,13 +2794,18 @@
       }
     ],
     "tags": [
-      "corporate",
-      "satire",
-      "finance",
-      "film",
       "books",
-      "tv"
-    ]
+      "business",
+      "capitalism",
+      "corporate",
+      "film",
+      "finance",
+      "satire",
+      "tv",
+      "wall-street"
+    ],
+    "tier": 2,
+    "sortOrder": 38
   },
   {
     "id": "fractured-timeline",
@@ -2716,11 +2884,16 @@
       }
     ],
     "tags": [
-      "experimental",
+      "books",
       "drama",
+      "experimental",
       "film",
-      "books"
-    ]
+      "literary",
+      "memory",
+      "nonlinear"
+    ],
+    "tier": 1,
+    "sortOrder": 16
   },
   {
     "id": "culinary-obsession",
@@ -2800,13 +2973,19 @@
       }
     ],
     "tags": [
-      "food",
+      "books",
+      "chef",
       "cooking",
       "drama",
       "film",
-      "books",
+      "food",
+      "gastronomy",
+      "kitchen",
+      "restaurant",
       "tv"
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 39
   },
   {
     "id": "suburban-decay",
@@ -2887,12 +3066,17 @@
       }
     ],
     "tags": [
-      "suburban",
+      "americana",
+      "books",
       "dark",
       "drama",
       "film",
-      "books"
-    ]
+      "melancholy",
+      "suburb",
+      "suburban"
+    ],
+    "tier": 2,
+    "sortOrder": 40
   },
   {
     "id": "philosophical-martial-arts",
@@ -2975,24 +3159,32 @@
       }
     ],
     "tags": [
+      "action",
+      "books",
+      "discipline",
+      "eastern",
+      "film",
+      "kung-fu",
       "martial-arts",
       "philosophy",
-      "action",
-      "film",
-      "books"
-    ]
+      "wuxia"
+    ],
+    "tier": 1,
+    "sortOrder": 18
   },
   {
     "id": "saturday-morning-worlds",
     "title": "Saturday Morning Worlds",
     "description": "From hand-drawn legends to Pixar heart and family books that read like movies.",
     "tags": [
-      "kids",
-      "family",
       "animation",
-      "cartoons",
       "books",
-      "film"
+      "cartoon",
+      "cartoons",
+      "family",
+      "film",
+      "kids",
+      "nostalgia"
     ],
     "sequence": [
       {
@@ -3070,19 +3262,24 @@
           "coverEnrichVersion": 2
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 75
   },
   {
     "id": "gateway-fantasy",
     "title": "Gateway Fantasy",
     "description": "Wardrobes, wizard schools, and film adaptations kids can grow into for years.",
     "tags": [
-      "kids",
+      "adventure",
+      "books",
       "family",
       "fantasy",
-      "books",
       "film",
-      "adventure"
+      "kids",
+      "magic",
+      "portal",
+      "young-reader"
     ],
     "sequence": [
       {
@@ -3152,20 +3349,25 @@
           "year": "2001"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 74
   },
   {
     "id": "stem-wonders",
     "title": "STEM Wonders",
     "description": "Curiosity-first science books, approachable documentaries, and wonder on screen.",
     "tags": [
-      "kids",
-      "family",
-      "science",
-      "stem",
-      "documentary",
       "books",
-      "film"
+      "discovery",
+      "documentary",
+      "education",
+      "engineering",
+      "family",
+      "film",
+      "kids",
+      "science",
+      "stem"
     ],
     "sequence": [
       {
@@ -3233,19 +3435,23 @@
           "year": "2008"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 76
   },
   {
     "id": "adventure-first",
     "title": "Adventure First",
     "description": "Treasure maps, open seas, and Studio Ghibli magic for young explorers.",
     "tags": [
-      "kids",
-      "family",
       "adventure",
       "animation",
       "books",
-      "film"
+      "exploration",
+      "family",
+      "film",
+      "kids",
+      "quest"
     ],
     "sequence": [
       {
@@ -3316,20 +3522,25 @@
           "coverEnrichVersion": 2
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 77
   },
   {
     "id": "existential-ai-v2",
     "title": "Existential AI: The Ghost in the Shell",
     "description": "Deepening the split between synthetic biology and spiritual legacy. What remains when the biological shell is gone?",
     "tags": [
-      "v2",
-      "sci-fi",
+      "advanced",
       "ai",
-      "philosophy",
-      "film",
       "books",
-      "cyberpunk"
+      "cyberpunk",
+      "deep-dive",
+      "film",
+      "philosophy",
+      "sci-fi",
+      "sequel",
+      "v2"
     ],
     "relatedTrackIds": [
       "existential-ai"
@@ -3409,20 +3620,25 @@
           "year": "1999"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 47
   },
   {
     "id": "surreal-sci-fi-v2",
     "title": "Surreal Sci-Fi: Broken Dimensions",
     "description": "A secondary deep dive into non-linear timelines, reality fractures, and the architecture of localized paradoxes.",
     "tags": [
-      "v2",
-      "sci-fi",
-      "surreal",
-      "psychological",
-      "film",
+      "advanced",
       "books",
-      "mind"
+      "deep-dive",
+      "film",
+      "mind",
+      "psychological",
+      "sci-fi",
+      "sequel",
+      "surreal",
+      "v2"
     ],
     "relatedTrackIds": [
       "surreal-sci-fi"
@@ -3500,20 +3716,25 @@
           "year": "1998"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 48
   },
   {
     "id": "dark-fantasy-v2",
     "title": "Dark Fantasy: Grimdark Empires",
     "description": "The expansion of the blood-and-dirt fantasy tradition. When institutions crumble, greed and survival dictate the realm.",
     "tags": [
-      "v2",
-      "fantasy",
-      "dark",
-      "medieval",
+      "advanced",
       "books",
+      "dark",
+      "deep-dive",
+      "fantasy",
       "film",
-      "tv"
+      "medieval",
+      "sequel",
+      "tv",
+      "v2"
     ],
     "relatedTrackIds": [
       "dark-fantasy-foundations"
@@ -3586,19 +3807,24 @@
           "year": "2019"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 49
   },
   {
     "id": "digital-frontier-v2",
     "title": "The Digital Frontier: Megacorporate Code",
     "description": "Advanced cryptographic warfare, cybernetic subversion, and high-stakes operations inside the physical network.",
     "tags": [
-      "v2",
-      "cyberpunk",
-      "sci-fi",
-      "hacking",
+      "advanced",
       "books",
-      "film"
+      "cyberpunk",
+      "deep-dive",
+      "film",
+      "hacking",
+      "sci-fi",
+      "sequel",
+      "v2"
     ],
     "relatedTrackIds": [
       "digital-frontier"
@@ -3677,20 +3903,25 @@
           "year": "1995"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 50
   },
   {
     "id": "transhuman-ascent-v2",
     "title": "The Transhuman Ascent: Cellular Optimization",
     "description": "The biological engineering horizon. Longevity protocols, synthetic chemical boosts, and the terminal split of humanity.",
     "tags": [
-      "v2",
-      "sci-fi",
+      "advanced",
       "biology",
+      "deep-dive",
+      "film",
       "longevity",
       "philosophy",
-      "film",
-      "tv"
+      "sci-fi",
+      "sequel",
+      "tv",
+      "v2"
     ],
     "relatedTrackIds": [
       "transhuman-ascent"
@@ -3769,20 +4000,25 @@
           "year": "2018"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 51
   },
   {
     "id": "perfect-sound-v2",
     "title": "The Perfect Sound: Studio Sorcery",
     "description": "The engineering and creative architecture behind the desk. Tracking the manic obsession of musical production.",
     "tags": [
-      "v2",
-      "music",
+      "advanced",
       "art",
-      "obsession",
-      "film",
+      "books",
+      "deep-dive",
       "documentary",
-      "books"
+      "film",
+      "music",
+      "obsession",
+      "sequel",
+      "v2"
     ],
     "relatedTrackIds": [
       "perfect-sound"
@@ -3846,20 +4082,25 @@
           "year": "2013"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 52
   },
   {
     "id": "roots-of-rhythm-v2",
     "title": "The Roots of Rhythm: Outlaws & Renegades",
     "description": "The bloodline of American songwriting. Grit, acoustic tradition, and the cost of the road.",
     "tags": [
-      "v2",
-      "music",
+      "advanced",
       "blues",
       "country",
-      "rock",
+      "deep-dive",
+      "documentary",
       "film",
-      "documentary"
+      "music",
+      "rock",
+      "sequel",
+      "v2"
     ],
     "relatedTrackIds": [
       "roots-of-rhythm"
@@ -3934,19 +4175,24 @@
           "year": "2006"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 53
   },
   {
     "id": "sovereign-analytical-v2",
     "title": "The Sovereign Analytical Edge: Mathematical Models",
     "description": "Advanced handicapping, finding structural arbitrage in live numbers, and the ultimate logic of probability over luck.",
     "tags": [
-      "v2",
-      "sports",
+      "advanced",
+      "books",
+      "deep-dive",
+      "film",
       "gambling",
       "probability",
-      "film",
-      "books"
+      "sequel",
+      "sports",
+      "v2"
     ],
     "relatedTrackIds": [
       "sovereign-analytical-edge"
@@ -4018,19 +4264,24 @@
           "year": "1995"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 54
   },
   {
     "id": "anatomy-of-the-job-v2",
     "title": "The Anatomy of the Job: The Master Con",
     "description": "Shifting from armed robberies to the intellectual high art of the long-game deception.",
     "tags": [
-      "v2",
+      "advanced",
+      "books",
       "crime",
+      "deep-dive",
+      "film",
       "heist",
       "noir",
-      "film",
-      "books"
+      "sequel",
+      "v2"
     ],
     "relatedTrackIds": [
       "anatomy-of-the-job"
@@ -4104,19 +4355,24 @@
           "year": "2001"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 55
   },
   {
     "id": "western-requiem-v2",
     "title": "The Western Requiem: The Iron Frontier",
     "description": "The evolution of the frontier myth into the industrial era. Modern laws meeting lawless expanses.",
     "tags": [
-      "v2",
-      "western",
+      "advanced",
       "americana",
-      "violence",
+      "books",
+      "deep-dive",
       "film",
-      "books"
+      "sequel",
+      "v2",
+      "violence",
+      "western"
     ],
     "relatedTrackIds": [
       "western-requiem"
@@ -4192,18 +4448,23 @@
           "year": "2005"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 56
   },
   {
     "id": "architecture-of-tragedy-v2",
     "title": "Architecture of a Tragedy: Modern Soil",
     "description": "Tracing the deep psychological and geographical scars left by modern infantry combat.",
     "tags": [
-      "v2",
-      "history",
-      "war",
+      "advanced",
+      "books",
+      "deep-dive",
       "film",
-      "books"
+      "history",
+      "sequel",
+      "v2",
+      "war"
     ],
     "relatedTrackIds": [
       "architecture-of-tragedy"
@@ -4281,18 +4542,23 @@
           "year": "1987"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 57
   },
   {
     "id": "conspiratorial-backrooms",
     "title": "The Conspiratorial Backrooms",
     "description": "Political manipulation, administrative power plays, and the structural subversion of democracy.",
     "tags": [
-      "thriller",
-      "politics",
-      "film",
       "books",
-      "investigation"
+      "democracy",
+      "film",
+      "investigation",
+      "political",
+      "politics",
+      "power",
+      "thriller"
     ],
     "sequence": [
       {
@@ -4367,17 +4633,24 @@
           "year": "1991"
         }
       }
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 21
   },
   {
     "id": "fourth-estate",
     "title": "The Fourth Estate",
     "description": "Investigative journalism as a system shield. The obsessive tracking of hidden institutional rot.",
     "tags": [
-      "investigation",
-      "journalism",
-      "film",
       "books",
+      "film",
+      "investigation",
+      "investigative",
+      "journalism",
+      "news",
+      "nonfiction",
+      "press",
+      "reporter",
       "thriller"
     ],
     "sequence": [
@@ -4449,18 +4722,23 @@
           "year": "1999"
         }
       }
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 8
   },
   {
     "id": "flesh-transformed",
     "title": "The Flesh Transformed",
     "description": "Body horror as an existential framework. Biological decay, corruption of the skin, and radical evolution.",
     "tags": [
-      "horror",
-      "sci-fi",
       "body-horror",
+      "books",
+      "cronenberg",
       "film",
-      "books"
+      "gore",
+      "horror",
+      "mutation",
+      "sci-fi"
     ],
     "sequence": [
       {
@@ -4536,18 +4814,22 @@
           "year": "1982"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 43
   },
   {
     "id": "lost-artifacts",
     "title": "Lost Artifacts & Haunted Media",
     "description": "Found footage and media curses. The complete erosion of objective truth through recorded documentation.",
     "tags": [
-      "horror",
-      "found-footage",
-      "film",
       "books",
-      "supernatural"
+      "curse",
+      "film",
+      "found-footage",
+      "horror",
+      "supernatural",
+      "tape"
     ],
     "sequence": [
       {
@@ -4622,19 +4904,24 @@
           "year": "2008"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 44
   },
   {
     "id": "eco-collapse",
     "title": "Eco-Collapse & Primal Retribution",
     "description": "Nature reclaiming its lineage. The systematic, atmospheric disintegration of human architectural boundaries.",
     "tags": [
-      "horror",
-      "sci-fi",
-      "nature",
+      "apocalypse",
+      "books",
+      "climate",
       "eco",
+      "environment",
       "film",
-      "books"
+      "horror",
+      "nature",
+      "sci-fi"
     ],
     "sequence": [
       {
@@ -4709,20 +4996,25 @@
           "year": "2008"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 45
   },
   {
     "id": "craft-legacy-v2",
     "title": "The Craft & The Legacy: Master Sawyer",
     "description": "The philosophy of raw architectural design and traditional material manipulation. Sourcing life through creation.",
     "tags": [
-      "v2",
-      "craft",
-      "woodworking",
+      "advanced",
       "architecture",
-      "film",
+      "books",
+      "craft",
+      "deep-dive",
       "documentary",
-      "books"
+      "film",
+      "sequel",
+      "v2",
+      "woodworking"
     ],
     "relatedTrackIds": [
       "craft-and-legacy"
@@ -4756,18 +5048,23 @@
           "amazonUrl": "https://www.amazon.com/s?k=Bauhaus%3A%20Spirit%20of%20the%20Century&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 58
   },
   {
     "id": "generational-epic",
     "title": "The Generational Epic",
     "description": "Multi-decade family dynamics, structural inheritances, and the crushing weight of bloodline legacies.",
     "tags": [
-      "drama",
-      "family",
-      "epic",
-      "film",
       "books",
+      "drama",
+      "dynasty",
+      "epic",
+      "family",
+      "family-saga",
+      "film",
+      "literary",
       "tv"
     ],
     "sequence": [
@@ -4822,18 +5119,23 @@
           "year": "2018"
         }
       }
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 6
   },
   {
     "id": "gonzo-journalism",
     "title": "Gonzo & Absurdist Reality",
     "description": "Altered reporting methods. Submerging into the narrative completely to find alternative cultural truth.",
     "tags": [
-      "journalism",
-      "satire",
-      "film",
+      "absurdist",
       "books",
-      "counterculture"
+      "counterculture",
+      "film",
+      "journalism",
+      "literary",
+      "reportage",
+      "satire"
     ],
     "sequence": [
       {
@@ -4889,18 +5191,24 @@
           "year": "2000"
         }
       }
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 22
   },
   {
     "id": "abyssal-trench",
     "title": "The Abyssal Trench",
     "description": "Deep-water horror and isolation. Claustrophobia meets deep marine physics and psychological collapse.",
     "tags": [
-      "horror",
-      "sci-fi",
-      "survival",
+      "books",
+      "deep-sea",
       "film",
-      "books"
+      "horror",
+      "isolation",
+      "ocean",
+      "pressure",
+      "sci-fi",
+      "survival"
     ],
     "sequence": [
       {
@@ -4958,18 +5266,23 @@
           "year": "2020"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 46
   },
   {
     "id": "cosmic-inevitability",
     "title": "Cosmic Inevitability",
     "description": "Existential dread anchored in inevitable disaster. The philosophy of coping with planetary finality.",
     "tags": [
-      "philosophy",
-      "sci-fi",
+      "absurdism",
+      "books",
+      "doom",
       "drama",
+      "existential",
       "film",
-      "books"
+      "philosophy",
+      "sci-fi"
     ],
     "sequence": [
       {
@@ -5023,18 +5336,24 @@
           "year": "2018"
         }
       }
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 10
   },
   {
     "id": "art-of-dialogue",
     "title": "The Art of the Dialogue",
     "description": "Minimalist locations driven entirely by deep interpersonal analysis, verbal combat, and chemistry.",
     "tags": [
-      "drama",
-      "philosophy",
-      "film",
       "books",
-      "dialogue"
+      "conversation",
+      "dialogue",
+      "drama",
+      "film",
+      "intimate",
+      "literary",
+      "philosophy",
+      "theater"
     ],
     "sequence": [
       {
@@ -5089,18 +5408,23 @@
           "year": "1995"
         }
       }
-    ]
+    ],
+    "tier": 1,
+    "sortOrder": 9
   },
   {
     "id": "cognitive-warfare",
     "title": "Cognitive Warfare: The Grid",
     "description": "High-stakes strategic mental games. The obsessive devotion required to master mathematical frameworks.",
     "tags": [
-      "thriller",
-      "strategy",
+      "books",
+      "chess",
+      "competition",
       "drama",
       "film",
-      "books",
+      "mind-games",
+      "strategy",
+      "thriller",
       "tv"
     ],
     "sequence": [
@@ -5164,20 +5488,26 @@
           "amazonUrl": "https://www.amazon.com/s?k=Chess%20Ultra&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 29
   },
   {
     "id": "folklore-legends-kids",
     "title": "Folklore & Ancient Legends Remade",
     "description": "Bespoke mythologies, classic cultural origins, and beautiful hand-drawn adventures for early exploration.",
     "tags": [
-      "kids",
+      "animation",
+      "books",
+      "fairy-tale",
       "family",
       "fantasy",
-      "mythology",
-      "books",
       "film",
-      "animation"
+      "kids",
+      "legend",
+      "myth",
+      "mythology",
+      "young"
     ],
     "sequence": [
       {
@@ -5244,20 +5574,25 @@
           "amazonUrl": "https://www.amazon.com/s?k=Santorini&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 78
   },
   {
     "id": "cosmic-journeys-kids",
     "title": "Cosmic Journeys & Brave Frontiers",
     "description": "Accessible, high-concept astronomy and exploration. Moving beyond our atmospheric backyard safely.",
     "tags": [
-      "kids",
+      "animation",
+      "astronomy",
+      "books",
+      "exploration",
       "family",
+      "film",
+      "kids",
       "sci-fi",
       "space",
-      "books",
-      "film",
-      "animation"
+      "young"
     ],
     "sequence": [
       {
@@ -5313,20 +5648,26 @@
           "year": "1999"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 79
   },
   {
     "id": "wilderness-call-kids",
     "title": "The Wilderness Call",
     "description": "Independent wilderness survival, natural respect, and building out standalone shelters from raw timber.",
     "tags": [
-      "kids",
+      "animals",
+      "animation",
+      "books",
+      "camping",
       "family",
+      "film",
+      "forest",
+      "kids",
       "nature",
       "survival",
-      "books",
-      "film",
-      "animation"
+      "young"
     ],
     "sequence": [
       {
@@ -5385,19 +5726,24 @@
           "year": "2020"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 80
   },
   {
     "id": "gothic-wonder-teens",
     "title": "Gothic Wonder & Shadow Realities",
     "description": "Intelligent, moody coming-of-age journeys operating on the threshold of real horror and high fantasy.",
     "tags": [
-      "teens",
-      "fantasy",
-      "horror",
-      "coming-of-age",
       "books",
-      "film"
+      "coming-of-age",
+      "dark-fantasy",
+      "fantasy",
+      "film",
+      "gothic",
+      "horror",
+      "teens",
+      "ya"
     ],
     "sequence": [
       {
@@ -5454,21 +5800,26 @@
           "year": "2006"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 69
   },
   {
     "id": "elevated-dystopia-teens",
     "title": "Elevated Dystopia: The Resistance",
     "description": "Clean, structural sociological collapse. Stripping down controlled societies through mechanical wit and rebellion.",
     "tags": [
-      "teens",
-      "dystopia",
-      "sci-fi",
-      "rebellion",
+      "animation",
       "books",
+      "dystopia",
       "film",
+      "rebellion",
+      "resistance",
+      "sci-fi",
+      "teens",
       "tv",
-      "animation"
+      "utopia",
+      "ya"
     ],
     "sequence": [
       {
@@ -5526,19 +5877,25 @@
           "year": "2021"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 70
   },
   {
     "id": "retro-mystery-teens",
     "title": "The Retro Mystery & Suburban Weird",
     "description": "Amateur investigations, deep analog tech reliance, and close-knit neighborhood defensive units.",
     "tags": [
-      "teens",
-      "mystery",
-      "sci-fi",
-      "horror",
+      "80s",
       "books",
       "film",
+      "horror",
+      "mystery",
+      "nostalgia",
+      "sci-fi",
+      "small-town",
+      "supernatural",
+      "teens",
       "tv"
     ],
     "sequence": [
@@ -5595,19 +5952,25 @@
           "year": "2016"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 71
   },
   {
     "id": "high-school-satire-teens",
     "title": "High School Mythologies & Sharp Wit",
     "description": "Socio-economic battlefield curation. Fast-talking, highly strategic analytical frameworks inside suburban architecture.",
     "tags": [
-      "teens",
-      "satire",
-      "drama",
-      "dark-comedy",
       "books",
-      "film"
+      "dark-academia",
+      "dark-comedy",
+      "drama",
+      "film",
+      "prep-school",
+      "satire",
+      "teens",
+      "wit",
+      "ya"
     ],
     "sequence": [
       {
@@ -5663,18 +6026,24 @@
           "year": "1998"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 68
   },
   {
     "id": "picture-book-pals-kids",
     "title": "Picture Book Pals",
     "description": "Gentle illustrated stories and short films for the youngest readers and watchers.",
     "tags": [
-      "kids",
-      "family",
+      "animation",
       "books",
+      "family",
       "film",
-      "animation"
+      "gentle",
+      "illustrated",
+      "kids",
+      "picture-book",
+      "preschool"
     ],
     "sequence": [
       {
@@ -5746,19 +6115,24 @@
           "year": "2016"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 82
   },
   {
     "id": "inventors-tinkerers-kids",
     "title": "Inventors & Tinkerers",
     "description": "Curious minds, homemade machines, and the joy of building something from scratch.",
     "tags": [
-      "kids",
-      "family",
-      "stem",
-      "science",
       "books",
-      "film"
+      "family",
+      "film",
+      "invention",
+      "kids",
+      "maker",
+      "robot",
+      "science",
+      "stem"
     ],
     "sequence": [
       {
@@ -5829,18 +6203,23 @@
           "year": "2017"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 81
   },
   {
     "id": "first-chills-teens",
     "title": "First Chills: Gateway Horror",
     "description": "Spooky without trauma. Teen-friendly scares that reward bravery and curiosity.",
     "tags": [
-      "teens",
-      "horror",
-      "supernatural",
+      "books",
       "film",
-      "books"
+      "gateway-horror",
+      "horror",
+      "spooky",
+      "supernatural",
+      "teens",
+      "ya"
     ],
     "sequence": [
       {
@@ -5917,19 +6296,25 @@
           "year": "2022"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 72
   },
   {
     "id": "mythic-quests-teens",
     "title": "Mythic Quests for Teens",
     "description": "Epic journeys, reluctant heroes, and worlds that demand you grow up fast.",
     "tags": [
-      "teens",
-      "fantasy",
       "adventure",
       "books",
+      "epic",
+      "fantasy",
       "film",
-      "tv"
+      "hero",
+      "quest",
+      "teens",
+      "tv",
+      "ya"
     ],
     "sequence": [
       {
@@ -5987,7 +6372,9 @@
           "year": "2020"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 73
   },
   {
     "id": "tabletop-legends",
@@ -5995,9 +6382,12 @@
     "description": "Board games as narrative engines. Roll dice, scheme, and tell stories around the table.",
     "tags": [
       "boardgame",
-      "strategy",
+      "cooperative",
+      "dice",
       "family",
-      "games"
+      "games",
+      "strategy",
+      "tabletop"
     ],
     "sequence": [
       {
@@ -6047,21 +6437,24 @@
           "amazonUrl": "https://www.amazon.com/s?k=Gloomhaven&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 83
   },
   {
     "id": "digital-frontier-branching",
     "title": "Digital Frontier: Branching Paths",
     "description": "From Neuromancer's consensual hallucination through the Matrix, cyber-decks, and the hacker underground.",
     "tags": [
-      "cyberpunk",
-      "hacking",
-      "sci-fi",
-      "branching",
+      "boardgame",
       "books",
+      "branching",
+      "cyberpunk",
       "film",
-      "videogame",
-      "boardgame"
+      "hacking",
+      "interactive",
+      "sci-fi",
+      "videogame"
     ],
     "relatedTrackIds": [
       "digital-frontier",
@@ -6153,18 +6546,22 @@
           "amazonUrl": "https://www.amazon.com/s?k=Hacknet%20Team%20Fractal%20Alligator&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 66
   },
   {
     "id": "pure-video-game-vibe",
     "title": "Pure Video Game Vibe",
     "description": "A videogame-only specialty run — puzzle wit, roguelike mastery, and open-world wonder.",
     "tags": [
-      "videogame",
-      "branching",
       "boutique",
+      "branching",
+      "games",
+      "gaming",
+      "indie-game",
       "roguelike",
-      "games"
+      "videogame"
     ],
     "sequence": [],
     "supplemental": [
@@ -6218,7 +6615,9 @@
           "amazonUrl": "https://www.amazon.com/s?k=Outer%20Wilds%20Mobius%20Digital&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 84
   },
   {
     "id": "pure-board-game-engine",
@@ -6226,10 +6625,12 @@
     "description": "A tabletop-only specialty run — settlement, engine-building, and economic warfare.",
     "tags": [
       "boardgame",
-      "branching",
-      "strategy",
       "boutique",
-      "games"
+      "branching",
+      "euro",
+      "games",
+      "strategy",
+      "tabletop"
     ],
     "sequence": [],
     "supplemental": [
@@ -6283,20 +6684,23 @@
           "amazonUrl": "https://www.amazon.com/s?k=Food%20Chain%20Magnate%20Jeroen%20Doumen%20%26%20Joris%20Wiersinga&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 3,
+    "sortOrder": 85
   },
   {
     "id": "sovereign-analytical-mix",
     "title": "Sovereign Analytical Mix",
     "description": "Probability, sports analytics, and the games that teach you to think in bets.",
     "tags": [
-      "probability",
       "analytics",
-      "branching",
+      "boardgame",
       "books",
+      "branching",
       "film",
-      "videogame",
-      "boardgame"
+      "games",
+      "probability",
+      "videogame"
     ],
     "relatedTrackIds": [
       "sovereign-analytical-edge",
@@ -6367,20 +6771,25 @@
           "amazonUrl": "https://www.amazon.com/s?k=Texas%20Hold'em&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 67
   },
   {
     "id": "dark-fantasy-campaign",
     "title": "Dark Fantasy Campaign",
     "description": "Grim swords, green knights, and the long campaigns that bleed into tabletop and CRPG epics.",
     "tags": [
-      "fantasy",
-      "grimdark",
-      "branching",
+      "boardgame",
       "books",
+      "branching",
+      "campaign",
+      "dnd",
+      "fantasy",
       "film",
-      "videogame",
-      "boardgame"
+      "grimdark",
+      "rpg",
+      "videogame"
     ],
     "relatedTrackIds": [
       "dark-fantasy-foundations",
@@ -6444,20 +6853,25 @@
           "amazonUrl": "https://www.amazon.com/s?k=Gloomhaven%20Isaac%20Childres&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 60
   },
   {
     "id": "cosmic-horror-isolation",
     "title": "Cosmic Horror & Isolation",
     "description": "Antarctic dread, xenomorph terror, and the games that trap you alone in the dark.",
     "tags": [
-      "horror",
-      "sci-fi",
-      "branching",
+      "boardgame",
       "books",
+      "branching",
       "film",
-      "videogame",
-      "boardgame"
+      "horror",
+      "isolation",
+      "lovecraft",
+      "madness",
+      "sci-fi",
+      "videogame"
     ],
     "relatedTrackIds": [
       "cosmic-horror"
@@ -6519,22 +6933,26 @@
           "amazonUrl": "https://www.amazon.com/s?k=Nemesis%20Awaken%20Realms&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 61
   },
   {
     "id": "epic-fantasy-tapestry",
     "title": "Epic Fantasy Tapestry",
     "description": "From Wheel of Time beginnings to Return of the King — then pick your AAA or boutique finale.",
     "tags": [
-      "fantasy",
-      "epic",
-      "branching",
       "aaa",
-      "boutique",
+      "boardgame",
       "books",
+      "boutique",
+      "branching",
+      "epic",
+      "fantasy",
       "film",
+      "high-fantasy",
       "videogame",
-      "boardgame"
+      "worldbuilding"
     ],
     "relatedTrackIds": [
       "gateway-fantasy",
@@ -6608,22 +7026,26 @@
           "amazonUrl": "https://www.amazon.com/s?k=War%20of%20the%20Ring%20Roberto%20Di%20Meglio&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 59
   },
   {
     "id": "grimdark-ascendant",
     "title": "Grimdark Ascendant",
     "description": "Mercenary companies, cursed manga, and the punishing games that define grimdark ascension.",
     "tags": [
-      "grimdark",
-      "fantasy",
-      "horror",
-      "branching",
       "aaa",
-      "boutique",
+      "boardgame",
       "books",
+      "boutique",
+      "branching",
+      "dark-fantasy",
+      "fantasy",
+      "grimdark",
+      "horror",
       "videogame",
-      "boardgame"
+      "war"
     ],
     "sequence": [
       {
@@ -6693,21 +7115,26 @@
           "amazonUrl": "https://www.amazon.com/s?k=Kingdom%20Death%3A%20Monster%20Adam%20Poots&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 62
   },
   {
     "id": "horror-evolution",
     "title": "Horror Evolution",
     "description": "Literary hauntings to Hereditary dread — then the games that modernize cosmic and co-op terror.",
     "tags": [
-      "horror",
-      "branching",
       "aaa",
-      "boutique",
+      "boardgame",
       "books",
+      "boutique",
+      "branching",
+      "classic-horror",
       "film",
-      "videogame",
-      "boardgame"
+      "horror",
+      "slasher",
+      "survival-horror",
+      "videogame"
     ],
     "relatedTrackIds": [
       "cosmic-horror",
@@ -6781,22 +7208,26 @@
           "amazonUrl": "https://www.amazon.com/s?k=Mansions%20of%20Madness%20Fantasy%20Flight%20Games&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 63
   },
   {
     "id": "automation-engine",
     "title": "Automation Engine",
     "description": "Murderbot diplomacy to Devs paranoia — then the factory sims and logic puzzles that optimize everything.",
     "tags": [
-      "automation",
-      "sci-fi",
-      "branching",
       "aaa",
-      "boutique",
+      "automation",
+      "boardgame",
       "books",
+      "boutique",
+      "branching",
+      "factory",
       "film",
-      "videogame",
-      "boardgame"
+      "sci-fi",
+      "systems",
+      "videogame"
     ],
     "sequence": [
       {
@@ -6866,20 +7297,24 @@
           "amazonUrl": "https://www.amazon.com/s?k=Turing%20Machine%20SCORPIO&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 64
   },
   {
     "id": "indie-artisan",
     "title": "Indie Artisan",
     "description": "Friendship and game design in prose and film — then the indie masterpieces that define boutique craft.",
     "tags": [
-      "indie",
-      "branching",
-      "boutique",
+      "boardgame",
       "books",
+      "boutique",
+      "branching",
+      "craft",
       "documentary",
-      "videogame",
-      "boardgame"
+      "handmade",
+      "indie",
+      "videogame"
     ],
     "sequence": [
       {
@@ -6948,6 +7383,8 @@
           "amazonUrl": "https://www.amazon.com/s?k=Pax%20Pamir%20Phil%20Eklund&tag=tomewizard-20"
         }
       }
-    ]
+    ],
+    "tier": 2,
+    "sortOrder": 65
   }
 ]

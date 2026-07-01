@@ -20,7 +20,7 @@ const searchIndex = buildTrackSearchIndex(tracks);
         Curated paths for the discerning through books, film, and television.
       </h1>
       <p class="text-sm text-white/55 max-w-2xl leading-relaxed">
-        Your phone is the guide. Your e-reader and TV are where the story lives.
+        Work through each track in sequence. Reading and watching in order is how the ideas connect.
       </p>
     </SiteHeader>
 
@@ -77,7 +77,29 @@ const searchIndex = buildTrackSearchIndex(tracks);
     <SiteFooter class="mt-12" />
   </main>
 
-  <script define:vars={{ trackTotal: tracks.length }}>
+  <script define:vars={{ trackTotal: tracks.length, searchSynonyms: {
+    horror: ['scary', 'creepy', 'spooky', 'frightening', 'terror', 'haunted'],
+    scary: ['horror', 'creepy', 'spooky', 'frightening'],
+    film: ['movie', 'cinema', 'movies'],
+    movie: ['film', 'cinema'],
+    dystopia: ['dystopian', 'resistance', 'future', 'totalitarian'],
+    dystopian: ['dystopia', 'resistance', 'future'],
+    'sci-fi': ['science-fiction', 'scifi', 'sf', 'futuristic'],
+    fantasy: ['magic', 'sorcery', 'mythic'],
+    philosophy: ['existential', 'ethics', 'ideas'],
+    'true-crime': ['murder', 'investigation', 'criminal'],
+    kids: ['children', 'family', 'young'],
+    teens: ['teen', 'ya', 'young-adult'],
+    games: ['gaming', 'videogame', 'boardgame'],
+    mystery: ['detective', 'suspense', 'investigation'],
+    comedy: ['funny', 'humor', 'satire'],
+    war: ['combat', 'military', 'battle'],
+    nature: ['wilderness', 'outdoors', 'environment'],
+    ai: ['artificial-intelligence', 'robot', 'android'],
+    hacking: ['hacker', 'cyber', 'infosec'],
+    cooking: ['food', 'chef', 'culinary'],
+    survival: ['apocalypse', 'post-apocalyptic', 'wilderness'],
+  } }}>
     const input = document.getElementById('track-search');
     const list = document.getElementById('track-list');
     const countEl = document.getElementById('track-count');
@@ -98,6 +120,48 @@ const searchIndex = buildTrackSearchIndex(tracks);
 
     function parseTerms(raw) {
       return normalize(raw).split(' ').filter(Boolean);
+    }
+
+    function stemVariants(term) {
+      const variants = new Set([term]);
+      if (term.length < 4) return [...variants];
+      if (term.endsWith('ies') && term.length > 5) variants.add(term.slice(0, -3) + 'y');
+      if (term.endsWith('ing') && term.length > 6) {
+        variants.add(term.slice(0, -3));
+        variants.add(term.slice(0, -3) + 'e');
+      }
+      if (term.endsWith('ed') && term.length > 5) {
+        variants.add(term.slice(0, -2));
+        variants.add(term.slice(0, -1));
+      }
+      if (term.endsWith('s') && !term.endsWith('ss') && term.length > 4) {
+        variants.add(term.slice(0, -1));
+      }
+      return [...variants].filter((v) => v.length >= 3);
+    }
+
+    function expandTerm(term) {
+      const expanded = new Set([term]);
+      const direct = searchSynonyms[term];
+      if (direct) direct.forEach((a) => expanded.add(a));
+      for (const [canonical, aliases] of Object.entries(searchSynonyms)) {
+        if (aliases.includes(term)) {
+          expanded.add(canonical);
+          aliases.forEach((a) => expanded.add(a));
+        }
+      }
+      return [...expanded];
+    }
+
+    function termMatchesHaystack(haystack, term) {
+      const candidates = new Set();
+      for (const expanded of expandTerm(term)) {
+        for (const stem of stemVariants(expanded)) candidates.add(stem);
+      }
+      for (const candidate of candidates) {
+        if (haystack.includes(candidate)) return true;
+      }
+      return false;
     }
 
     function escapeHtml(text) {
@@ -143,7 +207,7 @@ const searchIndex = buildTrackSearchIndex(tracks);
       let visible = 0;
       for (const item of items) {
         const haystack = item.dataset.haystack ?? '';
-        const show = !terms.length || terms.every((term) => haystack.includes(term));
+        const show = !terms.length || terms.every((term) => termMatchesHaystack(haystack, term));
         item.hidden = !show;
         if (show) visible += 1;
       }

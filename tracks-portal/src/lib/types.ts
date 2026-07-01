@@ -46,6 +46,10 @@ export interface Track {
   sequence: SequenceItem[];
   supplemental?: SequenceItem[];
   tags?: string[];
+  /** 1=prestige, 2=standard, 3=fun/kids/games — controls index sort order */
+  tier?: 1 | 2 | 3;
+  /** Lower values appear earlier within the index grid */
+  sortOrder?: number;
   relatedTrackIds?: string[];
 }
 
