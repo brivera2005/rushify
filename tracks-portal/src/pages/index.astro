@@ -4,148 +4,103 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const KOBO_CLARA_URL = 'https://www.amazon.com/dp/B0CZXYV8GT?tag=tomewizard-20';
 const TOMEWIZARD_URL = 'https://www.tomewizard.com';
-
-const steps = [
-  {
-    num: '01',
-    title: 'Scan QR from RushTV',
-    body: 'Open Tracks on your TV, tap the QR icon, and scan with your phone. Enter the PIN shown on screen to unlock your Track list.',
-  },
-  {
-    num: '02',
-    title: 'Read the book',
-    body: 'Tracks are meant for paper-like reading. Load ebooks on a dedicated e-reader, not your phone browser.',
-    kobo: true,
-  },
-  {
-    num: '03',
-    title: 'Watch on RushTV at home',
-    body: 'Films and series belong on the big screen. When a Track calls for a movie or show, go back to RushTV on your TV to watch.',
-  },
-  {
-    num: '04',
-    title: 'More moods at TomeWizard',
-    body: 'Want a different vibe? TomeWizard curates even more reading paths based on how you feel right now.',
-    tomewizard: true,
-  },
-];
 ---
 
 <BaseLayout
   title="Tracks · RushTracks"
   description="Curated paths for the discerning through books, film, and television. Browse on your phone, read on your e-reader, watch on RushTV."
 >
-  <main class="mx-auto max-w-5xl px-6 py-16 md:py-24">
-    <header class="mb-20 border-b border-white/15 pb-12">
-      <p class="text-accent text-sm uppercase tracking-[0.35em] mb-4">RushTracks</p>
-      <h1 class="font-display text-5xl md:text-7xl font-bold leading-none mb-6">Tracks</h1>
-      <p class="text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
+  <main class="mx-auto max-w-5xl px-4 sm:px-6 py-10 md:py-14">
+    <header class="mb-8 border-b border-white/15 pb-8">
+      <p class="text-accent text-xs uppercase tracking-[0.35em] mb-3">RushTracks</p>
+      <h1 class="font-display text-3xl md:text-5xl font-bold leading-tight mb-3">
         Curated paths for the discerning through books, film, and television.
+      </h1>
+      <p class="text-sm md:text-base text-white/60 max-w-2xl leading-relaxed">
         Your phone is the guide. Your e-reader and TV are where the story lives.
       </p>
     </header>
 
-    <section class="mb-24" aria-labelledby="how-to-follow">
-      <div class="flex items-baseline gap-4 mb-10">
-        <h2 id="how-to-follow" class="font-display text-3xl md:text-4xl font-bold">
-          How to follow a Track
-        </h2>
-        <span class="hidden md:inline-block h-px flex-1 bg-accent/60"></span>
+    <section aria-labelledby="tracks-heading">
+      <div class="sticky top-0 z-10 bg-black/95 backdrop-blur-sm pb-4 pt-1 -mx-4 px-4 sm:-mx-6 sm:px-6">
+        <label for="track-search" class="sr-only">Search tracks</label>
+        <input
+          id="track-search"
+          type="search"
+          inputmode="search"
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+          placeholder="Search tracks…"
+          class="w-full border border-white/20 bg-white/5 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/50"
+        />
+        <p id="track-count" class="mt-2 text-xs uppercase tracking-[0.25em] text-white/45">
+          {tracks.length} tracks
+        </p>
       </div>
 
-      <ol class="grid gap-0 md:grid-cols-2">
-        {steps.map((step, i) => (
-          <li
-            class:list={[
-              'group relative border border-white/15 p-8 md:p-10 hover:border-accent/70 transition-colors',
-              i % 2 === 0 ? 'md:border-r-0' : '',
-              i < 2 ? 'md:border-b-0' : '',
-            ]}
-          >
-            <span class="font-display text-5xl md:text-6xl font-bold text-accent/25 group-hover:text-accent/40 transition-colors leading-none">
-              {step.num}
-            </span>
-            <h3 class="font-display text-xl md:text-2xl font-bold mt-4 mb-3">{step.title}</h3>
-            <p class="text-white/65 leading-relaxed text-sm md:text-base">{step.body}</p>
-            {step.kobo && (
-              <p class="mt-4 text-sm text-white/50">
-                We like the{' '}
-                <a
-                  href={KOBO_CLARA_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-white/80 underline decoration-white/30 underline-offset-4 hover:text-accent hover:decoration-accent transition-colors"
-                >
-                  Kobo Clara BW
-                </a>
-                {' '}for glare-free, distraction-free reading.
-              </p>
-            )}
-            {step.tomewizard && (
-              <p class="mt-4">
-                <a
-                  href={TOMEWIZARD_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="inline-block text-sm uppercase tracking-[0.2em] text-accent border border-accent/40 px-4 py-2 hover:bg-accent hover:text-black transition-colors"
-                >
-                  TomeWizard.com
-                </a>
-              </p>
-            )}
-          </li>
-        ))}
-      </ol>
-    </section>
-
-    <section class="mb-24 border border-white/15 p-8 md:p-12" aria-labelledby="recommended-apps">
-      <h2 id="recommended-apps" class="text-xs uppercase tracking-[0.35em] text-accent mb-8">
-        Recommended apps
-      </h2>
-      <div class="grid gap-8 md:grid-cols-2">
-        <article class="border-l-2 border-accent pl-6">
-          <h3 class="font-display text-xl font-bold mb-2">SmartAudioBook Player</h3>
-          <p class="text-white/60 text-sm leading-relaxed">
-            For audiobook stops on a Track. Robust playback, bookmarks, and sleep timer built for long listens.
-          </p>
-        </article>
-        <article class="border-l-2 border-white/30 pl-6">
-          <h3 class="font-display text-xl font-bold mb-2">ReadEra</h3>
-          <p class="text-white/60 text-sm leading-relaxed">
-            If you need ebooks on a phone or tablet, ReadEra is a clean option. An e-reader is still the best experience.
-          </p>
-        </article>
-      </div>
-      <p class="mt-8 text-xs uppercase tracking-[0.25em] text-white/35">
-        Films &amp; shows: RushTV on your TV only. Not on your phone.
-      </p>
-    </section>
-
-    <section class="mb-20">
-      <h2 class="text-2xl md:text-3xl font-display mb-4">What are Tracks?</h2>
-      <p class="text-white/70 leading-relaxed max-w-3xl text-base md:text-lg">
-        Editorial journeys through books, film, and TV in deliberate sequence.
-        Each Track is a curated path, not an algorithmic row, designed to be experienced in order,
-        interleaving reading and viewing until the arc completes.
-      </p>
-    </section>
-
-    <section>
-      <h2 class="text-sm uppercase tracking-[0.3em] text-white/50 mb-8">All Tracks ({tracks.length})</h2>
-      <ul class="grid gap-4 md:grid-cols-2">
+      <h2 id="tracks-heading" class="sr-only">All Tracks</h2>
+      <ul id="track-list" class="grid gap-3 md:grid-cols-2 mt-2">
         {tracks.map((track) => (
-          <li>
+          <li data-search={`${track.title} ${track.description}`.toLowerCase()}>
             <a
               href={`/track/${track.id}`}
-              class="group block border border-white/15 p-6 hover:border-accent transition-colors"
+              class="group block border border-white/15 p-5 hover:border-accent transition-colors"
             >
-              <h3 class="font-display text-xl md:text-2xl group-hover:text-accent transition-colors">{track.title}</h3>
-              <p class="text-white/60 mt-2 text-sm leading-relaxed">{track.description}</p>
-              <p class="text-accent text-xs uppercase tracking-widest mt-4">{track.sequence.length} stops</p>
+              <h3 class="font-display text-lg md:text-xl group-hover:text-accent transition-colors">{track.title}</h3>
+              <p class="text-white/60 mt-2 text-sm leading-relaxed line-clamp-2">{track.description}</p>
+              <p class="text-accent text-xs uppercase tracking-widest mt-3">{track.sequence.length} stops</p>
             </a>
           </li>
         ))}
       </ul>
+      <p id="track-empty" class="hidden py-12 text-center text-white/50 text-sm">No tracks match your search.</p>
     </section>
+
+    <footer class="mt-16 pt-8 border-t border-white/10 text-xs text-white/45 leading-relaxed">
+      <p class="mb-4 max-w-2xl">
+        Editorial journeys through books, film, and TV — each Track a curated path experienced in order.
+      </p>
+      <nav class="flex flex-wrap gap-x-4 gap-y-2" aria-label="Resources">
+        <a href={TOMEWIZARD_URL} target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">TomeWizard.com</a>
+        <span class="text-white/20" aria-hidden="true">·</span>
+        <a href={KOBO_CLARA_URL} target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">Kobo Clara BW</a>
+        <span class="text-white/20" aria-hidden="true">·</span>
+        <span>SmartAudioBook Player</span>
+        <span class="text-white/20" aria-hidden="true">·</span>
+        <span>ReadEra</span>
+      </nav>
+    </footer>
   </main>
+
+  <script define:vars={{ trackTotal: tracks.length }}>
+    const input = document.getElementById('track-search');
+    const list = document.getElementById('track-list');
+    const countEl = document.getElementById('track-count');
+    const emptyEl = document.getElementById('track-empty');
+    if (!input || !list) throw new Error('track search elements missing');
+
+    const items = Array.from(list.querySelectorAll('li'));
+
+    function filterTracks() {
+      const q = input.value.toLowerCase().trim();
+      let visible = 0;
+      for (const item of items) {
+        const haystack = item.dataset.search ?? '';
+        const show = !q || haystack.includes(q);
+        item.hidden = !show;
+        if (show) visible += 1;
+      }
+      if (countEl) {
+        countEl.textContent = q ? `${visible} of ${trackTotal} tracks` : `${trackTotal} tracks`;
+      }
+      if (emptyEl) {
+        emptyEl.classList.toggle('hidden', visible > 0);
+      }
+      list.classList.toggle('hidden', visible === 0);
+    }
+
+    input.addEventListener('input', filterTracks);
+    input.addEventListener('search', filterTracks);
+  </script>
 </BaseLayout>
