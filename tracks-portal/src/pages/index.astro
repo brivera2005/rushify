@@ -1,0 +1,53 @@
+---
+import tracks from '../data/tracks.json';
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Tracks — curated paths through books, film, and television for the discerning media consumer." />
+    <title>Tracks · RushTracks</title>
+  </head>
+  <body class="bg-black text-white min-h-screen">
+    <main class="mx-auto max-w-5xl px-6 py-16 md:py-24">
+      <header class="mb-16 border-b border-white/15 pb-12">
+        <p class="text-accent text-sm uppercase tracking-[0.35em] mb-4">RushTracks</p>
+        <h1 class="font-display text-5xl md:text-7xl font-bold leading-none mb-6">Tracks</h1>
+        <p class="text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
+          Curated paths through books, film, and television — for the discerning media consumer.
+          Scan from your TV, read and watch on your phone.
+        </p>
+      </header>
+
+      <section class="mb-20">
+        <h2 class="text-2xl md:text-3xl font-display mb-4">What are Tracks?</h2>
+        <p class="text-white/70 leading-relaxed max-w-3xl text-base md:text-lg">
+          Magazine-quality narrative journeys: books, films, shows, and documentaries in deliberate sequence.
+          Each Track is an editorial path — not an algorithmic row — designed to be experienced in order,
+          interleaving reading and viewing until the arc completes.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-sm uppercase tracking-[0.3em] text-white/50 mb-8">All Tracks ({tracks.length})</h2>
+        <ul class="grid gap-4 md:grid-cols-2">
+          {tracks.map((track) => (
+            <li>
+              <a
+                href={`/track/${track.id}`}
+                class="group block border border-white/15 p-6 hover:border-accent transition-colors"
+              >
+                <h3 class="font-display text-xl md:text-2xl group-hover:text-accent transition-colors">{track.title}</h3>
+                <p class="text-white/60 mt-2 text-sm leading-relaxed">{track.description}</p>
+                <p class="text-accent text-xs uppercase tracking-widest mt-4">{track.sequence.length} stops</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
