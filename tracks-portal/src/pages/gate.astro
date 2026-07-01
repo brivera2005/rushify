@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Enter PIN · RushTracks" description="Enter the PIN shown on your TV to browse Tracks.">
+  <main class="mx-auto max-w-md px-6 py-20 md:py-28 min-h-screen flex flex-col justify-center">
+    <header class="mb-10 border-b border-white/15 pb-8">
+      <p class="text-accent text-sm uppercase tracking-[0.35em] mb-3">RushTracks</p>
+      <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight">Enter PIN</h1>
+      <p class="text-white/70 mt-4 leading-relaxed">
+        Open Tracks on your TV, tap the QR icon, then type the 6-digit PIN shown on screen.
+      </p>
+    </header>
+
+    <form id="pin-form" class="space-y-6">
+      <label class="block">
+        <span class="text-xs uppercase tracking-[0.3em] text-white/50">6-digit PIN</span>
+        <input
+          id="pin-input"
+          name="pin"
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]{6}"
+          maxlength="6"
+          autocomplete="one-time-code"
+          required
+          class="mt-3 w-full bg-black border border-white/30 px-4 py-4 text-3xl tracking-[0.4em] text-center font-display text-white focus:border-accent focus:outline-none"
+          placeholder="000000"
+        />
+      </label>
+      <p id="pin-error" class="text-accent text-sm hidden" role="alert"></p>
+      <button
+        type="submit"
+        class="w-full border border-accent bg-accent text-black font-semibold uppercase tracking-[0.2em] py-4 hover:bg-transparent hover:text-accent transition-colors"
+      >
+        Continue
+      </button>
+    </form>
+
+    <p class="text-white/40 text-xs mt-10 leading-relaxed">
+      PINs refresh each time you open the QR screen on TV. Scanning the QR takes you here; enter the current PIN to continue.
+    </p>
+  </main>
+
+  <script>
+    const form = document.getElementById('pin-form') as HTMLFormElement;
+    const input = document.getElementById('pin-input') as HTMLInputElement;
+    const errorEl = document.getElementById('pin-error') as HTMLParagraphElement;
+    const params = new URLSearchParams(window.location.search);
+    const next = params.get('next') || '/';
+
+    input.addEventListener('input', () => {
+      input.value = input.value.replace(/\D/g, '').slice(0, 6);
+      errorEl.classList.add('hidden');
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const pin = input.value.trim();
+      if (!/^\d{6}$/.test(pin)) {
+        errorEl.textContent = 'Enter the 6-digit PIN from your TV.';
+        errorEl.classList.remove('hidden');
+        return;
+      }
+      errorEl.classList.add('hidden');
+      try {
+        const res = await fetch('/api/pin', {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify({ pin }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) {
+          errorEl.textContent = data.error || 'PIN expired or incorrect. Open QR on your TV again.';
+          errorEl.classList.remove('hidden');
+          return;
+        }
+        window.location.href = data.redirect || next;
+      } catch {
+        errorEl.textContent = 'Network error. Try again.';
+        errorEl.classList.remove('hidden');
+      }
+    });
+  </script>
+</BaseLayout>

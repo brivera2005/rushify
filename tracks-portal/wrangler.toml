@@ -1,3 +1,10 @@
 name = "rushtracks"
 compatibility_date = "2024-09-23"
 pages_build_output_dir = "dist"
+
+# Create namespace: npx wrangler kv namespace create TRACKS_PINS
+# Then paste id / preview_id below and set RUSHTRACKS_GATE_SECRET in Pages dashboard.
+[[kv_namespaces]]
+binding = "TRACKS_PINS"
+id = "592a8755cc2f4c1a90672210649cffc3"
+preview_id = "0c965ca4d5d3465d9c8630530a38dbc3"

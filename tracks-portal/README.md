@@ -1,6 +1,6 @@
 # RushTracks Portal
 
-Companion web portal for RushTV **Tracks** — curated book→film journeys scanned from the TV app.
+Companion web portal for RushTV **Tracks**: curated book→film journeys scanned from the TV app.
 
 **Live:** [rushtracks.pages.dev](https://rushtracks.pages.dev)
 
@@ -61,11 +61,26 @@ Connect the `rushify` repo to Cloudflare Pages:
 
 | Path | Description |
 |------|-------------|
-| `/` | Landing — hero, What are Tracks?, grid of all 35 tracks |
-| `/track/[id]` | Vertical timeline for one track (books + film/show/doc items) |
+| `/gate` | PIN entry (shown when no session cookie) |
+| `/` | Landing: hero, What are Tracks?, grid of all tracks (gated) |
+| `/track/[id]` | Vertical timeline for one track (gated) |
+| `POST /api/pin` | Register PIN (TV, Bearer secret) or verify PIN (landing) |
+
+## PIN gate
+
+1. RushTV Tracks tab: tap QR icon → generates a 6-digit PIN and registers it with the Worker.
+2. TV shows QR to `https://rushtracks.pages.dev/` plus the PIN.
+3. Phone: scan QR (lands on `/gate`) or open the site and enter the PIN.
+4. Worker sets `tracks_session` HttpOnly cookie (7 days).
+5. Opening QR again registers a new PIN; the previous PIN stops working immediately.
+
+### Worker secrets (Cloudflare Pages → Settings → Environment variables)
+
+- `RUSHTRACKS_GATE_SECRET` — shared with RushTV `BuildConfig` / CI secret of the same name
+- KV binding `TRACKS_PINS` — create with `npx wrangler kv namespace create TRACKS_PINS` and paste ids into `wrangler.toml`
 
 ## Data
 
 Edit `public/tracks.json` and mirror to `src/data/tracks.json` (or copy from `tv-media-hub/app/src/main/assets/tracks/tracks.json`).
 
-The Android app loads the same JSON from assets and encodes QR URLs as `https://rushtracks.pages.dev/track/{id}`.
+The Android app encodes a single QR URL to `https://rushtracks.pages.dev/` and displays a rotating PIN for manual entry.

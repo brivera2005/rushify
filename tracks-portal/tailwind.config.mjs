@@ -7,8 +7,8 @@ export default {
         accent: '#FF4500',
       },
       fontFamily: {
-        display: ['Georgia', 'Times New Roman', 'serif'],
-        sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['"Libre Baskerville"', 'Georgia', 'serif'],
+        sans: ['"IBM Plex Sans"', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
     },
   },
