@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         accent: '#B87333',
+        obsidian: '#0A0E14',
         copper: {
           DEFAULT: '#B87333',
           light: '#D4A574',

@@ -6129,5 +6129,1909 @@
         }
       }
     ]
+  },
+  {
+    "id": "digital-frontier-branching",
+    "title": "Digital Frontier: Branching Paths",
+    "description": "From Neuromancer's consensual hallucination through the Matrix, cyber-decks, and the hacker underground.",
+    "tags": [
+      "cyberpunk",
+      "hacking",
+      "sci-fi",
+      "branching",
+      "books",
+      "film",
+      "videogame",
+      "boardgame"
+    ],
+    "relatedTrackIds": [
+      "digital-frontier",
+      "digital-frontier-v2"
+    ],
+    "sequence": [
+      {
+        "id": "dfb-book-1",
+        "type": "book",
+        "title": "Neuromancer",
+        "author": "William Gibson",
+        "year": 1984,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/283860-M.jpg",
+          "openLibraryKey": "/works/OL27258W",
+          "year": 1984,
+          "amazonUrl": "https://www.amazon.com/s?k=Neuromancer%20William%20Gibson&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "dfb-cross-1",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "The Matrix",
+            "targetId": "dfb-film-1",
+            "vibe": "film"
+          },
+          {
+            "label": "Cyberpunk 2077",
+            "targetId": "dfb-vg-1",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Android: Netrunner",
+            "targetId": "dfb-bg-1",
+            "vibe": "boardgame",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "dfb-film-1",
+        "type": "movie",
+        "title": "The Matrix",
+        "year": 1999,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/dXNAPwY7VrqMAo51EKhhCJfaGb5.jpg",
+          "overview": "Set in the 22nd century, The Matrix tells the story of a computer hacker who joins a group of underground insurgents fighting the vast and powerful computers who now rule the earth.",
+          "genres": [
+            "Action",
+            "Science Fiction"
+          ],
+          "rating": 8.3,
+          "ratingCount": 28093,
+          "tmdbId": 603,
+          "mediaType": "movie",
+          "year": "1999"
+        }
+      },
+      {
+        "id": "dfb-vg-1",
+        "type": "videogame",
+        "title": "Cyberpunk 2077",
+        "author": "CD Projekt Red",
+        "year": 2020,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Cyberpunk%202077%20CD%20Projekt%20Red&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "dfb-bg-1",
+        "type": "boardgame",
+        "title": "Android: Netrunner",
+        "author": "Richard Garfield & Lukas Litzsinger",
+        "year": 2012,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Android%3A%20Netrunner%20Richard%20Garfield%20%26%20Lukas%20Litzsinger&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "dfb-cross-2",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Mr. Robot",
+            "targetId": "dfb-show-1",
+            "vibe": "series"
+          },
+          {
+            "label": "Hacknet",
+            "targetId": "dfb-vg-2",
+            "vibe": "videogame",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "dfb-show-1",
+        "type": "show",
+        "title": "Mr. Robot",
+        "year": 2015,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/kv1nRqgebSsREnd7vdC2pSGjpLo.jpg",
+          "overview": "A young programmer, Elliot, suffers from a debilitating anti-social disorder and decides that he can only connect to people by hacking them. He wields his skills as a weapon to protect the people that he cares about. Elliot finds himself in the intersection between a cybersecurity firm he works for and the underworld organizations that are recruiting him to bring down corporate America.",
+          "genres": [
+            "Crime",
+            "Drama"
+          ],
+          "rating": 8.3,
+          "ratingCount": 5394,
+          "tmdbId": 62560,
+          "mediaType": "tv",
+          "year": "2015"
+        }
+      },
+      {
+        "id": "dfb-vg-2",
+        "type": "videogame",
+        "title": "Hacknet",
+        "author": "Team Fractal Alligator",
+        "year": 2015,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Hacknet%20Team%20Fractal%20Alligator&tag=tomewizard-20"
+        }
+      }
+    ],
+    "map": {
+      "nodes": [
+        {
+          "id": "dfb-n0",
+          "itemId": "dfb-book-1",
+          "layer": 0,
+          "slot": 1
+        },
+        {
+          "id": "dfb-n1",
+          "itemId": "dfb-cross-1",
+          "layer": 1,
+          "slot": 1
+        },
+        {
+          "id": "dfb-n2",
+          "itemId": "dfb-film-1",
+          "layer": 2,
+          "slot": 0
+        },
+        {
+          "id": "dfb-n3",
+          "itemId": "dfb-vg-1",
+          "layer": 2,
+          "slot": 1
+        },
+        {
+          "id": "dfb-n4",
+          "itemId": "dfb-bg-1",
+          "layer": 2,
+          "slot": 2
+        },
+        {
+          "id": "dfb-n5",
+          "itemId": "dfb-cross-2",
+          "layer": 3,
+          "slot": 1
+        },
+        {
+          "id": "dfb-n6",
+          "itemId": "dfb-show-1",
+          "layer": 4,
+          "slot": 0
+        },
+        {
+          "id": "dfb-n7",
+          "itemId": "dfb-vg-2",
+          "layer": 4,
+          "slot": 2
+        }
+      ],
+      "edges": [
+        {
+          "from": "dfb-n0",
+          "to": "dfb-n1"
+        },
+        {
+          "from": "dfb-n1",
+          "to": "dfb-n2"
+        },
+        {
+          "from": "dfb-n1",
+          "to": "dfb-n3"
+        },
+        {
+          "from": "dfb-n1",
+          "to": "dfb-n4"
+        },
+        {
+          "from": "dfb-n2",
+          "to": "dfb-n5"
+        },
+        {
+          "from": "dfb-n3",
+          "to": "dfb-n5"
+        },
+        {
+          "from": "dfb-n4",
+          "to": "dfb-n5"
+        },
+        {
+          "from": "dfb-n5",
+          "to": "dfb-n6"
+        },
+        {
+          "from": "dfb-n5",
+          "to": "dfb-n7"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pure-video-game-vibe",
+    "title": "Pure Video Game Vibe",
+    "description": "A videogame-only specialty run — puzzle wit, roguelike mastery, and open-world wonder.",
+    "tags": [
+      "videogame",
+      "branching",
+      "boutique",
+      "roguelike",
+      "games"
+    ],
+    "sequence": [
+      {
+        "id": "pvg-1",
+        "type": "videogame",
+        "title": "Portal",
+        "author": "Valve",
+        "year": 2007,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Portal%20Valve&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "pvg-cross-1",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Slay the Spire",
+            "targetId": "pvg-2",
+            "vibe": "roguelike"
+          },
+          {
+            "label": "Hades",
+            "targetId": "pvg-3",
+            "vibe": "roguelike"
+          }
+        ]
+      },
+      {
+        "id": "pvg-2",
+        "type": "videogame",
+        "title": "Slay the Spire",
+        "author": "MegaCrit",
+        "year": 2019,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Slay%20the%20Spire%20MegaCrit&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "pvg-3",
+        "type": "videogame",
+        "title": "Hades",
+        "author": "Supergiant Games",
+        "year": 2020,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Hades%20Supergiant%20Games&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "pvg-cross-2",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Elden Ring",
+            "targetId": "pvg-4",
+            "vibe": "open world"
+          },
+          {
+            "label": "Outer Wilds",
+            "targetId": "pvg-5",
+            "vibe": "exploration"
+          }
+        ]
+      },
+      {
+        "id": "pvg-4",
+        "type": "videogame",
+        "title": "Elden Ring",
+        "author": "FromSoftware",
+        "year": 2022,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Elden%20Ring%20FromSoftware&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "pvg-5",
+        "type": "videogame",
+        "title": "Outer Wilds",
+        "author": "Mobius Digital",
+        "year": 2019,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Outer%20Wilds%20Mobius%20Digital&tag=tomewizard-20"
+        }
+      }
+    ],
+    "map": {
+      "nodes": [
+        {
+          "id": "pvg-n0",
+          "itemId": "pvg-1",
+          "layer": 0,
+          "slot": 1
+        },
+        {
+          "id": "pvg-n1",
+          "itemId": "pvg-cross-1",
+          "layer": 1,
+          "slot": 1
+        },
+        {
+          "id": "pvg-n2",
+          "itemId": "pvg-2",
+          "layer": 2,
+          "slot": 0
+        },
+        {
+          "id": "pvg-n3",
+          "itemId": "pvg-3",
+          "layer": 2,
+          "slot": 2
+        },
+        {
+          "id": "pvg-n4",
+          "itemId": "pvg-cross-2",
+          "layer": 3,
+          "slot": 1
+        },
+        {
+          "id": "pvg-n5",
+          "itemId": "pvg-4",
+          "layer": 4,
+          "slot": 0
+        },
+        {
+          "id": "pvg-n6",
+          "itemId": "pvg-5",
+          "layer": 4,
+          "slot": 2
+        }
+      ],
+      "edges": [
+        {
+          "from": "pvg-n0",
+          "to": "pvg-n1"
+        },
+        {
+          "from": "pvg-n1",
+          "to": "pvg-n2"
+        },
+        {
+          "from": "pvg-n1",
+          "to": "pvg-n3"
+        },
+        {
+          "from": "pvg-n2",
+          "to": "pvg-n4"
+        },
+        {
+          "from": "pvg-n3",
+          "to": "pvg-n4"
+        },
+        {
+          "from": "pvg-n4",
+          "to": "pvg-n5"
+        },
+        {
+          "from": "pvg-n4",
+          "to": "pvg-n6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pure-board-game-engine",
+    "title": "Pure Board Game Engine",
+    "description": "A tabletop-only specialty run — settlement, engine-building, and economic warfare.",
+    "tags": [
+      "boardgame",
+      "branching",
+      "strategy",
+      "boutique",
+      "games"
+    ],
+    "sequence": [
+      {
+        "id": "pbge-1",
+        "type": "boardgame",
+        "title": "Catan",
+        "author": "Klaus Teuber",
+        "year": 1995,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Catan%20Klaus%20Teuber&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "pbge-cross-1",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Concordia",
+            "targetId": "pbge-2",
+            "vibe": "engine-building"
+          },
+          {
+            "label": "Power Grid",
+            "targetId": "pbge-3",
+            "vibe": "economic"
+          }
+        ]
+      },
+      {
+        "id": "pbge-2",
+        "type": "boardgame",
+        "title": "Concordia",
+        "author": "Mac Gerdts",
+        "year": 2013,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Concordia%20Mac%20Gerdts&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "pbge-3",
+        "type": "boardgame",
+        "title": "Power Grid",
+        "author": "Friedemann Friese",
+        "year": 2004,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Power%20Grid%20Friedemann%20Friese&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "pbge-cross-2",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Brass: Birmingham",
+            "targetId": "pbge-4",
+            "vibe": "industrial"
+          },
+          {
+            "label": "Food Chain Magnate",
+            "targetId": "pbge-5",
+            "vibe": "economic"
+          }
+        ]
+      },
+      {
+        "id": "pbge-4",
+        "type": "boardgame",
+        "title": "Brass: Birmingham",
+        "author": "Martin Wallace",
+        "year": 2018,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Brass%3A%20Birmingham%20Martin%20Wallace&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "pbge-5",
+        "type": "boardgame",
+        "title": "Food Chain Magnate",
+        "author": "Jeroen Doumen & Joris Wiersinga",
+        "year": 2015,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Food%20Chain%20Magnate%20Jeroen%20Doumen%20%26%20Joris%20Wiersinga&tag=tomewizard-20"
+        }
+      }
+    ],
+    "map": {
+      "nodes": [
+        {
+          "id": "pbge-n0",
+          "itemId": "pbge-1",
+          "layer": 0,
+          "slot": 1
+        },
+        {
+          "id": "pbge-n1",
+          "itemId": "pbge-cross-1",
+          "layer": 1,
+          "slot": 1
+        },
+        {
+          "id": "pbge-n2",
+          "itemId": "pbge-2",
+          "layer": 2,
+          "slot": 0
+        },
+        {
+          "id": "pbge-n3",
+          "itemId": "pbge-3",
+          "layer": 2,
+          "slot": 2
+        },
+        {
+          "id": "pbge-n4",
+          "itemId": "pbge-cross-2",
+          "layer": 3,
+          "slot": 1
+        },
+        {
+          "id": "pbge-n5",
+          "itemId": "pbge-4",
+          "layer": 4,
+          "slot": 0
+        },
+        {
+          "id": "pbge-n6",
+          "itemId": "pbge-5",
+          "layer": 4,
+          "slot": 2
+        }
+      ],
+      "edges": [
+        {
+          "from": "pbge-n0",
+          "to": "pbge-n1"
+        },
+        {
+          "from": "pbge-n1",
+          "to": "pbge-n2"
+        },
+        {
+          "from": "pbge-n1",
+          "to": "pbge-n3"
+        },
+        {
+          "from": "pbge-n2",
+          "to": "pbge-n4"
+        },
+        {
+          "from": "pbge-n3",
+          "to": "pbge-n4"
+        },
+        {
+          "from": "pbge-n4",
+          "to": "pbge-n5"
+        },
+        {
+          "from": "pbge-n4",
+          "to": "pbge-n6"
+        }
+      ]
+    }
+  },
+  {
+    "id": "sovereign-analytical-mix",
+    "title": "Sovereign Analytical Mix",
+    "description": "Probability, sports analytics, and the games that teach you to think in bets.",
+    "tags": [
+      "probability",
+      "analytics",
+      "branching",
+      "books",
+      "film",
+      "videogame",
+      "boardgame"
+    ],
+    "relatedTrackIds": [
+      "sovereign-analytical-edge",
+      "sovereign-analytical-v2"
+    ],
+    "sequence": [
+      {
+        "id": "sam-book-1",
+        "type": "book",
+        "title": "Thinking in Bets",
+        "author": "Annie Duke",
+        "year": 2018,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/8792782-M.jpg",
+          "openLibraryKey": "/works/OL19736287W",
+          "year": 2018,
+          "amazonUrl": "https://www.amazon.com/s?k=Thinking%20in%20Bets%20Annie%20Duke&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "sam-film-1",
+        "type": "movie",
+        "title": "Moneyball",
+        "year": 2011,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/4yIQq1e6iOcaZ5rLDG3lZBP3j7a.jpg",
+          "overview": "The story of Oakland Athletics general manager Billy Beane's successful attempt to put together a baseball team on a budget, by employing computer-generated analysis to draft his players.",
+          "genres": [
+            "Drama"
+          ],
+          "rating": 7.3,
+          "ratingCount": 5824,
+          "tmdbId": 60308,
+          "mediaType": "movie",
+          "year": "2011"
+        }
+      },
+      {
+        "id": "sam-cross-1",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Balatro",
+            "targetId": "sam-vg-1",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "The Crew",
+            "targetId": "sam-bg-1",
+            "vibe": "boardgame",
+            "optional": true
+          },
+          {
+            "label": "Texas Hold'em",
+            "targetId": "sam-bg-2",
+            "vibe": "boardgame",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "sam-vg-1",
+        "type": "videogame",
+        "title": "Balatro",
+        "author": "LocalThunk",
+        "year": 2024,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Balatro%20LocalThunk&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "sam-bg-1",
+        "type": "boardgame",
+        "title": "The Crew",
+        "author": "Thomas Sing",
+        "year": 2019,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Crew%20Thomas%20Sing&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "sam-bg-2",
+        "type": "boardgame",
+        "title": "Texas Hold'em",
+        "note": "Classic poker — any quality set or home game",
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Texas%20Hold'em&tag=tomewizard-20"
+        }
+      }
+    ],
+    "map": {
+      "nodes": [
+        {
+          "id": "sam-n0",
+          "itemId": "sam-book-1",
+          "layer": 0,
+          "slot": 1
+        },
+        {
+          "id": "sam-n1",
+          "itemId": "sam-film-1",
+          "layer": 1,
+          "slot": 1
+        },
+        {
+          "id": "sam-n2",
+          "itemId": "sam-cross-1",
+          "layer": 2,
+          "slot": 1
+        },
+        {
+          "id": "sam-n3",
+          "itemId": "sam-vg-1",
+          "layer": 3,
+          "slot": 0
+        },
+        {
+          "id": "sam-n4",
+          "itemId": "sam-bg-1",
+          "layer": 3,
+          "slot": 1
+        },
+        {
+          "id": "sam-n5",
+          "itemId": "sam-bg-2",
+          "layer": 3,
+          "slot": 2
+        }
+      ],
+      "edges": [
+        {
+          "from": "sam-n0",
+          "to": "sam-n1"
+        },
+        {
+          "from": "sam-n1",
+          "to": "sam-n2"
+        },
+        {
+          "from": "sam-n2",
+          "to": "sam-n3"
+        },
+        {
+          "from": "sam-n2",
+          "to": "sam-n4"
+        },
+        {
+          "from": "sam-n2",
+          "to": "sam-n5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "dark-fantasy-campaign",
+    "title": "Dark Fantasy Campaign",
+    "description": "Grim swords, green knights, and the long campaigns that bleed into tabletop and CRPG epics.",
+    "tags": [
+      "fantasy",
+      "grimdark",
+      "branching",
+      "books",
+      "film",
+      "videogame",
+      "boardgame"
+    ],
+    "relatedTrackIds": [
+      "dark-fantasy-foundations",
+      "dark-fantasy-v2"
+    ],
+    "sequence": [
+      {
+        "id": "dfc-book-1",
+        "type": "book",
+        "title": "The Blade Itself",
+        "author": "Joe Abercrombie",
+        "year": 2006,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/14543422-M.jpg",
+          "openLibraryKey": "/works/OL8400950W",
+          "year": 2001,
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Blade%20Itself%20Joe%20Abercrombie&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "dfc-film-1",
+        "type": "movie",
+        "title": "The Green Knight",
+        "year": 2021,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/if4hw3Ou5Sav9Em7WWHj66mnywp.jpg",
+          "overview": "An epic fantasy adventure based on the timeless Arthurian legend, The Green Knight tells the story of Sir Gawain, King Arthur's reckless and headstrong nephew, who embarks on a daring quest to confront the eponymous Green Knight, a gigantic emerald-skinned stranger and tester of men.",
+          "genres": [
+            "Adventure",
+            "Drama",
+            "Fantasy"
+          ],
+          "rating": 6.6,
+          "ratingCount": 2220,
+          "tmdbId": 559907,
+          "mediaType": "movie",
+          "year": "2021"
+        }
+      },
+      {
+        "id": "dfc-cross-1",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "The Witcher 3",
+            "targetId": "dfc-vg-1",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Gloomhaven",
+            "targetId": "dfc-bg-1",
+            "vibe": "boardgame",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "dfc-vg-1",
+        "type": "videogame",
+        "title": "The Witcher 3: Wild Hunt",
+        "author": "CD Projekt Red",
+        "year": 2015,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Witcher%203%3A%20Wild%20Hunt%20CD%20Projekt%20Red&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "dfc-bg-1",
+        "type": "boardgame",
+        "title": "Gloomhaven",
+        "author": "Isaac Childres",
+        "year": 2017,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Gloomhaven%20Isaac%20Childres&tag=tomewizard-20"
+        }
+      }
+    ],
+    "map": {
+      "nodes": [
+        {
+          "id": "dfc-n0",
+          "itemId": "dfc-book-1",
+          "layer": 0,
+          "slot": 1
+        },
+        {
+          "id": "dfc-n1",
+          "itemId": "dfc-film-1",
+          "layer": 1,
+          "slot": 1
+        },
+        {
+          "id": "dfc-n2",
+          "itemId": "dfc-cross-1",
+          "layer": 2,
+          "slot": 1
+        },
+        {
+          "id": "dfc-n3",
+          "itemId": "dfc-vg-1",
+          "layer": 3,
+          "slot": 0
+        },
+        {
+          "id": "dfc-n4",
+          "itemId": "dfc-bg-1",
+          "layer": 3,
+          "slot": 2
+        }
+      ],
+      "edges": [
+        {
+          "from": "dfc-n0",
+          "to": "dfc-n1"
+        },
+        {
+          "from": "dfc-n1",
+          "to": "dfc-n2"
+        },
+        {
+          "from": "dfc-n2",
+          "to": "dfc-n3"
+        },
+        {
+          "from": "dfc-n2",
+          "to": "dfc-n4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "cosmic-horror-isolation",
+    "title": "Cosmic Horror & Isolation",
+    "description": "Antarctic dread, xenomorph terror, and the games that trap you alone in the dark.",
+    "tags": [
+      "horror",
+      "sci-fi",
+      "branching",
+      "books",
+      "film",
+      "videogame",
+      "boardgame"
+    ],
+    "relatedTrackIds": [
+      "cosmic-horror"
+    ],
+    "sequence": [
+      {
+        "id": "chi-book-1",
+        "type": "book",
+        "title": "At the Mountains of Madness",
+        "author": "H.P. Lovecraft",
+        "year": 1936,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/6610039-M.jpg",
+          "openLibraryKey": "/works/OL152268W",
+          "year": 1968,
+          "amazonUrl": "https://www.amazon.com/s?k=At%20the%20Mountains%20of%20Madness%20H.P.%20Lovecraft&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "chi-film-1",
+        "type": "movie",
+        "title": "Alien",
+        "year": 1979,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/vfrQk5IPloGg1v9Rzbh2Eg3VGyM.jpg",
+          "overview": "During its return to the earth, commercial spaceship Nostromo intercepts a distress signal from a distant planet. When a three-member team of the crew discovers a chamber containing thousands of eggs on the planet, a creature inside one of the eggs attacks an explorer. The entire crew is unaware of the impending nightmare set to descend upon them when the alien parasite planted inside its unfortunate host is birthed.",
+          "genres": [
+            "Horror",
+            "Science Fiction"
+          ],
+          "rating": 8.2,
+          "ratingCount": 16470,
+          "tmdbId": 348,
+          "mediaType": "movie",
+          "year": "1979"
+        }
+      },
+      {
+        "id": "chi-cross-1",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Alien: Isolation",
+            "targetId": "chi-vg-1",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Nemesis",
+            "targetId": "chi-bg-1",
+            "vibe": "boardgame",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "chi-vg-1",
+        "type": "videogame",
+        "title": "Alien: Isolation",
+        "author": "Creative Assembly",
+        "year": 2014,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Alien%3A%20Isolation%20Creative%20Assembly&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "chi-bg-1",
+        "type": "boardgame",
+        "title": "Nemesis",
+        "author": "Awaken Realms",
+        "year": 2018,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Nemesis%20Awaken%20Realms&tag=tomewizard-20"
+        }
+      }
+    ],
+    "map": {
+      "nodes": [
+        {
+          "id": "chi-n0",
+          "itemId": "chi-book-1",
+          "layer": 0,
+          "slot": 1
+        },
+        {
+          "id": "chi-n1",
+          "itemId": "chi-film-1",
+          "layer": 1,
+          "slot": 1
+        },
+        {
+          "id": "chi-n2",
+          "itemId": "chi-cross-1",
+          "layer": 2,
+          "slot": 1
+        },
+        {
+          "id": "chi-n3",
+          "itemId": "chi-vg-1",
+          "layer": 3,
+          "slot": 0
+        },
+        {
+          "id": "chi-n4",
+          "itemId": "chi-bg-1",
+          "layer": 3,
+          "slot": 2
+        }
+      ],
+      "edges": [
+        {
+          "from": "chi-n0",
+          "to": "chi-n1"
+        },
+        {
+          "from": "chi-n1",
+          "to": "chi-n2"
+        },
+        {
+          "from": "chi-n2",
+          "to": "chi-n3"
+        },
+        {
+          "from": "chi-n2",
+          "to": "chi-n4"
+        }
+      ]
+    }
+  },
+  {
+    "id": "epic-fantasy-tapestry",
+    "title": "Epic Fantasy Tapestry",
+    "description": "From Wheel of Time beginnings to Return of the King — then pick your AAA or boutique finale.",
+    "tags": [
+      "fantasy",
+      "epic",
+      "branching",
+      "aaa",
+      "boutique",
+      "books",
+      "film",
+      "videogame",
+      "boardgame"
+    ],
+    "relatedTrackIds": [
+      "gateway-fantasy",
+      "dark-fantasy-foundations"
+    ],
+    "sequence": [
+      {
+        "id": "eft-book-1",
+        "type": "book",
+        "title": "The Eye of the World",
+        "author": "Robert Jordan",
+        "year": 1990,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/980232-M.jpg",
+          "openLibraryKey": "/works/OL7924103W",
+          "year": 1990,
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Eye%20of%20the%20World%20Robert%20Jordan&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "eft-film-1",
+        "type": "movie",
+        "title": "The Lord of the Rings: The Return of the King",
+        "year": 2003,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+          "overview": "As armies mass for a final battle that will decide the fate of the world--and powerful, ancient forces of Light and Dark compete to determine the outcome--one member of the Fellowship of the Ring is revealed as the noble heir to the throne of the Kings of Men. Yet, the sole hope for triumph over evil lies with a brave hobbit, Frodo, who, accompanied by his loyal friend Sam and the hideous, wretched Gollum, ventures deep into the very dark heart of Mordor on his seemingly impossible quest to destroy the Ring of Power.​",
+          "genres": [
+            "Adventure",
+            "Fantasy",
+            "Action"
+          ],
+          "rating": 8.5,
+          "ratingCount": 26727,
+          "tmdbId": 122,
+          "mediaType": "movie",
+          "year": "2003"
+        }
+      },
+      {
+        "id": "eft-cross-1",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Baldur's Gate 3",
+            "targetId": "eft-vg-1",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Hollow Knight",
+            "targetId": "eft-vg-2",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "War of the Ring",
+            "targetId": "eft-bg-1",
+            "vibe": "boardgame",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "eft-vg-1",
+        "type": "videogame",
+        "title": "Baldur's Gate 3",
+        "author": "Larian Studios",
+        "year": 2023,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Baldur's%20Gate%203%20Larian%20Studios&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "eft-vg-2",
+        "type": "videogame",
+        "title": "Hollow Knight",
+        "author": "Team Cherry",
+        "year": 2017,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Hollow%20Knight%20Team%20Cherry&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "eft-bg-1",
+        "type": "boardgame",
+        "title": "War of the Ring",
+        "author": "Roberto Di Meglio",
+        "year": 2012,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=War%20of%20the%20Ring%20Roberto%20Di%20Meglio&tag=tomewizard-20"
+        }
+      }
+    ],
+    "map": {
+      "nodes": [
+        {
+          "id": "eft-n0",
+          "itemId": "eft-book-1",
+          "layer": 0,
+          "slot": 1
+        },
+        {
+          "id": "eft-n1",
+          "itemId": "eft-film-1",
+          "layer": 1,
+          "slot": 1
+        },
+        {
+          "id": "eft-n2",
+          "itemId": "eft-cross-1",
+          "layer": 2,
+          "slot": 1
+        },
+        {
+          "id": "eft-n3",
+          "itemId": "eft-vg-1",
+          "layer": 3,
+          "slot": 0
+        },
+        {
+          "id": "eft-n4",
+          "itemId": "eft-vg-2",
+          "layer": 3,
+          "slot": 1
+        },
+        {
+          "id": "eft-n5",
+          "itemId": "eft-bg-1",
+          "layer": 3,
+          "slot": 2
+        }
+      ],
+      "edges": [
+        {
+          "from": "eft-n0",
+          "to": "eft-n1"
+        },
+        {
+          "from": "eft-n1",
+          "to": "eft-n2"
+        },
+        {
+          "from": "eft-n2",
+          "to": "eft-n3"
+        },
+        {
+          "from": "eft-n2",
+          "to": "eft-n4"
+        },
+        {
+          "from": "eft-n2",
+          "to": "eft-n5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "grimdark-ascendant",
+    "title": "Grimdark Ascendant",
+    "description": "Mercenary companies, cursed manga, and the punishing games that define grimdark ascension.",
+    "tags": [
+      "grimdark",
+      "fantasy",
+      "horror",
+      "branching",
+      "aaa",
+      "boutique",
+      "books",
+      "videogame",
+      "boardgame"
+    ],
+    "sequence": [
+      {
+        "id": "ga-book-1",
+        "type": "book",
+        "title": "The Black Company",
+        "author": "Glen Cook",
+        "year": 1984,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/6978703-M.jpg",
+          "openLibraryKey": "/works/OL16032768W",
+          "year": 1984,
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Black%20Company%20Glen%20Cook&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ga-show-1",
+        "type": "show",
+        "title": "Berserk (1997)",
+        "year": 1997,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/xctRBSZzvoHDHz38ZZUGxRYetvG.jpg",
+          "overview": "Guts, a wandering mercenary, joins the Band of the Hawk after being defeated in a duel by Griffith, the group's leader and founder. Together, they dominate every battle, but something menacing lurks in the shadows.",
+          "genres": [
+            "Action & Adventure",
+            "Sci-Fi & Fantasy",
+            "Animation"
+          ],
+          "rating": 8.5,
+          "ratingCount": 805,
+          "tmdbId": 35935,
+          "mediaType": "tv",
+          "year": "1997"
+        }
+      },
+      {
+        "id": "ga-cross-1",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Dark Souls",
+            "targetId": "ga-vg-1",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Fear & Hunger",
+            "targetId": "ga-vg-2",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Kingdom Death: Monster",
+            "targetId": "ga-bg-1",
+            "vibe": "boardgame",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "ga-vg-1",
+        "type": "videogame",
+        "title": "Dark Souls",
+        "author": "FromSoftware",
+        "year": 2011,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Dark%20Souls%20FromSoftware&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ga-vg-2",
+        "type": "videogame",
+        "title": "Fear & Hunger",
+        "author": "Happy Paintings",
+        "year": 2018,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Fear%20%26%20Hunger%20Happy%20Paintings&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ga-bg-1",
+        "type": "boardgame",
+        "title": "Kingdom Death: Monster",
+        "author": "Adam Poots",
+        "year": 2015,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Kingdom%20Death%3A%20Monster%20Adam%20Poots&tag=tomewizard-20"
+        }
+      }
+    ],
+    "map": {
+      "nodes": [
+        {
+          "id": "ga-n0",
+          "itemId": "ga-book-1",
+          "layer": 0,
+          "slot": 1
+        },
+        {
+          "id": "ga-n1",
+          "itemId": "ga-show-1",
+          "layer": 1,
+          "slot": 1
+        },
+        {
+          "id": "ga-n2",
+          "itemId": "ga-cross-1",
+          "layer": 2,
+          "slot": 1
+        },
+        {
+          "id": "ga-n3",
+          "itemId": "ga-vg-1",
+          "layer": 3,
+          "slot": 0
+        },
+        {
+          "id": "ga-n4",
+          "itemId": "ga-vg-2",
+          "layer": 3,
+          "slot": 1
+        },
+        {
+          "id": "ga-n5",
+          "itemId": "ga-bg-1",
+          "layer": 3,
+          "slot": 2
+        }
+      ],
+      "edges": [
+        {
+          "from": "ga-n0",
+          "to": "ga-n1"
+        },
+        {
+          "from": "ga-n1",
+          "to": "ga-n2"
+        },
+        {
+          "from": "ga-n2",
+          "to": "ga-n3"
+        },
+        {
+          "from": "ga-n2",
+          "to": "ga-n4"
+        },
+        {
+          "from": "ga-n2",
+          "to": "ga-n5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "horror-evolution",
+    "title": "Horror Evolution",
+    "description": "Literary hauntings to Hereditary dread — then the games that modernize cosmic and co-op terror.",
+    "tags": [
+      "horror",
+      "branching",
+      "aaa",
+      "boutique",
+      "books",
+      "film",
+      "videogame",
+      "boardgame"
+    ],
+    "relatedTrackIds": [
+      "cosmic-horror",
+      "folk-horror-pagan"
+    ],
+    "sequence": [
+      {
+        "id": "he-book-1",
+        "type": "book",
+        "title": "The Haunting of Hill House",
+        "author": "Shirley Jackson",
+        "year": 1959,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/4289014-M.jpg",
+          "openLibraryKey": "/works/OL3171069W",
+          "year": 1959,
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Haunting%20of%20Hill%20House%20Shirley%20Jackson&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "he-film-1",
+        "type": "movie",
+        "title": "Hereditary",
+        "year": 2018,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/4GFPuL14eXi66V96xBWY73Y9PfR.jpg",
+          "overview": "Following the death of the Leigh family matriarch, Annie and her children uncover disturbing secrets about their heritage. Their daily lives are not only impacted, but they also become entangled in a chilling fate from which they cannot escape, driving them to the brink of madness.",
+          "genres": [
+            "Horror",
+            "Mystery",
+            "Thriller"
+          ],
+          "rating": 7.3,
+          "ratingCount": 8653,
+          "tmdbId": 493922,
+          "mediaType": "movie",
+          "year": "2018"
+        }
+      },
+      {
+        "id": "he-cross-1",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Signalis",
+            "targetId": "he-vg-1",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Lethal Company",
+            "targetId": "he-vg-2",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Mansions of Madness",
+            "targetId": "he-bg-1",
+            "vibe": "boardgame",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "he-vg-1",
+        "type": "videogame",
+        "title": "Signalis",
+        "author": "rose-engine",
+        "year": 2022,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Signalis%20rose-engine&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "he-vg-2",
+        "type": "videogame",
+        "title": "Lethal Company",
+        "author": "Zeekerss",
+        "year": 2023,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Lethal%20Company%20Zeekerss&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "he-bg-1",
+        "type": "boardgame",
+        "title": "Mansions of Madness",
+        "author": "Fantasy Flight Games",
+        "year": 2011,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Mansions%20of%20Madness%20Fantasy%20Flight%20Games&tag=tomewizard-20"
+        }
+      }
+    ],
+    "map": {
+      "nodes": [
+        {
+          "id": "he-n0",
+          "itemId": "he-book-1",
+          "layer": 0,
+          "slot": 1
+        },
+        {
+          "id": "he-n1",
+          "itemId": "he-film-1",
+          "layer": 1,
+          "slot": 1
+        },
+        {
+          "id": "he-n2",
+          "itemId": "he-cross-1",
+          "layer": 2,
+          "slot": 1
+        },
+        {
+          "id": "he-n3",
+          "itemId": "he-vg-1",
+          "layer": 3,
+          "slot": 0
+        },
+        {
+          "id": "he-n4",
+          "itemId": "he-vg-2",
+          "layer": 3,
+          "slot": 1
+        },
+        {
+          "id": "he-n5",
+          "itemId": "he-bg-1",
+          "layer": 3,
+          "slot": 2
+        }
+      ],
+      "edges": [
+        {
+          "from": "he-n0",
+          "to": "he-n1"
+        },
+        {
+          "from": "he-n1",
+          "to": "he-n2"
+        },
+        {
+          "from": "he-n2",
+          "to": "he-n3"
+        },
+        {
+          "from": "he-n2",
+          "to": "he-n4"
+        },
+        {
+          "from": "he-n2",
+          "to": "he-n5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "automation-engine",
+    "title": "Automation Engine",
+    "description": "Murderbot diplomacy to Devs paranoia — then the factory sims and logic puzzles that optimize everything.",
+    "tags": [
+      "automation",
+      "sci-fi",
+      "branching",
+      "aaa",
+      "boutique",
+      "books",
+      "film",
+      "videogame",
+      "boardgame"
+    ],
+    "sequence": [
+      {
+        "id": "ae-book-1",
+        "type": "book",
+        "title": "All Systems Red",
+        "author": "Martha Wells",
+        "year": 2017,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/9157148-M.jpg",
+          "openLibraryKey": "/works/OL17914663W",
+          "year": 2017,
+          "amazonUrl": "https://www.amazon.com/s?k=All%20Systems%20Red%20Martha%20Wells&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ae-show-1",
+        "type": "show",
+        "title": "Devs",
+        "year": 2020,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/uv63iNWOh69bSJYJQZjiX6n8B3m.jpg",
+          "overview": "Young computer engineer Lily Chan investigates the secretive development division of her employer, a cutting-edge tech company based in San Francisco, which she believes is behind the murder of her boyfriend.",
+          "genres": [
+            "Sci-Fi & Fantasy",
+            "Drama",
+            "Mystery"
+          ],
+          "rating": 7.3,
+          "ratingCount": 810,
+          "tmdbId": 81349,
+          "mediaType": "tv",
+          "year": "2020"
+        }
+      },
+      {
+        "id": "ae-cross-1",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Factorio",
+            "targetId": "ae-vg-1",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Satisfactory",
+            "targetId": "ae-vg-2",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Turing Machine",
+            "targetId": "ae-bg-1",
+            "vibe": "boardgame",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "ae-vg-1",
+        "type": "videogame",
+        "title": "Factorio",
+        "author": "Wube Software",
+        "year": 2020,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Factorio%20Wube%20Software&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ae-vg-2",
+        "type": "videogame",
+        "title": "Satisfactory",
+        "author": "Coffee Stain Studios",
+        "year": 2019,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Satisfactory%20Coffee%20Stain%20Studios&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ae-bg-1",
+        "type": "boardgame",
+        "title": "Turing Machine",
+        "author": "SCORPIO",
+        "year": 2023,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Turing%20Machine%20SCORPIO&tag=tomewizard-20"
+        }
+      }
+    ],
+    "map": {
+      "nodes": [
+        {
+          "id": "ae-n0",
+          "itemId": "ae-book-1",
+          "layer": 0,
+          "slot": 1
+        },
+        {
+          "id": "ae-n1",
+          "itemId": "ae-show-1",
+          "layer": 1,
+          "slot": 1
+        },
+        {
+          "id": "ae-n2",
+          "itemId": "ae-cross-1",
+          "layer": 2,
+          "slot": 1
+        },
+        {
+          "id": "ae-n3",
+          "itemId": "ae-vg-1",
+          "layer": 3,
+          "slot": 0
+        },
+        {
+          "id": "ae-n4",
+          "itemId": "ae-vg-2",
+          "layer": 3,
+          "slot": 1
+        },
+        {
+          "id": "ae-n5",
+          "itemId": "ae-bg-1",
+          "layer": 3,
+          "slot": 2
+        }
+      ],
+      "edges": [
+        {
+          "from": "ae-n0",
+          "to": "ae-n1"
+        },
+        {
+          "from": "ae-n1",
+          "to": "ae-n2"
+        },
+        {
+          "from": "ae-n2",
+          "to": "ae-n3"
+        },
+        {
+          "from": "ae-n2",
+          "to": "ae-n4"
+        },
+        {
+          "from": "ae-n2",
+          "to": "ae-n5"
+        }
+      ]
+    }
+  },
+  {
+    "id": "indie-artisan",
+    "title": "Indie Artisan",
+    "description": "Friendship and game design in prose and film — then the indie masterpieces that define boutique craft.",
+    "tags": [
+      "indie",
+      "branching",
+      "boutique",
+      "books",
+      "documentary",
+      "videogame",
+      "boardgame"
+    ],
+    "sequence": [
+      {
+        "id": "ia-book-1",
+        "type": "book",
+        "title": "Tomorrow, and Tomorrow, and Tomorrow",
+        "author": "Gabrielle Zevin",
+        "year": 2022,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/12859975-M.jpg",
+          "openLibraryKey": "/works/OL26004554W",
+          "year": 2022,
+          "amazonUrl": "https://www.amazon.com/s?k=Tomorrow%2C%20and%20Tomorrow%2C%20and%20Tomorrow%20Gabrielle%20Zevin&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ia-doc-1",
+        "type": "documentary",
+        "title": "Indie Game: The Movie",
+        "year": 2012,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/2B1IqPg97ZhpEov4Fg3si4hI1Kw.jpg",
+          "overview": "Follows the dramatic journeys of video game developers as they create and release their games to the world. It's about making video games, but at its core, it's about the creative process, and exposing yourself through your work.",
+          "genres": [
+            "Documentary",
+            "Drama"
+          ],
+          "rating": 7.5,
+          "ratingCount": 494,
+          "tmdbId": 80215,
+          "mediaType": "movie",
+          "year": "2012"
+        }
+      },
+      {
+        "id": "ia-cross-1",
+        "type": "crossroads",
+        "label": "Pick one in this next tier",
+        "choices": [
+          {
+            "label": "Stardew Valley",
+            "targetId": "ia-vg-1",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Celeste",
+            "targetId": "ia-vg-2",
+            "vibe": "videogame",
+            "optional": true
+          },
+          {
+            "label": "Pax Pamir",
+            "targetId": "ia-bg-1",
+            "vibe": "boardgame",
+            "optional": true
+          }
+        ]
+      },
+      {
+        "id": "ia-vg-1",
+        "type": "videogame",
+        "title": "Stardew Valley",
+        "author": "ConcernedApe",
+        "year": 2016,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Stardew%20Valley%20ConcernedApe&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ia-vg-2",
+        "type": "videogame",
+        "title": "Celeste",
+        "author": "Maddy Makes Games",
+        "year": 2018,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Celeste%20Maddy%20Makes%20Games&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ia-bg-1",
+        "type": "boardgame",
+        "title": "Pax Pamir",
+        "author": "Phil Eklund",
+        "year": 2019,
+        "required": false,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Pax%20Pamir%20Phil%20Eklund&tag=tomewizard-20"
+        }
+      }
+    ],
+    "map": {
+      "nodes": [
+        {
+          "id": "ia-n0",
+          "itemId": "ia-book-1",
+          "layer": 0,
+          "slot": 1
+        },
+        {
+          "id": "ia-n1",
+          "itemId": "ia-doc-1",
+          "layer": 1,
+          "slot": 1
+        },
+        {
+          "id": "ia-n2",
+          "itemId": "ia-cross-1",
+          "layer": 2,
+          "slot": 1
+        },
+        {
+          "id": "ia-n3",
+          "itemId": "ia-vg-1",
+          "layer": 3,
+          "slot": 0
+        },
+        {
+          "id": "ia-n4",
+          "itemId": "ia-vg-2",
+          "layer": 3,
+          "slot": 1
+        },
+        {
+          "id": "ia-n5",
+          "itemId": "ia-bg-1",
+          "layer": 3,
+          "slot": 2
+        }
+      ],
+      "edges": [
+        {
+          "from": "ia-n0",
+          "to": "ia-n1"
+        },
+        {
+          "from": "ia-n1",
+          "to": "ia-n2"
+        },
+        {
+          "from": "ia-n2",
+          "to": "ia-n3"
+        },
+        {
+          "from": "ia-n2",
+          "to": "ia-n4"
+        },
+        {
+          "from": "ia-n2",
+          "to": "ia-n5"
+        }
+      ]
+    }
   }
 ]

@@ -8,4 +8,50 @@ html {
 
 body {
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .card-surface {
+    @apply border border-white/10 bg-white/[0.02] transition-[border-color,opacity,transform] duration-200 ease-out;
+  }
+
+  .card-surface:hover {
+    @apply border-copper/45;
+  }
+
+  .card-interactive:focus-visible {
+    @apply outline-none ring-1 ring-copper/40 ring-offset-1 ring-offset-black;
+  }
+
+  .search-input {
+    @apply w-full border border-white/15 bg-white/[0.03] px-3 py-2 text-sm text-white placeholder:text-white/35 transition-[border-color,box-shadow] duration-200 ease-out focus:border-copper/70 focus:outline-none focus:ring-1 focus:ring-copper/30;
+  }
+
+  .search-hit {
+    @apply bg-copper/25 text-copper rounded-sm px-0.5;
+  }
+
+  .path-node-circle {
+    transition: fill 0.2s ease, stroke 0.2s ease, opacity 0.2s ease;
+  }
+
+  .path-edge {
+    transition: stroke 0.2s ease;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

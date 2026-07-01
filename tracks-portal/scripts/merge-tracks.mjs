@@ -1,6 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { BRANCHING_TRACKS, BRANCHING_MAPS } from './branching-tracks.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const TRACKS_PATH = join(__dirname, '..', 'src', 'data', 'tracks.json');
@@ -230,14 +231,21 @@ function main() {
     return track;
   });
 
-  for (const track of [...NEW_TRACKS, ...GAP_TRACKS]) {
+  for (const track of [...NEW_TRACKS, ...GAP_TRACKS, ...BRANCHING_TRACKS]) {
     if (!existingIds.has(track.id)) {
-      tracks.push(track);
+      tracks.push({ ...track, map: BRANCHING_MAPS[track.id] || track.map });
       existingIds.add(track.id);
     }
   }
 
-  for (const [trackId, map] of Object.entries(MAPS)) {
+  for (const track of BRANCHING_TRACKS) {
+    const existing = tracks.find((t) => t.id === track.id);
+    if (existing && BRANCHING_MAPS[track.id] && !existing.map) {
+      existing.map = BRANCHING_MAPS[track.id];
+    }
+  }
+
+  for (const [trackId, map] of Object.entries({ ...MAPS, ...BRANCHING_MAPS })) {
     const track = tracks.find((t) => t.id === trackId);
     if (track && !track.map) track.map = map;
   }

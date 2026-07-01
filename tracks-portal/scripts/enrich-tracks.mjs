@@ -193,6 +193,12 @@ async function main() {
   const publicTracks = enriched.map(stripMetadata);
   writeFileSync(PUBLIC_PATH, JSON.stringify(publicTracks, null, 2));
 
+  const TVMEDIAHUB_PATH = join('C:', 'Users', 'Benjamin', 'Projects', 'tv-media-hub', 'app', 'src', 'main', 'assets', 'tracks', 'tracks.json');
+  if (existsSync(TVMEDIAHUB_PATH)) {
+    writeFileSync(TVMEDIAHUB_PATH, JSON.stringify(publicTracks, null, 2));
+    console.log(`Synced ${TVMEDIAHUB_PATH}`);
+  }
+
   console.log(`Wrote ${ENRICHED_PATH}`);
   console.log(`Wrote ${PUBLIC_PATH}`);
   console.log(`Cache entries: ${Object.keys(cache).length}`);

@@ -41,18 +41,18 @@ function nodeLabel(itemId: string) {
 }
 ---
 
-<section class="mb-12" aria-label="Path map">
-  <div class="flex items-center justify-between mb-4">
-    <h2 class="font-display text-lg text-white/80">Path Map</h2>
-    <p class="text-[10px] uppercase tracking-widest text-white/40">Tap nodes · choices save locally</p>
+<section class="mb-8" aria-label="Path map">
+  <div class="flex items-center justify-between mb-2">
+    <h2 class="font-display text-base text-white/75">Path Map</h2>
+    <p class="text-[9px] uppercase tracking-widest text-white/35">Tap nodes · choices save locally</p>
   </div>
-  <div class="relative border border-white/15 bg-white/[0.02] overflow-x-auto">
+  <div class="relative card-surface overflow-x-auto">
     <svg
       id={`path-map-${trackId}`}
-      class="path-map-svg w-full min-w-[320px]"
+      class="path-map-svg w-full min-w-[280px]"
       viewBox="0 0 100 100"
       preserveAspectRatio="xMidYMid meet"
-      style={`aspect-ratio: ${maxSlots} / ${layerCount}; max-height: 420px;`}
+      style={`aspect-ratio: ${maxSlots} / ${layerCount}; max-height: 260px;`}
       data-track-id={trackId}
     >
       {map.edges.map((edge) => {
@@ -61,14 +61,14 @@ function nodeLabel(itemId: string) {
         if (!from || !to) return null;
         return (
           <line
-            class="path-edge stroke-white/20"
+            class="path-edge stroke-white/15"
             data-from={edge.from}
             data-to={edge.to}
             x1={from.x}
             y1={from.y}
             x2={to.x}
             y2={to.y}
-            stroke-width="0.4"
+            stroke-width="0.35"
           />
         );
       })}
@@ -87,14 +87,14 @@ function nodeLabel(itemId: string) {
           >
             <circle
               class:list={[
-                'path-node-circle transition-all',
-                isCross ? 'fill-transparent stroke-copper' : 'fill-white/30 stroke-white/50',
+                'path-node-circle',
+                isCross ? 'fill-transparent stroke-copper/70' : 'fill-white/25 stroke-white/40',
                 isOptional && 'stroke-dashed',
               ]}
               cx={pos.x}
               cy={pos.y}
-              r={isCross ? 2.2 : 1.8}
-              stroke-width="0.35"
+              r={isCross ? 2 : 1.6}
+              stroke-width="0.3"
             />
             <title>{nodeLabel(node.itemId)}</title>
           </g>
@@ -102,7 +102,7 @@ function nodeLabel(itemId: string) {
       })}
     </svg>
   </div>
-  <p id={`path-status-${trackId}`} class="text-xs text-white/45 mt-2"></p>
+  <p id={`path-status-${trackId}`} class="text-[11px] text-white/40 mt-1.5"></p>
 </section>
 
 <script define:vars={{ trackId }}>
@@ -145,7 +145,7 @@ function nodeLabel(itemId: string) {
       const toItem = svg.querySelector(`[data-node-id="${line.dataset.to}"]`)?.dataset.itemId;
       const active = (fromItem && chosen.has(fromItem)) || (toItem && chosen.has(toItem));
       line.classList.toggle('stroke-copper', !!active);
-      line.classList.toggle('stroke-white/20', !active);
+      line.classList.toggle('stroke-white/15', !active);
     });
 
     document.querySelectorAll('.track-item-card').forEach((card) => {
@@ -153,7 +153,7 @@ function nodeLabel(itemId: string) {
       if (!id) return;
       card.classList.toggle('border-copper', chosen.has(id));
       card.classList.toggle('ring-1', chosen.has(id));
-      card.classList.toggle('ring-copper/40', chosen.has(id));
+      card.classList.toggle('ring-copper/35', chosen.has(id));
       card.classList.toggle('opacity-40', skipped.has(id));
       card.classList.toggle('hidden', state.hiddenItems?.includes(id));
     });

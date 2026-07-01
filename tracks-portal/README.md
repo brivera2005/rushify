@@ -124,7 +124,22 @@ cp public/tracks.json ../tv-media-hub/app/src/main/assets/tracks/tracks.json
 
 **Item types:** `book | movie | show | documentary | boardgame | videogame | crossroads`
 
-**Build-time metadata** (on enriched pages only): `posterUrl`, `coverUrl`, `genres`, `rating`, `amazonUrl` (books, tag `tomewizard-20`)
+**Build-time metadata** (on enriched pages only): `posterUrl`, `coverUrl`, `genres`, `rating`, `amazonUrl` (books, tag `tomewizard-20`), `tmdbId`, `mediaType`
+
+### RushTV deep links
+
+Film and series cards link into RushTV (`com.tvmhub.media`) instead of TMDB:
+
+```
+rushtv://detail?tmdb=movie:603
+rushtv://detail?tmdb=tv:1399
+```
+
+Optional auto-request: `&action=request` (requires RushTV app support).
+
+The static portal cannot check Plex library availability, so cards show **Open on RushTV**. Play or Request is decided on the TV detail screen.
+
+Logo assets: `public/rushtv-logo.png` (from `kodi/branding/media-pack/web_logo.png`), `public/favicon.png`.
 
 ### TMDB setup
 

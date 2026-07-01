@@ -24,6 +24,13 @@ export interface SequenceItem {
   label?: string;
   choices?: CrossroadsChoice[];
   vibe?: string;
+  note?: string;
+}
+
+export interface TrackProgressState {
+  chosenPath: string[];
+  completedNodes: string[];
+  lastVisited: string;
 }
 
 export interface MapNode {

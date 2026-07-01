@@ -1,0 +1,33 @@
+---
+interface Props {
+  backHref?: string;
+  backLabel?: string;
+  compact?: boolean;
+}
+
+const { backHref, backLabel = 'All Tracks', compact = false } = Astro.props;
+---
+
+<header class:list={['border-b border-white/10', compact ? 'mb-6 pb-5' : 'mb-7 pb-6']}>
+  {backHref && (
+    <a href={backHref} class="text-white/45 text-[11px] uppercase tracking-widest hover:text-copper transition-colors duration-200">
+      ← {backLabel}
+    </a>
+  )}
+  <div class:list={['flex items-center gap-3', backHref ? 'mt-4' : '']}>
+    <a href="/" class="shrink-0 rounded-sm focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-copper/50" aria-label="RushTracks home">
+      <img
+        src="/rushtv-logo.png"
+        alt=""
+        width="140"
+        height="36"
+        class="h-7 w-auto md:h-8"
+        loading="eager"
+        decoding="async"
+      />
+    </a>
+    <span class="text-white/15 text-lg leading-none select-none" aria-hidden="true">·</span>
+    <span class="text-copper text-[10px] md:text-xs uppercase tracking-[0.35em] font-medium">RushTracks</span>
+  </div>
+  <slot />
+</header>

@@ -15,8 +15,30 @@ export function getStaticPaths() {
 }
 
 const { track } = Astro.props;
-const requiredCount = track.sequence.filter((i) => i.type !== 'crossroads' && i.required !== false).length;
+const coreCount = track.sequence.filter(
+  (i) => i.type !== 'crossroads' && i.required !== false && i.type !== 'videogame' && i.type !== 'boardgame',
+).length;
 const optionalCount = track.sequence.filter((i) => i.required === false).length;
+
+const nodeIdByItemId: Record<string, string> = {};
+if (track.map) {
+  for (const node of track.map.nodes) {
+    nodeIdByItemId[node.itemId] = node.id;
+  }
+}
+
+const coreNodeIds = track.map
+  ? track.map.nodes
+      .filter((n) => {
+        const item = track.sequence.find((s) => s.id === n.itemId);
+        return item && item.type !== 'crossroads' && item.required !== false && item.type !== 'videogame' && item.type !== 'boardgame';
+      })
+      .map((n) => n.id)
+  : track.sequence
+      .filter((i) => i.type !== 'crossroads' && i.required !== false && i.type !== 'videogame' && i.type !== 'boardgame')
+      .map((i) => i.id!)
+      .filter(Boolean);
+
 const KOBO_CLARA_URL = 'https://www.amazon.com/dp/B0CZXYV8GT?tag=tomewizard-20';
 const TOMEWIZARD_URL = 'https://www.tomewizard.com';
 ---
@@ -30,7 +52,10 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
       <p class="text-white/70 mt-4 text-base md:text-lg leading-relaxed">{track.description}</p>
       <div class="flex flex-wrap items-center gap-3 mt-5">
         <p class="text-copper text-xs uppercase tracking-widest">
-          {requiredCount} core stops{optionalCount ? ` · ${optionalCount} optional` : ''}
+          {coreCount} core stops{optionalCount ? ` · ${optionalCount} optional tier 2` : ''}
+        </p>
+        <p id={`track-progress-${track.id}`} class="text-xs uppercase tracking-widest text-emerald-400/80">
+          0 of {coreCount} core complete
         </p>
         {track.map && (
           <span class="text-[10px] uppercase tracking-wider text-white/45 border border-white/15 px-2 py-0.5">
@@ -39,18 +64,9 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
         )}
       </div>
       {(track.tags?.length ?? 0) > 0 && (
-        <ul class="flex flex-wrap gap-2 mt-4" aria-label="Tags">
-          {track.tags!.map((tag) => (
-            <li>
-              <a
-                href={`/?tag=${encodeURIComponent(tag)}`}
-                class="text-xs uppercase tracking-wider text-white/50 border border-white/15 px-2.5 py-1 hover:border-copper hover:text-copper transition-colors"
-              >
-                {tag}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <p class="text-[10px] uppercase tracking-wider text-white/35 mt-4">
+          Themes: {track.tags!.join(' · ')}
+        </p>
       )}
     </header>
 
@@ -60,7 +76,12 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
 
     <section aria-label="Track sequence" class="space-y-4">
       {track.sequence.map((item, index) => (
-        <TrackItemCard item={item} index={index} trackId={track.id} />
+        <TrackItemCard
+          item={item}
+          index={index}
+          trackId={track.id}
+          nodeId={item.id ? (nodeIdByItemId[item.id] || item.id) : undefined}
+        />
       ))}
     </section>
 
@@ -78,4 +99,55 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
       </p>
     </footer>
   </main>
+
+  <script define:vars={{ trackId: track.id, coreNodeIds, coreCount }}>
+    const storageKey = `rushtracks-progress-${trackId}`;
+    const progressEl = document.getElementById(`track-progress-${trackId}`);
+
+    function loadState() {
+      try {
+        return JSON.parse(localStorage.getItem(storageKey) || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function updateHeader(state) {
+      if (!progressEl) return;
+      const completed = new Set(state.completedNodes || []);
+      const done = coreNodeIds.filter((id) => completed.has(id)).length;
+      const pct = coreCount ? Math.round((done / coreCount) * 100) : 0;
+      progressEl.textContent = `${done} of ${coreCount} core complete · ${pct}%`;
+    }
+
+    function toggleComplete(nodeId) {
+      const state = loadState();
+      if (!state.completedNodes) state.completedNodes = [];
+      if (!state.chosenPath) state.chosenPath = [];
+      const idx = state.completedNodes.indexOf(nodeId);
+      if (idx >= 0) {
+        state.completedNodes.splice(idx, 1);
+      } else {
+        state.completedNodes.push(nodeId);
+        if (!state.chosenPath.includes(nodeId)) state.chosenPath.push(nodeId);
+      }
+      state.lastVisited = new Date().toISOString();
+      localStorage.setItem(storageKey, JSON.stringify(state));
+      window.dispatchEvent(new CustomEvent('rushtracks-progress', { detail: { trackId, state } }));
+      updateHeader(state);
+    }
+
+    document.querySelectorAll('.complete-toggle').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const nodeId = btn.dataset.nodeId;
+        if (nodeId) toggleComplete(nodeId);
+      });
+    });
+
+    updateHeader(loadState());
+    window.addEventListener('rushtracks-progress', (e) => {
+      if (e.detail?.trackId === trackId) updateHeader(e.detail.state);
+    });
+  </script>
 </BaseLayout>
