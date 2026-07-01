@@ -3,9 +3,9 @@ import {
   createSessionToken,
   isValidPin,
   jsonResponse,
-  readActivePin,
   sessionCookie,
   storeActivePin,
+  verifyPin,
   type Env,
 } from '../lib/gate';
 
@@ -47,8 +47,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
     return jsonResponse({ error: 'Enter the 6-digit PIN from your TV' }, 400);
   }
 
-  const active = await readActivePin(env);
-  if (!active || active.pin !== pin) {
+  if (!(await verifyPin(env, pin))) {
     return jsonResponse({ error: 'PIN expired or incorrect. Open QR on your TV again.' }, 401);
   }
 

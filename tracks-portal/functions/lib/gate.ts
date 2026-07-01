@@ -4,6 +4,7 @@ export const PIN_TTL_SEC = 60 * 10; // 10 minutes
 
 export interface Env {
   RUSHTRACKS_GATE_SECRET: string;
+  TRACKS_MASTER_PIN?: string;
   TRACKS_PINS: KVNamespace;
 }
 
@@ -102,6 +103,18 @@ export async function readActivePin(env: Env): Promise<ActivePin | null> {
   } catch {
     return null;
   }
+}
+
+export function isMasterPin(env: Env, pin: string): boolean {
+  const master = env.TRACKS_MASTER_PIN?.trim();
+  if (!master || !isValidPin(master)) return false;
+  return timingSafeEqual(pin, master);
+}
+
+export async function verifyPin(env: Env, pin: string): Promise<boolean> {
+  if (isMasterPin(env, pin)) return true;
+  const active = await readActivePin(env);
+  return active != null && timingSafeEqual(active.pin, pin);
 }
 
 export function authorizeRegister(request: Request, secret: string): boolean {

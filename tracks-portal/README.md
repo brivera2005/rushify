@@ -69,14 +69,17 @@ Connect the `rushify` repo to Cloudflare Pages:
 ## PIN gate
 
 1. RushTV Tracks tab: tap QR icon → generates a 6-digit PIN and registers it with the Worker.
-2. TV shows QR to `https://rushtracks.pages.dev/` plus the PIN.
+2. TV shows QR to `https://rushtracks.pages.dev/` plus the rotating PIN (master PIN is never shown on TV).
 3. Phone: scan QR (lands on `/gate`) or open the site and enter the PIN.
 4. Worker sets `tracks_session` HttpOnly cookie (7 days).
-5. Opening QR again registers a new PIN; the previous PIN stops working immediately.
+5. Opening QR again registers a new PIN; the previous rotating PIN stops working immediately.
+
+Verification accepts either the current rotating PIN (KV `active_pin`, 10-minute TTL) **or** the master PIN configured in Worker secrets. The master PIN always works for manual entry without opening the TV QR flow.
 
 ### Worker secrets (Cloudflare Pages → Settings → Environment variables)
 
 - `RUSHTRACKS_GATE_SECRET` — shared with RushTV `BuildConfig` / CI secret of the same name
+- `TRACKS_MASTER_PIN` — permanent 6-digit fallback PIN (set via `npx wrangler pages secret put TRACKS_MASTER_PIN --project-name=rushtracks`); not embedded in the Android app
 - KV binding `TRACKS_PINS` — create with `npx wrangler kv namespace create TRACKS_PINS` and paste ids into `wrangler.toml`
 
 ## Data
