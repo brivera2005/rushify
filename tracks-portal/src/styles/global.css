@@ -108,7 +108,32 @@ body {
   }
 
   .track-item-badge {
-    @apply inline-block border border-white/20 px-1.5 py-px text-[9px] uppercase tracking-wider text-white/50 sm:text-[10px];
+    @apply inline-block border px-1.5 py-px text-[9px] font-medium uppercase tracking-wider sm:text-[10px];
+  }
+
+  /* Type colors — tuned for obsidian (#0A0E14) contrast */
+  .track-item-badge--book {
+    @apply border-blue-400/50 bg-blue-500/20 text-blue-200;
+  }
+
+  .track-item-badge--documentary {
+    @apply border-orange-400/50 bg-orange-500/20 text-orange-200;
+  }
+
+  .track-item-badge--film {
+    @apply border-emerald-400/50 bg-emerald-500/20 text-emerald-200;
+  }
+
+  .track-item-badge--series {
+    @apply border-violet-400/50 bg-violet-500/20 text-violet-200;
+  }
+
+  .track-item-badge--videogame {
+    @apply border-teal-400/50 bg-teal-500/20 text-teal-200;
+  }
+
+  .track-item-badge--boardgame {
+    @apply border-amber-400/50 bg-amber-500/20 text-amber-200;
   }
 
   .track-item-title {

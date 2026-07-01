@@ -20,6 +20,26 @@ export function typeLabel(type: string): string {
   }
 }
 
+/** CSS modifier for color-coded type badges on dark backgrounds. */
+export function typeBadgeClass(type: string): string {
+  switch (type) {
+    case 'book':
+      return 'track-item-badge--book';
+    case 'documentary':
+      return 'track-item-badge--documentary';
+    case 'show':
+      return 'track-item-badge--series';
+    case 'boardgame':
+      return 'track-item-badge--boardgame';
+    case 'videogame':
+      return 'track-item-badge--videogame';
+    case 'movie':
+      return 'track-item-badge--film';
+    default:
+      return 'track-item-badge--film';
+  }
+}
+
 export function isCoreItem(item: EnrichedSequenceItem): boolean {
   return CORE_TYPES.has(item.type);
 }

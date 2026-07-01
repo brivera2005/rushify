@@ -1,6 +1,6 @@
 ---
 import type { EnrichedSequenceItem } from '../lib/types';
-import { typeLabel } from '../lib/track-items';
+import { typeBadgeClass, typeLabel } from '../lib/track-items';
 import { bookTitleInitial, isOpenLibraryCover, openLibraryCoverSize } from '../lib/book-covers';
 import { buildRushTvDetailUrl, isRushTvEligibleItemType, tmdbAvailabilityKey } from '../lib/rushtv-deeplink';
 
@@ -95,7 +95,7 @@ const showDesktopPanel =
       <div class="flex items-start gap-1.5 sm:gap-2">
         <div class="min-w-0 flex-1">
           <div class="flex flex-wrap items-center gap-x-1.5 gap-y-0.5">
-            <span class="track-item-badge">{typeLabel(item.type)}</span>
+            <span class:list={['track-item-badge', typeBadgeClass(item.type)]}>{typeLabel(item.type)}</span>
             {stepNumber != null && (
               <span class="text-[10px] uppercase tracking-wider text-white/35">Stop {stepNumber}</span>
             )}
