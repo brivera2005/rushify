@@ -80,8 +80,9 @@ Verification accepts either the current rotating PIN (KV `active_pin`, 10-minute
 
 - `RUSHTRACKS_GATE_SECRET`: shared with RushTV `BuildConfig` / CI secret of the same name
 - `TRACKS_MASTER_PIN`: permanent 6-digit fallback PIN (set via `npx wrangler pages secret put TRACKS_MASTER_PIN --project-name=rushtracks`); not embedded in the Android app
-- `JELLYFIN_SERVER_URL`: homelab Jellyfin base URL (e.g. `https://jellyfin.example.com`) — powers **Available on RushTV** vs **Request on RushTV** buttons
-- `JELLYFIN_API_KEY`: Jellyfin API key with library read access
+- `PLEX_SERVER_URL` (or `PLEX_URL`): Plex Media Server base URL — powers **Available on RushTV** vs **Request on RushTV** buttons. Must be reachable from Cloudflare Workers (use your NPM/Cloudflare-proxied hostname, not a LAN-only `192.168.x.x` URL). Homelab default: `http://192.168.0.19:32400` (set a public proxy URL in production).
+- `PLEX_TOKEN`: Plex `X-Plex-Token` with library read access (Plex Web → any item → **View XML** → copy token from URL; see [pulsarr-plex-sync.md](../deploy/unraid/pulsarr-plex-sync.md))
+- `JELLYFIN_SERVER_URL` / `JELLYFIN_API_KEY` (optional): Jellyfin fallback when Plex secrets are absent
 - KV binding `TRACKS_PINS`: create with `npx wrangler kv namespace create TRACKS_PINS` and paste ids into `wrangler.toml`
 
 ## Data
@@ -139,7 +140,14 @@ rushtv://detail?tmdb=tv:1399
 
 Optional auto-request: `&action=request` (requires RushTV app support).
 
-The static portal checks Jellyfin at runtime via `GET /api/availability?ids=movie:603,tv:1399` (Worker, PIN-gated site allows `/api/`). Film/series cards show **Available on RushTV** (copper, play deep link) or **Request on RushTV** (amber outline, `&action=request`). Without Jellyfin secrets, buttons default to Request.
+The static portal checks Plex (primary) at runtime via `GET /api/availability?ids=movie:603,tv:1399` (Worker; `/api/` is allowed without PIN). Film/series cards show **Available on RushTV** (copper, play deep link) or **Request on RushTV** (amber outline, `&action=request`). Without Plex/Jellyfin secrets, buttons default to Request.
+
+Set secrets via Cloudflare dashboard or CLI:
+
+```bash
+npx wrangler pages secret put PLEX_SERVER_URL --project-name=rushtracks
+npx wrangler pages secret put PLEX_TOKEN --project-name=rushtracks
+```
 
 Logo assets: `public/rushtv-logo.png` (from `tv-media-hub/app/src/main/res/drawable/rushtv_logo.png`, black-background RushTV wordmark), `public/favicon.png` (from `tv-media-hub` launcher icon — not Vaulty/Kodi branding).
 

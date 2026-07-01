@@ -6,9 +6,14 @@ export interface Env {
   RUSHTRACKS_GATE_SECRET: string;
   TRACKS_MASTER_PIN?: string;
   TRACKS_PINS: KVNamespace;
-  /** Jellyfin base URL for library availability (e.g. https://jellyfin.example.com) */
+  /** Plex Media Server URL reachable from Cloudflare Workers (NPM/tunnel; not LAN-only) */
+  PLEX_SERVER_URL?: string;
+  /** Alias for PLEX_SERVER_URL */
+  PLEX_URL?: string;
+  /** Plex auth token (library read) */
+  PLEX_TOKEN?: string;
+  /** Jellyfin fallback — only used when Plex is not configured */
   JELLYFIN_SERVER_URL?: string;
-  /** Jellyfin API key with library read access */
   JELLYFIN_API_KEY?: string;
 }
 
