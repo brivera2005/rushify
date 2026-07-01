@@ -1,59 +1,81 @@
 ---
-import tracks from '../../data/tracks.json';
+import enrichedTracks from '../../data/tracks-enriched.json';
+import allTracks from '../../data/tracks.json';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import TrackItemCard from '../../components/TrackItemCard.astro';
+import PathMap from '../../components/PathMap.astro';
+import RelatedTracks from '../../components/RelatedTracks.astro';
+import type { EnrichedTrack } from '../../lib/types';
+
+const tracks = enrichedTracks as EnrichedTrack[];
+const trackList = allTracks as EnrichedTrack[];
 
 export function getStaticPaths() {
-  return tracks.map((track) => ({ params: { id: track.id }, props: { track } }));
+  return (enrichedTracks as EnrichedTrack[]).map((track) => ({ params: { id: track.id }, props: { track } }));
 }
 
 const { track } = Astro.props;
-
-function typeLabel(type: string) {
-  switch (type) {
-    case 'book': return 'Book';
-    case 'show': return 'Series';
-    case 'documentary': return 'Documentary';
-    default: return 'Film';
-  }
-}
+const requiredCount = track.sequence.filter((i) => i.type !== 'crossroads' && i.required !== false).length;
+const optionalCount = track.sequence.filter((i) => i.required === false).length;
+const KOBO_CLARA_URL = 'https://www.amazon.com/dp/B0CZXYV8GT?tag=tomewizard-20';
+const TOMEWIZARD_URL = 'https://www.tomewizard.com';
 ---
 
-<BaseLayout title={`${track.title} · Tracks`} description={track.description}>
-  <main class="mx-auto max-w-2xl px-6 py-12 md:py-20">
-    <a href="/" class="text-white/50 text-sm uppercase tracking-widest hover:text-accent">← All Tracks</a>
+<BaseLayout title={`${track.title} · RushTracks`} description={track.description}>
+  <main class="mx-auto max-w-3xl px-4 sm:px-6 py-10 md:py-16">
+    <a href="/" class="text-white/50 text-sm uppercase tracking-widest hover:text-copper transition-colors">← All Tracks</a>
 
-    <header class="mt-8 mb-12 border-b border-white/15 pb-10">
-      <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight">{track.title}</h1>
-      <p class="text-white/70 mt-4 text-lg leading-relaxed">{track.description}</p>
+    <header class="mt-6 mb-10 border-b border-white/15 pb-8">
+      <h1 class="font-display text-3xl md:text-5xl font-bold leading-tight">{track.title}</h1>
+      <p class="text-white/70 mt-4 text-base md:text-lg leading-relaxed">{track.description}</p>
+      <div class="flex flex-wrap items-center gap-3 mt-5">
+        <p class="text-copper text-xs uppercase tracking-widest">
+          {requiredCount} core stops{optionalCount ? ` · ${optionalCount} optional` : ''}
+        </p>
+        {track.map && (
+          <span class="text-[10px] uppercase tracking-wider text-white/45 border border-white/15 px-2 py-0.5">
+            Branching path
+          </span>
+        )}
+      </div>
       {(track.tags?.length ?? 0) > 0 && (
-        <ul class="flex flex-wrap gap-2 mt-5" aria-label="Tags">
+        <ul class="flex flex-wrap gap-2 mt-4" aria-label="Tags">
           {track.tags!.map((tag) => (
-            <li class="text-xs uppercase tracking-wider text-white/50 border border-white/15 px-2.5 py-1">
-              {tag}
+            <li>
+              <a
+                href={`/?tag=${encodeURIComponent(tag)}`}
+                class="text-xs uppercase tracking-wider text-white/50 border border-white/15 px-2.5 py-1 hover:border-copper hover:text-copper transition-colors"
+              >
+                {tag}
+              </a>
             </li>
           ))}
         </ul>
       )}
     </header>
 
-    <ol class="relative border-l border-white/20 ml-3">
+    {track.map && (
+      <PathMap trackId={track.id} map={track.map} sequence={track.sequence} />
+    )}
+
+    <section aria-label="Track sequence" class="space-y-4">
       {track.sequence.map((item, index) => (
-        <li class="mb-10 ml-8 relative">
-          <span class="absolute -left-[1.35rem] top-1 flex h-3 w-3 rounded-full bg-accent ring-4 ring-black"></span>
-          <p class="text-xs uppercase tracking-[0.25em] text-white/45 mb-1">{typeLabel(item.type)} · {index + 1}</p>
-          <h2 class="font-display text-xl md:text-2xl">{item.title}</h2>
-          {item.author && <p class="text-white/60 mt-1">{item.author}</p>}
-          {item.year && <p class="text-white/45 text-sm mt-1">{item.year}</p>}
-          {item.type === 'book' && (
-            <a
-              href="#"
-              class="inline-block mt-4 border border-white/30 px-4 py-2 text-xs uppercase tracking-widest hover:border-accent hover:text-accent transition-colors"
-            >
-              Download · Coming soon
-            </a>
-          )}
-        </li>
+        <TrackItemCard item={item} index={index} trackId={track.id} />
       ))}
-    </ol>
+    </section>
+
+    <RelatedTracks
+      currentId={track.id}
+      relatedIds={track.relatedTrackIds ?? []}
+      allTracks={trackList}
+    />
+
+    <footer class="mt-16 pt-8 border-t border-white/10 text-xs text-white/45">
+      <p>
+        <a href={TOMEWIZARD_URL} target="_blank" rel="noopener noreferrer" class="hover:text-copper transition-colors">TomeWizard.com</a>
+        <span class="text-white/20 mx-2" aria-hidden="true">·</span>
+        <a href={KOBO_CLARA_URL} target="_blank" rel="noopener noreferrer" class="hover:text-copper transition-colors">Kobo Clara BW</a>
+      </p>
+    </footer>
   </main>
 </BaseLayout>

@@ -4,7 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent: '#FF4500',
+        accent: '#B87333',
+        copper: {
+          DEFAULT: '#B87333',
+          light: '#D4A574',
+          dark: '#8B5A2B',
+        },
       },
       fontFamily: {
         display: ['"Libre Baskerville"', 'Georgia', 'serif'],

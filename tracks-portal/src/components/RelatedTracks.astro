@@ -1,0 +1,41 @@
+---
+import type { Track } from '../lib/types';
+
+interface Props {
+  currentId: string;
+  relatedIds: string[];
+  allTracks: Track[];
+}
+
+const { currentId, relatedIds, allTracks } = Astro.props;
+const related = relatedIds
+  .map((id) => allTracks.find((t) => t.id === id))
+  .filter(Boolean) as Track[];
+
+if (related.length === 0) return null;
+---
+
+<section class="mt-16 pt-8 border-t border-white/15" aria-label="Related tracks">
+  <h2 class="font-display text-lg text-white/80 mb-4">Related Tracks</h2>
+  <ul class="grid gap-3 sm:grid-cols-2">
+    {related.map((track) => (
+      <li>
+        <a
+          href={`/track/${track.id}`}
+          class:list={[
+            'block border p-4 transition-colors',
+            track.id === currentId ? 'border-copper text-copper' : 'border-white/15 hover:border-copper',
+          ]}
+        >
+          <h3 class="font-display text-base">{track.title}</h3>
+          <p class="text-white/50 text-sm mt-1 line-clamp-2">{track.description}</p>
+          {(track.tags ?? []).includes('v2') && (
+            <span class="inline-block mt-2 text-[10px] uppercase tracking-wider text-copper border border-copper/40 px-2 py-0.5">
+              Deep dive
+            </span>
+          )}
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>

@@ -1,0 +1,138 @@
+---
+import type { EnrichedSequenceItem } from '../lib/types';
+
+interface Props {
+  item: EnrichedSequenceItem;
+  index: number;
+  trackId: string;
+  hidden?: boolean;
+  chosen?: boolean;
+  skipped?: boolean;
+}
+
+const { item, index, trackId, hidden = false, chosen = false, skipped = false } = Astro.props;
+
+function typeLabel(type: string) {
+  switch (type) {
+    case 'book': return 'Book';
+    case 'show': return 'Series';
+    case 'documentary': return 'Documentary';
+    case 'boardgame': return 'Board Game';
+    case 'videogame': return 'Video Game';
+    case 'crossroads': return 'Crossroads';
+    default: return 'Film';
+  }
+}
+
+const meta = item.metadata;
+const imageUrl = meta?.posterUrl || meta?.coverUrl;
+const isOptional = item.required === false;
+const itemDomId = item.id || `${trackId}-item-${index}`;
+---
+
+<article
+  id={`card-${itemDomId}`}
+  class:list={[
+    'track-item-card border border-white/15 bg-white/[0.02] overflow-hidden transition-all duration-300',
+    hidden && 'hidden',
+    chosen && 'border-copper ring-1 ring-copper/40',
+    skipped && 'opacity-40',
+    isOptional && 'border-dashed',
+  ]}
+  data-item-id={itemDomId}
+  data-required={isOptional ? 'false' : 'true'}
+  data-type={item.type}
+>
+  {item.type === 'crossroads' ? (
+    <div class="p-5 md:p-6">
+      <p class="text-xs uppercase tracking-[0.25em] text-copper mb-2">{typeLabel(item.type)}</p>
+      <h2 class="font-display text-xl md:text-2xl">{item.label || 'Choose your path'}</h2>
+      <ul class="mt-4 space-y-2" data-crossroads-for={itemDomId}>
+        {item.choices?.map((choice) => (
+          <li>
+            <button
+              type="button"
+              class="crossroads-choice w-full text-left border border-white/20 px-4 py-3 hover:border-copper hover:text-copper transition-colors text-sm"
+              data-target={choice.targetId}
+              data-optional={choice.optional ? 'true' : 'false'}
+              data-vibe={choice.vibe || ''}
+            >
+              <span class="font-medium">{choice.label}</span>
+              {choice.vibe && (
+                <span class="block text-[10px] uppercase tracking-wider text-white/40 mt-1">{choice.vibe}</span>
+              )}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ) : (
+    <div class="flex flex-col sm:flex-row">
+      <div class="sm:w-36 md:w-40 shrink-0 bg-white/5 aspect-[2/3] sm:aspect-auto sm:min-h-[180px] relative">
+        {imageUrl ? (
+          <img
+            src={imageUrl}
+            alt=""
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            width="160"
+            height="240"
+          />
+        ) : (
+          <div class="absolute inset-0 flex items-center justify-center text-white/20 text-xs uppercase tracking-widest p-4 text-center">
+            {typeLabel(item.type)}
+          </div>
+        )}
+        {isOptional && (
+          <span class="absolute top-2 left-2 text-[9px] uppercase tracking-wider bg-black/80 border border-copper/50 text-copper px-1.5 py-0.5">
+            Optional
+          </span>
+        )}
+      </div>
+      <div class="flex-1 p-5 md:p-6 min-w-0">
+        <p class="text-xs uppercase tracking-[0.25em] text-white/45 mb-1">
+          {typeLabel(item.type)} · Stop {index + 1}
+        </p>
+        <h2 class="font-display text-xl md:text-2xl leading-snug">{item.title}</h2>
+        {item.author && <p class="text-white/60 mt-1">{item.author}</p>}
+        {(item.year || meta?.year) && (
+          <p class="text-white/45 text-sm mt-1">{meta?.year || item.year}</p>
+        )}
+        {meta?.genres && meta.genres.length > 0 && (
+          <p class="text-white/50 text-sm mt-2">{meta.genres.slice(0, 4).join(' · ')}</p>
+        )}
+        {meta?.rating != null && (
+          <p class="text-copper text-sm mt-2 font-medium">
+            TMDB {meta.rating}/10
+            {meta.ratingCount ? <span class="text-white/40 font-normal"> · {meta.ratingCount.toLocaleString()} votes</span> : null}
+          </p>
+        )}
+        {meta?.overview && (
+          <p class="text-white/55 text-sm mt-3 leading-relaxed line-clamp-3">{meta.overview}</p>
+        )}
+        <div class="flex flex-wrap gap-2 mt-4">
+          {item.type === 'book' && meta?.amazonUrl && (
+            <a
+              href={meta.amazonUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block border border-copper/60 text-copper px-4 py-2 text-xs uppercase tracking-widest hover:bg-copper hover:text-black transition-colors"
+            >
+              Buy on Amazon
+            </a>
+          )}
+          {meta?.tmdbId && meta?.mediaType && (
+            <a
+              href={`https://www.themoviedb.org/${meta.mediaType}/${meta.tmdbId}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-block border border-white/25 px-4 py-2 text-xs uppercase tracking-widest hover:border-white/50 transition-colors"
+            >
+              TMDB
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  )}
+</article>

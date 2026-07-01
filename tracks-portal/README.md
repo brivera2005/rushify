@@ -84,6 +84,54 @@ Verification accepts either the current rotating PIN (KV `active_pin`, 10-minute
 
 ## Data
 
-Edit `public/tracks.json` and mirror to `src/data/tracks.json` (or copy from `tv-media-hub/app/src/main/assets/tracks/tracks.json`).
+**Source of truth:** `src/data/tracks.json` (canonical track definitions)
 
-The Android app encodes a single QR URL to `https://rushtracks.pages.dev/` and displays a rotating PIN for manual entry.
+Build pipeline:
+
+1. `node scripts/merge-tracks.mjs` — merges new tracks, v2 links, branching maps
+2. `node scripts/enrich-tracks.mjs` — TMDB + Open Library metadata at build time
+3. Outputs `public/tracks.json` (for app sync) and `src/data/tracks-enriched.json` (for pages)
+
+Sync to Android app:
+
+```bash
+cp public/tracks.json ../tv-media-hub/app/src/main/assets/tracks/tracks.json
+```
+
+### Track schema
+
+```json
+{
+  "id": "existential-ai",
+  "title": "...",
+  "description": "...",
+  "tags": ["sci-fi", "v2", "kids", "teens"],
+  "relatedTrackIds": ["existential-ai-v2"],
+  "sequence": [
+    { "id": "item-1", "type": "book", "title": "...", "author": "..." },
+    { "id": "fork-1", "type": "crossroads", "label": "Choose your path", "choices": [
+      { "label": "Read first", "targetId": "item-2", "vibe": "book-heavy" },
+      { "label": "Play side quest", "targetId": "game-1", "vibe": "videogame", "optional": true }
+    ]},
+    { "id": "game-1", "type": "videogame", "title": "...", "year": 2018, "required": false }
+  ],
+  "map": {
+    "nodes": [{ "id": "n0", "itemId": "item-1", "layer": 0, "slot": 1 }],
+    "edges": [{ "from": "n0", "to": "n1" }]
+  }
+}
+```
+
+**Item types:** `book | movie | show | documentary | boardgame | videogame | crossroads`
+
+**Build-time metadata** (on enriched pages only): `posterUrl`, `coverUrl`, `genres`, `rating`, `amazonUrl` (books, tag `tomewizard-20`)
+
+### TMDB setup
+
+Set `TMDB_API_KEY` in repo root `.env` or `tracks-portal/.env` before build. Without it, books still get Open Library covers and Amazon links; film/TV cards show titles only.
+
+Get a key at [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api).
+
+Path choices persist in `localStorage` per track (`rushtracks-path-{id}`).
+
+Edit `src/data/tracks.json` and run `npm run build`. The Android app encodes a single QR URL to `https://rushtracks.pages.dev/` and displays a rotating PIN for manual entry.

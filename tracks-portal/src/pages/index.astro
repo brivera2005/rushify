@@ -4,6 +4,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const KOBO_CLARA_URL = 'https://www.amazon.com/dp/B0CZXYV8GT?tag=tomewizard-20';
 const TOMEWIZARD_URL = 'https://www.tomewizard.com';
+
+const allTags = [...new Set(tracks.flatMap((t) => t.tags ?? []))].sort();
 ---
 
 <BaseLayout
@@ -12,7 +14,7 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
 >
   <main class="mx-auto max-w-5xl px-4 sm:px-6 py-10 md:py-14">
     <header class="mb-8 border-b border-white/15 pb-8">
-      <p class="text-accent text-xs uppercase tracking-[0.35em] mb-3">RushTracks</p>
+      <p class="text-copper text-xs uppercase tracking-[0.35em] mb-3">RushTracks</p>
       <h1 class="font-display text-3xl md:text-5xl font-bold leading-tight mb-3">
         Curated paths for the discerning through books, film, and television.
       </h1>
@@ -32,8 +34,26 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
           autocorrect="off"
           spellcheck="false"
           placeholder="Search tracks, themes, tags…"
-          class="w-full border border-white/20 bg-white/5 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/50"
+          class="w-full border border-white/20 bg-white/5 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-copper focus:outline-none focus:ring-1 focus:ring-copper/50"
         />
+        <div id="tag-filters" class="flex flex-wrap gap-1.5 mt-3" role="group" aria-label="Filter by tag">
+          <button
+            type="button"
+            data-tag=""
+            class="tag-chip active text-[10px] uppercase tracking-wider border px-2.5 py-1 transition-colors border-copper text-copper"
+          >
+            All
+          </button>
+          {allTags.map((tag) => (
+            <button
+              type="button"
+              data-tag={tag}
+              class="tag-chip text-[10px] uppercase tracking-wider border border-white/15 text-white/50 px-2.5 py-1 hover:border-copper hover:text-copper transition-colors"
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
         <p id="track-count" class="mt-2 text-xs uppercase tracking-[0.25em] text-white/45">
           {tracks.length} tracks
         </p>
@@ -42,23 +62,33 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
       <h2 id="tracks-heading" class="sr-only">All Tracks</h2>
       <ul id="track-list" class="grid gap-3 md:grid-cols-2 mt-2">
         {tracks.map((track) => (
-          <li data-search={`${track.title} ${track.description} ${(track.tags ?? []).join(' ')}`.toLowerCase()}>
+          <li
+            data-search={`${track.title} ${track.description} ${(track.tags ?? []).join(' ')}`.toLowerCase()}
+            data-tags={(track.tags ?? []).join(',')}
+          >
             <a
               href={`/track/${track.id}`}
-              class="group block border border-white/15 p-5 hover:border-accent transition-colors"
+              class="group block border border-white/15 p-5 hover:border-copper transition-colors h-full"
             >
-              <h3 class="font-display text-lg md:text-xl group-hover:text-accent transition-colors">{track.title}</h3>
+              <div class="flex items-start justify-between gap-2">
+                <h3 class="font-display text-lg md:text-xl group-hover:text-copper transition-colors">{track.title}</h3>
+                {track.map && (
+                  <span class="shrink-0 text-[9px] uppercase tracking-wider text-copper border border-copper/40 px-1.5 py-0.5" title="Branching path">
+                    Map
+                  </span>
+                )}
+              </div>
               <p class="text-white/60 mt-2 text-sm leading-relaxed line-clamp-2">{track.description}</p>
               {(track.tags?.length ?? 0) > 0 && (
                 <ul class="flex flex-wrap gap-1.5 mt-3" aria-label="Tags">
-                  {track.tags!.slice(0, 4).map((tag) => (
+                  {track.tags!.slice(0, 5).map((tag) => (
                     <li class="text-[10px] uppercase tracking-wider text-white/50 border border-white/15 px-2 py-0.5">
                       {tag}
                     </li>
                   ))}
                 </ul>
               )}
-              <p class="text-accent text-xs uppercase tracking-widest mt-3">{track.sequence.length} stops</p>
+              <p class="text-copper text-xs uppercase tracking-widest mt-3">{track.sequence.length} stops</p>
             </a>
           </li>
         ))}
@@ -68,9 +98,9 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
 
     <footer class="mt-16 pt-8 border-t border-white/10 text-xs text-white/45">
       <p>
-        <a href={TOMEWIZARD_URL} target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">TomeWizard.com</a>
+        <a href={TOMEWIZARD_URL} target="_blank" rel="noopener noreferrer" class="hover:text-copper transition-colors">TomeWizard.com</a>
         <span class="text-white/20 mx-2" aria-hidden="true">·</span>
-        <a href={KOBO_CLARA_URL} target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">Kobo Clara BW</a>
+        <a href={KOBO_CLARA_URL} target="_blank" rel="noopener noreferrer" class="hover:text-copper transition-colors">Kobo Clara BW</a>
       </p>
     </footer>
   </main>
@@ -80,21 +110,44 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
     const list = document.getElementById('track-list');
     const countEl = document.getElementById('track-count');
     const emptyEl = document.getElementById('track-empty');
+    const tagFilters = document.getElementById('tag-filters');
     if (!input || !list) throw new Error('track search elements missing');
 
     const items = Array.from(list.querySelectorAll('li'));
+    let activeTag = new URLSearchParams(window.location.search).get('tag') || '';
+
+    function setActiveChip(tag) {
+      tagFilters?.querySelectorAll('.tag-chip').forEach((chip) => {
+        const match = (chip.dataset.tag || '') === tag;
+        chip.classList.toggle('border-copper', match);
+        chip.classList.toggle('text-copper', match);
+        chip.classList.toggle('border-white/15', !match);
+        chip.classList.toggle('text-white/50', !match);
+        chip.classList.toggle('active', match);
+      });
+    }
+
+    if (activeTag) setActiveChip(activeTag);
 
     function filterTracks() {
       const q = input.value.toLowerCase().trim();
       let visible = 0;
       for (const item of items) {
         const haystack = item.dataset.search ?? '';
-        const show = !q || haystack.includes(q);
+        const tags = (item.dataset.tags ?? '').split(',').filter(Boolean);
+        const tagMatch = !activeTag || tags.includes(activeTag);
+        const show = tagMatch && (!q || haystack.includes(q));
         item.hidden = !show;
         if (show) visible += 1;
       }
       if (countEl) {
-        countEl.textContent = q ? `${visible} of ${trackTotal} tracks` : `${trackTotal} tracks`;
+        const parts = [];
+        if (activeTag) parts.push(activeTag);
+        if (q) parts.push(`"${q}"`);
+        const suffix = parts.length ? ` · ${parts.join(' · ')}` : '';
+        countEl.textContent = q || activeTag
+          ? `${visible} of ${trackTotal} tracks${suffix}`
+          : `${trackTotal} tracks`;
       }
       if (emptyEl) {
         emptyEl.classList.toggle('hidden', visible > 0);
@@ -102,7 +155,20 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
       list.classList.toggle('hidden', visible === 0);
     }
 
+    tagFilters?.addEventListener('click', (e) => {
+      const chip = e.target.closest('.tag-chip');
+      if (!chip) return;
+      activeTag = chip.dataset.tag || '';
+      const url = new URL(window.location.href);
+      if (activeTag) url.searchParams.set('tag', activeTag);
+      else url.searchParams.delete('tag');
+      window.history.replaceState({}, '', url);
+      setActiveChip(activeTag);
+      filterTracks();
+    });
+
     input.addEventListener('input', filterTracks);
     input.addEventListener('search', filterTracks);
+    filterTracks();
   </script>
 </BaseLayout>

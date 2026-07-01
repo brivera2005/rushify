@@ -1,0 +1,235 @@
+---
+import type { TrackMap, SequenceItem } from '../lib/types';
+
+interface Props {
+  trackId: string;
+  map: TrackMap;
+  sequence: SequenceItem[];
+}
+
+const { trackId, map, sequence } = Astro.props;
+
+const itemById = Object.fromEntries(
+  sequence.filter((s) => s.id).map((s) => [s.id!, s]),
+);
+
+const layers = new Map<number, typeof map.nodes>();
+for (const node of map.nodes) {
+  const list = layers.get(node.layer) || [];
+  list.push(node);
+  layers.set(node.layer, list);
+}
+const layerCount = Math.max(...map.nodes.map((n) => n.layer)) + 1;
+const maxSlots = Math.max(...map.nodes.map((n) => n.slot)) + 1;
+
+function nodeX(slot: number) {
+  return ((slot + 0.5) / maxSlots) * 100;
+}
+function nodeY(layer: number) {
+  return ((layer + 0.5) / layerCount) * 100;
+}
+
+const nodePositions = Object.fromEntries(
+  map.nodes.map((n) => [n.id, { x: nodeX(n.slot), y: nodeY(n.layer) }]),
+);
+
+function nodeLabel(itemId: string) {
+  const item = itemById[itemId];
+  if (!item) return '?';
+  if (item.type === 'crossroads') return '◇';
+  return item.title.split(' ').slice(0, 2).join(' ');
+}
+---
+
+<section class="mb-12" aria-label="Path map">
+  <div class="flex items-center justify-between mb-4">
+    <h2 class="font-display text-lg text-white/80">Path Map</h2>
+    <p class="text-[10px] uppercase tracking-widest text-white/40">Tap nodes · choices save locally</p>
+  </div>
+  <div class="relative border border-white/15 bg-white/[0.02] overflow-x-auto">
+    <svg
+      id={`path-map-${trackId}`}
+      class="path-map-svg w-full min-w-[320px]"
+      viewBox="0 0 100 100"
+      preserveAspectRatio="xMidYMid meet"
+      style={`aspect-ratio: ${maxSlots} / ${layerCount}; max-height: 420px;`}
+      data-track-id={trackId}
+    >
+      {map.edges.map((edge) => {
+        const from = nodePositions[edge.from];
+        const to = nodePositions[edge.to];
+        if (!from || !to) return null;
+        return (
+          <line
+            class="path-edge stroke-white/20"
+            data-from={edge.from}
+            data-to={edge.to}
+            x1={from.x}
+            y1={from.y}
+            x2={to.x}
+            y2={to.y}
+            stroke-width="0.4"
+          />
+        );
+      })}
+      {map.nodes.map((node) => {
+        const pos = nodePositions[node.id];
+        const item = itemById[node.itemId];
+        const isCross = item?.type === 'crossroads';
+        const isOptional = item?.required === false;
+        return (
+          <g
+            class="path-node cursor-pointer"
+            data-node-id={node.id}
+            data-item-id={node.itemId}
+            role="button"
+            tabindex="0"
+          >
+            <circle
+              class:list={[
+                'path-node-circle transition-all',
+                isCross ? 'fill-transparent stroke-copper' : 'fill-white/30 stroke-white/50',
+                isOptional && 'stroke-dashed',
+              ]}
+              cx={pos.x}
+              cy={pos.y}
+              r={isCross ? 2.2 : 1.8}
+              stroke-width="0.35"
+            />
+            <title>{nodeLabel(node.itemId)}</title>
+          </g>
+        );
+      })}
+    </svg>
+  </div>
+  <p id={`path-status-${trackId}`} class="text-xs text-white/45 mt-2"></p>
+</section>
+
+<script define:vars={{ trackId }}>
+  const svg = document.getElementById(`path-map-${trackId}`);
+  const status = document.getElementById(`path-status-${trackId}`);
+  if (!svg) throw new Error('path map missing');
+
+  const storageKey = `rushtracks-path-${trackId}`;
+
+  function loadState() {
+    try {
+      return JSON.parse(localStorage.getItem(storageKey) || '{}');
+    } catch {
+      return {};
+    }
+  }
+
+  function saveState(state) {
+    localStorage.setItem(storageKey, JSON.stringify(state));
+  }
+
+  function applyVisuals(state) {
+    const chosen = new Set(state.chosenItems || []);
+    const skipped = new Set(state.skippedItems || []);
+
+    svg.querySelectorAll('.path-node').forEach((g) => {
+      const itemId = g.dataset.itemId;
+      const circle = g.querySelector('.path-node-circle');
+      if (!circle || !itemId) return;
+      circle.classList.remove('fill-copper', 'stroke-copper', 'opacity-30');
+      if (chosen.has(itemId)) {
+        circle.classList.add('fill-copper', 'stroke-copper');
+      } else if (skipped.has(itemId)) {
+        circle.classList.add('opacity-30');
+      }
+    });
+
+    svg.querySelectorAll('.path-edge').forEach((line) => {
+      const fromItem = svg.querySelector(`[data-node-id="${line.dataset.from}"]`)?.dataset.itemId;
+      const toItem = svg.querySelector(`[data-node-id="${line.dataset.to}"]`)?.dataset.itemId;
+      const active = (fromItem && chosen.has(fromItem)) || (toItem && chosen.has(toItem));
+      line.classList.toggle('stroke-copper', !!active);
+      line.classList.toggle('stroke-white/20', !active);
+    });
+
+    document.querySelectorAll('.track-item-card').forEach((card) => {
+      const id = card.dataset.itemId;
+      if (!id) return;
+      card.classList.toggle('border-copper', chosen.has(id));
+      card.classList.toggle('ring-1', chosen.has(id));
+      card.classList.toggle('ring-copper/40', chosen.has(id));
+      card.classList.toggle('opacity-40', skipped.has(id));
+      card.classList.toggle('hidden', state.hiddenItems?.includes(id));
+    });
+
+    if (status) {
+      const n = chosen.size;
+      status.textContent = n ? `${n} stop${n === 1 ? '' : 's'} on your path` : 'Select nodes or crossroads choices to build your path';
+    }
+  }
+
+  let state = loadState();
+  applyVisuals(state);
+
+  svg.querySelectorAll('.path-node').forEach((g) => {
+    const activate = () => {
+      const itemId = g.dataset.itemId;
+      if (!itemId) return;
+      const card = document.getElementById(`card-${itemId}`);
+      card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      if (!state.chosenItems) state.chosenItems = [];
+      const idx = state.chosenItems.indexOf(itemId);
+      if (idx >= 0) {
+        state.chosenItems.splice(idx, 1);
+      } else {
+        state.chosenItems.push(itemId);
+        if (state.skippedItems) {
+          state.skippedItems = state.skippedItems.filter((id) => id !== itemId);
+        }
+      }
+      saveState(state);
+      applyVisuals(state);
+    };
+    g.addEventListener('click', activate);
+    g.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        activate();
+      }
+    });
+  });
+
+  document.querySelectorAll('.crossroads-choice').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+      const optional = btn.dataset.optional === 'true';
+      if (!targetId) return;
+
+      if (!state.chosenItems) state.chosenItems = [];
+      if (!state.skippedItems) state.skippedItems = [];
+      if (!state.hiddenItems) state.hiddenItems = [];
+
+      const crossroads = btn.closest('[data-crossroads-for]');
+      const crossId = crossroads?.dataset.crossroadsFor;
+      if (crossId && !state.chosenItems.includes(crossId)) {
+        state.chosenItems.push(crossId);
+      }
+
+      if (!state.chosenItems.includes(targetId)) {
+        state.chosenItems.push(targetId);
+      }
+
+      const siblings = crossroads?.querySelectorAll('.crossroads-choice') || [];
+      siblings.forEach((sib) => {
+        const sibTarget = sib.dataset.target;
+        if (sibTarget && sibTarget !== targetId && !optional) {
+          if (!state.skippedItems.includes(sibTarget)) {
+            state.skippedItems.push(sibTarget);
+          }
+        }
+      });
+
+      btn.classList.add('border-copper', 'text-copper');
+      saveState(state);
+      applyVisuals(state);
+      document.getElementById(`card-${targetId}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+</script>
