@@ -3,7 +3,6 @@ import enrichedTracks from '../../data/tracks-enriched.json';
 import allTracks from '../../data/tracks.json';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TrackItemCard from '../../components/TrackItemCard.astro';
-import PathMap from '../../components/PathMap.astro';
 import RelatedTracks from '../../components/RelatedTracks.astro';
 import type { EnrichedTrack } from '../../lib/types';
 
@@ -15,29 +14,9 @@ export function getStaticPaths() {
 }
 
 const { track } = Astro.props;
-const coreCount = track.sequence.filter(
-  (i) => i.type !== 'crossroads' && i.required !== false && i.type !== 'videogame' && i.type !== 'boardgame',
-).length;
-const optionalCount = track.sequence.filter((i) => i.required === false).length;
-
-const nodeIdByItemId: Record<string, string> = {};
-if (track.map) {
-  for (const node of track.map.nodes) {
-    nodeIdByItemId[node.itemId] = node.id;
-  }
-}
-
-const coreNodeIds = track.map
-  ? track.map.nodes
-      .filter((n) => {
-        const item = track.sequence.find((s) => s.id === n.itemId);
-        return item && item.type !== 'crossroads' && item.required !== false && item.type !== 'videogame' && item.type !== 'boardgame';
-      })
-      .map((n) => n.id)
-  : track.sequence
-      .filter((i) => i.type !== 'crossroads' && i.required !== false && i.type !== 'videogame' && i.type !== 'boardgame')
-      .map((i) => i.id!)
-      .filter(Boolean);
+const coreItems = track.sequence;
+const supplementalItems = track.supplemental ?? [];
+const coreCount = coreItems.length;
 
 const KOBO_CLARA_URL = 'https://www.amazon.com/dp/B0CZXYV8GT?tag=tomewizard-20';
 const TOMEWIZARD_URL = 'https://www.tomewizard.com';
@@ -52,15 +31,13 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
       <p class="text-white/70 mt-4 text-base md:text-lg leading-relaxed">{track.description}</p>
       <div class="flex flex-wrap items-center gap-3 mt-5">
         <p class="text-copper text-xs uppercase tracking-widest">
-          {coreCount} core stops{optionalCount ? ` · ${optionalCount} optional tier 2` : ''}
+          {coreCount} {coreCount === 1 ? 'stop' : 'stops'}
+          {supplementalItems.length > 0 && ` · ${supplementalItems.length} optional`}
         </p>
-        <p id={`track-progress-${track.id}`} class="text-xs uppercase tracking-widest text-emerald-400/80">
-          0 of {coreCount} core complete
-        </p>
-        {track.map && (
-          <span class="text-[10px] uppercase tracking-wider text-white/45 border border-white/15 px-2 py-0.5">
-            Branching path
-          </span>
+        {coreCount > 0 && (
+          <p id={`track-progress-${track.id}`} class="text-xs uppercase tracking-widest text-emerald-400/80">
+            0 of {coreCount} complete
+          </p>
         )}
       </div>
       {(track.tags?.length ?? 0) > 0 && (
@@ -70,20 +47,41 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
       )}
     </header>
 
-    {track.map && (
-      <PathMap trackId={track.id} map={track.map} sequence={track.sequence} />
+    {coreCount > 0 && (
+      <section aria-label="Track sequence" class="space-y-4">
+        {coreItems.map((item, index) => (
+          <TrackItemCard
+            item={item}
+            stepNumber={index + 1}
+            trackId={track.id}
+            itemId={item.id}
+          />
+        ))}
+      </section>
     )}
 
-    <section aria-label="Track sequence" class="space-y-4">
-      {track.sequence.map((item, index) => (
-        <TrackItemCard
-          item={item}
-          index={index}
-          trackId={track.id}
-          nodeId={item.id ? (nodeIdByItemId[item.id] || item.id) : undefined}
-        />
-      ))}
-    </section>
+    {supplementalItems.length > 0 && (
+      <section aria-label="Supplemental suggestions" class="mt-12 pt-8 border-t border-white/10">
+        <header class="mb-5">
+          <h2 class="font-display text-xl md:text-2xl text-white/90">If you want more</h2>
+          <p class="text-white/45 text-sm mt-1">Optional board games and video games — not required to follow the track.</p>
+        </header>
+        <div class="space-y-4">
+          {supplementalItems.map((item) => (
+            <TrackItemCard
+              item={item}
+              trackId={track.id}
+              itemId={item.id}
+              supplemental
+            />
+          ))}
+        </div>
+      </section>
+    )}
+
+    {coreCount === 0 && supplementalItems.length > 0 && (
+      <p class="text-white/55 text-sm mb-6">This track is game-focused — everything below is optional fun, not a required order.</p>
+    )}
 
     <RelatedTracks
       currentId={track.id}
@@ -105,54 +103,76 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
     hydrateRushtvButtons();
   </script>
 
-  <script define:vars={{ trackId: track.id, coreNodeIds, coreCount }}>
-    const storageKey = `rushtracks-progress-${trackId}`;
-    const progressEl = document.getElementById(`track-progress-${trackId}`);
+  {coreCount > 0 && (
+    <script define:vars={{ trackId: track.id, coreItemIds: coreItems.map((i) => i.id).filter(Boolean), coreCount }}>
+      const storageKey = `rushtracks-progress-${trackId}`;
+      const progressEl = document.getElementById(`track-progress-${trackId}`);
 
-    function loadState() {
-      try {
-        return JSON.parse(localStorage.getItem(storageKey) || '{}');
-      } catch {
-        return {};
+      function loadState() {
+        try {
+          const raw = JSON.parse(localStorage.getItem(storageKey) || '{}');
+          if (raw.completedItems) return raw;
+          if (raw.completedNodes) {
+            return { completedItems: raw.completedNodes, lastVisited: raw.lastVisited };
+          }
+          return { completedItems: [] };
+        } catch {
+          return { completedItems: [] };
+        }
       }
-    }
 
-    function updateHeader(state) {
-      if (!progressEl) return;
-      const completed = new Set(state.completedNodes || []);
-      const done = coreNodeIds.filter((id) => completed.has(id)).length;
-      const pct = coreCount ? Math.round((done / coreCount) * 100) : 0;
-      progressEl.textContent = `${done} of ${coreCount} core complete · ${pct}%`;
-    }
-
-    function toggleComplete(nodeId) {
-      const state = loadState();
-      if (!state.completedNodes) state.completedNodes = [];
-      if (!state.chosenPath) state.chosenPath = [];
-      const idx = state.completedNodes.indexOf(nodeId);
-      if (idx >= 0) {
-        state.completedNodes.splice(idx, 1);
-      } else {
-        state.completedNodes.push(nodeId);
-        if (!state.chosenPath.includes(nodeId)) state.chosenPath.push(nodeId);
+      function updateHeader(state) {
+        if (!progressEl) return;
+        const completed = new Set(state.completedItems || []);
+        const done = coreItemIds.filter((id) => completed.has(id)).length;
+        const pct = coreCount ? Math.round((done / coreCount) * 100) : 0;
+        progressEl.textContent = `${done} of ${coreCount} complete · ${pct}%`;
       }
-      state.lastVisited = new Date().toISOString();
-      localStorage.setItem(storageKey, JSON.stringify(state));
-      window.dispatchEvent(new CustomEvent('rushtracks-progress', { detail: { trackId, state } }));
-      updateHeader(state);
-    }
 
-    document.querySelectorAll('.complete-toggle').forEach((btn) => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const nodeId = btn.dataset.nodeId;
-        if (nodeId) toggleComplete(nodeId);
+      function syncToggleButtons(state) {
+        const completed = new Set(state.completedItems || []);
+        document.querySelectorAll('.complete-toggle').forEach((btn) => {
+          const id = btn.dataset.itemId;
+          const isDone = id && completed.has(id);
+          btn.setAttribute('aria-pressed', isDone ? 'true' : 'false');
+          btn.classList.toggle('border-emerald-500', Boolean(isDone));
+          btn.classList.toggle('text-emerald-400', Boolean(isDone));
+        });
+      }
+
+      function toggleComplete(itemId) {
+        const state = loadState();
+        if (!state.completedItems) state.completedItems = [];
+        const idx = state.completedItems.indexOf(itemId);
+        if (idx >= 0) {
+          state.completedItems.splice(idx, 1);
+        } else {
+          state.completedItems.push(itemId);
+        }
+        state.lastVisited = new Date().toISOString();
+        localStorage.setItem(storageKey, JSON.stringify(state));
+        window.dispatchEvent(new CustomEvent('rushtracks-progress', { detail: { trackId, state } }));
+        updateHeader(state);
+        syncToggleButtons(state);
+      }
+
+      document.querySelectorAll('.complete-toggle').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const itemId = btn.dataset.itemId;
+          if (itemId) toggleComplete(itemId);
+        });
       });
-    });
 
-    updateHeader(loadState());
-    window.addEventListener('rushtracks-progress', (e) => {
-      if (e.detail?.trackId === trackId) updateHeader(e.detail.state);
-    });
-  </script>
+      const initial = loadState();
+      updateHeader(initial);
+      syncToggleButtons(initial);
+      window.addEventListener('rushtracks-progress', (e) => {
+        if (e.detail?.trackId === trackId) {
+          updateHeader(e.detail.state);
+          syncToggleButtons(e.detail.state);
+        }
+      });
+    </script>
+  )}
 </BaseLayout>

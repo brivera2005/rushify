@@ -1,7 +1,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { BRANCHING_TRACKS, BRANCHING_MAPS } from './branching-tracks.mjs';
+import { BRANCHING_TRACKS } from './branching-tracks.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const TRACKS_PATH = join(__dirname, '..', 'src', 'data', 'tracks.json');
@@ -116,84 +116,6 @@ const GAP_TRACKS = [
   },
 ];
 
-const MAPS = {
-  'existential-ai': {
-    nodes: [
-      { id: 'n0', itemId: 'eai-book-1', layer: 0, slot: 1 },
-      { id: 'n1', itemId: 'eai-book-2', layer: 1, slot: 0 },
-      { id: 'n2', itemId: 'eai-film-1', layer: 1, slot: 2 },
-      { id: 'n3', itemId: 'eai-cross-1', layer: 2, slot: 1 },
-      { id: 'n4', itemId: 'eai-film-2', layer: 3, slot: 0 },
-      { id: 'n5', itemId: 'eai-film-3', layer: 3, slot: 1 },
-      { id: 'n6', itemId: 'eai-game-1', layer: 3, slot: 2 },
-      { id: 'n7', itemId: 'eai-show-1', layer: 4, slot: 1 },
-    ],
-    edges: [
-      { from: 'n0', to: 'n1' },
-      { from: 'n0', to: 'n2' },
-      { from: 'n1', to: 'n3' },
-      { from: 'n2', to: 'n3' },
-      { from: 'n3', to: 'n4' },
-      { from: 'n3', to: 'n5' },
-      { from: 'n3', to: 'n6' },
-      { from: 'n4', to: 'n7' },
-      { from: 'n5', to: 'n7' },
-      { from: 'n6', to: 'n7' },
-    ],
-  },
-  'cognitive-warfare': {
-    nodes: [
-      { id: 'n0', itemId: 'cw-book-1', layer: 0, slot: 1 },
-      { id: 'n1', itemId: 'cw-cross-1', layer: 1, slot: 1 },
-      { id: 'n2', itemId: 'cw-film-1', layer: 2, slot: 0 },
-      { id: 'n4', itemId: 'cw-game-1', layer: 2, slot: 2 },
-      { id: 'n5', itemId: 'cw-show-1', layer: 3, slot: 1 },
-    ],
-    edges: [
-      { from: 'n0', to: 'n1' },
-      { from: 'n1', to: 'n2' },
-      { from: 'n1', to: 'n4' },
-      { from: 'n2', to: 'n5' },
-      { from: 'n4', to: 'n5' },
-    ],
-  },
-  'folklore-legends-kids': {
-    nodes: [
-      { id: 'n0', itemId: 'flk-book-1', layer: 0, slot: 1 },
-      { id: 'n1', itemId: 'flk-cross-1', layer: 1, slot: 1 },
-      { id: 'n2', itemId: 'flk-film-1', layer: 2, slot: 0 },
-      { id: 'n3', itemId: 'flk-film-2', layer: 2, slot: 2 },
-      { id: 'n4', itemId: 'flk-game-1', layer: 2, slot: 1 },
-    ],
-    edges: [
-      { from: 'n0', to: 'n1' },
-      { from: 'n1', to: 'n2' },
-      { from: 'n1', to: 'n3' },
-      { from: 'n1', to: 'n4' },
-    ],
-  },
-};
-
-const EXISTENTIAL_AI_SEQUENCE_PATCH = [
-  { id: 'eai-book-1', type: 'book', title: 'Do Androids Dream of Electric Sheep?', author: 'Philip K. Dick' },
-  { id: 'eai-book-2', type: 'book', title: '2001: A Space Odyssey', author: 'Arthur C. Clarke' },
-  { id: 'eai-film-1', type: 'movie', title: 'Blade Runner', year: 1982 },
-  {
-    id: 'eai-cross-1',
-    type: 'crossroads',
-    label: 'Choose your synthetic lens',
-    choices: [
-      { label: 'Intimate AI drama', targetId: 'eai-film-2', vibe: 'movie-heavy' },
-      { label: 'Philosophical thriller', targetId: 'eai-film-3', vibe: 'movie-heavy' },
-      { label: 'Play the simulation', targetId: 'eai-game-1', vibe: 'videogame', optional: true },
-    ],
-  },
-  { id: 'eai-film-2', type: 'movie', title: 'Ex Machina', year: 2014 },
-  { id: 'eai-film-3', type: 'movie', title: 'Her', year: 2013, required: false },
-  { id: 'eai-game-1', type: 'videogame', title: 'Detroit: Become Human', year: 2018, required: false },
-  { id: 'eai-show-1', type: 'show', title: 'Westworld (Season 1)', year: 2016 },
-];
-
 function ensureItemIds(track) {
   track.sequence = track.sequence.map((item, i) => ({
     ...item,
@@ -219,36 +141,19 @@ function main() {
   let tracks = JSON.parse(readFileSync(TRACKS_PATH, 'utf8'));
   const existingIds = new Set(tracks.map((t) => t.id));
 
-  tracks = tracks.map((track) => {
-    if (track.id === 'existential-ai') {
-      return {
-        ...track,
-        sequence: EXISTENTIAL_AI_SEQUENCE_PATCH,
-        map: MAPS['existential-ai'],
-        relatedTrackIds: ['existential-ai-v2'],
-      };
-    }
-    return track;
-  });
-
   for (const track of [...NEW_TRACKS, ...GAP_TRACKS, ...BRANCHING_TRACKS]) {
     if (!existingIds.has(track.id)) {
-      tracks.push({ ...track, map: BRANCHING_MAPS[track.id] || track.map });
+      tracks.push({ ...track });
       existingIds.add(track.id);
     }
   }
 
-  for (const track of BRANCHING_TRACKS) {
-    const existing = tracks.find((t) => t.id === track.id);
-    if (existing && BRANCHING_MAPS[track.id] && !existing.map) {
-      existing.map = BRANCHING_MAPS[track.id];
+  tracks = tracks.map((track) => {
+    if (track.id === 'existential-ai' && !track.relatedTrackIds) {
+      return { ...track, relatedTrackIds: ['existential-ai-v2'] };
     }
-  }
-
-  for (const [trackId, map] of Object.entries({ ...MAPS, ...BRANCHING_MAPS })) {
-    const track = tracks.find((t) => t.id === trackId);
-    if (track && !track.map) track.map = map;
-  }
+    return track;
+  });
 
   tracks = tracks.map(ensureItemIds);
   tracks = applyRelations(tracks);

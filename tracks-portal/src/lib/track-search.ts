@@ -21,19 +21,14 @@ function pushTerms(bucket: string[], ...values: Array<string | number | undefine
 
 function collectItemTerms(item: EnrichedSequenceItem): string[] {
   const terms: string[] = [];
-  pushTerms(terms, item.title, item.author, item.type, item.label, item.vibe, item.note, item.year);
-  if (item.choices) {
-    for (const choice of item.choices) {
-      pushTerms(terms, choice.label, choice.vibe);
-    }
-  }
+  pushTerms(terms, item.title, item.author, item.type, item.note, item.year);
   const meta = item.metadata;
   if (meta) {
     pushTerms(terms, meta.overview, meta.year, ...(meta.genres ?? []));
   }
   // Future-proof: index any extra string fields (developer, designer, etc.)
   for (const [key, value] of Object.entries(item)) {
-    if (['title', 'author', 'type', 'label', 'vibe', 'note', 'choices', 'metadata', 'required', 'id', 'year'].includes(key)) {
+    if (['title', 'author', 'type', 'note', 'metadata', 'id', 'year'].includes(key)) {
       continue;
     }
     if (typeof value === 'string') pushTerms(terms, value);
@@ -47,6 +42,9 @@ export function buildTrackHaystack(track: EnrichedTrack): string {
   for (const item of track.sequence) {
     parts.push(...collectItemTerms(item));
   }
+  for (const item of track.supplemental ?? []) {
+    parts.push(...collectItemTerms(item));
+  }
   return normalizeSearchText(parts.join(' '));
 }
 
@@ -55,7 +53,6 @@ export interface TrackSearchEntry {
   title: string;
   description: string;
   haystack: string;
-  hasMap: boolean;
   stopCount: number;
 }
 
@@ -65,8 +62,7 @@ export function buildTrackSearchIndex(tracks: EnrichedTrack[]): TrackSearchEntry
     title: track.title,
     description: track.description,
     haystack: buildTrackHaystack(track),
-    hasMap: Boolean(track.map),
-    stopCount: track.sequence.length,
+    stopCount: track.sequence.length + (track.supplemental?.length ?? 0),
   }));
 }
 

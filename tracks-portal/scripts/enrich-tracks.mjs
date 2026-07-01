@@ -105,7 +105,6 @@ async function enrichBook(item) {
 }
 
 async function enrichItem(item, cache) {
-  if (item.type === 'crossroads') return {};
   const key = cacheKey(item);
   if (cache[key]) return cache[key];
 
@@ -151,10 +150,19 @@ async function pool(items, worker, limit) {
 }
 
 function stripMetadata(track) {
+  const stripItem = ({ metadata, ...rest }) => rest;
   return {
     ...track,
-    sequence: track.sequence.map(({ metadata, ...rest }) => rest),
+    sequence: track.sequence.map(stripItem),
+    supplemental: track.supplemental?.map(stripItem),
   };
+}
+
+function enrichItems(items, cache) {
+  return (items || []).map((item) => {
+    const meta = cache[cacheKey(item)];
+    return meta ? { ...item, metadata: meta } : { ...item };
+  });
 }
 
 async function main() {
@@ -162,9 +170,8 @@ async function main() {
   const cache = loadCache();
   const allItems = [];
   for (const track of tracks) {
-    for (const item of track.sequence) {
-      if (item.type !== 'crossroads') allItems.push(item);
-    }
+    for (const item of track.sequence) allItems.push(item);
+    for (const item of track.supplemental ?? []) allItems.push(item);
   }
 
   console.log(`Enriching ${allItems.length} items${TMDB_KEY ? '' : ' (no TMDB_API_KEY, books only)'}`);
@@ -181,11 +188,8 @@ async function main() {
 
   const enriched = tracks.map((track) => ({
     ...track,
-    sequence: track.sequence.map((item) => {
-      if (item.type === 'crossroads') return { ...item };
-      const meta = cache[cacheKey(item)];
-      return meta ? { ...item, metadata: meta } : { ...item };
-    }),
+    sequence: enrichItems(track.sequence, cache),
+    supplemental: track.supplemental ? enrichItems(track.supplemental, cache) : undefined,
   }));
 
   writeFileSync(ENRICHED_PATH, JSON.stringify(enriched, null, 2));

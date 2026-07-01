@@ -4,12 +4,13 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/merge-tracks.mjs && node scripts/enrich-tracks.mjs && astro dev",
-    "prebuild": "node scripts/merge-tracks.mjs && node scripts/enrich-tracks.mjs",
+    "dev": "node scripts/merge-tracks.mjs && node scripts/flatten-tracks.mjs && node scripts/enrich-tracks.mjs && astro dev",
+    "prebuild": "node scripts/merge-tracks.mjs && node scripts/flatten-tracks.mjs && node scripts/enrich-tracks.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "enrich": "node scripts/enrich-tracks.mjs",
     "merge": "node scripts/merge-tracks.mjs",
+    "flatten": "node scripts/flatten-tracks.mjs",
     "deploy": "npm run build && wrangler pages deploy dist --project-name=rushtracks --branch=main"
   },
   "dependencies": {

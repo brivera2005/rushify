@@ -1,33 +1,21 @@
 ---
 import type { EnrichedSequenceItem } from '../lib/types';
+import { typeLabel } from '../lib/track-items';
 import { buildRushTvDetailUrl, isRushTvEligibleItemType, tmdbAvailabilityKey } from '../lib/rushtv-deeplink';
 
 interface Props {
   item: EnrichedSequenceItem;
-  index: number;
   trackId: string;
-  nodeId?: string;
+  itemId?: string;
+  stepNumber?: number;
+  supplemental?: boolean;
 }
 
-const { item, index, trackId, nodeId } = Astro.props;
-
-function typeLabel(type: string) {
-  switch (type) {
-    case 'book': return 'Book';
-    case 'show': return 'Series';
-    case 'documentary': return 'Documentary';
-    case 'boardgame': return 'Board Game';
-    case 'videogame': return 'Video Game';
-    case 'crossroads': return 'Crossroads';
-    default: return 'Film';
-  }
-}
+const { item, trackId, itemId, stepNumber, supplemental = false } = Astro.props;
 
 const meta = item.metadata;
 const imageUrl = meta?.posterUrl || meta?.coverUrl;
-const isOptional = item.required === false;
-const isTier2 = item.type === 'videogame' || item.type === 'boardgame';
-const itemDomId = item.id || `${trackId}-item-${index}`;
+const itemDomId = itemId || item.id || `${trackId}-item`;
 const rushTvEligible =
   meta?.tmdbId && meta?.mediaType && isRushTvEligibleItemType(item.type);
 const rushTvKey = rushTvEligible
@@ -42,131 +30,97 @@ const rushTvUrl = rushTvEligible
   id={`card-${itemDomId}`}
   class:list={[
     'track-item-card border border-white/15 bg-white/[0.02] overflow-hidden transition-all duration-300',
-    isOptional && 'border-dashed',
-    isTier2 && isOptional && 'border-copper/30',
+    supplemental && 'border-dashed border-copper/25',
   ]}
   data-item-id={itemDomId}
-  data-node-id={nodeId}
-  data-required={isOptional ? 'false' : 'true'}
   data-type={item.type}
-  data-core={!isTier2 && item.type !== 'crossroads' ? 'true' : 'false'}
 >
-  {item.type === 'crossroads' ? (
-    <div class="p-5 md:p-6">
-      <p class="text-xs uppercase tracking-[0.25em] text-copper mb-2">{typeLabel(item.type)}</p>
-      <h2 class="font-display text-xl md:text-2xl">{item.label || 'Pick one in this next tier'}</h2>
-      <p class="text-white/45 text-sm mt-2">Tier 1 paths are core media; video games and board games are optional.</p>
-      <ul class="mt-4 space-y-2" data-crossroads-for={itemDomId}>
-        {item.choices?.map((choice) => (
-          <li>
-            <button
-              type="button"
-              class="crossroads-choice w-full text-left border border-white/20 px-4 py-3 hover:border-copper hover:text-copper transition-colors text-sm"
-              data-target={choice.targetId}
-              data-optional={choice.optional ? 'true' : 'false'}
-              data-vibe={choice.vibe || ''}
-            >
-              <span class="font-medium">{choice.label}</span>
-              {choice.optional && (
-                <span class="ml-2 text-[9px] uppercase tracking-wider text-copper border border-copper/40 px-1.5 py-0.5">
-                  Tier 2 · Optional
-                </span>
-              )}
-              {choice.vibe && !choice.optional && (
-                <span class="block text-[10px] uppercase tracking-wider text-white/40 mt-1">{choice.vibe}</span>
-              )}
-            </button>
-          </li>
-        ))}
-      </ul>
+  <div class="flex flex-col sm:flex-row">
+    <div class="sm:w-36 md:w-40 shrink-0 bg-white/5 aspect-[2/3] sm:aspect-auto sm:min-h-[180px] relative">
+      {imageUrl ? (
+        <img
+          src={imageUrl}
+          alt=""
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          width="160"
+          height="240"
+        />
+      ) : (
+        <div class="absolute inset-0 flex items-center justify-center text-white/20 text-xs uppercase tracking-widest p-4 text-center">
+          {typeLabel(item.type)}
+        </div>
+      )}
+      {supplemental && (
+        <span class="absolute top-2 left-2 text-[9px] uppercase tracking-wider bg-black/80 border border-copper/50 text-copper px-1.5 py-0.5">
+          Optional
+        </span>
+      )}
     </div>
-  ) : (
-    <div class="flex flex-col sm:flex-row">
-      <div class="sm:w-36 md:w-40 shrink-0 bg-white/5 aspect-[2/3] sm:aspect-auto sm:min-h-[180px] relative">
-        {imageUrl ? (
-          <img
-            src={imageUrl}
-            alt=""
-            class="absolute inset-0 w-full h-full object-cover"
-            loading="lazy"
-            width="160"
-            height="240"
-          />
-        ) : (
-          <div class="absolute inset-0 flex items-center justify-center text-white/20 text-xs uppercase tracking-widest p-4 text-center">
+    <div class="flex-1 p-5 md:p-6 min-w-0">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0 flex-1">
+          <p class="text-xs uppercase tracking-[0.25em] text-white/45 mb-1">
             {typeLabel(item.type)}
-          </div>
-        )}
-        {isOptional && (
-          <span class="absolute top-2 left-2 text-[9px] uppercase tracking-wider bg-black/80 border border-copper/50 text-copper px-1.5 py-0.5">
-            Tier 2 · Optional
-          </span>
+            {stepNumber != null && <> · Stop {stepNumber}</>}
+          </p>
+          <h2 class="font-display text-xl md:text-2xl leading-snug">{item.title}</h2>
+        </div>
+        {!supplemental && itemId && (
+          <button
+            type="button"
+            class="complete-toggle shrink-0 border border-white/25 w-9 h-9 flex items-center justify-center hover:border-emerald-500 transition-colors"
+            data-item-id={itemId}
+            aria-pressed="false"
+            aria-label="Mark complete"
+            title="Mark complete"
+          >
+            <span class="complete-icon text-sm" aria-hidden="true">✓</span>
+          </button>
         )}
       </div>
-      <div class="flex-1 p-5 md:p-6 min-w-0">
-        <div class="flex items-start justify-between gap-3">
-          <div class="min-w-0 flex-1">
-            <p class="text-xs uppercase tracking-[0.25em] text-white/45 mb-1">
-              {typeLabel(item.type)} · Stop {index + 1}
-            </p>
-            <h2 class="font-display text-xl md:text-2xl leading-snug">{item.title}</h2>
-          </div>
-          {nodeId && (
-            <button
-              type="button"
-              class="complete-toggle shrink-0 border border-white/25 w-9 h-9 flex items-center justify-center hover:border-emerald-500 transition-colors"
-              data-node-id={nodeId}
-              aria-pressed="false"
-              aria-label="Mark complete"
-              title="Mark complete"
-            >
-              <span class="complete-icon text-sm" aria-hidden="true">✓</span>
-            </button>
-          )}
-        </div>
-        {item.author && <p class="text-white/60 mt-1">{item.author}</p>}
-        {item.note && <p class="text-white/50 text-sm mt-1 italic">{item.note}</p>}
-        {(item.year || meta?.year) && (
-          <p class="text-white/45 text-sm mt-1">{meta?.year || item.year}</p>
+      {item.author && <p class="text-white/60 mt-1">{item.author}</p>}
+      {item.note && <p class="text-white/50 text-sm mt-1 italic">{item.note}</p>}
+      {(item.year || meta?.year) && (
+        <p class="text-white/45 text-sm mt-1">{meta?.year || item.year}</p>
+      )}
+      {meta?.genres && meta.genres.length > 0 && (
+        <p class="text-white/50 text-sm mt-2">{meta.genres.slice(0, 4).join(' · ')}</p>
+      )}
+      {meta?.rating != null && (
+        <p class="text-copper text-sm mt-2 font-medium">
+          ★ {meta.rating}/10
+          {meta.ratingCount ? <span class="text-white/40 font-normal"> · {meta.ratingCount.toLocaleString()} votes</span> : null}
+        </p>
+      )}
+      {meta?.overview && (
+        <p class="text-white/55 text-sm mt-3 leading-relaxed line-clamp-3">{meta.overview}</p>
+      )}
+      <div class="flex flex-wrap gap-2 mt-4">
+        {item.type === 'book' && meta?.amazonUrl && (
+          <a
+            href={meta.amazonUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block border border-copper/60 text-copper px-4 py-2 text-xs uppercase tracking-widest hover:bg-copper hover:text-black transition-colors"
+          >
+            Buy on Amazon
+          </a>
         )}
-        {meta?.genres && meta.genres.length > 0 && (
-          <p class="text-white/50 text-sm mt-2">{meta.genres.slice(0, 4).join(' · ')}</p>
+        {rushTvEligible && rushTvUrl && rushTvKey && (
+          <a
+            href={rushTvUrl}
+            class="rushtv-cta rushtv-cta--loading inline-flex items-center gap-2 min-h-[44px] px-4 py-2 text-xs uppercase tracking-widest transition-colors"
+            data-tmdb-key={rushTvKey}
+            data-tmdb-id={meta!.tmdbId}
+            data-media-type={meta!.mediaType}
+            aria-label="Checking RushTV availability"
+          >
+            <span class="rushtv-cta-spinner" aria-hidden="true"></span>
+            <span class="rushtv-cta-label">Checking…</span>
+          </a>
         )}
-        {meta?.rating != null && (
-          <p class="text-copper text-sm mt-2 font-medium">
-            ★ {meta.rating}/10
-            {meta.ratingCount ? <span class="text-white/40 font-normal"> · {meta.ratingCount.toLocaleString()} votes</span> : null}
-          </p>
-        )}
-        {meta?.overview && (
-          <p class="text-white/55 text-sm mt-3 leading-relaxed line-clamp-3">{meta.overview}</p>
-        )}
-        <div class="flex flex-wrap gap-2 mt-4">
-          {item.type === 'book' && meta?.amazonUrl && (
-            <a
-              href={meta.amazonUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-block border border-copper/60 text-copper px-4 py-2 text-xs uppercase tracking-widest hover:bg-copper hover:text-black transition-colors"
-            >
-              Buy on Amazon
-            </a>
-          )}
-          {rushTvEligible && rushTvUrl && rushTvKey && (
-            <a
-              href={rushTvUrl}
-              class="rushtv-cta rushtv-cta--loading inline-flex items-center gap-2 min-h-[44px] px-4 py-2 text-xs uppercase tracking-widest transition-colors"
-              data-tmdb-key={rushTvKey}
-              data-tmdb-id={meta!.tmdbId}
-              data-media-type={meta!.mediaType}
-              aria-label="Checking RushTV availability"
-            >
-              <span class="rushtv-cta-spinner" aria-hidden="true"></span>
-              <span class="rushtv-cta-label">Checking…</span>
-            </a>
-          )}
-        </div>
       </div>
     </div>
-  )}
+  </div>
 </article>

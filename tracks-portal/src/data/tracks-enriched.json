@@ -49,29 +49,6 @@
         }
       },
       {
-        "id": "eai-cross-1",
-        "type": "crossroads",
-        "label": "Choose your synthetic lens",
-        "choices": [
-          {
-            "label": "Intimate AI drama",
-            "targetId": "eai-film-2",
-            "vibe": "movie-heavy"
-          },
-          {
-            "label": "Philosophical thriller",
-            "targetId": "eai-film-3",
-            "vibe": "movie-heavy"
-          },
-          {
-            "label": "Play the simulation",
-            "targetId": "eai-game-1",
-            "vibe": "videogame",
-            "optional": true
-          }
-        ]
-      },
-      {
         "id": "eai-film-2",
         "type": "movie",
         "title": "Ex Machina",
@@ -95,7 +72,6 @@
         "type": "movie",
         "title": "Her",
         "year": 2013,
-        "required": false,
         "metadata": {
           "posterUrl": "https://image.tmdb.org/t/p/w342/eCOtqtfvn7mxGl6nfmq4b1exJRc.jpg",
           "overview": "In the not so distant future, Theodore, a lonely writer, purchases a newly developed operating system designed to meet the user's every need. To Theodore's surprise, a romantic relationship develops between him and his operating system. This unconventional love story blends science fiction and romance in a sweet tale that explores the nature of love and the ways that technology isolates and connects us all.",
@@ -109,16 +85,6 @@
           "tmdbId": 152601,
           "mediaType": "movie",
           "year": "2013"
-        }
-      },
-      {
-        "id": "eai-game-1",
-        "type": "videogame",
-        "title": "Detroit: Become Human",
-        "year": 2018,
-        "required": false,
-        "metadata": {
-          "amazonUrl": "https://www.amazon.com/s?k=Detroit%3A%20Become%20Human&tag=tomewizard-20"
         }
       },
       {
@@ -149,102 +115,19 @@
       "books",
       "cyberpunk"
     ],
-    "map": {
-      "nodes": [
-        {
-          "id": "n0",
-          "itemId": "eai-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "n1",
-          "itemId": "eai-book-2",
-          "layer": 1,
-          "slot": 0
-        },
-        {
-          "id": "n2",
-          "itemId": "eai-film-1",
-          "layer": 1,
-          "slot": 2
-        },
-        {
-          "id": "n3",
-          "itemId": "eai-cross-1",
-          "layer": 2,
-          "slot": 1
-        },
-        {
-          "id": "n4",
-          "itemId": "eai-film-2",
-          "layer": 3,
-          "slot": 0
-        },
-        {
-          "id": "n5",
-          "itemId": "eai-film-3",
-          "layer": 3,
-          "slot": 1
-        },
-        {
-          "id": "n6",
-          "itemId": "eai-game-1",
-          "layer": 3,
-          "slot": 2
-        },
-        {
-          "id": "n7",
-          "itemId": "eai-show-1",
-          "layer": 4,
-          "slot": 1
-        }
-      ],
-      "edges": [
-        {
-          "from": "n0",
-          "to": "n1"
-        },
-        {
-          "from": "n0",
-          "to": "n2"
-        },
-        {
-          "from": "n1",
-          "to": "n3"
-        },
-        {
-          "from": "n2",
-          "to": "n3"
-        },
-        {
-          "from": "n3",
-          "to": "n4"
-        },
-        {
-          "from": "n3",
-          "to": "n5"
-        },
-        {
-          "from": "n3",
-          "to": "n6"
-        },
-        {
-          "from": "n4",
-          "to": "n7"
-        },
-        {
-          "from": "n5",
-          "to": "n7"
-        },
-        {
-          "from": "n6",
-          "to": "n7"
-        }
-      ]
-    },
     "relatedTrackIds": [
       "existential-ai-v2"
+    ],
+    "supplemental": [
+      {
+        "id": "eai-game-1",
+        "type": "videogame",
+        "title": "Detroit: Become Human",
+        "year": 2018,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Detroit%3A%20Become%20Human&tag=tomewizard-20"
+        }
+      }
     ]
   },
   {
@@ -5075,29 +4958,6 @@
         }
       },
       {
-        "id": "cw-cross-1",
-        "type": "crossroads",
-        "label": "Choose your battlefield",
-        "choices": [
-          {
-            "label": "Literary mind games",
-            "targetId": "cw-film-1",
-            "vibe": "book-heavy"
-          },
-          {
-            "label": "Cinematic tension",
-            "targetId": "cw-show-1",
-            "vibe": "movie-heavy"
-          },
-          {
-            "label": "Play the endgame",
-            "targetId": "cw-game-1",
-            "vibe": "videogame",
-            "optional": true
-          }
-        ]
-      },
-      {
         "id": "cw-film-1",
         "type": "movie",
         "title": "Searching for Bobby Fischer",
@@ -5113,16 +4973,6 @@
           "tmdbId": 14291,
           "mediaType": "movie",
           "year": "1993"
-        }
-      },
-      {
-        "id": "cw-game-1",
-        "type": "videogame",
-        "title": "Chess Ultra",
-        "year": 2017,
-        "required": false,
-        "metadata": {
-          "amazonUrl": "https://www.amazon.com/s?k=Chess%20Ultra&tag=tomewizard-20"
         }
       },
       {
@@ -5144,62 +4994,17 @@
         }
       }
     ],
-    "map": {
-      "nodes": [
-        {
-          "id": "n0",
-          "itemId": "cw-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "n1",
-          "itemId": "cw-cross-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "n2",
-          "itemId": "cw-film-1",
-          "layer": 2,
-          "slot": 0
-        },
-        {
-          "id": "n4",
-          "itemId": "cw-game-1",
-          "layer": 2,
-          "slot": 2
-        },
-        {
-          "id": "n5",
-          "itemId": "cw-show-1",
-          "layer": 3,
-          "slot": 1
+    "supplemental": [
+      {
+        "id": "cw-game-1",
+        "type": "videogame",
+        "title": "Chess Ultra",
+        "year": 2017,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Chess%20Ultra&tag=tomewizard-20"
         }
-      ],
-      "edges": [
-        {
-          "from": "n0",
-          "to": "n1"
-        },
-        {
-          "from": "n1",
-          "to": "n2"
-        },
-        {
-          "from": "n1",
-          "to": "n4"
-        },
-        {
-          "from": "n2",
-          "to": "n5"
-        },
-        {
-          "from": "n4",
-          "to": "n5"
-        }
-      ]
-    }
+      }
+    ]
   },
   {
     "id": "folklore-legends-kids",
@@ -5225,29 +5030,6 @@
           "year": 2024,
           "amazonUrl": "https://www.amazon.com/s?k=Percy%20Jackson%20%26%20the%20Olympians%3A%20The%20Lightning%20Thief%20Rick%20Riordan&tag=tomewizard-20"
         }
-      },
-      {
-        "id": "flk-cross-1",
-        "type": "crossroads",
-        "label": "Pick your mythic lens",
-        "choices": [
-          {
-            "label": "Ocean legends",
-            "targetId": "flk-film-1",
-            "vibe": "movie-heavy"
-          },
-          {
-            "label": "Spirit world",
-            "targetId": "flk-film-2",
-            "vibe": "movie-heavy"
-          },
-          {
-            "label": "Board game night",
-            "targetId": "flk-game-1",
-            "vibe": "boardgame",
-            "optional": true
-          }
-        ]
       },
       {
         "id": "flk-film-1",
@@ -5288,70 +5070,19 @@
           "mediaType": "movie",
           "year": "2001"
         }
-      },
+      }
+    ],
+    "supplemental": [
       {
         "id": "flk-game-1",
         "type": "boardgame",
         "title": "Santorini",
         "year": 2017,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Santorini&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "n0",
-          "itemId": "flk-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "n1",
-          "itemId": "flk-cross-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "n2",
-          "itemId": "flk-film-1",
-          "layer": 2,
-          "slot": 0
-        },
-        {
-          "id": "n3",
-          "itemId": "flk-film-2",
-          "layer": 2,
-          "slot": 2
-        },
-        {
-          "id": "n4",
-          "itemId": "flk-game-1",
-          "layer": 2,
-          "slot": 1
-        }
-      ],
-      "edges": [
-        {
-          "from": "n0",
-          "to": "n1"
-        },
-        {
-          "from": "n1",
-          "to": "n2"
-        },
-        {
-          "from": "n1",
-          "to": "n3"
-        },
-        {
-          "from": "n1",
-          "to": "n4"
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "cosmic-journeys-kids",
@@ -6084,6 +5815,26 @@
     ],
     "sequence": [
       {
+        "id": "tl-doc-1",
+        "type": "documentary",
+        "title": "Going Cardboard",
+        "year": 2012,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/gdRmGrtlrXmo2NjhwUy3BbE6dDp.jpg",
+          "overview": "A film about the new board gaming, a phenomenon going on right under your nose, probably in your very community. This film will take you into that world to meet the players and designers responsible for this radical departure from technology. And you just might discover it's the hobby for you.",
+          "genres": [
+            "Documentary"
+          ],
+          "rating": 6.1,
+          "ratingCount": 8,
+          "tmdbId": 84778,
+          "mediaType": "movie",
+          "year": "2012"
+        }
+      }
+    ],
+    "supplemental": [
+      {
         "id": "tl-game-1",
         "type": "boardgame",
         "title": "Pandemic",
@@ -6108,24 +5859,6 @@
         "year": 2017,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Gloomhaven&tag=tomewizard-20"
-        }
-      },
-      {
-        "id": "tl-doc-1",
-        "type": "documentary",
-        "title": "Going Cardboard",
-        "year": 2012,
-        "metadata": {
-          "posterUrl": "https://image.tmdb.org/t/p/w342/gdRmGrtlrXmo2NjhwUy3BbE6dDp.jpg",
-          "overview": "A film about the new board gaming, a phenomenon going on right under your nose, probably in your very community. This film will take you into that world to meet the players and designers responsible for this radical departure from technology. And you just might discover it's the hobby for you.",
-          "genres": [
-            "Documentary"
-          ],
-          "rating": 6.1,
-          "ratingCount": 8,
-          "tmdbId": 84778,
-          "mediaType": "movie",
-          "year": "2012"
         }
       }
     ]
@@ -6163,30 +5896,6 @@
         }
       },
       {
-        "id": "dfb-cross-1",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "The Matrix",
-            "targetId": "dfb-film-1",
-            "vibe": "film"
-          },
-          {
-            "label": "Cyberpunk 2077",
-            "targetId": "dfb-vg-1",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Android: Netrunner",
-            "targetId": "dfb-bg-1",
-            "vibe": "boardgame",
-            "optional": true
-          }
-        ]
-      },
-      {
         "id": "dfb-film-1",
         "type": "movie",
         "title": "The Matrix",
@@ -6206,46 +5915,6 @@
         }
       },
       {
-        "id": "dfb-vg-1",
-        "type": "videogame",
-        "title": "Cyberpunk 2077",
-        "author": "CD Projekt Red",
-        "year": 2020,
-        "required": false,
-        "metadata": {
-          "amazonUrl": "https://www.amazon.com/s?k=Cyberpunk%202077%20CD%20Projekt%20Red&tag=tomewizard-20"
-        }
-      },
-      {
-        "id": "dfb-bg-1",
-        "type": "boardgame",
-        "title": "Android: Netrunner",
-        "author": "Richard Garfield & Lukas Litzsinger",
-        "year": 2012,
-        "required": false,
-        "metadata": {
-          "amazonUrl": "https://www.amazon.com/s?k=Android%3A%20Netrunner%20Richard%20Garfield%20%26%20Lukas%20Litzsinger&tag=tomewizard-20"
-        }
-      },
-      {
-        "id": "dfb-cross-2",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Mr. Robot",
-            "targetId": "dfb-show-1",
-            "vibe": "series"
-          },
-          {
-            "label": "Hacknet",
-            "targetId": "dfb-vg-2",
-            "vibe": "videogame",
-            "optional": true
-          }
-        ]
-      },
-      {
         "id": "dfb-show-1",
         "type": "show",
         "title": "Mr. Robot",
@@ -6263,6 +5932,28 @@
           "mediaType": "tv",
           "year": "2015"
         }
+      }
+    ],
+    "supplemental": [
+      {
+        "id": "dfb-vg-1",
+        "type": "videogame",
+        "title": "Cyberpunk 2077",
+        "author": "CD Projekt Red",
+        "year": 2020,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Cyberpunk%202077%20CD%20Projekt%20Red&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "dfb-bg-1",
+        "type": "boardgame",
+        "title": "Android: Netrunner",
+        "author": "Richard Garfield & Lukas Litzsinger",
+        "year": 2012,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Android%3A%20Netrunner%20Richard%20Garfield%20%26%20Lukas%20Litzsinger&tag=tomewizard-20"
+        }
       },
       {
         "id": "dfb-vg-2",
@@ -6270,102 +5961,11 @@
         "title": "Hacknet",
         "author": "Team Fractal Alligator",
         "year": 2015,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Hacknet%20Team%20Fractal%20Alligator&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "dfb-n0",
-          "itemId": "dfb-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "dfb-n1",
-          "itemId": "dfb-cross-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "dfb-n2",
-          "itemId": "dfb-film-1",
-          "layer": 2,
-          "slot": 0
-        },
-        {
-          "id": "dfb-n3",
-          "itemId": "dfb-vg-1",
-          "layer": 2,
-          "slot": 1
-        },
-        {
-          "id": "dfb-n4",
-          "itemId": "dfb-bg-1",
-          "layer": 2,
-          "slot": 2
-        },
-        {
-          "id": "dfb-n5",
-          "itemId": "dfb-cross-2",
-          "layer": 3,
-          "slot": 1
-        },
-        {
-          "id": "dfb-n6",
-          "itemId": "dfb-show-1",
-          "layer": 4,
-          "slot": 0
-        },
-        {
-          "id": "dfb-n7",
-          "itemId": "dfb-vg-2",
-          "layer": 4,
-          "slot": 2
-        }
-      ],
-      "edges": [
-        {
-          "from": "dfb-n0",
-          "to": "dfb-n1"
-        },
-        {
-          "from": "dfb-n1",
-          "to": "dfb-n2"
-        },
-        {
-          "from": "dfb-n1",
-          "to": "dfb-n3"
-        },
-        {
-          "from": "dfb-n1",
-          "to": "dfb-n4"
-        },
-        {
-          "from": "dfb-n2",
-          "to": "dfb-n5"
-        },
-        {
-          "from": "dfb-n3",
-          "to": "dfb-n5"
-        },
-        {
-          "from": "dfb-n4",
-          "to": "dfb-n5"
-        },
-        {
-          "from": "dfb-n5",
-          "to": "dfb-n6"
-        },
-        {
-          "from": "dfb-n5",
-          "to": "dfb-n7"
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "pure-video-game-vibe",
@@ -6378,7 +5978,8 @@
       "roguelike",
       "games"
     ],
-    "sequence": [
+    "sequence": [],
+    "supplemental": [
       {
         "id": "pvg-1",
         "type": "videogame",
@@ -6388,23 +5989,6 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Portal%20Valve&tag=tomewizard-20"
         }
-      },
-      {
-        "id": "pvg-cross-1",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Slay the Spire",
-            "targetId": "pvg-2",
-            "vibe": "roguelike"
-          },
-          {
-            "label": "Hades",
-            "targetId": "pvg-3",
-            "vibe": "roguelike"
-          }
-        ]
       },
       {
         "id": "pvg-2",
@@ -6427,23 +6011,6 @@
         }
       },
       {
-        "id": "pvg-cross-2",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Elden Ring",
-            "targetId": "pvg-4",
-            "vibe": "open world"
-          },
-          {
-            "label": "Outer Wilds",
-            "targetId": "pvg-5",
-            "vibe": "exploration"
-          }
-        ]
-      },
-      {
         "id": "pvg-4",
         "type": "videogame",
         "title": "Elden Ring",
@@ -6463,83 +6030,7 @@
           "amazonUrl": "https://www.amazon.com/s?k=Outer%20Wilds%20Mobius%20Digital&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "pvg-n0",
-          "itemId": "pvg-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "pvg-n1",
-          "itemId": "pvg-cross-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "pvg-n2",
-          "itemId": "pvg-2",
-          "layer": 2,
-          "slot": 0
-        },
-        {
-          "id": "pvg-n3",
-          "itemId": "pvg-3",
-          "layer": 2,
-          "slot": 2
-        },
-        {
-          "id": "pvg-n4",
-          "itemId": "pvg-cross-2",
-          "layer": 3,
-          "slot": 1
-        },
-        {
-          "id": "pvg-n5",
-          "itemId": "pvg-4",
-          "layer": 4,
-          "slot": 0
-        },
-        {
-          "id": "pvg-n6",
-          "itemId": "pvg-5",
-          "layer": 4,
-          "slot": 2
-        }
-      ],
-      "edges": [
-        {
-          "from": "pvg-n0",
-          "to": "pvg-n1"
-        },
-        {
-          "from": "pvg-n1",
-          "to": "pvg-n2"
-        },
-        {
-          "from": "pvg-n1",
-          "to": "pvg-n3"
-        },
-        {
-          "from": "pvg-n2",
-          "to": "pvg-n4"
-        },
-        {
-          "from": "pvg-n3",
-          "to": "pvg-n4"
-        },
-        {
-          "from": "pvg-n4",
-          "to": "pvg-n5"
-        },
-        {
-          "from": "pvg-n4",
-          "to": "pvg-n6"
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "pure-board-game-engine",
@@ -6552,7 +6043,8 @@
       "boutique",
       "games"
     ],
-    "sequence": [
+    "sequence": [],
+    "supplemental": [
       {
         "id": "pbge-1",
         "type": "boardgame",
@@ -6562,23 +6054,6 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Catan%20Klaus%20Teuber&tag=tomewizard-20"
         }
-      },
-      {
-        "id": "pbge-cross-1",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Concordia",
-            "targetId": "pbge-2",
-            "vibe": "engine-building"
-          },
-          {
-            "label": "Power Grid",
-            "targetId": "pbge-3",
-            "vibe": "economic"
-          }
-        ]
       },
       {
         "id": "pbge-2",
@@ -6601,23 +6076,6 @@
         }
       },
       {
-        "id": "pbge-cross-2",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Brass: Birmingham",
-            "targetId": "pbge-4",
-            "vibe": "industrial"
-          },
-          {
-            "label": "Food Chain Magnate",
-            "targetId": "pbge-5",
-            "vibe": "economic"
-          }
-        ]
-      },
-      {
         "id": "pbge-4",
         "type": "boardgame",
         "title": "Brass: Birmingham",
@@ -6637,83 +6095,7 @@
           "amazonUrl": "https://www.amazon.com/s?k=Food%20Chain%20Magnate%20Jeroen%20Doumen%20%26%20Joris%20Wiersinga&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "pbge-n0",
-          "itemId": "pbge-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "pbge-n1",
-          "itemId": "pbge-cross-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "pbge-n2",
-          "itemId": "pbge-2",
-          "layer": 2,
-          "slot": 0
-        },
-        {
-          "id": "pbge-n3",
-          "itemId": "pbge-3",
-          "layer": 2,
-          "slot": 2
-        },
-        {
-          "id": "pbge-n4",
-          "itemId": "pbge-cross-2",
-          "layer": 3,
-          "slot": 1
-        },
-        {
-          "id": "pbge-n5",
-          "itemId": "pbge-4",
-          "layer": 4,
-          "slot": 0
-        },
-        {
-          "id": "pbge-n6",
-          "itemId": "pbge-5",
-          "layer": 4,
-          "slot": 2
-        }
-      ],
-      "edges": [
-        {
-          "from": "pbge-n0",
-          "to": "pbge-n1"
-        },
-        {
-          "from": "pbge-n1",
-          "to": "pbge-n2"
-        },
-        {
-          "from": "pbge-n1",
-          "to": "pbge-n3"
-        },
-        {
-          "from": "pbge-n2",
-          "to": "pbge-n4"
-        },
-        {
-          "from": "pbge-n3",
-          "to": "pbge-n4"
-        },
-        {
-          "from": "pbge-n4",
-          "to": "pbge-n5"
-        },
-        {
-          "from": "pbge-n4",
-          "to": "pbge-n6"
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "sovereign-analytical-mix",
@@ -6763,39 +6145,15 @@
           "mediaType": "movie",
           "year": "2011"
         }
-      },
-      {
-        "id": "sam-cross-1",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Balatro",
-            "targetId": "sam-vg-1",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "The Crew",
-            "targetId": "sam-bg-1",
-            "vibe": "boardgame",
-            "optional": true
-          },
-          {
-            "label": "Texas Hold'em",
-            "targetId": "sam-bg-2",
-            "vibe": "boardgame",
-            "optional": true
-          }
-        ]
-      },
+      }
+    ],
+    "supplemental": [
       {
         "id": "sam-vg-1",
         "type": "videogame",
         "title": "Balatro",
         "author": "LocalThunk",
         "year": 2024,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Balatro%20LocalThunk&tag=tomewizard-20"
         }
@@ -6806,7 +6164,6 @@
         "title": "The Crew",
         "author": "Thomas Sing",
         "year": 2019,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=The%20Crew%20Thomas%20Sing&tag=tomewizard-20"
         }
@@ -6816,74 +6173,11 @@
         "type": "boardgame",
         "title": "Texas Hold'em",
         "note": "Classic poker — any quality set or home game",
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Texas%20Hold'em&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "sam-n0",
-          "itemId": "sam-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "sam-n1",
-          "itemId": "sam-film-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "sam-n2",
-          "itemId": "sam-cross-1",
-          "layer": 2,
-          "slot": 1
-        },
-        {
-          "id": "sam-n3",
-          "itemId": "sam-vg-1",
-          "layer": 3,
-          "slot": 0
-        },
-        {
-          "id": "sam-n4",
-          "itemId": "sam-bg-1",
-          "layer": 3,
-          "slot": 1
-        },
-        {
-          "id": "sam-n5",
-          "itemId": "sam-bg-2",
-          "layer": 3,
-          "slot": 2
-        }
-      ],
-      "edges": [
-        {
-          "from": "sam-n0",
-          "to": "sam-n1"
-        },
-        {
-          "from": "sam-n1",
-          "to": "sam-n2"
-        },
-        {
-          "from": "sam-n2",
-          "to": "sam-n3"
-        },
-        {
-          "from": "sam-n2",
-          "to": "sam-n4"
-        },
-        {
-          "from": "sam-n2",
-          "to": "sam-n5"
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "dark-fantasy-campaign",
@@ -6935,33 +6229,15 @@
           "mediaType": "movie",
           "year": "2021"
         }
-      },
-      {
-        "id": "dfc-cross-1",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "The Witcher 3",
-            "targetId": "dfc-vg-1",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Gloomhaven",
-            "targetId": "dfc-bg-1",
-            "vibe": "boardgame",
-            "optional": true
-          }
-        ]
-      },
+      }
+    ],
+    "supplemental": [
       {
         "id": "dfc-vg-1",
         "type": "videogame",
         "title": "The Witcher 3: Wild Hunt",
         "author": "CD Projekt Red",
         "year": 2015,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=The%20Witcher%203%3A%20Wild%20Hunt%20CD%20Projekt%20Red&tag=tomewizard-20"
         }
@@ -6972,64 +6248,11 @@
         "title": "Gloomhaven",
         "author": "Isaac Childres",
         "year": 2017,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Gloomhaven%20Isaac%20Childres&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "dfc-n0",
-          "itemId": "dfc-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "dfc-n1",
-          "itemId": "dfc-film-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "dfc-n2",
-          "itemId": "dfc-cross-1",
-          "layer": 2,
-          "slot": 1
-        },
-        {
-          "id": "dfc-n3",
-          "itemId": "dfc-vg-1",
-          "layer": 3,
-          "slot": 0
-        },
-        {
-          "id": "dfc-n4",
-          "itemId": "dfc-bg-1",
-          "layer": 3,
-          "slot": 2
-        }
-      ],
-      "edges": [
-        {
-          "from": "dfc-n0",
-          "to": "dfc-n1"
-        },
-        {
-          "from": "dfc-n1",
-          "to": "dfc-n2"
-        },
-        {
-          "from": "dfc-n2",
-          "to": "dfc-n3"
-        },
-        {
-          "from": "dfc-n2",
-          "to": "dfc-n4"
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "cosmic-horror-isolation",
@@ -7079,33 +6302,15 @@
           "mediaType": "movie",
           "year": "1979"
         }
-      },
-      {
-        "id": "chi-cross-1",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Alien: Isolation",
-            "targetId": "chi-vg-1",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Nemesis",
-            "targetId": "chi-bg-1",
-            "vibe": "boardgame",
-            "optional": true
-          }
-        ]
-      },
+      }
+    ],
+    "supplemental": [
       {
         "id": "chi-vg-1",
         "type": "videogame",
         "title": "Alien: Isolation",
         "author": "Creative Assembly",
         "year": 2014,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Alien%3A%20Isolation%20Creative%20Assembly&tag=tomewizard-20"
         }
@@ -7116,64 +6321,11 @@
         "title": "Nemesis",
         "author": "Awaken Realms",
         "year": 2018,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Nemesis%20Awaken%20Realms&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "chi-n0",
-          "itemId": "chi-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "chi-n1",
-          "itemId": "chi-film-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "chi-n2",
-          "itemId": "chi-cross-1",
-          "layer": 2,
-          "slot": 1
-        },
-        {
-          "id": "chi-n3",
-          "itemId": "chi-vg-1",
-          "layer": 3,
-          "slot": 0
-        },
-        {
-          "id": "chi-n4",
-          "itemId": "chi-bg-1",
-          "layer": 3,
-          "slot": 2
-        }
-      ],
-      "edges": [
-        {
-          "from": "chi-n0",
-          "to": "chi-n1"
-        },
-        {
-          "from": "chi-n1",
-          "to": "chi-n2"
-        },
-        {
-          "from": "chi-n2",
-          "to": "chi-n3"
-        },
-        {
-          "from": "chi-n2",
-          "to": "chi-n4"
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "epic-fantasy-tapestry",
@@ -7227,39 +6379,15 @@
           "mediaType": "movie",
           "year": "2003"
         }
-      },
-      {
-        "id": "eft-cross-1",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Baldur's Gate 3",
-            "targetId": "eft-vg-1",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Hollow Knight",
-            "targetId": "eft-vg-2",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "War of the Ring",
-            "targetId": "eft-bg-1",
-            "vibe": "boardgame",
-            "optional": true
-          }
-        ]
-      },
+      }
+    ],
+    "supplemental": [
       {
         "id": "eft-vg-1",
         "type": "videogame",
         "title": "Baldur's Gate 3",
         "author": "Larian Studios",
         "year": 2023,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Baldur's%20Gate%203%20Larian%20Studios&tag=tomewizard-20"
         }
@@ -7270,7 +6398,6 @@
         "title": "Hollow Knight",
         "author": "Team Cherry",
         "year": 2017,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Hollow%20Knight%20Team%20Cherry&tag=tomewizard-20"
         }
@@ -7281,74 +6408,11 @@
         "title": "War of the Ring",
         "author": "Roberto Di Meglio",
         "year": 2012,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=War%20of%20the%20Ring%20Roberto%20Di%20Meglio&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "eft-n0",
-          "itemId": "eft-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "eft-n1",
-          "itemId": "eft-film-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "eft-n2",
-          "itemId": "eft-cross-1",
-          "layer": 2,
-          "slot": 1
-        },
-        {
-          "id": "eft-n3",
-          "itemId": "eft-vg-1",
-          "layer": 3,
-          "slot": 0
-        },
-        {
-          "id": "eft-n4",
-          "itemId": "eft-vg-2",
-          "layer": 3,
-          "slot": 1
-        },
-        {
-          "id": "eft-n5",
-          "itemId": "eft-bg-1",
-          "layer": 3,
-          "slot": 2
-        }
-      ],
-      "edges": [
-        {
-          "from": "eft-n0",
-          "to": "eft-n1"
-        },
-        {
-          "from": "eft-n1",
-          "to": "eft-n2"
-        },
-        {
-          "from": "eft-n2",
-          "to": "eft-n3"
-        },
-        {
-          "from": "eft-n2",
-          "to": "eft-n4"
-        },
-        {
-          "from": "eft-n2",
-          "to": "eft-n5"
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "grimdark-ascendant",
@@ -7398,39 +6462,15 @@
           "mediaType": "tv",
           "year": "1997"
         }
-      },
-      {
-        "id": "ga-cross-1",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Dark Souls",
-            "targetId": "ga-vg-1",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Fear & Hunger",
-            "targetId": "ga-vg-2",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Kingdom Death: Monster",
-            "targetId": "ga-bg-1",
-            "vibe": "boardgame",
-            "optional": true
-          }
-        ]
-      },
+      }
+    ],
+    "supplemental": [
       {
         "id": "ga-vg-1",
         "type": "videogame",
         "title": "Dark Souls",
         "author": "FromSoftware",
         "year": 2011,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Dark%20Souls%20FromSoftware&tag=tomewizard-20"
         }
@@ -7441,7 +6481,6 @@
         "title": "Fear & Hunger",
         "author": "Happy Paintings",
         "year": 2018,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Fear%20%26%20Hunger%20Happy%20Paintings&tag=tomewizard-20"
         }
@@ -7452,74 +6491,11 @@
         "title": "Kingdom Death: Monster",
         "author": "Adam Poots",
         "year": 2015,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Kingdom%20Death%3A%20Monster%20Adam%20Poots&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "ga-n0",
-          "itemId": "ga-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "ga-n1",
-          "itemId": "ga-show-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "ga-n2",
-          "itemId": "ga-cross-1",
-          "layer": 2,
-          "slot": 1
-        },
-        {
-          "id": "ga-n3",
-          "itemId": "ga-vg-1",
-          "layer": 3,
-          "slot": 0
-        },
-        {
-          "id": "ga-n4",
-          "itemId": "ga-vg-2",
-          "layer": 3,
-          "slot": 1
-        },
-        {
-          "id": "ga-n5",
-          "itemId": "ga-bg-1",
-          "layer": 3,
-          "slot": 2
-        }
-      ],
-      "edges": [
-        {
-          "from": "ga-n0",
-          "to": "ga-n1"
-        },
-        {
-          "from": "ga-n1",
-          "to": "ga-n2"
-        },
-        {
-          "from": "ga-n2",
-          "to": "ga-n3"
-        },
-        {
-          "from": "ga-n2",
-          "to": "ga-n4"
-        },
-        {
-          "from": "ga-n2",
-          "to": "ga-n5"
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "horror-evolution",
@@ -7572,39 +6548,15 @@
           "mediaType": "movie",
           "year": "2018"
         }
-      },
-      {
-        "id": "he-cross-1",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Signalis",
-            "targetId": "he-vg-1",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Lethal Company",
-            "targetId": "he-vg-2",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Mansions of Madness",
-            "targetId": "he-bg-1",
-            "vibe": "boardgame",
-            "optional": true
-          }
-        ]
-      },
+      }
+    ],
+    "supplemental": [
       {
         "id": "he-vg-1",
         "type": "videogame",
         "title": "Signalis",
         "author": "rose-engine",
         "year": 2022,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Signalis%20rose-engine&tag=tomewizard-20"
         }
@@ -7615,7 +6567,6 @@
         "title": "Lethal Company",
         "author": "Zeekerss",
         "year": 2023,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Lethal%20Company%20Zeekerss&tag=tomewizard-20"
         }
@@ -7626,74 +6577,11 @@
         "title": "Mansions of Madness",
         "author": "Fantasy Flight Games",
         "year": 2011,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Mansions%20of%20Madness%20Fantasy%20Flight%20Games&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "he-n0",
-          "itemId": "he-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "he-n1",
-          "itemId": "he-film-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "he-n2",
-          "itemId": "he-cross-1",
-          "layer": 2,
-          "slot": 1
-        },
-        {
-          "id": "he-n3",
-          "itemId": "he-vg-1",
-          "layer": 3,
-          "slot": 0
-        },
-        {
-          "id": "he-n4",
-          "itemId": "he-vg-2",
-          "layer": 3,
-          "slot": 1
-        },
-        {
-          "id": "he-n5",
-          "itemId": "he-bg-1",
-          "layer": 3,
-          "slot": 2
-        }
-      ],
-      "edges": [
-        {
-          "from": "he-n0",
-          "to": "he-n1"
-        },
-        {
-          "from": "he-n1",
-          "to": "he-n2"
-        },
-        {
-          "from": "he-n2",
-          "to": "he-n3"
-        },
-        {
-          "from": "he-n2",
-          "to": "he-n4"
-        },
-        {
-          "from": "he-n2",
-          "to": "he-n5"
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "automation-engine",
@@ -7743,39 +6631,15 @@
           "mediaType": "tv",
           "year": "2020"
         }
-      },
-      {
-        "id": "ae-cross-1",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Factorio",
-            "targetId": "ae-vg-1",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Satisfactory",
-            "targetId": "ae-vg-2",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Turing Machine",
-            "targetId": "ae-bg-1",
-            "vibe": "boardgame",
-            "optional": true
-          }
-        ]
-      },
+      }
+    ],
+    "supplemental": [
       {
         "id": "ae-vg-1",
         "type": "videogame",
         "title": "Factorio",
         "author": "Wube Software",
         "year": 2020,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Factorio%20Wube%20Software&tag=tomewizard-20"
         }
@@ -7786,7 +6650,6 @@
         "title": "Satisfactory",
         "author": "Coffee Stain Studios",
         "year": 2019,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Satisfactory%20Coffee%20Stain%20Studios&tag=tomewizard-20"
         }
@@ -7797,74 +6660,11 @@
         "title": "Turing Machine",
         "author": "SCORPIO",
         "year": 2023,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Turing%20Machine%20SCORPIO&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "ae-n0",
-          "itemId": "ae-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "ae-n1",
-          "itemId": "ae-show-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "ae-n2",
-          "itemId": "ae-cross-1",
-          "layer": 2,
-          "slot": 1
-        },
-        {
-          "id": "ae-n3",
-          "itemId": "ae-vg-1",
-          "layer": 3,
-          "slot": 0
-        },
-        {
-          "id": "ae-n4",
-          "itemId": "ae-vg-2",
-          "layer": 3,
-          "slot": 1
-        },
-        {
-          "id": "ae-n5",
-          "itemId": "ae-bg-1",
-          "layer": 3,
-          "slot": 2
-        }
-      ],
-      "edges": [
-        {
-          "from": "ae-n0",
-          "to": "ae-n1"
-        },
-        {
-          "from": "ae-n1",
-          "to": "ae-n2"
-        },
-        {
-          "from": "ae-n2",
-          "to": "ae-n3"
-        },
-        {
-          "from": "ae-n2",
-          "to": "ae-n4"
-        },
-        {
-          "from": "ae-n2",
-          "to": "ae-n5"
-        }
-      ]
-    }
+    ]
   },
   {
     "id": "indie-artisan",
@@ -7911,39 +6711,15 @@
           "mediaType": "movie",
           "year": "2012"
         }
-      },
-      {
-        "id": "ia-cross-1",
-        "type": "crossroads",
-        "label": "Pick one in this next tier",
-        "choices": [
-          {
-            "label": "Stardew Valley",
-            "targetId": "ia-vg-1",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Celeste",
-            "targetId": "ia-vg-2",
-            "vibe": "videogame",
-            "optional": true
-          },
-          {
-            "label": "Pax Pamir",
-            "targetId": "ia-bg-1",
-            "vibe": "boardgame",
-            "optional": true
-          }
-        ]
-      },
+      }
+    ],
+    "supplemental": [
       {
         "id": "ia-vg-1",
         "type": "videogame",
         "title": "Stardew Valley",
         "author": "ConcernedApe",
         "year": 2016,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Stardew%20Valley%20ConcernedApe&tag=tomewizard-20"
         }
@@ -7954,7 +6730,6 @@
         "title": "Celeste",
         "author": "Maddy Makes Games",
         "year": 2018,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Celeste%20Maddy%20Makes%20Games&tag=tomewizard-20"
         }
@@ -7965,73 +6740,10 @@
         "title": "Pax Pamir",
         "author": "Phil Eklund",
         "year": 2019,
-        "required": false,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Pax%20Pamir%20Phil%20Eklund&tag=tomewizard-20"
         }
       }
-    ],
-    "map": {
-      "nodes": [
-        {
-          "id": "ia-n0",
-          "itemId": "ia-book-1",
-          "layer": 0,
-          "slot": 1
-        },
-        {
-          "id": "ia-n1",
-          "itemId": "ia-doc-1",
-          "layer": 1,
-          "slot": 1
-        },
-        {
-          "id": "ia-n2",
-          "itemId": "ia-cross-1",
-          "layer": 2,
-          "slot": 1
-        },
-        {
-          "id": "ia-n3",
-          "itemId": "ia-vg-1",
-          "layer": 3,
-          "slot": 0
-        },
-        {
-          "id": "ia-n4",
-          "itemId": "ia-vg-2",
-          "layer": 3,
-          "slot": 1
-        },
-        {
-          "id": "ia-n5",
-          "itemId": "ia-bg-1",
-          "layer": 3,
-          "slot": 2
-        }
-      ],
-      "edges": [
-        {
-          "from": "ia-n0",
-          "to": "ia-n1"
-        },
-        {
-          "from": "ia-n1",
-          "to": "ia-n2"
-        },
-        {
-          "from": "ia-n2",
-          "to": "ia-n3"
-        },
-        {
-          "from": "ia-n2",
-          "to": "ia-n4"
-        },
-        {
-          "from": "ia-n2",
-          "to": "ia-n5"
-        }
-      ]
-    }
+    ]
   }
 ]
