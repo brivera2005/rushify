@@ -1,6 +1,6 @@
 # RushTracks Portal
 
-Companion web portal for RushTV **Tracks**: curated book→film journeys scanned from the TV app.
+Companion web portal for RushTV **Tracks**: curated paths for the discerning through books, film, and television.
 
 **Live:** [rushtracks.pages.dev](https://rushtracks.pages.dev)
 
@@ -78,9 +78,9 @@ Verification accepts either the current rotating PIN (KV `active_pin`, 10-minute
 
 ### Worker secrets (Cloudflare Pages → Settings → Environment variables)
 
-- `RUSHTRACKS_GATE_SECRET` — shared with RushTV `BuildConfig` / CI secret of the same name
-- `TRACKS_MASTER_PIN` — permanent 6-digit fallback PIN (set via `npx wrangler pages secret put TRACKS_MASTER_PIN --project-name=rushtracks`); not embedded in the Android app
-- KV binding `TRACKS_PINS` — create with `npx wrangler kv namespace create TRACKS_PINS` and paste ids into `wrangler.toml`
+- `RUSHTRACKS_GATE_SECRET`: shared with RushTV `BuildConfig` / CI secret of the same name
+- `TRACKS_MASTER_PIN`: permanent 6-digit fallback PIN (set via `npx wrangler pages secret put TRACKS_MASTER_PIN --project-name=rushtracks`); not embedded in the Android app
+- KV binding `TRACKS_PINS`: create with `npx wrangler kv namespace create TRACKS_PINS` and paste ids into `wrangler.toml`
 
 ## Data
 
