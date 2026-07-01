@@ -137,6 +137,69 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Detroit%3A%20Become%20Human&tag=tomewizard-20"
         }
+      },
+      {
+        "id": "eai-supp-book-1",
+        "type": "book",
+        "title": "Klara and the Sun",
+        "author": "Kazuo Ishiguro",
+        "year": 2021,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/10648686-M.jpg",
+          "openLibraryKey": "/works/OL20883297W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL20883297W",
+          "year": 2019,
+          "amazonUrl": "https://www.amazon.com/s?k=Klara%20and%20the%20Sun%20Kazuo%20Ishiguro&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "eai-supp-film-1",
+        "type": "movie",
+        "title": "A.I. Artificial Intelligence",
+        "year": 2001,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/8MZSGX5JORoO72EfuAEcejH5yHn.jpg",
+          "overview": "David, a robotic boy—the first of his kind programmed to love—is adopted as a test case by a Cybertronics employee and his wife. Though he gradually becomes their child, a series of unexpected circumstances make this life impossible for David.",
+          "genres": [
+            "Drama",
+            "Science Fiction",
+            "Adventure"
+          ],
+          "rating": 7.1,
+          "ratingCount": 6696,
+          "tmdbId": 644,
+          "mediaType": "movie",
+          "year": "2001"
+        }
+      },
+      {
+        "id": "eai-supp-show-1",
+        "type": "show",
+        "title": "Humans (Season 1)",
+        "year": 2015,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/iBjjSGgnjAQBSQGO9pYIh7Gp2PO.jpg",
+          "overview": "In a parallel present where the latest must-have gadget for any busy family is a 'Synth' - a highly-developed robotic servant that's so similar to a real human it's transforming the way we live.",
+          "genres": [
+            "Sci-Fi & Fantasy",
+            "Drama",
+            "Mystery"
+          ],
+          "rating": 7.5,
+          "ratingCount": 699,
+          "tmdbId": 62822,
+          "mediaType": "tv",
+          "year": "2015"
+        }
+      },
+      {
+        "id": "eai-supp-bg-1",
+        "type": "boardgame",
+        "title": "Robo Rally",
+        "author": "Richard Garfield",
+        "year": 1999,
+        "metadata": {}
       }
     ],
     "tier": 1,
@@ -5487,6 +5550,47 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Chess%20Ultra&tag=tomewizard-20"
         }
+      },
+      {
+        "id": "cw-supp-book-1",
+        "type": "book",
+        "title": "The Immortal Game",
+        "author": "David Shenk",
+        "year": 2006,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/242579-M.jpg",
+          "openLibraryKey": "/works/OL3337386W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL3337386W",
+          "year": 2006,
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Immortal%20Game%20David%20Shenk&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "cw-supp-film-1",
+        "type": "movie",
+        "title": "Pawn Sacrifice",
+        "year": 2014,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/5vcLstd2hYn0XhyuEKaPbBZAqSh.jpg",
+          "overview": "During the height of the Cold War, American chess prodigy Bobby Fischer finds himself caught between two superpowers when he challenges the Soviet Empire.",
+          "genres": [
+            "Thriller",
+            "Drama"
+          ],
+          "rating": 6.7,
+          "ratingCount": 1071,
+          "tmdbId": 245698,
+          "mediaType": "movie",
+          "year": "2015"
+        }
+      },
+      {
+        "id": "cw-supp-bg-1",
+        "type": "boardgame",
+        "title": "Chess",
+        "note": "Classic chess — any quality set or app",
+        "metadata": {}
       }
     ],
     "tier": 2,
@@ -5573,6 +5677,47 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Santorini&tag=tomewizard-20"
         }
+      },
+      {
+        "id": "flk-supp-book-1",
+        "type": "book",
+        "title": "D'Aulaires' Book of Greek Myths",
+        "author": "Ingri and Edgar Parin d'Aulaire",
+        "metadata": {
+          "openLibraryKey": "/works/OL43236658W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL43236658W",
+          "year": 1962,
+          "amazonUrl": "https://www.amazon.com/s?k=D'Aulaires'%20Book%20of%20Greek%20Myths%20Ingri%20and%20Edgar%20Parin%20d'Aulaire&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "flk-supp-film-1",
+        "type": "movie",
+        "title": "Kubo and the Two Strings",
+        "year": 2016,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/ewcOCkuuKAKULGUnbBVaO1htt0D.jpg",
+          "overview": "Kubo mesmerizes the people in his village with his magical gift for spinning wild tales with origami. When he accidentally summons an evil spirit seeking vengeance, Kubo is forced to go on a quest to solve the mystery of his fallen samurai father and his mystical weaponry, as well as discover his own magical powers.",
+          "genres": [
+            "Animation",
+            "Adventure",
+            "Family"
+          ],
+          "rating": 7.6,
+          "ratingCount": 3835,
+          "tmdbId": 313297,
+          "mediaType": "movie",
+          "year": "2016"
+        }
+      },
+      {
+        "id": "flk-supp-vg-1",
+        "type": "videogame",
+        "title": "Child of Light",
+        "author": "Ubisoft Montreal",
+        "year": 2014,
+        "metadata": {}
       }
     ],
     "tier": 3,
@@ -6436,6 +6581,49 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Gloomhaven&tag=tomewizard-20"
         }
+      },
+      {
+        "id": "tl-supp-book-1",
+        "type": "book",
+        "title": "It's All a Game",
+        "author": "Tristan Donovan",
+        "year": 2017,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/9365018-M.jpg",
+          "openLibraryKey": "/works/OL20690908W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL20690908W",
+          "year": 2017,
+          "amazonUrl": "https://www.amazon.com/s?k=It's%20All%20a%20Game%20Tristan%20Donovan&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "tl-supp-show-1",
+        "type": "show",
+        "title": "TableTop",
+        "year": 2012,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=TableTop&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "tl-supp-doc-1",
+        "type": "documentary",
+        "title": "Under the Boardwalk: The Monopoly Story",
+        "year": 2010,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/eRIqXJA911uwvSLHuBV8Kc7drkp.jpg",
+          "overview": "Under the Boardwalk: The Monopoly Story shows how the classic board game has become a worldwide cultural phenomenon and follows the colorful players who come together to compete for the coveted title of Monopoly World Champion.",
+          "genres": [
+            "Documentary",
+            "History"
+          ],
+          "rating": 6.2,
+          "ratingCount": 25,
+          "tmdbId": 86726,
+          "mediaType": "movie",
+          "year": "2010"
+        }
       }
     ],
     "tier": 3,
@@ -6545,6 +6733,60 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Hacknet%20Team%20Fractal%20Alligator&tag=tomewizard-20"
         }
+      },
+      {
+        "id": "dfb-supp-book-1",
+        "type": "book",
+        "title": "Snow Crash",
+        "author": "Neal Stephenson",
+        "year": 1992,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/392508-M.jpg",
+          "openLibraryKey": "/works/OL38501W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL38501W",
+          "year": 1992,
+          "amazonUrl": "https://www.amazon.com/s?k=Snow%20Crash%20Neal%20Stephenson&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "dfb-supp-film-1",
+        "type": "movie",
+        "title": "Johnny Mnemonic",
+        "year": 1995,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/iH8Jgi8qvb7pnBfI8fVGaUbyRna.jpg",
+          "overview": "In a dystopian 2021, Johnny is a data trafficker who has an implant that allows him to securely store data too sensitive for regular computer networks. On one delivery run, he accepts a package that not only exceeds the implant's safety limits—and will kill him if the data is not removed in time—but also contains information far more important and valuable than he had ever imagined. On a race against time, he must avoid the assassins sent to kill him and remove the data before it, too, ends his life.",
+          "genres": [
+            "Science Fiction",
+            "Action",
+            "Adventure"
+          ],
+          "rating": 5.8,
+          "ratingCount": 1534,
+          "tmdbId": 9886,
+          "mediaType": "movie",
+          "year": "1995"
+        }
+      },
+      {
+        "id": "dfb-supp-show-1",
+        "type": "show",
+        "title": "Altered Carbon (Season 1)",
+        "year": 2018,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/AisK4uFsnwwmMkSynFpNl0VeGR.jpg",
+          "overview": "After 250 years on ice, a prisoner returns to life in a new body with one chance to win his freedom: by solving a mind-bending murder.",
+          "genres": [
+            "Sci-Fi & Fantasy",
+            "Drama"
+          ],
+          "rating": 7.6,
+          "ratingCount": 2279,
+          "tmdbId": 68421,
+          "mediaType": "tv",
+          "year": "2018"
+        }
       }
     ],
     "tier": 2,
@@ -6614,6 +6856,59 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Outer%20Wilds%20Mobius%20Digital&tag=tomewizard-20"
         }
+      },
+      {
+        "id": "pvg-supp-book-1",
+        "type": "book",
+        "title": "Blood, Sweat, and Pixels",
+        "author": "Jason Schreier",
+        "year": 2017,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/10216136-M.jpg",
+          "openLibraryKey": "/works/OL19721368W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL19721368W",
+          "year": 2017,
+          "amazonUrl": "https://www.amazon.com/s?k=Blood%2C%20Sweat%2C%20and%20Pixels%20Jason%20Schreier&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "pvg-supp-doc-1",
+        "type": "documentary",
+        "title": "Free to Play",
+        "year": 2014,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/ohLJT2UiFLsiw3SeXrbw6dxT7Fg.jpg",
+          "overview": "Follow three professional video game players as they overcome personal adversity, family pressures, and the realities of life to compete in a $1,000,000 tournament that could change their lives forever.",
+          "genres": [
+            "Documentary"
+          ],
+          "rating": 6.9,
+          "ratingCount": 158,
+          "tmdbId": 256561,
+          "mediaType": "movie",
+          "year": "2014"
+        }
+      },
+      {
+        "id": "pvg-supp-film-1",
+        "type": "movie",
+        "title": "Tron",
+        "year": 1982,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/jigY9B6TKz4qlfikZcd18qtzTK4.jpg",
+          "overview": "When brilliant video game maker Flynn hacks the mainframe of his ex-employer, he is beamed inside an astonishing digital world and becomes part of the very game he is designing. In his mission through cyberspace, Flynn matches wits with a maniacal Master Control Program and teams up with Tron, a security measure created to bring balance to the digital environment.",
+          "genres": [
+            "Science Fiction",
+            "Action",
+            "Adventure"
+          ],
+          "rating": 6.6,
+          "ratingCount": 2776,
+          "tmdbId": 97,
+          "mediaType": "movie",
+          "year": "1982"
+        }
       }
     ],
     "tier": 3,
@@ -6682,6 +6977,44 @@
         "year": 2015,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Food%20Chain%20Magnate%20Jeroen%20Doumen%20%26%20Joris%20Wiersinga&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "pbge-supp-book-1",
+        "type": "book",
+        "title": "The Board Game Family",
+        "author": "Ellie Dix",
+        "year": 2020,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Board%20Game%20Family%20Ellie%20Dix&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "pbge-supp-show-1",
+        "type": "show",
+        "title": "TableTop",
+        "year": 2012,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=TableTop&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "pbge-supp-doc-1",
+        "type": "documentary",
+        "title": "Going Cardboard",
+        "year": 2012,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/gdRmGrtlrXmo2NjhwUy3BbE6dDp.jpg",
+          "overview": "A film about the new board gaming, a phenomenon going on right under your nose, probably in your very community. This film will take you into that world to meet the players and designers responsible for this radical departure from technology. And you just might discover it's the hobby for you.",
+          "genres": [
+            "Documentary"
+          ],
+          "rating": 6.1,
+          "ratingCount": 8,
+          "tmdbId": 84778,
+          "mediaType": "movie",
+          "year": "2012"
         }
       }
     ],
@@ -6770,6 +7103,59 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Texas%20Hold'em&tag=tomewizard-20"
         }
+      },
+      {
+        "id": "sam-supp-book-1",
+        "type": "book",
+        "title": "The Signal and the Noise",
+        "author": "Nate Silver",
+        "year": 2012,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/7256893-M.jpg",
+          "openLibraryKey": "/works/OL16700318W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL16700318W",
+          "year": 2012,
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Signal%20and%20the%20Noise%20Nate%20Silver&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "sam-supp-film-1",
+        "type": "movie",
+        "title": "21",
+        "year": 2008,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/efG8Po57alqSlhqHU1lXJ3duG6t.jpg",
+          "overview": "Ben Campbell is a young, highly intelligent student at M.I.T. who strives to succeed. Wanting a scholarship to transfer to Harvard School of Medicine to become a doctor, Ben learns that he cannot afford the $300,000 tuition as he comes from a poor, working-class background. But one evening, Ben is introduced by his unorthodox math professor to a small but secretive club of five students, Jill, Choi, Kianna, and Fisher, who are being trained by Professor Rosa to count cards at blackjack.",
+          "genres": [
+            "Drama",
+            "Crime"
+          ],
+          "rating": 6.7,
+          "ratingCount": 5063,
+          "tmdbId": 8065,
+          "mediaType": "movie",
+          "year": "2008"
+        }
+      },
+      {
+        "id": "sam-supp-film-2",
+        "type": "movie",
+        "title": "Rounders",
+        "year": 1998,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/mqbMwYGwIChnaCO55h7v8DG8Wwy.jpg",
+          "overview": "Poker addict Mike McDermott knows the game inside out, but loses his money one night in a game to Russian-American gangster Teddy KGB. Promising his partner Jo he'll give up, he meets up with best friend Lester 'Worm' Murphy, just out of prison and owing lots of money to the wrong kind of people. McDermott becomes his co-guarantor and now there's only one way to raise the money, the pair have to get back into the game.",
+          "genres": [
+            "Drama",
+            "Crime"
+          ],
+          "rating": 7,
+          "ratingCount": 1936,
+          "tmdbId": 10220,
+          "mediaType": "movie",
+          "year": "1998"
+        }
       }
     ],
     "tier": 2,
@@ -6852,6 +7238,60 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Gloomhaven%20Isaac%20Childres&tag=tomewizard-20"
         }
+      },
+      {
+        "id": "dfc-supp-book-1",
+        "type": "book",
+        "title": "The Name of the Wind",
+        "author": "Patrick Rothfuss",
+        "year": 2007,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/11480483-M.jpg",
+          "openLibraryKey": "/works/OL8479867W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL8479867W",
+          "year": 2007,
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Name%20of%20the%20Wind%20Patrick%20Rothfuss&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "dfc-supp-show-1",
+        "type": "show",
+        "title": "The Witcher (Season 1)",
+        "year": 2019,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/AoGsDM02UVt0npBA8OvpDcZbaMi.jpg",
+          "overview": "Geralt of Rivia, a mutated monster-hunter for hire, journeys toward his destiny in a turbulent world where people often prove more wicked than beasts.",
+          "genres": [
+            "Drama",
+            "Action & Adventure"
+          ],
+          "rating": 7.9,
+          "ratingCount": 6734,
+          "tmdbId": 71912,
+          "mediaType": "tv",
+          "year": "2019"
+        }
+      },
+      {
+        "id": "dfc-supp-film-1",
+        "type": "movie",
+        "title": "Conan the Barbarian",
+        "year": 1982,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/qw2A587Ee61IwcSOLNFRhuOACZZ.jpg",
+          "overview": "A horde of rampaging warriors massacre the parents of young Conan and enslave the young child for years on The Wheel of Pain. As the sole survivor of the childhood massacre, Conan is released from slavery and taught the ancient arts of fighting. Transforming himself into a killing machine, Conan travels into the wilderness to seek vengeance on Thulsa Doom, the man responsible for killing his family. In the wilderness, Conan takes up with the thieves Valeria and Subotai. The group comes upon King Osric, who wants the trio of warriors to help rescue his daughter who has joined Doom in the hills.",
+          "genres": [
+            "Adventure",
+            "Fantasy",
+            "Action"
+          ],
+          "rating": 6.8,
+          "ratingCount": 2819,
+          "tmdbId": 9387,
+          "mediaType": "movie",
+          "year": "1982"
+        }
       }
     ],
     "tier": 2,
@@ -6931,6 +7371,61 @@
         "year": 2018,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Nemesis%20Awaken%20Realms&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "chi-supp-book-1",
+        "type": "book",
+        "title": "The Call of Cthulhu",
+        "author": "H.P. Lovecraft",
+        "year": 1928,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/10102400-M.jpg",
+          "openLibraryKey": "/works/OL20804234W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL20804234W",
+          "year": 2016,
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Call%20of%20Cthulhu%20H.P.%20Lovecraft&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "chi-supp-film-1",
+        "type": "movie",
+        "title": "The Thing",
+        "year": 1982,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/tzGY49kseSE9QAKk47uuDGwnSCu.jpg",
+          "overview": "A research team in Antarctica is hunted by a shape-shifting alien that assumes the appearance of its victims.",
+          "genres": [
+            "Horror",
+            "Mystery",
+            "Science Fiction"
+          ],
+          "rating": 8.1,
+          "ratingCount": 7999,
+          "tmdbId": 1091,
+          "mediaType": "movie",
+          "year": "1982"
+        }
+      },
+      {
+        "id": "chi-supp-show-1",
+        "type": "show",
+        "title": "Lovecraft Country",
+        "year": 2020,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/fz7bdjxPColvEWCGr5Kiclzc86d.jpg",
+          "overview": "The anthology horror series follows 25-year-old Atticus Freeman, who joins up with his friend Letitia and his Uncle George to embark on a road trip across 1950s Jim Crow America to find his missing father. They must survive and overcome both the racist terrors of white America and the malevolent spirits that could be ripped from a Lovecraft paperback.",
+          "genres": [
+            "Drama",
+            "Mystery",
+            "Sci-Fi & Fantasy"
+          ],
+          "rating": 7.1,
+          "ratingCount": 776,
+          "tmdbId": 82816,
+          "mediaType": "tv",
+          "year": "2020"
         }
       }
     ],
@@ -7025,6 +7520,60 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=War%20of%20the%20Ring%20Roberto%20Di%20Meglio&tag=tomewizard-20"
         }
+      },
+      {
+        "id": "eft-supp-book-1",
+        "type": "book",
+        "title": "The Fellowship of the Ring",
+        "author": "J.R.R. Tolkien",
+        "year": 1954,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/14627060-M.jpg",
+          "openLibraryKey": "/works/OL27513W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL27513W",
+          "year": 1954,
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Fellowship%20of%20the%20Ring%20J.R.R.%20Tolkien&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "eft-supp-film-1",
+        "type": "movie",
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "year": 2001,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+          "overview": "Young hobbit Frodo Baggins, after inheriting a mysterious ring from his uncle Bilbo, must leave his home in order to keep it from falling into the hands of its evil creator. Along the way, a fellowship is formed to protect the ringbearer and make sure that the ring arrives at its final destination: Mt. Doom, the only place where it can be destroyed.",
+          "genres": [
+            "Adventure",
+            "Fantasy",
+            "Action"
+          ],
+          "rating": 8.4,
+          "ratingCount": 27746,
+          "tmdbId": 120,
+          "mediaType": "movie",
+          "year": "2001"
+        }
+      },
+      {
+        "id": "eft-supp-show-1",
+        "type": "show",
+        "title": "The Wheel of Time (Season 1)",
+        "year": 2021,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/ihBi24EIr5kwAeY2PqmsgAcCj4n.jpg",
+          "overview": "The lives of five young villagers change forever when a strange and powerful woman arrives, claiming one of them is the child of an ancient prophecy with the power to tip the balance between Light and Dark forever. They must choose whether to trust this stranger – and each other – with the fate of the world before the Dark One breaks out of His prison, and the Last Battle begins.",
+          "genres": [
+            "Sci-Fi & Fantasy",
+            "Drama"
+          ],
+          "rating": 7.6,
+          "ratingCount": 2414,
+          "tmdbId": 71914,
+          "mediaType": "tv",
+          "year": "2021"
+        }
       }
     ],
     "tier": 2,
@@ -7113,6 +7662,62 @@
         "year": 2015,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Kingdom%20Death%3A%20Monster%20Adam%20Poots&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ga-supp-book-1",
+        "type": "book",
+        "title": "Prince of Thorns",
+        "author": "Mark Lawrence",
+        "year": 2011,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/7603832-M.jpg",
+          "openLibraryKey": "/works/OL17450797W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL17450797W",
+          "year": 2011,
+          "amazonUrl": "https://www.amazon.com/s?k=Prince%20of%20Thorns%20Mark%20Lawrence&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "ga-supp-show-1",
+        "type": "show",
+        "title": "Vinland Saga (Season 1)",
+        "year": 2019,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/vUHlpA5c1NXkds59reY3HMb4Abs.jpg",
+          "overview": "For a thousand years, the Vikings have made quite a name and reputation for themselves as the strongest families with a thirst for violence. Thorfinn, the son of one of the Vikings' greatest warriors, spends his boyhood in a battlefield enhancing his skills in his adventure to redeem his most-desired revenge after his father was murdered.",
+          "genres": [
+            "Animation",
+            "War & Politics",
+            "Action & Adventure",
+            "Drama"
+          ],
+          "rating": 8.5,
+          "ratingCount": 956,
+          "tmdbId": 88803,
+          "mediaType": "tv",
+          "year": "2019"
+        }
+      },
+      {
+        "id": "ga-supp-film-1",
+        "type": "movie",
+        "title": "Conan the Barbarian",
+        "year": 1982,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/qw2A587Ee61IwcSOLNFRhuOACZZ.jpg",
+          "overview": "A horde of rampaging warriors massacre the parents of young Conan and enslave the young child for years on The Wheel of Pain. As the sole survivor of the childhood massacre, Conan is released from slavery and taught the ancient arts of fighting. Transforming himself into a killing machine, Conan travels into the wilderness to seek vengeance on Thulsa Doom, the man responsible for killing his family. In the wilderness, Conan takes up with the thieves Valeria and Subotai. The group comes upon King Osric, who wants the trio of warriors to help rescue his daughter who has joined Doom in the hills.",
+          "genres": [
+            "Adventure",
+            "Fantasy",
+            "Action"
+          ],
+          "rating": 6.8,
+          "ratingCount": 2819,
+          "tmdbId": 9387,
+          "mediaType": "movie",
+          "year": "1982"
         }
       }
     ],
@@ -7207,6 +7812,49 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Mansions%20of%20Madness%20Fantasy%20Flight%20Games&tag=tomewizard-20"
         }
+      },
+      {
+        "id": "he-supp-book-1",
+        "type": "book",
+        "title": "The Shining",
+        "author": "Stephen King",
+        "year": 1977,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/12376585-M.jpg",
+          "openLibraryKey": "/works/OL81633W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL81633W",
+          "year": 1977,
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Shining%20Stephen%20King&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "he-supp-film-1",
+        "type": "movie",
+        "title": "The Exorcist",
+        "year": 1973,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/5x0CeVHJI8tcDx8tUUwYHQSNILq.jpg",
+          "overview": "When a mysterious entity possesses a young girl, her mother seeks the help of two Catholic priests to save her life.",
+          "genres": [
+            "Horror",
+            "Drama"
+          ],
+          "rating": 7.7,
+          "ratingCount": 8690,
+          "tmdbId": 9552,
+          "mediaType": "movie",
+          "year": "1973"
+        }
+      },
+      {
+        "id": "he-supp-show-1",
+        "type": "show",
+        "title": "The Haunting of Hill House (Netflix)",
+        "year": 2018,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Haunting%20of%20Hill%20House%20(Netflix)&tag=tomewizard-20"
+        }
       }
     ],
     "tier": 2,
@@ -7296,6 +7944,58 @@
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Turing%20Machine%20SCORPIO&tag=tomewizard-20"
         }
+      },
+      {
+        "id": "ae-supp-book-1",
+        "type": "book",
+        "title": "Autonomous",
+        "author": "Annalee Newitz",
+        "year": 2017,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/8452721-M.jpg",
+          "openLibraryKey": "/works/OL19339910W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL19339910W",
+          "year": 2017,
+          "amazonUrl": "https://www.amazon.com/s?k=Autonomous%20Annalee%20Newitz&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "ae-supp-film-1",
+        "type": "movie",
+        "title": "Ex Machina",
+        "year": 2014,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/dmJW8IAKHKxFNiUnoDR7JfsK7Rp.jpg",
+          "overview": "Caleb, a coder at the world's largest internet company, wins a competition to spend a week at a private mountain retreat belonging to Nathan, the reclusive CEO of the company. But when Caleb arrives at the remote location he finds that he will have to participate in a strange and fascinating experiment in which he must interact with the world's first true artificial intelligence, housed in the body of a beautiful robot girl.",
+          "genres": [
+            "Drama",
+            "Science Fiction"
+          ],
+          "rating": 7.6,
+          "ratingCount": 14318,
+          "tmdbId": 264660,
+          "mediaType": "movie",
+          "year": "2015"
+        }
+      },
+      {
+        "id": "ae-supp-doc-1",
+        "type": "documentary",
+        "title": "AlphaGo",
+        "year": 2017,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/zDxZwTCX22gYREAy73wiibzu9H6.jpg",
+          "overview": "The ancient Chinese game of Go has long been considered a grand challenge for artificial intelligence. Yet in 2016, Google's DeepMind team announced that they would be taking on Lee Sedol, the world's most elite Go champion. AlphaGo chronicles the team as it prepares to test the limits of its rapidly-evolving AI technology. The film pits man against machine, and reveals as much about the workings of the human mind as it does the future of AI.",
+          "genres": [
+            "Documentary"
+          ],
+          "rating": 7.7,
+          "ratingCount": 162,
+          "tmdbId": 455008,
+          "mediaType": "movie",
+          "year": "2017"
+        }
       }
     ],
     "tier": 2,
@@ -7381,6 +8081,50 @@
         "year": 2019,
         "metadata": {
           "amazonUrl": "https://www.amazon.com/s?k=Pax%20Pamir%20Phil%20Eklund&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ia-supp-book-1",
+        "type": "book",
+        "title": "Masters of Doom",
+        "author": "David Kushner",
+        "year": 2003,
+        "metadata": {
+          "coverUrl": "https://covers.openlibrary.org/b/id/606299-M.jpg",
+          "openLibraryKey": "/works/OL5957689W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL5957689W",
+          "year": 2003,
+          "amazonUrl": "https://www.amazon.com/s?k=Masters%20of%20Doom%20David%20Kushner&tag=tomewizard-20",
+          "coverEnrichVersion": 2
+        }
+      },
+      {
+        "id": "ia-supp-doc-1",
+        "type": "documentary",
+        "title": "Double Fine Adventure",
+        "year": 2015,
+        "metadata": {
+          "amazonUrl": "https://www.amazon.com/s?k=Double%20Fine%20Adventure&tag=tomewizard-20"
+        }
+      },
+      {
+        "id": "ia-supp-film-1",
+        "type": "movie",
+        "title": "The Last Starfighter",
+        "year": 1984,
+        "metadata": {
+          "posterUrl": "https://image.tmdb.org/t/p/w342/A7oAHTjtYnIEQjJs62IONRufooq.jpg",
+          "overview": "Video game expert Alex Rogan finds himself transported to another planet after conquering the video game The Last Starfighter, only to find out it was just a test. He was recruited to join the team of best Starfighters to defend their world from the attack.",
+          "genres": [
+            "Adventure",
+            "Science Fiction",
+            "Action"
+          ],
+          "rating": 6.6,
+          "ratingCount": 772,
+          "tmdbId": 11884,
+          "mediaType": "movie",
+          "year": "1984"
         }
       }
     ],

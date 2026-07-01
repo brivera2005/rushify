@@ -64,6 +64,32 @@
         "type": "videogame",
         "title": "Detroit: Become Human",
         "year": 2018
+      },
+      {
+        "id": "eai-supp-book-1",
+        "type": "book",
+        "title": "Klara and the Sun",
+        "author": "Kazuo Ishiguro",
+        "year": 2021
+      },
+      {
+        "id": "eai-supp-film-1",
+        "type": "movie",
+        "title": "A.I. Artificial Intelligence",
+        "year": 2001
+      },
+      {
+        "id": "eai-supp-show-1",
+        "type": "show",
+        "title": "Humans (Season 1)",
+        "year": 2015
+      },
+      {
+        "id": "eai-supp-bg-1",
+        "type": "boardgame",
+        "title": "Robo Rally",
+        "author": "Richard Garfield",
+        "year": 1999
       }
     ],
     "tier": 1,
@@ -2766,6 +2792,25 @@
         "type": "videogame",
         "title": "Chess Ultra",
         "year": 2017
+      },
+      {
+        "id": "cw-supp-book-1",
+        "type": "book",
+        "title": "The Immortal Game",
+        "author": "David Shenk",
+        "year": 2006
+      },
+      {
+        "id": "cw-supp-film-1",
+        "type": "movie",
+        "title": "Pawn Sacrifice",
+        "year": 2014
+      },
+      {
+        "id": "cw-supp-bg-1",
+        "type": "boardgame",
+        "title": "Chess",
+        "note": "Classic chess — any quality set or app"
       }
     ],
     "tier": 2,
@@ -2814,6 +2859,25 @@
         "type": "boardgame",
         "title": "Santorini",
         "year": 2017
+      },
+      {
+        "id": "flk-supp-book-1",
+        "type": "book",
+        "title": "D'Aulaires' Book of Greek Myths",
+        "author": "Ingri and Edgar Parin d'Aulaire"
+      },
+      {
+        "id": "flk-supp-film-1",
+        "type": "movie",
+        "title": "Kubo and the Two Strings",
+        "year": 2016
+      },
+      {
+        "id": "flk-supp-vg-1",
+        "type": "videogame",
+        "title": "Child of Light",
+        "author": "Ubisoft Montreal",
+        "year": 2014
       }
     ],
     "tier": 3,
@@ -3264,6 +3328,25 @@
         "type": "boardgame",
         "title": "Gloomhaven",
         "year": 2017
+      },
+      {
+        "id": "tl-supp-book-1",
+        "type": "book",
+        "title": "It's All a Game",
+        "author": "Tristan Donovan",
+        "year": 2017
+      },
+      {
+        "id": "tl-supp-show-1",
+        "type": "show",
+        "title": "TableTop",
+        "year": 2012
+      },
+      {
+        "id": "tl-supp-doc-1",
+        "type": "documentary",
+        "title": "Under the Boardwalk: The Monopoly Story",
+        "year": 2010
       }
     ],
     "tier": 3,
@@ -3330,6 +3413,25 @@
         "title": "Hacknet",
         "author": "Team Fractal Alligator",
         "year": 2015
+      },
+      {
+        "id": "dfb-supp-book-1",
+        "type": "book",
+        "title": "Snow Crash",
+        "author": "Neal Stephenson",
+        "year": 1992
+      },
+      {
+        "id": "dfb-supp-film-1",
+        "type": "movie",
+        "title": "Johnny Mnemonic",
+        "year": 1995
+      },
+      {
+        "id": "dfb-supp-show-1",
+        "type": "show",
+        "title": "Altered Carbon (Season 1)",
+        "year": 2018
       }
     ],
     "tier": 2,
@@ -3384,6 +3486,25 @@
         "title": "Outer Wilds",
         "author": "Mobius Digital",
         "year": 2019
+      },
+      {
+        "id": "pvg-supp-book-1",
+        "type": "book",
+        "title": "Blood, Sweat, and Pixels",
+        "author": "Jason Schreier",
+        "year": 2017
+      },
+      {
+        "id": "pvg-supp-doc-1",
+        "type": "documentary",
+        "title": "Free to Play",
+        "year": 2014
+      },
+      {
+        "id": "pvg-supp-film-1",
+        "type": "movie",
+        "title": "Tron",
+        "year": 1982
       }
     ],
     "tier": 3,
@@ -3438,6 +3559,25 @@
         "title": "Food Chain Magnate",
         "author": "Jeroen Doumen & Joris Wiersinga",
         "year": 2015
+      },
+      {
+        "id": "pbge-supp-book-1",
+        "type": "book",
+        "title": "The Board Game Family",
+        "author": "Ellie Dix",
+        "year": 2020
+      },
+      {
+        "id": "pbge-supp-show-1",
+        "type": "show",
+        "title": "TableTop",
+        "year": 2012
+      },
+      {
+        "id": "pbge-supp-doc-1",
+        "type": "documentary",
+        "title": "Going Cardboard",
+        "year": 2012
       }
     ],
     "tier": 3,
@@ -3496,6 +3636,25 @@
         "type": "boardgame",
         "title": "Texas Hold'em",
         "note": "Classic poker — any quality set or home game"
+      },
+      {
+        "id": "sam-supp-book-1",
+        "type": "book",
+        "title": "The Signal and the Noise",
+        "author": "Nate Silver",
+        "year": 2012
+      },
+      {
+        "id": "sam-supp-film-1",
+        "type": "movie",
+        "title": "21",
+        "year": 2008
+      },
+      {
+        "id": "sam-supp-film-2",
+        "type": "movie",
+        "title": "Rounders",
+        "year": 1998
       }
     ],
     "tier": 2,
@@ -3550,6 +3709,25 @@
         "title": "Gloomhaven",
         "author": "Isaac Childres",
         "year": 2017
+      },
+      {
+        "id": "dfc-supp-book-1",
+        "type": "book",
+        "title": "The Name of the Wind",
+        "author": "Patrick Rothfuss",
+        "year": 2007
+      },
+      {
+        "id": "dfc-supp-show-1",
+        "type": "show",
+        "title": "The Witcher (Season 1)",
+        "year": 2019
+      },
+      {
+        "id": "dfc-supp-film-1",
+        "type": "movie",
+        "title": "Conan the Barbarian",
+        "year": 1982
       }
     ],
     "tier": 2,
@@ -3603,6 +3781,25 @@
         "title": "Nemesis",
         "author": "Awaken Realms",
         "year": 2018
+      },
+      {
+        "id": "chi-supp-book-1",
+        "type": "book",
+        "title": "The Call of Cthulhu",
+        "author": "H.P. Lovecraft",
+        "year": 1928
+      },
+      {
+        "id": "chi-supp-film-1",
+        "type": "movie",
+        "title": "The Thing",
+        "year": 1982
+      },
+      {
+        "id": "chi-supp-show-1",
+        "type": "show",
+        "title": "Lovecraft Country",
+        "year": 2020
       }
     ],
     "tier": 2,
@@ -3665,6 +3862,25 @@
         "title": "War of the Ring",
         "author": "Roberto Di Meglio",
         "year": 2012
+      },
+      {
+        "id": "eft-supp-book-1",
+        "type": "book",
+        "title": "The Fellowship of the Ring",
+        "author": "J.R.R. Tolkien",
+        "year": 1954
+      },
+      {
+        "id": "eft-supp-film-1",
+        "type": "movie",
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "year": 2001
+      },
+      {
+        "id": "eft-supp-show-1",
+        "type": "show",
+        "title": "The Wheel of Time (Season 1)",
+        "year": 2021
       }
     ],
     "tier": 2,
@@ -3723,6 +3939,25 @@
         "title": "Kingdom Death: Monster",
         "author": "Adam Poots",
         "year": 2015
+      },
+      {
+        "id": "ga-supp-book-1",
+        "type": "book",
+        "title": "Prince of Thorns",
+        "author": "Mark Lawrence",
+        "year": 2011
+      },
+      {
+        "id": "ga-supp-show-1",
+        "type": "show",
+        "title": "Vinland Saga (Season 1)",
+        "year": 2019
+      },
+      {
+        "id": "ga-supp-film-1",
+        "type": "movie",
+        "title": "Conan the Barbarian",
+        "year": 1982
       }
     ],
     "tier": 2,
@@ -3785,6 +4020,25 @@
         "title": "Mansions of Madness",
         "author": "Fantasy Flight Games",
         "year": 2011
+      },
+      {
+        "id": "he-supp-book-1",
+        "type": "book",
+        "title": "The Shining",
+        "author": "Stephen King",
+        "year": 1977
+      },
+      {
+        "id": "he-supp-film-1",
+        "type": "movie",
+        "title": "The Exorcist",
+        "year": 1973
+      },
+      {
+        "id": "he-supp-show-1",
+        "type": "show",
+        "title": "The Haunting of Hill House (Netflix)",
+        "year": 2018
       }
     ],
     "tier": 2,
@@ -3843,6 +4097,25 @@
         "title": "Turing Machine",
         "author": "SCORPIO",
         "year": 2023
+      },
+      {
+        "id": "ae-supp-book-1",
+        "type": "book",
+        "title": "Autonomous",
+        "author": "Annalee Newitz",
+        "year": 2017
+      },
+      {
+        "id": "ae-supp-film-1",
+        "type": "movie",
+        "title": "Ex Machina",
+        "year": 2014
+      },
+      {
+        "id": "ae-supp-doc-1",
+        "type": "documentary",
+        "title": "AlphaGo",
+        "year": 2017
       }
     ],
     "tier": 2,
@@ -3899,6 +4172,25 @@
         "title": "Pax Pamir",
         "author": "Phil Eklund",
         "year": 2019
+      },
+      {
+        "id": "ia-supp-book-1",
+        "type": "book",
+        "title": "Masters of Doom",
+        "author": "David Kushner",
+        "year": 2003
+      },
+      {
+        "id": "ia-supp-doc-1",
+        "type": "documentary",
+        "title": "Double Fine Adventure",
+        "year": 2015
+      },
+      {
+        "id": "ia-supp-film-1",
+        "type": "movie",
+        "title": "The Last Starfighter",
+        "year": 1984
       }
     ],
     "tier": 2,

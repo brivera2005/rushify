@@ -5,6 +5,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import TrackItemCard from '../../components/TrackItemCard.astro';
 import RelatedTracks from '../../components/RelatedTracks.astro';
 import SiteFooter from '../../components/SiteFooter.astro';
+import { groupSupplementalItems } from '../../lib/track-items';
 import type { EnrichedTrack } from '../../lib/types';
 
 const tracks = enrichedTracks as EnrichedTrack[];
@@ -17,6 +18,7 @@ export function getStaticPaths() {
 const { track } = Astro.props;
 const coreItems = track.sequence;
 const supplementalItems = track.supplemental ?? [];
+const supplementalGroups = groupSupplementalItems(supplementalItems);
 const coreCount = coreItems.length;
 ---
 
@@ -58,25 +60,6 @@ const coreCount = coreItems.length;
       </section>
     )}
 
-    {supplementalItems.length > 0 && (
-      <section aria-label="Supplemental suggestions" class="mt-6 border-t border-white/10 pt-4 sm:mt-10 sm:pt-6 md:mt-12 md:pt-8">
-        <header class="mb-2 sm:mb-4">
-          <h2 class="font-display text-lg text-white/90 sm:text-xl md:text-2xl">If you want more</h2>
-          <p class="mt-0.5 text-xs text-white/45 sm:mt-1 sm:text-sm">Optional board games and video games — not required to follow the track.</p>
-        </header>
-        <div class="space-y-1.5 sm:space-y-2">
-          {supplementalItems.map((item) => (
-            <TrackItemCard
-              item={item}
-              trackId={track.id}
-              itemId={item.id}
-              supplemental
-            />
-          ))}
-        </div>
-      </section>
-    )}
-
     {coreCount === 0 && supplementalItems.length > 0 && (
       <p class="text-white/55 text-sm mb-6">This track is game-focused — everything below is optional fun, not a required order.</p>
     )}
@@ -86,6 +69,34 @@ const coreCount = coreItems.length;
       relatedIds={track.relatedTrackIds ?? []}
       allTracks={trackList}
     />
+
+    {supplementalGroups.length > 0 && (
+      <section aria-label="Supplemental suggestions" class="mt-6 border-t border-white/10 pt-4 sm:mt-10 sm:pt-6 md:mt-12 md:pt-8">
+        <header class="mb-2 sm:mb-4">
+          <h2 class="font-display text-lg text-white/90 sm:text-xl md:text-2xl">If you want more</h2>
+          <p class="mt-0.5 text-xs text-white/45 sm:mt-1 sm:text-sm">
+            Optional games, books, and film — not required to follow the track.
+          </p>
+        </header>
+        <div class="space-y-5 sm:space-y-6">
+          {supplementalGroups.map((group) => (
+            <div>
+              <h3 class="mb-1.5 text-[10px] uppercase tracking-widest text-copper/80 sm:mb-2 sm:text-xs">{group.label}</h3>
+              <div class="space-y-1.5 sm:space-y-2">
+                {group.items.map((item) => (
+                  <TrackItemCard
+                    item={item}
+                    trackId={track.id}
+                    itemId={item.id}
+                    supplemental
+                  />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    )}
 
     <SiteFooter class="mt-16" />
   </main>

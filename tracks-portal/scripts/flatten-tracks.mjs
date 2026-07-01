@@ -52,18 +52,19 @@ function flattenTrack(track) {
     sequence.push(item);
   };
 
-  const addSupplemental = (raw) => {
+  const addSupplemental = (raw, { gamesOnly = false } = {}) => {
     const type = normalizeType(raw.type);
-    if (!isGameType(type)) return;
+    if (gamesOnly && !isGameType(type)) return;
+    if (!gamesOnly && !isGameType(type) && !isCoreType(type)) return;
     const key = itemKey(raw);
-    if (seenSupp.has(key)) return;
+    if (seenSupp.has(key) || seenCore.has(key)) return;
     seenSupp.add(key);
     supplemental.push(stripBranchFields({ ...raw, type, required: false }));
   };
 
   for (const item of track.sequence || []) {
     if (item.type === 'crossroads') continue;
-    if (isGameType(item.type)) addSupplemental(item);
+    if (isGameType(item.type)) addSupplemental(item, { gamesOnly: true });
     else if (isCoreType(item.type)) addCore(item);
   }
 
@@ -74,7 +75,7 @@ function flattenTrack(track) {
     );
     for (const node of track.map.nodes) {
       const item = byId[node.itemId];
-      if (item) addSupplemental(item);
+      if (item) addSupplemental(item, { gamesOnly: true });
     }
   }
 

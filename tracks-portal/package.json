@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "dev": "node scripts/merge-tracks.mjs && node scripts/flatten-tracks.mjs && node scripts/enrich-tracks.mjs && astro dev",
-    "prebuild": "node scripts/merge-tracks.mjs && node scripts/apply-track-meta.mjs && node scripts/flatten-tracks.mjs && node scripts/enrich-tracks.mjs",
+    "prebuild": "node scripts/merge-tracks.mjs && node scripts/apply-track-meta.mjs && node scripts/flatten-tracks.mjs && node scripts/expand-supplemental.mjs && node scripts/enrich-tracks.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "enrich": "node scripts/enrich-tracks.mjs",
