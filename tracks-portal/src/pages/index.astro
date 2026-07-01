@@ -1,53 +1,151 @@
 ---
 import tracks from '../data/tracks.json';
-import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const KOBO_CLARA_URL = 'https://www.amazon.com/dp/B0CZXYV8GT?tag=tomewizard-20';
+const TOMEWIZARD_URL = 'https://www.tomewizard.com';
+
+const steps = [
+  {
+    num: '01',
+    title: 'Scan QR from RushTV',
+    body: 'Open Tracks on your TV, tap the QR icon, and scan with your phone. Enter the PIN shown on screen to unlock your Track list.',
+  },
+  {
+    num: '02',
+    title: 'Read the book',
+    body: 'Tracks are meant for paper-like reading. Load ebooks on a dedicated e-reader, not your phone browser.',
+    kobo: true,
+  },
+  {
+    num: '03',
+    title: 'Watch on RushTV at home',
+    body: 'Films and series belong on the big screen. When a Track calls for a movie or show, go back to RushTV on your TV to watch.',
+  },
+  {
+    num: '04',
+    title: 'More moods at TomeWizard',
+    body: 'Want a different vibe? TomeWizard curates even more reading paths based on how you feel right now.',
+    tomewizard: true,
+  },
+];
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Tracks — curated paths through books, film, and television for the discerning media consumer." />
-    <title>Tracks · RushTracks</title>
-  </head>
-  <body class="bg-black text-white min-h-screen">
-    <main class="mx-auto max-w-5xl px-6 py-16 md:py-24">
-      <header class="mb-16 border-b border-white/15 pb-12">
-        <p class="text-accent text-sm uppercase tracking-[0.35em] mb-4">RushTracks</p>
-        <h1 class="font-display text-5xl md:text-7xl font-bold leading-none mb-6">Tracks</h1>
-        <p class="text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
-          Curated paths through books, film, and television — for the discerning media consumer.
-          Scan from your TV, read and watch on your phone.
-        </p>
-      </header>
+<BaseLayout
+  title="Tracks · RushTracks"
+  description="Curated paths through books, film, and television. Browse on your phone, read on your e-reader, watch on RushTV."
+>
+  <main class="mx-auto max-w-5xl px-6 py-16 md:py-24">
+    <header class="mb-20 border-b border-white/15 pb-12">
+      <p class="text-accent text-sm uppercase tracking-[0.35em] mb-4">RushTracks</p>
+      <h1 class="font-display text-5xl md:text-7xl font-bold leading-none mb-6">Tracks</h1>
+      <p class="text-lg md:text-xl text-white/75 max-w-2xl leading-relaxed">
+        Curated paths through books, film, and television.
+        Your phone is the guide. Your e-reader and TV are where the story lives.
+      </p>
+    </header>
 
-      <section class="mb-20">
-        <h2 class="text-2xl md:text-3xl font-display mb-4">What are Tracks?</h2>
-        <p class="text-white/70 leading-relaxed max-w-3xl text-base md:text-lg">
-          Magazine-quality narrative journeys: books, films, shows, and documentaries in deliberate sequence.
-          Each Track is an editorial path — not an algorithmic row — designed to be experienced in order,
-          interleaving reading and viewing until the arc completes.
-        </p>
-      </section>
+    <section class="mb-24" aria-labelledby="how-to-follow">
+      <div class="flex items-baseline gap-4 mb-10">
+        <h2 id="how-to-follow" class="font-display text-3xl md:text-4xl font-bold">
+          How to follow a Track
+        </h2>
+        <span class="hidden md:inline-block h-px flex-1 bg-accent/60"></span>
+      </div>
 
-      <section>
-        <h2 class="text-sm uppercase tracking-[0.3em] text-white/50 mb-8">All Tracks ({tracks.length})</h2>
-        <ul class="grid gap-4 md:grid-cols-2">
-          {tracks.map((track) => (
-            <li>
-              <a
-                href={`/track/${track.id}`}
-                class="group block border border-white/15 p-6 hover:border-accent transition-colors"
-              >
-                <h3 class="font-display text-xl md:text-2xl group-hover:text-accent transition-colors">{track.title}</h3>
-                <p class="text-white/60 mt-2 text-sm leading-relaxed">{track.description}</p>
-                <p class="text-accent text-xs uppercase tracking-widest mt-4">{track.sequence.length} stops</p>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </main>
-  </body>
-</html>
+      <ol class="grid gap-0 md:grid-cols-2">
+        {steps.map((step, i) => (
+          <li
+            class:list={[
+              'group relative border border-white/15 p-8 md:p-10 hover:border-accent/70 transition-colors',
+              i % 2 === 0 ? 'md:border-r-0' : '',
+              i < 2 ? 'md:border-b-0' : '',
+            ]}
+          >
+            <span class="font-display text-5xl md:text-6xl font-bold text-accent/25 group-hover:text-accent/40 transition-colors leading-none">
+              {step.num}
+            </span>
+            <h3 class="font-display text-xl md:text-2xl font-bold mt-4 mb-3">{step.title}</h3>
+            <p class="text-white/65 leading-relaxed text-sm md:text-base">{step.body}</p>
+            {step.kobo && (
+              <p class="mt-4 text-sm text-white/50">
+                We like the{' '}
+                <a
+                  href={KOBO_CLARA_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white/80 underline decoration-white/30 underline-offset-4 hover:text-accent hover:decoration-accent transition-colors"
+                >
+                  Kobo Clara BW
+                </a>
+                {' '}for glare-free, distraction-free reading.
+              </p>
+            )}
+            {step.tomewizard && (
+              <p class="mt-4">
+                <a
+                  href={TOMEWIZARD_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-block text-sm uppercase tracking-[0.2em] text-accent border border-accent/40 px-4 py-2 hover:bg-accent hover:text-black transition-colors"
+                >
+                  TomeWizard.com
+                </a>
+              </p>
+            )}
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="mb-24 border border-white/15 p-8 md:p-12" aria-labelledby="recommended-apps">
+      <h2 id="recommended-apps" class="text-xs uppercase tracking-[0.35em] text-accent mb-8">
+        Recommended apps
+      </h2>
+      <div class="grid gap-8 md:grid-cols-2">
+        <article class="border-l-2 border-accent pl-6">
+          <h3 class="font-display text-xl font-bold mb-2">SmartAudioBook Player</h3>
+          <p class="text-white/60 text-sm leading-relaxed">
+            For audiobook stops on a Track. Robust playback, bookmarks, and sleep timer built for long listens.
+          </p>
+        </article>
+        <article class="border-l-2 border-white/30 pl-6">
+          <h3 class="font-display text-xl font-bold mb-2">ReadEra</h3>
+          <p class="text-white/60 text-sm leading-relaxed">
+            If you need ebooks on a phone or tablet, ReadEra is a clean option. An e-reader is still the best experience.
+          </p>
+        </article>
+      </div>
+      <p class="mt-8 text-xs uppercase tracking-[0.25em] text-white/35">
+        Films &amp; shows: RushTV on your TV only. Not on your phone.
+      </p>
+    </section>
+
+    <section class="mb-20">
+      <h2 class="text-2xl md:text-3xl font-display mb-4">What are Tracks?</h2>
+      <p class="text-white/70 leading-relaxed max-w-3xl text-base md:text-lg">
+        Editorial journeys through books, film, and TV in deliberate sequence.
+        Each Track is a curated path, not an algorithmic row, designed to be experienced in order,
+        interleaving reading and viewing until the arc completes.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-sm uppercase tracking-[0.3em] text-white/50 mb-8">All Tracks ({tracks.length})</h2>
+      <ul class="grid gap-4 md:grid-cols-2">
+        {tracks.map((track) => (
+          <li>
+            <a
+              href={`/track/${track.id}`}
+              class="group block border border-white/15 p-6 hover:border-accent transition-colors"
+            >
+              <h3 class="font-display text-xl md:text-2xl group-hover:text-accent transition-colors">{track.title}</h3>
+              <p class="text-white/60 mt-2 text-sm leading-relaxed">{track.description}</p>
+              <p class="text-accent text-xs uppercase tracking-widest mt-4">{track.sequence.length} stops</p>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+  </main>
+</BaseLayout>
