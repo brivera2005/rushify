@@ -1,0 +1,23 @@
+---
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+const KOBO_CLARA_URL = 'https://www.amazon.com/dp/B0CZXYV8GT?tag=tomewizard-20';
+const TOMEWIZARD_URL = 'https://www.tomewizard.com';
+const OPEN_LIBRARY_URL = 'https://openlibrary.org';
+---
+
+<footer class:list={['pt-6 border-t border-white/8 text-[11px] text-white/40', className]}>
+  <p>
+    <a href={TOMEWIZARD_URL} target="_blank" rel="noopener noreferrer" class="hover:text-copper transition-colors duration-200">TomeWizard.com</a>
+    <span class="text-white/15 mx-2" aria-hidden="true">·</span>
+    <a href={KOBO_CLARA_URL} target="_blank" rel="noopener noreferrer" class="hover:text-copper transition-colors duration-200">Kobo Clara BW</a>
+  </p>
+  <p class="mt-2 text-white/30">
+    Book covers courtesy of{' '}
+    <a href={OPEN_LIBRARY_URL} target="_blank" rel="noopener noreferrer" class="hover:text-copper transition-colors duration-200">Open Library</a>
+    {' / Internet Archive'}
+  </p>
+</footer>

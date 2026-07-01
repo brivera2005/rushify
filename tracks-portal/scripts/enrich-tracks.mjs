@@ -13,9 +13,33 @@ const PUBLIC_PATH = join(root, 'public', 'tracks.json');
 const AFFILIATE_TAG = 'tomewizard-20';
 const TMDB_IMAGE = 'https://image.tmdb.org/t/p/w342';
 const CONCURRENCY = 6;
+const BOOK_ENRICH_VERSION = 2;
+const OL_COVERS = 'https://covers.openlibrary.org/b';
+const OL_SITE = 'https://openlibrary.org';
 
 loadEnv();
 const TMDB_KEY = process.env.TMDB_API_KEY;
+
+class RateLimiter {
+  constructor(maxRequests, windowMs) {
+    this.max = maxRequests;
+    this.window = windowMs;
+    this.timestamps = [];
+  }
+
+  async wait() {
+    const now = Date.now();
+    this.timestamps = this.timestamps.filter((t) => now - t < this.window);
+    if (this.timestamps.length >= this.max) {
+      const waitMs = this.window - (now - this.timestamps[0]) + 100;
+      await new Promise((r) => setTimeout(r, waitMs));
+      return this.wait();
+    }
+    this.timestamps.push(Date.now());
+  }
+}
+
+const olLimiter = new RateLimiter(95, 5 * 60 * 1000);
 
 function cacheKey(item) {
   const base = `${item.type}:${item.title}:${item.author ?? ''}:${item.year ?? ''}`;
@@ -54,9 +78,54 @@ function cleanShowTitle(title) {
     .trim();
 }
 
+function preferIsbn13(isbns) {
+  if (!isbns?.length) return null;
+  const normalized = isbns.map((i) => String(i).replace(/-/g, ''));
+  const isbn13 = normalized.find((i) => i.length === 13);
+  return isbn13 || normalized[0];
+}
+
+function buildCoverCandidates(doc) {
+  const candidates = [];
+  const isbn = preferIsbn13(doc.isbn);
+  if (isbn) candidates.push({ key: 'isbn', value: isbn });
+  if (doc.cover_i) candidates.push({ key: 'id', value: doc.cover_i });
+  const olid = doc.edition_key?.[0] || null;
+  if (olid) candidates.push({ key: 'olid', value: olid });
+  return candidates;
+}
+
+function buildCoverUrl(key, value, size = 'M') {
+  return `${OL_COVERS}/${key}/${value}-${size}.jpg`;
+}
+
+async function verifyCover(url) {
+  const checkUrl = `${url}?default=false`;
+  try {
+    await olLimiter.wait();
+    const res = await fetch(checkUrl, { method: 'HEAD', redirect: 'follow' });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+async function findVerifiedCover(candidates) {
+  for (const { key, value } of candidates) {
+    const url = buildCoverUrl(key, value, 'M');
+    if (await verifyCover(url)) return url;
+  }
+  return null;
+}
+
+function buildOpenLibraryUrl(doc, isbn) {
+  if (isbn) return `${OL_SITE}/isbn/${isbn}`;
+  if (doc.key) return `${OL_SITE}${doc.key}`;
+  return undefined;
+}
+
 async function enrichFilm(item) {
   const isShow = item.type === 'show';
-  const isDoc = item.type === 'documentary';
   const query = isShow ? cleanShowTitle(item.title) : item.title;
   const mediaPath = isShow ? 'tv' : 'movie';
   const search = await tmdbFetch(
@@ -85,28 +154,49 @@ async function enrichFilm(item) {
 }
 
 async function enrichBook(item) {
-  const params = new URLSearchParams({ title: item.title, limit: '3' });
+  const params = new URLSearchParams({ title: item.title, limit: '1' });
   if (item.author) params.set('author', item.author);
+
+  await olLimiter.wait();
   const res = await fetch(`https://openlibrary.org/search.json?${params}`);
   const data = res.ok ? await res.json() : null;
   const doc = data?.docs?.[0];
-  const coverId = doc?.cover_i;
-  const coverUrl = coverId
-    ? `https://covers.openlibrary.org/b/id/${coverId}-M.jpg`
-    : undefined;
+
+  if (!doc) {
+    return {
+      coverUrl: undefined,
+      amazonUrl: amazonSearchUrl(item.title, item.author),
+      coverEnrichVersion: BOOK_ENRICH_VERSION,
+    };
+  }
+
+  const isbn = preferIsbn13(doc.isbn);
+  const candidates = buildCoverCandidates(doc);
+  const coverUrl = candidates.length ? await findVerifiedCover(candidates) : undefined;
 
   return {
-    coverUrl,
-    openLibraryKey: doc?.key,
-    overview: doc?.first_sentence?.[0] || undefined,
-    year: doc?.first_publish_year || item.year,
+    coverUrl: coverUrl || undefined,
+    openLibraryKey: doc.key,
+    openLibraryUrl: buildOpenLibraryUrl(doc, isbn),
+    overview: doc.first_sentence?.[0] || undefined,
+    year: doc.first_publish_year || item.year,
     amazonUrl: amazonSearchUrl(item.title, item.author),
+    coverEnrichVersion: BOOK_ENRICH_VERSION,
   };
+}
+
+function isBookCacheValid(cached) {
+  return cached?.coverEnrichVersion === BOOK_ENRICH_VERSION;
 }
 
 async function enrichItem(item, cache) {
   const key = cacheKey(item);
-  if (cache[key]) return cache[key];
+  if (item.type === 'book' && isBookCacheValid(cache[key])) {
+    return cache[key];
+  }
+  if (item.type !== 'book' && cache[key]) {
+    return cache[key];
+  }
 
   let meta = {};
   try {
@@ -115,14 +205,7 @@ async function enrichItem(item, cache) {
     } else if (['movie', 'show', 'documentary'].includes(item.type)) {
       if (TMDB_KEY) {
         meta = await enrichFilm(item);
-      } else {
-        meta = {};
       }
-      if (!meta.amazonUrl && item.type === 'book') {
-        meta.amazonUrl = amazonSearchUrl(item.title, item.author);
-      }
-    } else {
-      meta = { amazonUrl: amazonSearchUrl(item.title, item.author) };
     }
   } catch (err) {
     console.warn(`enrich failed for ${item.title}:`, err.message);
@@ -130,6 +213,7 @@ async function enrichItem(item, cache) {
 
   if (item.type === 'book' && !meta.amazonUrl) {
     meta.amazonUrl = amazonSearchUrl(item.title, item.author);
+    meta.coverEnrichVersion = BOOK_ENRICH_VERSION;
   }
 
   cache[key] = meta;
@@ -165,19 +249,55 @@ function enrichItems(items, cache) {
   });
 }
 
+function countBookCovers(enriched) {
+  let books = 0;
+  let withCover = 0;
+  let placeholder = 0;
+  for (const track of enriched) {
+    for (const item of [...track.sequence, ...(track.supplemental ?? [])]) {
+      if (item.type !== 'book') continue;
+      books += 1;
+      if (item.metadata?.coverUrl) withCover += 1;
+      else placeholder += 1;
+    }
+  }
+  return { books, withCover, placeholder };
+}
+
 async function main() {
   const tracks = JSON.parse(readFileSync(TRACKS_PATH, 'utf8'));
   const cache = loadCache();
   const allItems = [];
+  const bookItems = [];
+  const filmItems = [];
   for (const track of tracks) {
-    for (const item of track.sequence) allItems.push(item);
-    for (const item of track.supplemental ?? []) allItems.push(item);
+    for (const item of track.sequence) {
+      allItems.push(item);
+      if (item.type === 'book') bookItems.push(item);
+      else filmItems.push(item);
+    }
+    for (const item of track.supplemental ?? []) {
+      allItems.push(item);
+      if (item.type === 'book') bookItems.push(item);
+      else filmItems.push(item);
+    }
   }
 
-  console.log(`Enriching ${allItems.length} items${TMDB_KEY ? '' : ' (no TMDB_API_KEY, books only)'}`);
+  const booksToEnrich = bookItems.filter((item) => !isBookCacheValid(cache[cacheKey(item)])).length;
+  console.log(
+    `Enriching ${allItems.length} items (${bookItems.length} books, ${booksToEnrich} need OL refresh)${TMDB_KEY ? '' : ' — no TMDB_API_KEY, films skip TMDB'}`,
+  );
 
   await pool(
-    allItems,
+    bookItems.filter((item) => !isBookCacheValid(cache[cacheKey(item)])),
+    async (item) => {
+      await enrichItem(item, cache);
+    },
+    1,
+  );
+
+  await pool(
+    filmItems,
     async (item) => {
       await enrichItem(item, cache);
     },
@@ -203,9 +323,11 @@ async function main() {
     console.log(`Synced ${TVMEDIAHUB_PATH}`);
   }
 
+  const stats = countBookCovers(enriched);
   console.log(`Wrote ${ENRICHED_PATH}`);
   console.log(`Wrote ${PUBLIC_PATH}`);
   console.log(`Cache entries: ${Object.keys(cache).length}`);
+  console.log(`Books: ${stats.withCover} Open Library covers, ${stats.placeholder} typographic placeholders (${stats.books} total)`);
 }
 
 main().catch((err) => {

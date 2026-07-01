@@ -12,8 +12,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/207515-M.jpg",
           "openLibraryKey": "/works/OL2172356W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL2172356W",
           "year": 1968,
-          "amazonUrl": "https://www.amazon.com/s?k=Do%20Androids%20Dream%20of%20Electric%20Sheep%3F%20Philip%20K.%20Dick&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Do%20Androids%20Dream%20of%20Electric%20Sheep%3F%20Philip%20K.%20Dick&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -24,8 +26,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/15170836-M.jpg",
           "openLibraryKey": "/works/OL43125206W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL43125206W",
           "year": 1968,
-          "amazonUrl": "https://www.amazon.com/s?k=2001%3A%20A%20Space%20Odyssey%20Arthur%20C.%20Clarke&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=2001%3A%20A%20Space%20Odyssey%20Arthur%20C.%20Clarke&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -143,8 +147,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8408974-M.jpg",
           "openLibraryKey": "/works/OL17268007W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL17268007W",
           "year": 2014,
-          "amazonUrl": "https://www.amazon.com/s?k=Annihilation%20Jeff%20VanderMeer&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Annihilation%20Jeff%20VanderMeer&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -155,8 +161,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/5018327-M.jpg",
           "openLibraryKey": "/works/OL2172454W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL2172454W",
           "year": 1969,
-          "amazonUrl": "https://www.amazon.com/s?k=Ubik%20Philip%20K.%20Dick&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Ubik%20Philip%20K.%20Dick&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -224,8 +232,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/11305529-M.jpg",
           "openLibraryKey": "/works/OL14871946W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL14871946W",
           "year": 1983,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Book%20of%20the%20New%20Sun%20Gene%20Wolfe&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Book%20of%20the%20New%20Sun%20Gene%20Wolfe&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -236,8 +246,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/14543422-M.jpg",
           "openLibraryKey": "/works/OL8400950W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL8400950W",
           "year": 2001,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Blade%20Itself%20Joe%20Abercrombie&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Blade%20Itself%20Joe%20Abercrombie&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -306,8 +318,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/283860-M.jpg",
           "openLibraryKey": "/works/OL27258W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL27258W",
           "year": 1984,
-          "amazonUrl": "https://www.amazon.com/s?k=Neuromancer%20William%20Gibson&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Neuromancer%20William%20Gibson&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -318,8 +332,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/392508-M.jpg",
           "openLibraryKey": "/works/OL38501W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL38501W",
           "year": 1992,
-          "amazonUrl": "https://www.amazon.com/s?k=Snow%20Crash%20Neal%20Stephenson&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Snow%20Crash%20Neal%20Stephenson&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -386,8 +402,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/13223488-M.jpg",
           "openLibraryKey": "/works/OL29914687W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL29914687W",
           "year": 2002,
-          "amazonUrl": "https://www.amazon.com/s?k=Altered%20Carbon%20Richard%20K.%20Morgan&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Altered%20Carbon%20Richard%20K.%20Morgan&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -396,7 +414,8 @@
         "author": "Yuval Noah Harari",
         "id": "transhuman-ascent-item-1",
         "metadata": {
-          "amazonUrl": "https://www.amazon.com/s?k=Homo%20Deus%3A%20A%20Brief%20History%20of%20Tomorrow%20Yuval%20Noah%20Harari&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Homo%20Deus%3A%20A%20Brief%20History%20of%20Tomorrow%20Yuval%20Noah%20Harari&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -464,8 +483,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8867987-M.jpg",
           "openLibraryKey": "/works/OL17068219W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL17068219W",
           "year": 2012,
-          "amazonUrl": "https://www.amazon.com/s?k=How%20Music%20Works%20David%20Byrne&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=How%20Music%20Works%20David%20Byrne&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -553,8 +574,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/9110162-M.jpg",
           "openLibraryKey": "/works/OL20444287W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL20444287W",
           "year": 2010,
-          "amazonUrl": "https://www.amazon.com/s?k=Life%20Keith%20Richards&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Life%20Keith%20Richards&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -642,8 +665,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8792782-M.jpg",
           "openLibraryKey": "/works/OL19736287W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL19736287W",
           "year": 2018,
-          "amazonUrl": "https://www.amazon.com/s?k=Thinking%20in%20Bets%20Annie%20Duke&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Thinking%20in%20Bets%20Annie%20Duke&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -653,8 +678,10 @@
         "id": "sovereign-analytical-edge-item-1",
         "metadata": {
           "openLibraryKey": "/works/OL15531951W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL15531951W",
           "year": 2010,
-          "amazonUrl": "https://www.amazon.com/s?k=Lay%20the%20Favorite%20Beth%20Raymer&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Lay%20the%20Favorite%20Beth%20Raymer&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -720,8 +747,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/579568-M.jpg",
           "openLibraryKey": "/works/OL492418W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL492418W",
           "year": 1972,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Friends%20of%20Eddie%20Coyle%20George%20V.%20Higgins&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Friends%20of%20Eddie%20Coyle%20George%20V.%20Higgins&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -809,8 +838,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/419991-M.jpg",
           "openLibraryKey": "/works/OL40879W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL40879W",
           "year": 1985,
-          "amazonUrl": "https://www.amazon.com/s?k=Blood%20Meridian%20Cormac%20McCarthy&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Blood%20Meridian%20Cormac%20McCarthy&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -896,8 +927,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/7732035-M.jpg",
           "openLibraryKey": "/works/OL13341644W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL13341644W",
           "year": 1960,
-          "amazonUrl": "https://www.amazon.com/s?k=Night%20Elie%20Wiesel&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Night%20Elie%20Wiesel&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -984,8 +1017,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/7013626-M.jpg",
           "openLibraryKey": "/works/OL15723140W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL15723140W",
           "year": 1962,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Spy%20Who%20Came%20in%20from%20the%20Cold%20John%20le%20Carr%C3%A9&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Spy%20Who%20Came%20in%20from%20the%20Cold%20John%20le%20Carr%C3%A9&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1050,8 +1085,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/6610039-M.jpg",
           "openLibraryKey": "/works/OL152268W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL152268W",
           "year": 1968,
-          "amazonUrl": "https://www.amazon.com/s?k=At%20the%20Mountains%20of%20Madness%20H.P.%20Lovecraft&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=At%20the%20Mountains%20of%20Madness%20H.P.%20Lovecraft&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1134,8 +1171,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/6275823-M.jpg",
           "openLibraryKey": "/works/OL13759269W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL13759269W",
           "year": 2009,
-          "amazonUrl": "https://www.amazon.com/s?k=Shop%20Class%20as%20Soulcraft%20Matthew%20B.%20Crawford&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Shop%20Class%20as%20Soulcraft%20Matthew%20B.%20Crawford&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1146,8 +1185,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/120825-M.jpg",
           "openLibraryKey": "/works/OL3923600W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL3923600W",
           "year": 1977,
-          "amazonUrl": "https://www.amazon.com/s?k=A%20Pattern%20Language%20Christopher%20Alexander&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=A%20Pattern%20Language%20Christopher%20Alexander&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1212,8 +1253,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/7880307-M.jpg",
           "openLibraryKey": "/works/OL3741565W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL3741565W",
           "year": 1989,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Cuckoo's%20Egg%20Clifford%20Stoll&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Cuckoo's%20Egg%20Clifford%20Stoll&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1224,8 +1267,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/6404884-M.jpg",
           "openLibraryKey": "/works/OL13646905W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL13646905W",
           "year": 2009,
-          "amazonUrl": "https://www.amazon.com/s?k=Daemon%20Daniel%20Suarez&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Daemon%20Daniel%20Suarez&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1289,8 +1334,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/5978577-M.jpg",
           "openLibraryKey": "/works/OL1285005W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL1285005W",
           "year": 1776,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Decline%20and%20Fall%20of%20the%20Roman%20Empire%20Edward%20Gibbon&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Decline%20and%20Fall%20of%20the%20Roman%20Empire%20Edward%20Gibbon&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1374,8 +1421,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/1377482-M.jpg",
           "openLibraryKey": "/works/OL1974546W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL1974546W",
           "year": 1996,
-          "amazonUrl": "https://www.amazon.com/s?k=Into%20the%20Wild%20Jon%20Krakauer&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Into%20the%20Wild%20Jon%20Krakauer&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1386,8 +1435,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/198120-M.jpg",
           "openLibraryKey": "/works/OL40873W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL40873W",
           "year": 2006,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Road%20Cormac%20McCarthy&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Road%20Cormac%20McCarthy&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1450,8 +1501,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/6450442-M.jpg",
           "openLibraryKey": "/works/OL32195W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL32195W",
           "year": 1998,
-          "amazonUrl": "https://www.amazon.com/s?k=House%20of%20Leaves%20Mark%20Z.%20Danielewski&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=House%20of%20Leaves%20Mark%20Z.%20Danielewski&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1534,8 +1587,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/14910748-M.jpg",
           "openLibraryKey": "/works/OL43043884W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL43043884W",
           "year": 1925,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Trial%20Franz%20Kafka&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Trial%20Franz%20Kafka&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1546,8 +1601,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8745958-M.jpg",
           "openLibraryKey": "/works/OL11326416W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL11326416W",
           "year": 2003,
-          "amazonUrl": "https://www.amazon.com/s?k=1984%20George%20Orwell&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=1984%20George%20Orwell&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1612,8 +1669,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8238803-M.jpg",
           "openLibraryKey": "/works/OL17916664W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL17916664W",
           "year": 2017,
-          "amazonUrl": "https://www.amazon.com/s?k=Mythos%20Stephen%20Fry&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Mythos%20Stephen%20Fry&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1624,8 +1683,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8739376-M.jpg",
           "openLibraryKey": "/works/OL18012166W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL18012166W",
           "year": 2018,
-          "amazonUrl": "https://www.amazon.com/s?k=Circe%20Madeline%20Miller&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Circe%20Madeline%20Miller&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1690,8 +1751,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/228066-M.jpg",
           "openLibraryKey": "/works/OL1992198W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL1992198W",
           "year": 1965,
-          "amazonUrl": "https://www.amazon.com/s?k=In%20Cold%20Blood%20Truman%20Capote&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=In%20Cold%20Blood%20Truman%20Capote&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1702,8 +1765,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8351551-M.jpg",
           "openLibraryKey": "/works/OL18195597W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL18195597W",
           "year": 2018,
-          "amazonUrl": "https://www.amazon.com/s?k=I'll%20Be%20Gone%20in%20the%20Dark%20Michelle%20McNamara&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=I'll%20Be%20Gone%20in%20the%20Dark%20Michelle%20McNamara&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1767,8 +1832,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/14251489-M.jpg",
           "openLibraryKey": "/works/OL12626692W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL12626692W",
           "year": 1995,
-          "amazonUrl": "https://www.amazon.com/s?k=Making%20Movies%20Sidney%20Lumet&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Making%20Movies%20Sidney%20Lumet&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1850,8 +1917,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/6468653-M.jpg",
           "openLibraryKey": "/works/OL276798W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL276798W",
           "year": 1961,
-          "amazonUrl": "https://www.amazon.com/s?k=Catch-22%20Joseph%20Heller&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Catch-22%20Joseph%20Heller&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1862,8 +1931,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/12727001-M.jpg",
           "openLibraryKey": "/works/OL98459W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL98459W",
           "year": 1956,
-          "amazonUrl": "https://www.amazon.com/s?k=Slaughterhouse-Five%20Kurt%20Vonnegut&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Slaughterhouse-Five%20Kurt%20Vonnegut&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1925,8 +1996,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/11481354-M.jpg",
           "openLibraryKey": "/works/OL893415W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL893415W",
           "year": 1965,
-          "amazonUrl": "https://www.amazon.com/s?k=Dune%20Frank%20Herbert&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Dune%20Frank%20Herbert&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -1937,8 +2010,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/9261324-M.jpg",
           "openLibraryKey": "/works/OL46309W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL46309W",
           "year": 1953,
-          "amazonUrl": "https://www.amazon.com/s?k=Foundation%20Isaac%20Asimov&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Foundation%20Isaac%20Asimov&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2004,8 +2079,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/6622699-M.jpg",
           "openLibraryKey": "/works/OL46108W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL46108W",
           "year": 1955,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20End%20of%20Eternity%20Isaac%20Asimov&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20End%20of%20Eternity%20Isaac%20Asimov&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2091,8 +2168,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/998587-M.jpg",
           "openLibraryKey": "/works/OL47266W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL47266W",
           "year": 1929,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Maltese%20Falcon%20Dashiell%20Hammett&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Maltese%20Falcon%20Dashiell%20Hammett&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2103,8 +2182,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/7268475-M.jpg",
           "openLibraryKey": "/works/OL15400582W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL15400582W",
           "year": 1939,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Big%20Sleep%20Raymond%20Chandler&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Big%20Sleep%20Raymond%20Chandler&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2169,8 +2250,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/14557288-M.jpg",
           "openLibraryKey": "/works/OL36277W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL36277W",
           "year": 1888,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Count%20of%20Monte%20Cristo%20Alexandre%20Dumas&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Count%20of%20Monte%20Cristo%20Alexandre%20Dumas&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2252,8 +2335,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/11344395-M.jpg",
           "openLibraryKey": "/works/OL16167566W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL16167566W",
           "year": 2012,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Ritual%20Adam%20Nevill&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Ritual%20Adam%20Nevill&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2334,8 +2419,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8359565-M.jpg",
           "openLibraryKey": "/works/OL18437639W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL18437639W",
           "year": 2000,
-          "amazonUrl": "https://www.amazon.com/s?k=Journey%20to%20the%20Center%20of%20the%20Earth%20Jules%20Verne&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Journey%20to%20the%20Center%20of%20the%20Earth%20Jules%20Verne&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2398,8 +2485,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/911109-M.jpg",
           "openLibraryKey": "/works/OL11374287W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL11374287W",
           "year": 1954,
-          "amazonUrl": "https://www.amazon.com/s?k=I%20Am%20Legend%20Richard%20Matheson&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=I%20Am%20Legend%20Richard%20Matheson&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2410,8 +2499,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/7369961-M.jpg",
           "openLibraryKey": "/works/OL17202418W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL17202418W",
           "year": 2014,
-          "amazonUrl": "https://www.amazon.com/s?k=Station%20Eleven%20Emily%20St.%20John%20Mandel&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Station%20Eleven%20Emily%20St.%20John%20Mandel&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2475,8 +2566,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8401686-M.jpg",
           "openLibraryKey": "/works/OL1812933W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL1812933W",
           "year": 1991,
-          "amazonUrl": "https://www.amazon.com/s?k=American%20Psycho%20Bret%20Easton%20Ellis&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=American%20Psycho%20Bret%20Easton%20Ellis&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2559,8 +2652,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/6714077-M.jpg",
           "openLibraryKey": "/works/OL482454W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL482454W",
           "year": 2004,
-          "amazonUrl": "https://www.amazon.com/s?k=Cloud%20Atlas%20David%20Mitchell&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Cloud%20Atlas%20David%20Mitchell&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2640,8 +2735,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/843879-M.jpg",
           "openLibraryKey": "/works/OL3348011W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL3348011W",
           "year": 2000,
-          "amazonUrl": "https://www.amazon.com/s?k=Kitchen%20Confidential%20Anthony%20Bourdain&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Kitchen%20Confidential%20Anthony%20Bourdain&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2724,8 +2821,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/228873-M.jpg",
           "openLibraryKey": "/works/OL501911W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL501911W",
           "year": 1961,
-          "amazonUrl": "https://www.amazon.com/s?k=Revolutionary%20Road%20Richard%20Yates&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Revolutionary%20Road%20Richard%20Yates&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2807,8 +2906,10 @@
         "id": "philosophical-martial-arts-item-0",
         "metadata": {
           "openLibraryKey": "/works/OL39568417W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL39568417W",
           "year": 2013,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Book%20of%20Five%20Rings%20Miyamoto%20Musashi&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Book%20of%20Five%20Rings%20Miyamoto%20Musashi&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -2963,8 +3064,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8461797-M.jpg",
           "openLibraryKey": "/works/OL483391W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL483391W",
           "year": 1952,
-          "amazonUrl": "https://www.amazon.com/s?k=Charlotte's%20Web%20E.B.%20White&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Charlotte's%20Web%20E.B.%20White&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       }
     ]
@@ -2990,8 +3093,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8441376-M.jpg",
           "openLibraryKey": "/works/OL71037W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL71037W",
           "year": 1950,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Lion%2C%20the%20Witch%20and%20the%20Wardrobe%20C.S.%20Lewis&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Lion%2C%20the%20Witch%20and%20the%20Wardrobe%20C.S.%20Lewis&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3002,8 +3107,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/276518-M.jpg",
           "openLibraryKey": "/works/OL31306243W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL31306243W",
           "year": 2000,
-          "amazonUrl": "https://www.amazon.com/s?k=Harry%20Potter%20and%20the%20Sorcerer's%20Stone%20J.K.%20Rowling&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Harry%20Potter%20and%20the%20Sorcerer's%20Stone%20J.K.%20Rowling&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3069,8 +3176,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/257822-M.jpg",
           "openLibraryKey": "/works/OL15130328W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL15130328W",
           "year": 1988,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Way%20Things%20Work%20David%20Macaulay&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Way%20Things%20Work%20David%20Macaulay&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3081,8 +3190,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8709146-M.jpg",
           "openLibraryKey": "/works/OL41495W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL41495W",
           "year": 1962,
-          "amazonUrl": "https://www.amazon.com/s?k=A%20Wrinkle%20in%20Time%20Madeleine%20L'Engle&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=A%20Wrinkle%20in%20Time%20Madeleine%20L'Engle&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3145,8 +3256,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/13859660-M.jpg",
           "openLibraryKey": "/works/OL24034W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL24034W",
           "year": 1880,
-          "amazonUrl": "https://www.amazon.com/s?k=Treasure%20Island%20Robert%20Louis%20Stevenson&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Treasure%20Island%20Robert%20Louis%20Stevenson&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3197,8 +3310,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/108669-M.jpg",
           "openLibraryKey": "/works/OL111900W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL111900W",
           "year": 1959,
-          "amazonUrl": "https://www.amazon.com/s?k=My%20Side%20of%20the%20Mountain%20Jean%20Craighead%20George&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=My%20Side%20of%20the%20Mountain%20Jean%20Craighead%20George&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       }
     ]
@@ -3228,8 +3343,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/12385229-M.jpg",
           "openLibraryKey": "/works/OL46241W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL46241W",
           "year": 1950,
-          "amazonUrl": "https://www.amazon.com/s?k=I%2C%20Robot%20Isaac%20Asimov&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=I%2C%20Robot%20Isaac%20Asimov&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3319,8 +3436,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/10526598-M.jpg",
           "openLibraryKey": "/works/OL16314245W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL16314245W",
           "year": 2008,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Three-Body%20Problem%20Cixin%20Liu&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Three-Body%20Problem%20Cixin%20Liu&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3408,8 +3527,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/14658316-M.jpg",
           "openLibraryKey": "/works/OL15358691W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL15358691W",
           "year": 2010,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Way%20of%20Kings%20Brandon%20Sanderson&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Way%20of%20Kings%20Brandon%20Sanderson&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3420,8 +3541,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/6307636-M.jpg",
           "openLibraryKey": "/works/OL8369445W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL8369445W",
           "year": 2001,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Lies%20of%20Locke%20Lamora%20Scott%20Lynch&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Lies%20of%20Locke%20Lamora%20Scott%20Lynch&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3489,8 +3612,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/6424001-M.jpg",
           "openLibraryKey": "/works/OL38494W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL38494W",
           "year": 1999,
-          "amazonUrl": "https://www.amazon.com/s?k=Cryptonomicon%20Neal%20Stephenson&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Cryptonomicon%20Neal%20Stephenson&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3579,8 +3704,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/12619380-M.jpg",
           "openLibraryKey": "/works/OL27290838W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL27290838W",
           "year": 2020,
-          "amazonUrl": "https://www.amazon.com/s?k=Lifespan%3A%20Why%20We%20Age%E2%80%94and%20Why%20We%20Don't%20Have%20To%20David%20Sinclair&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Lifespan%3A%20Why%20We%20Age%E2%80%94and%20Why%20We%20Don't%20Have%20To%20David%20Sinclair&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3667,7 +3794,8 @@
         "title": "The Creative Act: A Way of Being",
         "author": "Rick Rubin",
         "metadata": {
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Creative%20Act%3A%20A%20Way%20of%20Being%20Rick%20Rubin&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Creative%20Act%3A%20A%20Way%20of%20Being%20Rick%20Rubin&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3743,7 +3871,8 @@
         "title": "Cash: The Autobiography",
         "author": "Johnny Cash",
         "metadata": {
-          "amazonUrl": "https://www.amazon.com/s?k=Cash%3A%20The%20Autobiography%20Johnny%20Cash&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Cash%3A%20The%20Autobiography%20Johnny%20Cash&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3831,8 +3960,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/7256893-M.jpg",
           "openLibraryKey": "/works/OL16700318W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL16700318W",
           "year": 2012,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Signal%20and%20the%20Noise%20Nate%20Silver&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Signal%20and%20the%20Noise%20Nate%20Silver&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3843,8 +3974,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/714396-M.jpg",
           "openLibraryKey": "/works/OL6323987W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL6323987W",
           "year": 2001,
-          "amazonUrl": "https://www.amazon.com/s?k=Sharp%20Sports%20Betting%20Stanford%20Wong&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Sharp%20Sports%20Betting%20Stanford%20Wong&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3909,7 +4042,8 @@
         "title": "The Big Con: The Story of the Confidence Man",
         "author": "David Maurer",
         "metadata": {
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Big%20Con%3A%20The%20Story%20of%20the%20Confidence%20Man%20David%20Maurer&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Big%20Con%3A%20The%20Story%20of%20the%20Confidence%20Man%20David%20Maurer&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -3996,8 +4130,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/7438807-M.jpg",
           "openLibraryKey": "/works/OL16190670W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL16190670W",
           "year": 2011,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Sisters%20Brothers%20Patrick%20deWitt&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Sisters%20Brothers%20Patrick%20deWitt&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4081,8 +4217,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/12639079-M.jpg",
           "openLibraryKey": "/works/OL2919959W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL2919959W",
           "year": 1990,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Things%20They%20Carried%20Tim%20O'Brien&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Things%20They%20Carried%20Tim%20O'Brien&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4165,8 +4303,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/12989059-M.jpg",
           "openLibraryKey": "/works/OL46932W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL46932W",
           "year": 1974,
-          "amazonUrl": "https://www.amazon.com/s?k=All%20the%20President's%20Men%20Bob%20Woodward&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=All%20the%20President's%20Men%20Bob%20Woodward&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4247,7 +4387,8 @@
         "title": "Say Nothing: A True Story of Murder and Memory in Northern Ireland",
         "author": "Patrick Radden Keefe",
         "metadata": {
-          "amazonUrl": "https://www.amazon.com/s?k=Say%20Nothing%3A%20A%20True%20Story%20of%20Murder%20and%20Memory%20in%20Northern%20Ireland%20Patrick%20Radden%20Keefe&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Say%20Nothing%3A%20A%20True%20Story%20of%20Murder%20and%20Memory%20in%20Northern%20Ireland%20Patrick%20Radden%20Keefe&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4330,8 +4471,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/10327329-M.jpg",
           "openLibraryKey": "/works/OL19979107W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL19979107W",
           "year": 2014,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Troop%20Nick%20Cutter&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Troop%20Nick%20Cutter&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4415,8 +4558,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8835206-M.jpg",
           "openLibraryKey": "/works/OL20046537W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL20046537W",
           "year": 2017,
-          "amazonUrl": "https://www.amazon.com/s?k=Universal%20Harvester%20John%20Darnielle&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Universal%20Harvester%20John%20Darnielle&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4500,8 +4645,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8758252-M.jpg",
           "openLibraryKey": "/works/OL19074847W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL19074847W",
           "year": 2018,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Overstory%20Richard%20Powers&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Overstory%20Richard%20Powers&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4587,7 +4734,8 @@
         "title": "The Soul of a Tree: A Woodworker's Reflections",
         "author": "George Nakashima",
         "metadata": {
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Soul%20of%20a%20Tree%3A%20A%20Woodworker's%20Reflections%20George%20Nakashima&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Soul%20of%20a%20Tree%3A%20A%20Woodworker's%20Reflections%20George%20Nakashima&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4630,8 +4778,10 @@
         "author": "Gabriel García Márquez",
         "metadata": {
           "openLibraryKey": "/works/OL29355621W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL29355621W",
           "year": 2007,
-          "amazonUrl": "https://www.amazon.com/s?k=One%20Hundred%20Years%20of%20Solitude%20Gabriel%20Garc%C3%ADa%20M%C3%A1rquez&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=One%20Hundred%20Years%20of%20Solitude%20Gabriel%20Garc%C3%ADa%20M%C3%A1rquez&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4694,8 +4844,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/13396-M.jpg",
           "openLibraryKey": "/works/OL158041W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL158041W",
           "year": 1971,
-          "amazonUrl": "https://www.amazon.com/s?k=Fear%20and%20Loathing%20in%20Las%20Vegas%20Hunter%20S.%20Thompson&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Fear%20and%20Loathing%20in%20Las%20Vegas%20Hunter%20S.%20Thompson&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4759,8 +4911,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/10362068-M.jpg",
           "openLibraryKey": "/works/OL21365659W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL21365659W",
           "year": 2007,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Swarm%20Frank%20Sch%C3%A4tzing&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Swarm%20Frank%20Sch%C3%A4tzing&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4826,8 +4980,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/12726570-M.jpg",
           "openLibraryKey": "/works/OL1230690W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL1230690W",
           "year": 1955,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Myth%20of%20Sisyphus%20Albert%20Camus&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Myth%20of%20Sisyphus%20Albert%20Camus&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4889,8 +5045,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/181220-M.jpg",
           "openLibraryKey": "/works/OL9173820W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL9173820W",
           "year": 2006,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Paris%20Review%20Interviews%20The%20Paris%20Review&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Paris%20Review%20Interviews%20The%20Paris%20Review&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -4953,8 +5111,10 @@
         "author": "Vladimir Nabokov",
         "metadata": {
           "openLibraryKey": "/works/OL34693589W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL34693589W",
           "year": 1964,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Defense%20Vladimir%20Nabokov&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Defense%20Vladimir%20Nabokov&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5027,8 +5187,10 @@
         "author": "Rick Riordan",
         "metadata": {
           "openLibraryKey": "/works/OL44580102W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL44580102W",
           "year": 2024,
-          "amazonUrl": "https://www.amazon.com/s?k=Percy%20Jackson%20%26%20the%20Olympians%3A%20The%20Lightning%20Thief%20Rick%20Riordan&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Percy%20Jackson%20%26%20the%20Olympians%3A%20The%20Lightning%20Thief%20Rick%20Riordan&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5106,8 +5268,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8709146-M.jpg",
           "openLibraryKey": "/works/OL41495W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL41495W",
           "year": 1962,
-          "amazonUrl": "https://www.amazon.com/s?k=A%20Wrinkle%20in%20Time%20Madeleine%20L'Engle&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=A%20Wrinkle%20in%20Time%20Madeleine%20L'Engle&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5173,8 +5337,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/108669-M.jpg",
           "openLibraryKey": "/works/OL111900W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL111900W",
           "year": 1959,
-          "amazonUrl": "https://www.amazon.com/s?k=My%20Side%20of%20the%20Mountain%20Jean%20George&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=My%20Side%20of%20the%20Mountain%20Jean%20George&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5242,8 +5408,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/7258156-M.jpg",
           "openLibraryKey": "/works/OL16804661W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL16804661W",
           "year": 2013,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Ocean%20at%20the%20End%20of%20the%20Lane%20Neil%20Gaiman&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Ocean%20at%20the%20End%20of%20the%20Lane%20Neil%20Gaiman&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5311,8 +5479,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8352502-M.jpg",
           "openLibraryKey": "/works/OL1846076W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL1846076W",
           "year": 1993,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Giver%20Lois%20Lowry&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Giver%20Lois%20Lowry&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5379,8 +5549,10 @@
         "author": "Edgar Cantero",
         "metadata": {
           "openLibraryKey": "/works/OL19710811W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL19710811W",
           "year": 2017,
-          "amazonUrl": "https://www.amazon.com/s?k=Meddling%20Kids%20Edgar%20Cantero&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Meddling%20Kids%20Edgar%20Cantero&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5446,8 +5618,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/744854-M.jpg",
           "openLibraryKey": "/works/OL4321141W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL4321141W",
           "year": 1992,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Secret%20History%20Donna%20Tartt&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Secret%20History%20Donna%20Tartt&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5511,8 +5685,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/50842-M.jpg",
           "openLibraryKey": "/works/OL2568879W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL2568879W",
           "year": 1963,
-          "amazonUrl": "https://www.amazon.com/s?k=Where%20the%20Wild%20Things%20Are%20Maurice%20Sendak&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Where%20the%20Wild%20Things%20Are%20Maurice%20Sendak&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5523,8 +5699,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/7835968-M.jpg",
           "openLibraryKey": "/works/OL52987W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL52987W",
           "year": 1969,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Very%20Hungry%20Caterpillar%20Eric%20Carle&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Very%20Hungry%20Caterpillar%20Eric%20Carle&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5591,8 +5769,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/14380180-M.jpg",
           "openLibraryKey": "/works/OL17334846W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL17334846W",
           "year": 2013,
-          "amazonUrl": "https://www.amazon.com/s?k=Rosie%20Revere%2C%20Engineer%20Andrea%20Beaty&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Rosie%20Revere%2C%20Engineer%20Andrea%20Beaty&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5603,8 +5783,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/7443301-M.jpg",
           "openLibraryKey": "/works/OL17365087W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL17365087W",
           "year": 2016,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Wild%20Robot%20Peter%20Brown&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Wild%20Robot%20Peter%20Brown&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5669,8 +5851,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/12634210-M.jpg",
           "openLibraryKey": "/works/OL268379W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL268379W",
           "year": 1981,
-          "amazonUrl": "https://www.amazon.com/s?k=Scary%20Stories%20to%20Tell%20in%20the%20Dark%20Alvin%20Schwartz&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Scary%20Stories%20to%20Tell%20in%20the%20Dark%20Alvin%20Schwartz&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5756,8 +5940,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/14559692-M.jpg",
           "openLibraryKey": "/works/OL17786115W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL17786115W",
           "year": 2015,
-          "amazonUrl": "https://www.amazon.com/s?k=An%20Ember%20in%20the%20Ashes%20Sabaa%20Tahir&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=An%20Ember%20in%20the%20Ashes%20Sabaa%20Tahir&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -5891,8 +6077,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/283860-M.jpg",
           "openLibraryKey": "/works/OL27258W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL27258W",
           "year": 1984,
-          "amazonUrl": "https://www.amazon.com/s?k=Neuromancer%20William%20Gibson&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Neuromancer%20William%20Gibson&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -6124,8 +6312,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/8792782-M.jpg",
           "openLibraryKey": "/works/OL19736287W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL19736287W",
           "year": 2018,
-          "amazonUrl": "https://www.amazon.com/s?k=Thinking%20in%20Bets%20Annie%20Duke&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Thinking%20in%20Bets%20Annie%20Duke&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -6206,8 +6396,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/14543422-M.jpg",
           "openLibraryKey": "/works/OL8400950W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL8400950W",
           "year": 2001,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Blade%20Itself%20Joe%20Abercrombie&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Blade%20Itself%20Joe%20Abercrombie&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -6280,8 +6472,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/6610039-M.jpg",
           "openLibraryKey": "/works/OL152268W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL152268W",
           "year": 1968,
-          "amazonUrl": "https://www.amazon.com/s?k=At%20the%20Mountains%20of%20Madness%20H.P.%20Lovecraft&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=At%20the%20Mountains%20of%20Madness%20H.P.%20Lovecraft&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -6356,8 +6550,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/980232-M.jpg",
           "openLibraryKey": "/works/OL7924103W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL7924103W",
           "year": 1990,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Eye%20of%20the%20World%20Robert%20Jordan&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Eye%20of%20the%20World%20Robert%20Jordan&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -6439,8 +6635,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/6978703-M.jpg",
           "openLibraryKey": "/works/OL16032768W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL16032768W",
           "year": 1984,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Black%20Company%20Glen%20Cook&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Black%20Company%20Glen%20Cook&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -6525,8 +6723,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/4289014-M.jpg",
           "openLibraryKey": "/works/OL3171069W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL3171069W",
           "year": 1959,
-          "amazonUrl": "https://www.amazon.com/s?k=The%20Haunting%20of%20Hill%20House%20Shirley%20Jackson&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=The%20Haunting%20of%20Hill%20House%20Shirley%20Jackson&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -6608,8 +6808,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/9157148-M.jpg",
           "openLibraryKey": "/works/OL17914663W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL17914663W",
           "year": 2017,
-          "amazonUrl": "https://www.amazon.com/s?k=All%20Systems%20Red%20Martha%20Wells&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=All%20Systems%20Red%20Martha%20Wells&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {
@@ -6689,8 +6891,10 @@
         "metadata": {
           "coverUrl": "https://covers.openlibrary.org/b/id/12859975-M.jpg",
           "openLibraryKey": "/works/OL26004554W",
+          "openLibraryUrl": "https://openlibrary.org/works/OL26004554W",
           "year": 2022,
-          "amazonUrl": "https://www.amazon.com/s?k=Tomorrow%2C%20and%20Tomorrow%2C%20and%20Tomorrow%20Gabrielle%20Zevin&tag=tomewizard-20"
+          "amazonUrl": "https://www.amazon.com/s?k=Tomorrow%2C%20and%20Tomorrow%2C%20and%20Tomorrow%20Gabrielle%20Zevin&tag=tomewizard-20",
+          "coverEnrichVersion": 2
         }
       },
       {

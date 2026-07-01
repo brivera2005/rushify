@@ -2,14 +2,12 @@
 import enrichedTracks from '../data/tracks-enriched.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import { buildTrackSearchIndex } from '../lib/track-search';
 import type { EnrichedTrack } from '../lib/types';
 
 const tracks = enrichedTracks as EnrichedTrack[];
 const searchIndex = buildTrackSearchIndex(tracks);
-
-const KOBO_CLARA_URL = 'https://www.amazon.com/dp/B0CZXYV8GT?tag=tomewizard-20';
-const TOMEWIZARD_URL = 'https://www.tomewizard.com';
 ---
 
 <BaseLayout
@@ -76,13 +74,7 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
       </p>
     </section>
 
-    <footer class="mt-12 pt-6 border-t border-white/8 text-[11px] text-white/40">
-      <p>
-        <a href={TOMEWIZARD_URL} target="_blank" rel="noopener noreferrer" class="hover:text-copper transition-colors duration-200">TomeWizard.com</a>
-        <span class="text-white/15 mx-2" aria-hidden="true">·</span>
-        <a href={KOBO_CLARA_URL} target="_blank" rel="noopener noreferrer" class="hover:text-copper transition-colors duration-200">Kobo Clara BW</a>
-      </p>
-    </footer>
+    <SiteFooter class="mt-12" />
   </main>
 
   <script define:vars={{ trackTotal: tracks.length }}>

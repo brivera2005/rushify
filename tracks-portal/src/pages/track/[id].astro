@@ -4,6 +4,7 @@ import allTracks from '../../data/tracks.json';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TrackItemCard from '../../components/TrackItemCard.astro';
 import RelatedTracks from '../../components/RelatedTracks.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
 import type { EnrichedTrack } from '../../lib/types';
 
 const tracks = enrichedTracks as EnrichedTrack[];
@@ -17,9 +18,6 @@ const { track } = Astro.props;
 const coreItems = track.sequence;
 const supplementalItems = track.supplemental ?? [];
 const coreCount = coreItems.length;
-
-const KOBO_CLARA_URL = 'https://www.amazon.com/dp/B0CZXYV8GT?tag=tomewizard-20';
-const TOMEWIZARD_URL = 'https://www.tomewizard.com';
 ---
 
 <BaseLayout title={`${track.title} · RushTracks`} description={track.description}>
@@ -89,13 +87,7 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
       allTracks={trackList}
     />
 
-    <footer class="mt-16 pt-8 border-t border-white/10 text-xs text-white/45">
-      <p>
-        <a href={TOMEWIZARD_URL} target="_blank" rel="noopener noreferrer" class="hover:text-copper transition-colors">TomeWizard.com</a>
-        <span class="text-white/20 mx-2" aria-hidden="true">·</span>
-        <a href={KOBO_CLARA_URL} target="_blank" rel="noopener noreferrer" class="hover:text-copper transition-colors">Kobo Clara BW</a>
-      </p>
-    </footer>
+    <SiteFooter class="mt-16" />
   </main>
 
   <script>

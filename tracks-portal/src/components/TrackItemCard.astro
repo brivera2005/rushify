@@ -1,6 +1,7 @@
 ---
 import type { EnrichedSequenceItem } from '../lib/types';
 import { typeLabel } from '../lib/track-items';
+import { bookTitleInitial, isOpenLibraryCover, openLibraryCoverSize } from '../lib/book-covers';
 import { buildRushTvDetailUrl, isRushTvEligibleItemType, tmdbAvailabilityKey } from '../lib/rushtv-deeplink';
 
 interface Props {
@@ -9,12 +10,22 @@ interface Props {
   itemId?: string;
   stepNumber?: number;
   supplemental?: boolean;
+  compact?: boolean;
 }
 
-const { item, trackId, itemId, stepNumber, supplemental = false } = Astro.props;
+const { item, trackId, itemId, stepNumber, supplemental = false, compact = false } = Astro.props;
 
 const meta = item.metadata;
-const imageUrl = meta?.posterUrl || meta?.coverUrl;
+const isBook = item.type === 'book';
+const coverSize = compact ? 'S' : 'M';
+const bookCoverUrl = isBook && meta?.coverUrl && isOpenLibraryCover(meta.coverUrl)
+  ? openLibraryCoverSize(meta.coverUrl, coverSize)
+  : isBook
+    ? meta?.coverUrl
+    : undefined;
+const imageUrl = isBook ? bookCoverUrl : meta?.posterUrl;
+const showBookPlaceholder = isBook && !imageUrl;
+const titleInitial = bookTitleInitial(item.title);
 const itemDomId = itemId || item.id || `${trackId}-item`;
 const rushTvEligible =
   meta?.tmdbId && meta?.mediaType && isRushTvEligibleItemType(item.type);
@@ -46,6 +57,14 @@ const rushTvUrl = rushTvEligible
           width="160"
           height="240"
         />
+      ) : showBookPlaceholder ? (
+        <div class="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-b from-white/[0.04] to-white/[0.01] p-4" aria-hidden="true">
+          <svg class="w-8 h-8 text-copper/40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.25" aria-hidden="true">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+          </svg>
+          <span class="font-display text-3xl text-copper/55 leading-none">{titleInitial}</span>
+        </div>
       ) : (
         <div class="absolute inset-0 flex items-center justify-center text-white/20 text-xs uppercase tracking-widest p-4 text-center">
           {typeLabel(item.type)}
@@ -121,6 +140,18 @@ const rushTvUrl = rushTvEligible
           </a>
         )}
       </div>
+      {isBook && meta?.coverUrl && meta?.openLibraryUrl && (
+        <p class="text-[10px] text-white/30 mt-3">
+          <a
+            href={meta.openLibraryUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-copper/70 transition-colors"
+          >
+            Cover from Open Library
+          </a>
+        </p>
+      )}
     </div>
   </div>
 </article>

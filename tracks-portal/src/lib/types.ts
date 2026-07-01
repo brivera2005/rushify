@@ -31,6 +31,7 @@ export interface ItemMetadata {
   tmdbId?: number;
   mediaType?: 'movie' | 'tv';
   openLibraryKey?: string;
+  openLibraryUrl?: string;
   year?: number;
 }
 
