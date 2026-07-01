@@ -100,6 +100,11 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
     </footer>
   </main>
 
+  <script>
+    import { hydrateRushtvButtons } from '../../lib/rushtv-availability-client.ts';
+    hydrateRushtvButtons();
+  </script>
+
   <script define:vars={{ trackId: track.id, coreNodeIds, coreCount }}>
     const storageKey = `rushtracks-progress-${trackId}`;
     const progressEl = document.getElementById(`track-progress-${trackId}`);

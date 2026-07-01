@@ -9,8 +9,17 @@
  */
 export type RushTvMediaType = 'movie' | 'tv';
 
-export function buildRushTvDetailUrl(tmdbId: number, mediaType: RushTvMediaType): string {
-  return `rushtv://detail?tmdb=${mediaType}:${tmdbId}`;
+export function buildRushTvDetailUrl(
+  tmdbId: number,
+  mediaType: RushTvMediaType,
+  action?: 'request',
+): string {
+  const base = `rushtv://detail?tmdb=${mediaType}:${tmdbId}`;
+  return action === 'request' ? `${base}&action=request` : base;
+}
+
+export function tmdbAvailabilityKey(mediaType: RushTvMediaType, tmdbId: number): string {
+  return `${mediaType}:${tmdbId}`;
 }
 
 /** Film and series track stops that can open in RushTV. */

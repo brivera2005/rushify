@@ -1,10 +1,18 @@
 ---
-import type { TrackMap, SequenceItem } from '../lib/types';
+import type { EnrichedSequenceItem, TrackMap } from '../lib/types';
+import {
+  buildJourneyLayers,
+  countCoreSteps,
+  isOptionalItem,
+  itemImage,
+  typeIcon,
+  typeLabel,
+} from '../lib/path-progress';
 
 interface Props {
   trackId: string;
   map: TrackMap;
-  sequence: SequenceItem[];
+  sequence: EnrichedSequenceItem[];
 }
 
 const { trackId, map, sequence } = Astro.props;
@@ -13,223 +21,182 @@ const itemById = Object.fromEntries(
   sequence.filter((s) => s.id).map((s) => [s.id!, s]),
 );
 
-const layers = new Map<number, typeof map.nodes>();
-for (const node of map.nodes) {
-  const list = layers.get(node.layer) || [];
-  list.push(node);
-  layers.set(node.layer, list);
-}
-const layerCount = Math.max(...map.nodes.map((n) => n.layer)) + 1;
-const maxSlots = Math.max(...map.nodes.map((n) => n.slot)) + 1;
+const layers = buildJourneyLayers(map, sequence);
+const coreStepCount = countCoreSteps(layers, sequence);
 
-function nodeX(slot: number) {
-  return ((slot + 0.5) / maxSlots) * 100;
-}
-function nodeY(layer: number) {
-  return ((layer + 0.5) / layerCount) * 100;
-}
-
-const nodePositions = Object.fromEntries(
-  map.nodes.map((n) => [n.id, { x: nodeX(n.slot), y: nodeY(n.layer) }]),
-);
-
-function nodeLabel(itemId: string) {
-  const item = itemById[itemId];
-  if (!item) return '?';
-  if (item.type === 'crossroads') return '◇';
-  return item.title.split(' ').slice(0, 2).join(' ');
-}
+const layerPayload = layers.map((layer) => ({
+  layer: layer.layer,
+  kind: layer.kind,
+  choiceItemId: layer.choiceItemId,
+  nodes:
+    layer.kind === 'choice'
+      ? (layer.choiceOptions || []).map((opt) => ({
+          nodeId: opt.nodeId,
+          itemId: opt.itemId,
+          title: opt.item?.title || itemById[opt.itemId]?.title || 'Untitled',
+          type: opt.item?.type || itemById[opt.itemId]?.type || 'movie',
+          optional: isOptionalItem(opt.item || itemById[opt.itemId]),
+        }))
+      : layer.nodes.map((node) => {
+          const item = itemById[node.itemId];
+          return {
+            nodeId: node.id,
+            itemId: node.itemId,
+            title: item?.title || 'Untitled',
+            type: item?.type || 'movie',
+            optional: isOptionalItem(item),
+          };
+        }),
+}));
 ---
 
-<section class="mb-8" aria-label="Path map">
-  <div class="flex items-center justify-between mb-2">
-    <h2 class="font-display text-base text-white/75">Path Map</h2>
-    <p class="text-[9px] uppercase tracking-widest text-white/35">Tap nodes · choices save locally</p>
+<section class="journey-map" aria-label="Your journey map" id={`journey-map-${trackId}`}>
+  <div class="journey-toolbar">
+    <div>
+      <h2 class="font-display text-base text-white/80 mb-1">Your Journey</h2>
+      <p id={`journey-status-${trackId}`} class="journey-status">
+        Step 1 of {coreStepCount} · Start below
+      </p>
+    </div>
+    <button type="button" id={`journey-reset-${trackId}`} class="journey-reset">
+      Start over
+    </button>
   </div>
-  <div class="relative card-surface overflow-x-auto">
-    <svg
-      id={`path-map-${trackId}`}
-      class="path-map-svg w-full min-w-[280px]"
-      viewBox="0 0 100 100"
-      preserveAspectRatio="xMidYMid meet"
-      style={`aspect-ratio: ${maxSlots} / ${layerCount}; max-height: 260px;`}
-      data-track-id={trackId}
-    >
-      {map.edges.map((edge) => {
-        const from = nodePositions[edge.from];
-        const to = nodePositions[edge.to];
-        if (!from || !to) return null;
+
+  <ol class="journey-timeline">
+    <li class="journey-layer journey-layer--start" data-layer="-1">
+      <div class="journey-start-badge">Start</div>
+    </li>
+
+    {
+      layers.map((layer) => {
+        const isOptionalLayer =
+          layer.kind === 'choice' &&
+          (layer.choiceOptions || []).every((o) => isOptionalItem(o.item || itemById[o.itemId]));
+        const layerHasOptionalOnly =
+          layer.kind === 'steps' &&
+          layer.nodes.every((n) => isOptionalItem(itemById[n.itemId]));
+
         return (
-          <line
-            class="path-edge stroke-white/15"
-            data-from={edge.from}
-            data-to={edge.to}
-            x1={from.x}
-            y1={from.y}
-            x2={to.x}
-            y2={to.y}
-            stroke-width="0.35"
-          />
-        );
-      })}
-      {map.nodes.map((node) => {
-        const pos = nodePositions[node.id];
-        const item = itemById[node.itemId];
-        const isCross = item?.type === 'crossroads';
-        const isOptional = item?.required === false;
-        return (
-          <g
-            class="path-node cursor-pointer"
-            data-node-id={node.id}
-            data-item-id={node.itemId}
-            role="button"
-            tabindex="0"
+          <li
+            class:list={[
+              'journey-layer',
+              (isOptionalLayer || layerHasOptionalOnly) && 'journey-layer--optional',
+            ]}
+            data-layer={layer.layer}
+            data-optional={(isOptionalLayer || layerHasOptionalOnly) ? 'true' : 'false'}
           >
-            <circle
-              class:list={[
-                'path-node-circle',
-                isCross ? 'fill-transparent stroke-copper/70' : 'fill-white/25 stroke-white/40',
-                isOptional && 'stroke-dashed',
-              ]}
-              cx={pos.x}
-              cy={pos.y}
-              r={isCross ? 2 : 1.6}
-              stroke-width="0.3"
-            />
-            <title>{nodeLabel(node.itemId)}</title>
-          </g>
+            {layer.kind === 'choice' ? (
+              <div
+                class="journey-choice-panel"
+                data-choice-layer={layer.layer}
+                {...(layer.choiceItemId ? { 'data-crossroads-item': layer.choiceItemId } : {})}
+              >
+                <h3 class="journey-choice-heading">{layer.choiceLabel || 'Pick one path'}</h3>
+                <p class="journey-choice-hint">
+                  Choose one to continue — siblings fade as skipped. Optional side quests are dashed.
+                </p>
+                <div class="journey-choice-grid">
+                  {(layer.choiceOptions || []).map((opt) => {
+                    const item = opt.item || itemById[opt.itemId];
+                    const optional = isOptionalItem(item);
+                    const thumb = itemImage(item);
+                    return (
+                      <button
+                        type="button"
+                        class:list={[
+                          'journey-node-card',
+                          optional && 'journey-node-card--optional',
+                        ]}
+                        data-node-id={opt.nodeId}
+                        data-item-id={opt.itemId}
+                        data-layer={layer.layer}
+                        data-optional={optional ? 'true' : 'false'}
+                        data-is-choice="true"
+                      >
+                        <div class="journey-node-body">
+                          {thumb ? (
+                            <img src={thumb} alt="" class="journey-node-thumb" loading="lazy" width="48" height="64" />
+                          ) : (
+                            <div class="journey-node-thumb flex items-center justify-center text-lg" aria-hidden="true">
+                              {typeIcon(item?.type || 'movie')}
+                            </div>
+                          )}
+                          <div class="journey-node-meta">
+                            <p class="journey-node-type">
+                              {typeIcon(item?.type || 'movie')} {typeLabel(item?.type || 'movie')}
+                              {optional && (
+                                <span class="journey-node-badge journey-node-badge--optional ml-2">
+                                  Optional
+                                </span>
+                              )}
+                            </p>
+                            <p class="journey-node-title">{item?.title || 'Untitled'}</p>
+                            {item?.note && <p class="text-[11px] text-white/45 mt-1 line-clamp-2">{item.note}</p>}
+                          </div>
+                          <span class="journey-node-badge" aria-live="polite"></span>
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            ) : (
+              layer.nodes.map((node) => {
+                const item = itemById[node.itemId];
+                if (item?.type === 'crossroads') return null;
+                const optional = isOptionalItem(item);
+                const thumb = itemImage(item);
+                return (
+                  <button
+                    type="button"
+                    class:list={[
+                      'journey-node-card mb-3',
+                      optional && 'journey-node-card--optional',
+                    ]}
+                    data-node-id={node.id}
+                    data-item-id={node.itemId}
+                    data-layer={layer.layer}
+                    data-optional={optional ? 'true' : 'false'}
+                    data-is-choice="false"
+                  >
+                    <div class="journey-node-body">
+                      {thumb ? (
+                        <img src={thumb} alt="" class="journey-node-thumb" loading="lazy" width="48" height="64" />
+                      ) : (
+                        <div class="journey-node-thumb flex items-center justify-center text-lg" aria-hidden="true">
+                          {typeIcon(item?.type || 'movie')}
+                        </div>
+                      )}
+                      <div class="journey-node-meta">
+                        <p class="journey-node-type">
+                          {typeIcon(item?.type || 'movie')} {typeLabel(item?.type || 'movie')}
+                          {optional && (
+                            <span class="journey-node-badge journey-node-badge--optional ml-2">Side quest</span>
+                          )}
+                        </p>
+                        <p class="journey-node-title">{item?.title || 'Untitled'}</p>
+                        {item?.note && <p class="text-[11px] text-white/45 mt-1 line-clamp-2">{item.note}</p>}
+                      </div>
+                      <span class="journey-node-badge" aria-live="polite"></span>
+                    </div>
+                  </button>
+                );
+              })
+            )}
+          </li>
         );
-      })}
-    </svg>
-  </div>
-  <p id={`path-status-${trackId}`} class="text-[11px] text-white/40 mt-1.5"></p>
+      })
+    }
+  </ol>
 </section>
 
-<script define:vars={{ trackId }}>
-  const svg = document.getElementById(`path-map-${trackId}`);
-  const status = document.getElementById(`path-status-${trackId}`);
-  if (!svg) throw new Error('path map missing');
-
-  const storageKey = `rushtracks-path-${trackId}`;
-
-  function loadState() {
-    try {
-      return JSON.parse(localStorage.getItem(storageKey) || '{}');
-    } catch {
-      return {};
-    }
-  }
-
-  function saveState(state) {
-    localStorage.setItem(storageKey, JSON.stringify(state));
-  }
-
-  function applyVisuals(state) {
-    const chosen = new Set(state.chosenItems || []);
-    const skipped = new Set(state.skippedItems || []);
-
-    svg.querySelectorAll('.path-node').forEach((g) => {
-      const itemId = g.dataset.itemId;
-      const circle = g.querySelector('.path-node-circle');
-      if (!circle || !itemId) return;
-      circle.classList.remove('fill-copper', 'stroke-copper', 'opacity-30');
-      if (chosen.has(itemId)) {
-        circle.classList.add('fill-copper', 'stroke-copper');
-      } else if (skipped.has(itemId)) {
-        circle.classList.add('opacity-30');
-      }
-    });
-
-    svg.querySelectorAll('.path-edge').forEach((line) => {
-      const fromItem = svg.querySelector(`[data-node-id="${line.dataset.from}"]`)?.dataset.itemId;
-      const toItem = svg.querySelector(`[data-node-id="${line.dataset.to}"]`)?.dataset.itemId;
-      const active = (fromItem && chosen.has(fromItem)) || (toItem && chosen.has(toItem));
-      line.classList.toggle('stroke-copper', !!active);
-      line.classList.toggle('stroke-white/15', !active);
-    });
-
-    document.querySelectorAll('.track-item-card').forEach((card) => {
-      const id = card.dataset.itemId;
-      if (!id) return;
-      card.classList.toggle('border-copper', chosen.has(id));
-      card.classList.toggle('ring-1', chosen.has(id));
-      card.classList.toggle('ring-copper/35', chosen.has(id));
-      card.classList.toggle('opacity-40', skipped.has(id));
-      card.classList.toggle('hidden', state.hiddenItems?.includes(id));
-    });
-
-    if (status) {
-      const n = chosen.size;
-      status.textContent = n ? `${n} stop${n === 1 ? '' : 's'} on your path` : 'Select nodes or crossroads choices to build your path';
-    }
-  }
-
-  let state = loadState();
-  applyVisuals(state);
-
-  svg.querySelectorAll('.path-node').forEach((g) => {
-    const activate = () => {
-      const itemId = g.dataset.itemId;
-      if (!itemId) return;
-      const card = document.getElementById(`card-${itemId}`);
-      card?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-      if (!state.chosenItems) state.chosenItems = [];
-      const idx = state.chosenItems.indexOf(itemId);
-      if (idx >= 0) {
-        state.chosenItems.splice(idx, 1);
-      } else {
-        state.chosenItems.push(itemId);
-        if (state.skippedItems) {
-          state.skippedItems = state.skippedItems.filter((id) => id !== itemId);
-        }
-      }
-      saveState(state);
-      applyVisuals(state);
-    };
-    g.addEventListener('click', activate);
-    g.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        activate();
-      }
-    });
-  });
-
-  document.querySelectorAll('.crossroads-choice').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.dataset.target;
-      const optional = btn.dataset.optional === 'true';
-      if (!targetId) return;
-
-      if (!state.chosenItems) state.chosenItems = [];
-      if (!state.skippedItems) state.skippedItems = [];
-      if (!state.hiddenItems) state.hiddenItems = [];
-
-      const crossroads = btn.closest('[data-crossroads-for]');
-      const crossId = crossroads?.dataset.crossroadsFor;
-      if (crossId && !state.chosenItems.includes(crossId)) {
-        state.chosenItems.push(crossId);
-      }
-
-      if (!state.chosenItems.includes(targetId)) {
-        state.chosenItems.push(targetId);
-      }
-
-      const siblings = crossroads?.querySelectorAll('.crossroads-choice') || [];
-      siblings.forEach((sib) => {
-        const sibTarget = sib.dataset.target;
-        if (sibTarget && sibTarget !== targetId && !optional) {
-          if (!state.skippedItems.includes(sibTarget)) {
-            state.skippedItems.push(sibTarget);
-          }
-        }
-      });
-
-      btn.classList.add('border-copper', 'text-copper');
-      saveState(state);
-      applyVisuals(state);
-      document.getElementById(`card-${targetId}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
+<script define:vars={{ trackId, layerPayload, coreStepCount, mapJson: JSON.stringify(map) }}>
+  import { initJourneyMap } from '../../lib/journey-map-client.ts';
+  initJourneyMap({
+    trackId,
+    layers: layerPayload,
+    coreStepCount,
+    mapJson,
   });
 </script>

@@ -6,6 +6,10 @@ export interface Env {
   RUSHTRACKS_GATE_SECRET: string;
   TRACKS_MASTER_PIN?: string;
   TRACKS_PINS: KVNamespace;
+  /** Jellyfin base URL for library availability (e.g. https://jellyfin.example.com) */
+  JELLYFIN_SERVER_URL?: string;
+  /** Jellyfin API key with library read access */
+  JELLYFIN_API_KEY?: string;
 }
 
 export interface ActivePin {

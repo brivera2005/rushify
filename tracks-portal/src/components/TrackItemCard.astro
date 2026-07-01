@@ -1,6 +1,6 @@
 ---
 import type { EnrichedSequenceItem } from '../lib/types';
-import { buildRushTvDetailUrl, isRushTvEligibleItemType } from '../lib/rushtv-deeplink';
+import { buildRushTvDetailUrl, isRushTvEligibleItemType, tmdbAvailabilityKey } from '../lib/rushtv-deeplink';
 
 interface Props {
   item: EnrichedSequenceItem;
@@ -28,10 +28,14 @@ const imageUrl = meta?.posterUrl || meta?.coverUrl;
 const isOptional = item.required === false;
 const isTier2 = item.type === 'videogame' || item.type === 'boardgame';
 const itemDomId = item.id || `${trackId}-item-${index}`;
-const rushTvUrl =
-  meta?.tmdbId && meta?.mediaType && isRushTvEligibleItemType(item.type)
-    ? buildRushTvDetailUrl(meta.tmdbId, meta.mediaType)
-    : null;
+const rushTvEligible =
+  meta?.tmdbId && meta?.mediaType && isRushTvEligibleItemType(item.type);
+const rushTvKey = rushTvEligible
+  ? tmdbAvailabilityKey(meta!.mediaType!, meta!.tmdbId!)
+  : null;
+const rushTvUrl = rushTvEligible
+  ? buildRushTvDetailUrl(meta!.tmdbId!, meta!.mediaType!)
+  : null;
 ---
 
 <article
@@ -148,12 +152,17 @@ const rushTvUrl =
               Buy on Amazon
             </a>
           )}
-          {rushTvUrl && (
+          {rushTvEligible && rushTvUrl && rushTvKey && (
             <a
               href={rushTvUrl}
-              class="inline-block border border-copper/60 text-copper px-4 py-2 text-xs uppercase tracking-widest hover:bg-copper hover:text-black transition-colors"
+              class="rushtv-cta rushtv-cta--loading inline-flex items-center gap-2 min-h-[44px] px-4 py-2 text-xs uppercase tracking-widest transition-colors"
+              data-tmdb-key={rushTvKey}
+              data-tmdb-id={meta!.tmdbId}
+              data-media-type={meta!.mediaType}
+              aria-label="Checking RushTV availability"
             >
-              Open on RushTV
+              <span class="rushtv-cta-spinner" aria-hidden="true"></span>
+              <span class="rushtv-cta-label">Checking…</span>
             </a>
           )}
         </div>
