@@ -31,7 +31,7 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
           autocomplete="off"
           autocorrect="off"
           spellcheck="false"
-          placeholder="Search tracks…"
+          placeholder="Search tracks, themes, tags…"
           class="w-full border border-white/20 bg-white/5 px-4 py-3 text-base text-white placeholder:text-white/40 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent/50"
         />
         <p id="track-count" class="mt-2 text-xs uppercase tracking-[0.25em] text-white/45">
@@ -42,13 +42,22 @@ const TOMEWIZARD_URL = 'https://www.tomewizard.com';
       <h2 id="tracks-heading" class="sr-only">All Tracks</h2>
       <ul id="track-list" class="grid gap-3 md:grid-cols-2 mt-2">
         {tracks.map((track) => (
-          <li data-search={`${track.title} ${track.description}`.toLowerCase()}>
+          <li data-search={`${track.title} ${track.description} ${(track.tags ?? []).join(' ')}`.toLowerCase()}>
             <a
               href={`/track/${track.id}`}
               class="group block border border-white/15 p-5 hover:border-accent transition-colors"
             >
               <h3 class="font-display text-lg md:text-xl group-hover:text-accent transition-colors">{track.title}</h3>
               <p class="text-white/60 mt-2 text-sm leading-relaxed line-clamp-2">{track.description}</p>
+              {(track.tags?.length ?? 0) > 0 && (
+                <ul class="flex flex-wrap gap-1.5 mt-3" aria-label="Tags">
+                  {track.tags!.slice(0, 4).map((tag) => (
+                    <li class="text-[10px] uppercase tracking-wider text-white/50 border border-white/15 px-2 py-0.5">
+                      {tag}
+                    </li>
+                  ))}
+                </ul>
+              )}
               <p class="text-accent text-xs uppercase tracking-widest mt-3">{track.sequence.length} stops</p>
             </a>
           </li>

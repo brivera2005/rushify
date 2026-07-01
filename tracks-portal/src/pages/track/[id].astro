@@ -25,6 +25,15 @@ function typeLabel(type: string) {
     <header class="mt-8 mb-12 border-b border-white/15 pb-10">
       <h1 class="font-display text-4xl md:text-5xl font-bold leading-tight">{track.title}</h1>
       <p class="text-white/70 mt-4 text-lg leading-relaxed">{track.description}</p>
+      {(track.tags?.length ?? 0) > 0 && (
+        <ul class="flex flex-wrap gap-2 mt-5" aria-label="Tags">
+          {track.tags!.map((tag) => (
+            <li class="text-xs uppercase tracking-wider text-white/50 border border-white/15 px-2.5 py-1">
+              {tag}
+            </li>
+          ))}
+        </ul>
+      )}
     </header>
 
     <ol class="relative border-l border-white/20 ml-3">

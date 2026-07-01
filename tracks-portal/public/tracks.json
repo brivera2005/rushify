@@ -4,11 +4,39 @@
     "title": "The Existential AI",
     "description": "The evolution from mechanical curiosity to cold, logical independence.",
     "sequence": [
-      { "type": "book", "title": "Do Androids Dream of Electric Sheep?", "author": "Philip K. Dick" },
-      { "type": "book", "title": "2001: A Space Odyssey", "author": "Arthur C. Clarke" },
-      { "type": "movie", "title": "Blade Runner", "year": 1982 },
-      { "type": "movie", "title": "Ex Machina", "year": 2014 },
-      { "type": "show", "title": "Westworld (Season 1)", "year": 2016 }
+      {
+        "type": "book",
+        "title": "Do Androids Dream of Electric Sheep?",
+        "author": "Philip K. Dick"
+      },
+      {
+        "type": "book",
+        "title": "2001: A Space Odyssey",
+        "author": "Arthur C. Clarke"
+      },
+      {
+        "type": "movie",
+        "title": "Blade Runner",
+        "year": 1982
+      },
+      {
+        "type": "movie",
+        "title": "Ex Machina",
+        "year": 2014
+      },
+      {
+        "type": "show",
+        "title": "Westworld (Season 1)",
+        "year": 2016
+      }
+    ],
+    "tags": [
+      "sci-fi",
+      "ai",
+      "philosophy",
+      "film",
+      "books",
+      "cyberpunk"
     ]
   },
   {
@@ -16,10 +44,34 @@
     "title": "Surreal Sci-Fi & The Mind",
     "description": "Reality distortion, cognitive fractures, and worlds that bleed into our own.",
     "sequence": [
-      { "type": "book", "title": "Annihilation", "author": "Jeff VanderMeer" },
-      { "type": "book", "title": "Ubik", "author": "Philip K. Dick" },
-      { "type": "movie", "title": "Stalker", "year": 1979 },
-      { "type": "show", "title": "Severance (Season 1)", "year": 2022 }
+      {
+        "type": "book",
+        "title": "Annihilation",
+        "author": "Jeff VanderMeer"
+      },
+      {
+        "type": "book",
+        "title": "Ubik",
+        "author": "Philip K. Dick"
+      },
+      {
+        "type": "movie",
+        "title": "Stalker",
+        "year": 1979
+      },
+      {
+        "type": "show",
+        "title": "Severance (Season 1)",
+        "year": 2022
+      }
+    ],
+    "tags": [
+      "sci-fi",
+      "surreal",
+      "psychological",
+      "film",
+      "books",
+      "mind"
     ]
   },
   {
@@ -27,10 +79,34 @@
     "title": "Dark Fantasy Foundations",
     "description": "Morally gray protagonists, brutal world-building, and the subversion of classic heroism.",
     "sequence": [
-      { "type": "book", "title": "The Book of the New Sun", "author": "Gene Wolfe" },
-      { "type": "book", "title": "The Blade Itself", "author": "Joe Abercrombie" },
-      { "type": "movie", "title": "The Green Knight", "year": 2021 },
-      { "type": "show", "title": "Game of Thrones (Seasons 1-4)", "year": 2011 }
+      {
+        "type": "book",
+        "title": "The Book of the New Sun",
+        "author": "Gene Wolfe"
+      },
+      {
+        "type": "book",
+        "title": "The Blade Itself",
+        "author": "Joe Abercrombie"
+      },
+      {
+        "type": "movie",
+        "title": "The Green Knight",
+        "year": 2021
+      },
+      {
+        "type": "show",
+        "title": "Game of Thrones (Seasons 1-4)",
+        "year": 2011
+      }
+    ],
+    "tags": [
+      "fantasy",
+      "dark",
+      "medieval",
+      "books",
+      "film",
+      "tv"
     ]
   },
   {
@@ -38,10 +114,34 @@
     "title": "The Digital Frontier",
     "description": "The hacker ethos, cybernetic decay, and the architecture of the code.",
     "sequence": [
-      { "type": "book", "title": "Neuromancer", "author": "William Gibson" },
-      { "type": "book", "title": "Snow Crash", "author": "Neal Stephenson" },
-      { "type": "movie", "title": "The Matrix", "year": 1999 },
-      { "type": "show", "title": "Mr. Robot", "year": 2015 }
+      {
+        "type": "book",
+        "title": "Neuromancer",
+        "author": "William Gibson"
+      },
+      {
+        "type": "book",
+        "title": "Snow Crash",
+        "author": "Neal Stephenson"
+      },
+      {
+        "type": "movie",
+        "title": "The Matrix",
+        "year": 1999
+      },
+      {
+        "type": "show",
+        "title": "Mr. Robot",
+        "year": 2015
+      }
+    ],
+    "tags": [
+      "cyberpunk",
+      "sci-fi",
+      "hacking",
+      "books",
+      "film",
+      "tv"
     ]
   },
   {
@@ -49,10 +149,34 @@
     "title": "The Transhuman Ascent",
     "description": "Bioengineering, peptide protocols, longevity, and altering the human vessel.",
     "sequence": [
-      { "type": "book", "title": "Altered Carbon", "author": "Richard K. Morgan" },
-      { "type": "book", "title": "Homo Deus: A Brief History of Tomorrow", "author": "Yuval Noah Harari" },
-      { "type": "movie", "title": "Gattaca", "year": 1997 },
-      { "type": "movie", "title": "Limitless", "year": 2011 }
+      {
+        "type": "book",
+        "title": "Altered Carbon",
+        "author": "Richard K. Morgan"
+      },
+      {
+        "type": "book",
+        "title": "Homo Deus: A Brief History of Tomorrow",
+        "author": "Yuval Noah Harari"
+      },
+      {
+        "type": "movie",
+        "title": "Gattaca",
+        "year": 1997
+      },
+      {
+        "type": "movie",
+        "title": "Limitless",
+        "year": 2011
+      }
+    ],
+    "tags": [
+      "sci-fi",
+      "biology",
+      "longevity",
+      "philosophy",
+      "film",
+      "books"
     ]
   },
   {
@@ -60,10 +184,34 @@
     "title": "The Perfect Sound",
     "description": "The violent, obsessive, and transcendent pursuit of musical and artistic perfection.",
     "sequence": [
-      { "type": "book", "title": "How Music Works", "author": "David Byrne" },
-      { "type": "movie", "title": "Amadeus", "year": 1984 },
-      { "type": "movie", "title": "Whiplash", "year": 2014 },
-      { "type": "documentary", "title": "Sound City", "year": 2013 }
+      {
+        "type": "book",
+        "title": "How Music Works",
+        "author": "David Byrne"
+      },
+      {
+        "type": "movie",
+        "title": "Amadeus",
+        "year": 1984
+      },
+      {
+        "type": "movie",
+        "title": "Whiplash",
+        "year": 2014
+      },
+      {
+        "type": "documentary",
+        "title": "Sound City",
+        "year": 2013
+      }
+    ],
+    "tags": [
+      "music",
+      "art",
+      "obsession",
+      "film",
+      "documentary",
+      "books"
     ]
   },
   {
@@ -71,10 +219,34 @@
     "title": "The Roots of Rhythm",
     "description": "The soul, grit, and history of country, blues, and pure active rock.",
     "sequence": [
-      { "type": "book", "title": "Life", "author": "Keith Richards" },
-      { "type": "movie", "title": "Walk the Line", "year": 2005 },
-      { "type": "movie", "title": "O Brother, Where Art Thou?", "year": 2000 },
-      { "type": "documentary", "title": "It Might Get Loud", "year": 2008 }
+      {
+        "type": "book",
+        "title": "Life",
+        "author": "Keith Richards"
+      },
+      {
+        "type": "movie",
+        "title": "Walk the Line",
+        "year": 2005
+      },
+      {
+        "type": "movie",
+        "title": "O Brother, Where Art Thou?",
+        "year": 2000
+      },
+      {
+        "type": "documentary",
+        "title": "It Might Get Loud",
+        "year": 2008
+      }
+    ],
+    "tags": [
+      "music",
+      "blues",
+      "country",
+      "rock",
+      "film",
+      "documentary"
     ]
   },
   {
@@ -82,10 +254,33 @@
     "title": "The Sovereign Analytical Edge",
     "description": "Sports handicapping, the probability of the wager, and finding the signal in the noise.",
     "sequence": [
-      { "type": "book", "title": "Thinking in Bets", "author": "Annie Duke" },
-      { "type": "book", "title": "Lay the Favorite", "author": "Beth Raymer" },
-      { "type": "movie", "title": "Moneyball", "year": 2011 },
-      { "type": "movie", "title": "Uncut Gems", "year": 2019 }
+      {
+        "type": "book",
+        "title": "Thinking in Bets",
+        "author": "Annie Duke"
+      },
+      {
+        "type": "book",
+        "title": "Lay the Favorite",
+        "author": "Beth Raymer"
+      },
+      {
+        "type": "movie",
+        "title": "Moneyball",
+        "year": 2011
+      },
+      {
+        "type": "movie",
+        "title": "Uncut Gems",
+        "year": 2019
+      }
+    ],
+    "tags": [
+      "sports",
+      "gambling",
+      "probability",
+      "film",
+      "books"
     ]
   },
   {
@@ -93,10 +288,34 @@
     "title": "The Anatomy of the Job",
     "description": "The professional standard of organized crime: planning, execution, and the inevitable fallout.",
     "sequence": [
-      { "type": "book", "title": "The Friends of Eddie Coyle", "author": "George V. Higgins" },
-      { "type": "movie", "title": "Rififi", "year": 1955 },
-      { "type": "movie", "title": "Heat", "year": 1995 },
-      { "type": "show", "title": "The Wire (Season 1)", "year": 2002 }
+      {
+        "type": "book",
+        "title": "The Friends of Eddie Coyle",
+        "author": "George V. Higgins"
+      },
+      {
+        "type": "movie",
+        "title": "Rififi",
+        "year": 1955
+      },
+      {
+        "type": "movie",
+        "title": "Heat",
+        "year": 1995
+      },
+      {
+        "type": "show",
+        "title": "The Wire (Season 1)",
+        "year": 2002
+      }
+    ],
+    "tags": [
+      "crime",
+      "heist",
+      "noir",
+      "film",
+      "books",
+      "tv"
     ]
   },
   {
@@ -104,10 +323,34 @@
     "title": "The Western Requiem",
     "description": "The myth of the American Frontier brutally dismantled by violence and reality.",
     "sequence": [
-      { "type": "book", "title": "Blood Meridian", "author": "Cormac McCarthy" },
-      { "type": "movie", "title": "Unforgiven", "year": 1992 },
-      { "type": "movie", "title": "The Assassination of Jesse James by the Coward Robert Ford", "year": 2007 },
-      { "type": "show", "title": "Deadwood", "year": 2004 }
+      {
+        "type": "book",
+        "title": "Blood Meridian",
+        "author": "Cormac McCarthy"
+      },
+      {
+        "type": "movie",
+        "title": "Unforgiven",
+        "year": 1992
+      },
+      {
+        "type": "movie",
+        "title": "The Assassination of Jesse James by the Coward Robert Ford",
+        "year": 2007
+      },
+      {
+        "type": "show",
+        "title": "Deadwood",
+        "year": 2004
+      }
+    ],
+    "tags": [
+      "western",
+      "americana",
+      "violence",
+      "film",
+      "books",
+      "tv"
     ]
   },
   {
@@ -115,10 +358,34 @@
     "title": "Architecture of a Tragedy",
     "description": "An uncompromising look at the systemic mechanics and devastating human toll of the Holocaust and war.",
     "sequence": [
-      { "type": "book", "title": "Night", "author": "Elie Wiesel" },
-      { "type": "documentary", "title": "Shoah", "year": 1985 },
-      { "type": "movie", "title": "The Zone of Interest", "year": 2023 },
-      { "type": "show", "title": "Band of Brothers", "year": 2001 }
+      {
+        "type": "book",
+        "title": "Night",
+        "author": "Elie Wiesel"
+      },
+      {
+        "type": "documentary",
+        "title": "Shoah",
+        "year": 1985
+      },
+      {
+        "type": "movie",
+        "title": "The Zone of Interest",
+        "year": 2023
+      },
+      {
+        "type": "show",
+        "title": "Band of Brothers",
+        "year": 2001
+      }
+    ],
+    "tags": [
+      "history",
+      "war",
+      "holocaust",
+      "documentary",
+      "film",
+      "tv"
     ]
   },
   {
@@ -126,9 +393,29 @@
     "title": "Cold War Paranoia",
     "description": "The gray, bureaucratic dread and institutional betrayal of the 20th century's invisible conflicts.",
     "sequence": [
-      { "type": "book", "title": "The Spy Who Came in from the Cold", "author": "John le Carré" },
-      { "type": "movie", "title": "The Conversation", "year": 1974 },
-      { "type": "show", "title": "The Americans", "year": 2013 }
+      {
+        "type": "book",
+        "title": "The Spy Who Came in from the Cold",
+        "author": "John le Carré"
+      },
+      {
+        "type": "movie",
+        "title": "The Conversation",
+        "year": 1974
+      },
+      {
+        "type": "show",
+        "title": "The Americans",
+        "year": 2013
+      }
+    ],
+    "tags": [
+      "spy",
+      "cold-war",
+      "thriller",
+      "film",
+      "books",
+      "tv"
     ]
   },
   {
@@ -136,10 +423,34 @@
     "title": "Cosmic Horror & The Void",
     "description": "The terrifying realization of human insignificance in the face of the unknown.",
     "sequence": [
-      { "type": "book", "title": "At the Mountains of Madness", "author": "H.P. Lovecraft" },
-      { "type": "movie", "title": "Alien", "year": 1979 },
-      { "type": "movie", "title": "The Thing", "year": 1982 },
-      { "type": "show", "title": "Chernobyl", "year": 2019 }
+      {
+        "type": "book",
+        "title": "At the Mountains of Madness",
+        "author": "H.P. Lovecraft"
+      },
+      {
+        "type": "movie",
+        "title": "Alien",
+        "year": 1979
+      },
+      {
+        "type": "movie",
+        "title": "The Thing",
+        "year": 1982
+      },
+      {
+        "type": "show",
+        "title": "Chernobyl",
+        "year": 2019
+      }
+    ],
+    "tags": [
+      "horror",
+      "sci-fi",
+      "lovecraft",
+      "film",
+      "books",
+      "tv"
     ]
   },
   {
@@ -147,10 +458,33 @@
     "title": "The Craft & The Legacy",
     "description": "Woodworking, physical labor, architecture, and finding soul in manual creation.",
     "sequence": [
-      { "type": "book", "title": "Shop Class as Soulcraft", "author": "Matthew B. Crawford" },
-      { "type": "book", "title": "A Pattern Language", "author": "Christopher Alexander" },
-      { "type": "movie", "title": "Jiro Dreams of Sushi", "year": 2011 },
-      { "type": "movie", "title": "The Grand Budapest Hotel", "year": 2014 }
+      {
+        "type": "book",
+        "title": "Shop Class as Soulcraft",
+        "author": "Matthew B. Crawford"
+      },
+      {
+        "type": "book",
+        "title": "A Pattern Language",
+        "author": "Christopher Alexander"
+      },
+      {
+        "type": "movie",
+        "title": "Jiro Dreams of Sushi",
+        "year": 2011
+      },
+      {
+        "type": "movie",
+        "title": "The Grand Budapest Hotel",
+        "year": 2014
+      }
+    ],
+    "tags": [
+      "craft",
+      "woodworking",
+      "architecture",
+      "film",
+      "books"
     ]
   },
   {
@@ -158,10 +492,34 @@
     "title": "The Homelab & Cyber Warfare",
     "description": "Servers, infrastructure breakdown, networking paranoia, and true system exploitation.",
     "sequence": [
-      { "type": "book", "title": "The Cuckoo's Egg", "author": "Clifford Stoll" },
-      { "type": "book", "title": "Daemon", "author": "Daniel Suarez" },
-      { "type": "movie", "title": "Sneakers", "year": 1992 },
-      { "type": "show", "title": "Halt and Catch Fire", "year": 2014 }
+      {
+        "type": "book",
+        "title": "The Cuckoo's Egg",
+        "author": "Clifford Stoll"
+      },
+      {
+        "type": "book",
+        "title": "Daemon",
+        "author": "Daniel Suarez"
+      },
+      {
+        "type": "movie",
+        "title": "Sneakers",
+        "year": 1992
+      },
+      {
+        "type": "show",
+        "title": "Halt and Catch Fire",
+        "year": 2014
+      }
+    ],
+    "tags": [
+      "cybersecurity",
+      "hacking",
+      "homelab",
+      "film",
+      "books",
+      "tv"
     ]
   },
   {
@@ -169,10 +527,34 @@
     "title": "The Imperial Collapse",
     "description": "The inevitable fall of dynasties, massive historical shifts, and macro-history.",
     "sequence": [
-      { "type": "book", "title": "The Decline and Fall of the Roman Empire", "author": "Edward Gibbon" },
-      { "type": "movie", "title": "Lawrence of Arabia", "year": 1962 },
-      { "type": "movie", "title": "The Last Emperor", "year": 1987 },
-      { "type": "show", "title": "Rome", "year": 2005 }
+      {
+        "type": "book",
+        "title": "The Decline and Fall of the Roman Empire",
+        "author": "Edward Gibbon"
+      },
+      {
+        "type": "movie",
+        "title": "Lawrence of Arabia",
+        "year": 1962
+      },
+      {
+        "type": "movie",
+        "title": "The Last Emperor",
+        "year": 1987
+      },
+      {
+        "type": "show",
+        "title": "Rome",
+        "year": 2005
+      }
+    ],
+    "tags": [
+      "history",
+      "empire",
+      "epic",
+      "film",
+      "books",
+      "tv"
     ]
   },
   {
@@ -180,10 +562,33 @@
     "title": "The Primal Frontier",
     "description": "Deep nature, absolute isolation, and surviving the harshest elements on Earth.",
     "sequence": [
-      { "type": "book", "title": "Into the Wild", "author": "Jon Krakauer" },
-      { "type": "book", "title": "The Road", "author": "Cormac McCarthy" },
-      { "type": "movie", "title": "The Revenant", "year": 2015 },
-      { "type": "movie", "title": "Jeremiah Johnson", "year": 1972 }
+      {
+        "type": "book",
+        "title": "Into the Wild",
+        "author": "Jon Krakauer"
+      },
+      {
+        "type": "book",
+        "title": "The Road",
+        "author": "Cormac McCarthy"
+      },
+      {
+        "type": "movie",
+        "title": "The Revenant",
+        "year": 2015
+      },
+      {
+        "type": "movie",
+        "title": "Jeremiah Johnson",
+        "year": 1972
+      }
+    ],
+    "tags": [
+      "nature",
+      "survival",
+      "wilderness",
+      "film",
+      "books"
     ]
   },
   {
@@ -191,10 +596,33 @@
     "title": "The Unreliable Perspective",
     "description": "Psychological thrillers, compromised narrators, and completely fractured narratives.",
     "sequence": [
-      { "type": "book", "title": "House of Leaves", "author": "Mark Z. Danielewski" },
-      { "type": "movie", "title": "Memento", "year": 2000 },
-      { "type": "movie", "title": "Fight Club", "year": 1999 },
-      { "type": "movie", "title": "Shutter Island", "year": 2010 }
+      {
+        "type": "book",
+        "title": "House of Leaves",
+        "author": "Mark Z. Danielewski"
+      },
+      {
+        "type": "movie",
+        "title": "Memento",
+        "year": 2000
+      },
+      {
+        "type": "movie",
+        "title": "Fight Club",
+        "year": 1999
+      },
+      {
+        "type": "movie",
+        "title": "Shutter Island",
+        "year": 2010
+      }
+    ],
+    "tags": [
+      "thriller",
+      "psychological",
+      "film",
+      "books",
+      "noir"
     ]
   },
   {
@@ -202,10 +630,34 @@
     "title": "The Dystopian Bureaucracy",
     "description": "Kafkaesque systems, paperwork as a weapon, and inescapable institutional decay.",
     "sequence": [
-      { "type": "book", "title": "The Trial", "author": "Franz Kafka" },
-      { "type": "book", "title": "1984", "author": "George Orwell" },
-      { "type": "movie", "title": "Brazil", "year": 1985 },
-      { "type": "show", "title": "The Prisoner", "year": 1967 }
+      {
+        "type": "book",
+        "title": "The Trial",
+        "author": "Franz Kafka"
+      },
+      {
+        "type": "book",
+        "title": "1984",
+        "author": "George Orwell"
+      },
+      {
+        "type": "movie",
+        "title": "Brazil",
+        "year": 1985
+      },
+      {
+        "type": "show",
+        "title": "The Prisoner",
+        "year": 1967
+      }
+    ],
+    "tags": [
+      "dystopia",
+      "kafka",
+      "satire",
+      "books",
+      "film",
+      "tv"
     ]
   },
   {
@@ -213,10 +665,33 @@
     "title": "Ancient Myths Remade",
     "description": "Epic lore, historical theology, and the visceral re-telling of human foundations.",
     "sequence": [
-      { "type": "book", "title": "Mythos", "author": "Stephen Fry" },
-      { "type": "book", "title": "Circe", "author": "Madeline Miller" },
-      { "type": "movie", "title": "The Northman", "year": 2022 },
-      { "type": "movie", "title": "O Brother, Where Art Thou?", "year": 2000 }
+      {
+        "type": "book",
+        "title": "Mythos",
+        "author": "Stephen Fry"
+      },
+      {
+        "type": "book",
+        "title": "Circe",
+        "author": "Madeline Miller"
+      },
+      {
+        "type": "movie",
+        "title": "The Northman",
+        "year": 2022
+      },
+      {
+        "type": "movie",
+        "title": "O Brother, Where Art Thou?",
+        "year": 2000
+      }
+    ],
+    "tags": [
+      "mythology",
+      "fantasy",
+      "classics",
+      "books",
+      "film"
     ]
   },
   {
@@ -224,10 +699,33 @@
     "title": "True Crime & Systemic Failure",
     "description": "Real corruption, deep-seated institutional collapse, and unsolved obsessions.",
     "sequence": [
-      { "type": "book", "title": "In Cold Blood", "author": "Truman Capote" },
-      { "type": "book", "title": "I'll Be Gone in the Dark", "author": "Michelle McNamara" },
-      { "type": "movie", "title": "Zodiac", "year": 2007 },
-      { "type": "documentary", "title": "The Thin Blue Line", "year": 1988 }
+      {
+        "type": "book",
+        "title": "In Cold Blood",
+        "author": "Truman Capote"
+      },
+      {
+        "type": "book",
+        "title": "I'll Be Gone in the Dark",
+        "author": "Michelle McNamara"
+      },
+      {
+        "type": "movie",
+        "title": "Zodiac",
+        "year": 2007
+      },
+      {
+        "type": "documentary",
+        "title": "The Thin Blue Line",
+        "year": 1988
+      }
+    ],
+    "tags": [
+      "true-crime",
+      "documentary",
+      "film",
+      "books",
+      "investigation"
     ]
   },
   {
@@ -235,10 +733,33 @@
     "title": "The Cinematic Meta-Narrative",
     "description": "The devastating toll of artistic sacrifice and films exploring their own creation.",
     "sequence": [
-      { "type": "book", "title": "Making Movies", "author": "Sidney Lumet" },
-      { "type": "movie", "title": "8½", "year": 1963 },
-      { "type": "movie", "title": "Mulholland Drive", "year": 2001 },
-      { "type": "movie", "title": "Birdman", "year": 2014 }
+      {
+        "type": "book",
+        "title": "Making Movies",
+        "author": "Sidney Lumet"
+      },
+      {
+        "type": "movie",
+        "title": "8½",
+        "year": 1963
+      },
+      {
+        "type": "movie",
+        "title": "Mulholland Drive",
+        "year": 2001
+      },
+      {
+        "type": "movie",
+        "title": "Birdman",
+        "year": 2014
+      }
+    ],
+    "tags": [
+      "film",
+      "cinema",
+      "meta",
+      "art",
+      "books"
     ]
   },
   {
@@ -246,10 +767,33 @@
     "title": "The Satirical Mirror",
     "description": "High-intellect dark comedy, existential absurdity, and vicious societal critique.",
     "sequence": [
-      { "type": "book", "title": "Catch-22", "author": "Joseph Heller" },
-      { "type": "book", "title": "Slaughterhouse-Five", "author": "Kurt Vonnegut" },
-      { "type": "movie", "title": "Dr. Strangelove", "year": 1964 },
-      { "type": "movie", "title": "Network", "year": 1976 }
+      {
+        "type": "book",
+        "title": "Catch-22",
+        "author": "Joseph Heller"
+      },
+      {
+        "type": "book",
+        "title": "Slaughterhouse-Five",
+        "author": "Kurt Vonnegut"
+      },
+      {
+        "type": "movie",
+        "title": "Dr. Strangelove",
+        "year": 1964
+      },
+      {
+        "type": "movie",
+        "title": "Network",
+        "year": 1976
+      }
+    ],
+    "tags": [
+      "satire",
+      "comedy",
+      "dark-comedy",
+      "books",
+      "film"
     ]
   },
   {
@@ -257,10 +801,34 @@
     "title": "Space Opera & Galactic Scale",
     "description": "Grand science fiction, cosmic empires, and the long-term survival of the species.",
     "sequence": [
-      { "type": "book", "title": "Dune", "author": "Frank Herbert" },
-      { "type": "book", "title": "Foundation", "author": "Isaac Asimov" },
-      { "type": "movie", "title": "Interstellar", "year": 2014 },
-      { "type": "show", "title": "The Expanse", "year": 2015 }
+      {
+        "type": "book",
+        "title": "Dune",
+        "author": "Frank Herbert"
+      },
+      {
+        "type": "book",
+        "title": "Foundation",
+        "author": "Isaac Asimov"
+      },
+      {
+        "type": "movie",
+        "title": "Interstellar",
+        "year": 2014
+      },
+      {
+        "type": "show",
+        "title": "The Expanse",
+        "year": 2015
+      }
+    ],
+    "tags": [
+      "sci-fi",
+      "space",
+      "epic",
+      "books",
+      "film",
+      "tv"
     ]
   },
   {
@@ -268,10 +836,33 @@
     "title": "Time as a Weapon",
     "description": "Temporal paradoxes, chronological manipulation, and the inescapable loop.",
     "sequence": [
-      { "type": "book", "title": "The End of Eternity", "author": "Isaac Asimov" },
-      { "type": "movie", "title": "Primer", "year": 2004 },
-      { "type": "movie", "title": "12 Monkeys", "year": 1995 },
-      { "type": "show", "title": "Dark", "year": 2017 }
+      {
+        "type": "book",
+        "title": "The End of Eternity",
+        "author": "Isaac Asimov"
+      },
+      {
+        "type": "movie",
+        "title": "Primer",
+        "year": 2004
+      },
+      {
+        "type": "movie",
+        "title": "12 Monkeys",
+        "year": 1995
+      },
+      {
+        "type": "show",
+        "title": "Dark",
+        "year": 2017
+      }
+    ],
+    "tags": [
+      "sci-fi",
+      "time-travel",
+      "film",
+      "books",
+      "tv"
     ]
   },
   {
@@ -279,10 +870,33 @@
     "title": "The Noir Shadow",
     "description": "Classic and neo-noir detective logic, femme fatales, and the grit of the city.",
     "sequence": [
-      { "type": "book", "title": "The Maltese Falcon", "author": "Dashiell Hammett" },
-      { "type": "book", "title": "The Big Sleep", "author": "Raymond Chandler" },
-      { "type": "movie", "title": "Chinatown", "year": 1974 },
-      { "type": "movie", "title": "L.A. Confidential", "year": 1997 }
+      {
+        "type": "book",
+        "title": "The Maltese Falcon",
+        "author": "Dashiell Hammett"
+      },
+      {
+        "type": "book",
+        "title": "The Big Sleep",
+        "author": "Raymond Chandler"
+      },
+      {
+        "type": "movie",
+        "title": "Chinatown",
+        "year": 1974
+      },
+      {
+        "type": "movie",
+        "title": "L.A. Confidential",
+        "year": 1997
+      }
+    ],
+    "tags": [
+      "noir",
+      "detective",
+      "crime",
+      "film",
+      "books"
     ]
   },
   {
@@ -290,10 +904,33 @@
     "title": "The Anatomy of Retribution",
     "description": "Pure vengeance, calculated tracking, and the hollow victory of revenge.",
     "sequence": [
-      { "type": "book", "title": "The Count of Monte Cristo", "author": "Alexandre Dumas" },
-      { "type": "movie", "title": "Oldboy", "year": 2003 },
-      { "type": "movie", "title": "John Wick", "year": 2014 },
-      { "type": "movie", "title": "Kill Bill", "year": 2003 }
+      {
+        "type": "book",
+        "title": "The Count of Monte Cristo",
+        "author": "Alexandre Dumas"
+      },
+      {
+        "type": "movie",
+        "title": "Oldboy",
+        "year": 2003
+      },
+      {
+        "type": "movie",
+        "title": "John Wick",
+        "year": 2014
+      },
+      {
+        "type": "movie",
+        "title": "Kill Bill",
+        "year": 2003
+      }
+    ],
+    "tags": [
+      "revenge",
+      "action",
+      "thriller",
+      "film",
+      "books"
     ]
   },
   {
@@ -301,10 +938,33 @@
     "title": "Folk Horror & Pagan Rites",
     "description": "Isolated villages, ancient earth terrors, and the horror of the old religion.",
     "sequence": [
-      { "type": "book", "title": "The Ritual", "author": "Adam Nevill" },
-      { "type": "movie", "title": "The Wicker Man", "year": 1973 },
-      { "type": "movie", "title": "Midsommar", "year": 2019 },
-      { "type": "movie", "title": "The Witch", "year": 2015 }
+      {
+        "type": "book",
+        "title": "The Ritual",
+        "author": "Adam Nevill"
+      },
+      {
+        "type": "movie",
+        "title": "The Wicker Man",
+        "year": 1973
+      },
+      {
+        "type": "movie",
+        "title": "Midsommar",
+        "year": 2019
+      },
+      {
+        "type": "movie",
+        "title": "The Witch",
+        "year": 2015
+      }
+    ],
+    "tags": [
+      "horror",
+      "folk",
+      "supernatural",
+      "film",
+      "books"
     ]
   },
   {
@@ -312,9 +972,28 @@
     "title": "The Subterranean Unconscious",
     "description": "Deep earth, claustrophobia, and the psychological descent into the dark.",
     "sequence": [
-      { "type": "book", "title": "Journey to the Center of the Earth", "author": "Jules Verne" },
-      { "type": "movie", "title": "The Descent", "year": 2005 },
-      { "type": "movie", "title": "As Above, So Below", "year": 2014 }
+      {
+        "type": "book",
+        "title": "Journey to the Center of the Earth",
+        "author": "Jules Verne"
+      },
+      {
+        "type": "movie",
+        "title": "The Descent",
+        "year": 2005
+      },
+      {
+        "type": "movie",
+        "title": "As Above, So Below",
+        "year": 2014
+      }
+    ],
+    "tags": [
+      "horror",
+      "claustrophobia",
+      "adventure",
+      "film",
+      "books"
     ]
   },
   {
@@ -322,10 +1001,34 @@
     "title": "The Silent Apocalypse",
     "description": "Post-collapse survival, empty worlds, and the remnants of humanity.",
     "sequence": [
-      { "type": "book", "title": "I Am Legend", "author": "Richard Matheson" },
-      { "type": "book", "title": "Station Eleven", "author": "Emily St. John Mandel" },
-      { "type": "movie", "title": "28 Days Later", "year": 2002 },
-      { "type": "show", "title": "The Last of Us", "year": 2023 }
+      {
+        "type": "book",
+        "title": "I Am Legend",
+        "author": "Richard Matheson"
+      },
+      {
+        "type": "book",
+        "title": "Station Eleven",
+        "author": "Emily St. John Mandel"
+      },
+      {
+        "type": "movie",
+        "title": "28 Days Later",
+        "year": 2002
+      },
+      {
+        "type": "show",
+        "title": "The Last of Us",
+        "year": 2023
+      }
+    ],
+    "tags": [
+      "post-apocalyptic",
+      "sci-fi",
+      "survival",
+      "film",
+      "books",
+      "tv"
     ]
   },
   {
@@ -333,10 +1036,34 @@
     "title": "The Corporate Machine",
     "description": "Late-stage capitalism, boardrooms, and pure white-collar dread.",
     "sequence": [
-      { "type": "book", "title": "American Psycho", "author": "Bret Easton Ellis" },
-      { "type": "movie", "title": "Margin Call", "year": 2011 },
-      { "type": "movie", "title": "The Big Short", "year": 2015 },
-      { "type": "show", "title": "Succession", "year": 2018 }
+      {
+        "type": "book",
+        "title": "American Psycho",
+        "author": "Bret Easton Ellis"
+      },
+      {
+        "type": "movie",
+        "title": "Margin Call",
+        "year": 2011
+      },
+      {
+        "type": "movie",
+        "title": "The Big Short",
+        "year": 2015
+      },
+      {
+        "type": "show",
+        "title": "Succession",
+        "year": 2018
+      }
+    ],
+    "tags": [
+      "corporate",
+      "satire",
+      "finance",
+      "film",
+      "books",
+      "tv"
     ]
   },
   {
@@ -344,10 +1071,32 @@
     "title": "The Fractured Timeline",
     "description": "Multi-narrative, mosaic storytelling, and lives colliding across space and time.",
     "sequence": [
-      { "type": "book", "title": "Cloud Atlas", "author": "David Mitchell" },
-      { "type": "movie", "title": "Pulp Fiction", "year": 1994 },
-      { "type": "movie", "title": "Magnolia", "year": 1999 },
-      { "type": "movie", "title": "Babel", "year": 2006 }
+      {
+        "type": "book",
+        "title": "Cloud Atlas",
+        "author": "David Mitchell"
+      },
+      {
+        "type": "movie",
+        "title": "Pulp Fiction",
+        "year": 1994
+      },
+      {
+        "type": "movie",
+        "title": "Magnolia",
+        "year": 1999
+      },
+      {
+        "type": "movie",
+        "title": "Babel",
+        "year": 2006
+      }
+    ],
+    "tags": [
+      "experimental",
+      "drama",
+      "film",
+      "books"
     ]
   },
   {
@@ -355,10 +1104,34 @@
     "title": "The Culinary Obsession",
     "description": "Perfection in flavor, the chaos of the kitchen, and culinary madness.",
     "sequence": [
-      { "type": "book", "title": "Kitchen Confidential", "author": "Anthony Bourdain" },
-      { "type": "movie", "title": "The Menu", "year": 2022 },
-      { "type": "movie", "title": "Boiling Point", "year": 2021 },
-      { "type": "show", "title": "The Bear", "year": 2022 }
+      {
+        "type": "book",
+        "title": "Kitchen Confidential",
+        "author": "Anthony Bourdain"
+      },
+      {
+        "type": "movie",
+        "title": "The Menu",
+        "year": 2022
+      },
+      {
+        "type": "movie",
+        "title": "Boiling Point",
+        "year": 2021
+      },
+      {
+        "type": "show",
+        "title": "The Bear",
+        "year": 2022
+      }
+    ],
+    "tags": [
+      "food",
+      "cooking",
+      "drama",
+      "film",
+      "books",
+      "tv"
     ]
   },
   {
@@ -366,10 +1139,33 @@
     "title": "Suburban Decay",
     "description": "The dark, rotting underbelly of the perfect neighborhood.",
     "sequence": [
-      { "type": "book", "title": "Revolutionary Road", "author": "Richard Yates" },
-      { "type": "movie", "title": "Blue Velvet", "year": 1986 },
-      { "type": "movie", "title": "American Beauty", "year": 1999 },
-      { "type": "movie", "title": "Donnie Darko", "year": 2001 }
+      {
+        "type": "book",
+        "title": "Revolutionary Road",
+        "author": "Richard Yates"
+      },
+      {
+        "type": "movie",
+        "title": "Blue Velvet",
+        "year": 1986
+      },
+      {
+        "type": "movie",
+        "title": "American Beauty",
+        "year": 1999
+      },
+      {
+        "type": "movie",
+        "title": "Donnie Darko",
+        "year": 2001
+      }
+    ],
+    "tags": [
+      "suburban",
+      "dark",
+      "drama",
+      "film",
+      "books"
     ]
   },
   {
@@ -377,10 +1173,174 @@
     "title": "Philosophical Martial Arts",
     "description": "Discipline, the spirituality of combat, and the path of the warrior.",
     "sequence": [
-      { "type": "book", "title": "The Book of Five Rings", "author": "Miyamoto Musashi" },
-      { "type": "movie", "title": "Seven Samurai", "year": 1954 },
-      { "type": "movie", "title": "Crouching Tiger, Hidden Dragon", "year": 2000 },
-      { "type": "movie", "title": "Hero", "year": 2002 }
+      {
+        "type": "book",
+        "title": "The Book of Five Rings",
+        "author": "Miyamoto Musashi"
+      },
+      {
+        "type": "movie",
+        "title": "Seven Samurai",
+        "year": 1954
+      },
+      {
+        "type": "movie",
+        "title": "Crouching Tiger, Hidden Dragon",
+        "year": 2000
+      },
+      {
+        "type": "movie",
+        "title": "Hero",
+        "year": 2002
+      }
+    ],
+    "tags": [
+      "martial-arts",
+      "philosophy",
+      "action",
+      "film",
+      "books"
+    ]
+  },
+  {
+    "id": "saturday-morning-worlds",
+    "title": "Saturday Morning Worlds",
+    "description": "From hand-drawn legends to Pixar heart and family books that read like movies.",
+    "tags": [
+      "kids",
+      "family",
+      "animation",
+      "cartoons",
+      "books",
+      "film"
+    ],
+    "sequence": [
+      {
+        "type": "show",
+        "title": "Looney Tunes",
+        "year": 1930
+      },
+      {
+        "type": "movie",
+        "title": "The Lion King",
+        "year": 1994
+      },
+      {
+        "type": "movie",
+        "title": "Toy Story",
+        "year": 1995
+      },
+      {
+        "type": "book",
+        "title": "Charlotte's Web",
+        "author": "E.B. White"
+      }
+    ]
+  },
+  {
+    "id": "gateway-fantasy",
+    "title": "Gateway Fantasy",
+    "description": "Wardrobes, wizard schools, and film adaptations kids can grow into for years.",
+    "tags": [
+      "kids",
+      "family",
+      "fantasy",
+      "books",
+      "film",
+      "adventure"
+    ],
+    "sequence": [
+      {
+        "type": "book",
+        "title": "The Lion, the Witch and the Wardrobe",
+        "author": "C.S. Lewis"
+      },
+      {
+        "type": "book",
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "author": "J.K. Rowling"
+      },
+      {
+        "type": "movie",
+        "title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+        "year": 2005
+      },
+      {
+        "type": "movie",
+        "title": "Harry Potter and the Sorcerer's Stone",
+        "year": 2001
+      }
+    ]
+  },
+  {
+    "id": "stem-wonders",
+    "title": "STEM Wonders",
+    "description": "Curiosity-first science books, approachable documentaries, and wonder on screen.",
+    "tags": [
+      "kids",
+      "family",
+      "science",
+      "stem",
+      "documentary",
+      "books",
+      "film"
+    ],
+    "sequence": [
+      {
+        "type": "book",
+        "title": "The Way Things Work",
+        "author": "David Macaulay"
+      },
+      {
+        "type": "book",
+        "title": "A Wrinkle in Time",
+        "author": "Madeleine L'Engle"
+      },
+      {
+        "type": "documentary",
+        "title": "March of the Penguins",
+        "year": 2005
+      },
+      {
+        "type": "movie",
+        "title": "Wall-E",
+        "year": 2008
+      }
+    ]
+  },
+  {
+    "id": "adventure-first",
+    "title": "Adventure First",
+    "description": "Treasure maps, open seas, and Studio Ghibli magic for young explorers.",
+    "tags": [
+      "kids",
+      "family",
+      "adventure",
+      "animation",
+      "books",
+      "film"
+    ],
+    "sequence": [
+      {
+        "type": "book",
+        "title": "Treasure Island",
+        "author": "Robert Louis Stevenson"
+      },
+      {
+        "type": "movie",
+        "title": "Spirited Away",
+        "year": 2001
+      },
+      {
+        "type": "movie",
+        "title": "The Goonies",
+        "year": 1985
+      },
+      {
+        "type": "book",
+        "title": "My Side of the Mountain",
+        "author": "Jean Craighead George"
+      }
     ]
   }
 ]
