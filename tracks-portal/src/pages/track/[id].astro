@@ -21,13 +21,13 @@ const coreCount = coreItems.length;
 ---
 
 <BaseLayout title={`${track.title} · RushTracks`} description={track.description}>
-  <main class="mx-auto max-w-3xl px-4 sm:px-6 py-10 md:py-16">
-    <a href="/" class="text-white/50 text-sm uppercase tracking-widest hover:text-copper transition-colors">← All Tracks</a>
+  <main class="mx-auto max-w-3xl px-4 sm:px-6 py-5 sm:py-8 md:py-16">
+    <a href="/" class="text-white/50 text-xs uppercase tracking-widest hover:text-copper transition-colors sm:text-sm">← All Tracks</a>
 
-    <header class="mt-6 mb-10 border-b border-white/15 pb-8">
-      <h1 class="font-display text-3xl md:text-5xl font-bold leading-tight">{track.title}</h1>
-      <p class="text-white/70 mt-4 text-base md:text-lg leading-relaxed">{track.description}</p>
-      <div class="flex flex-wrap items-center gap-3 mt-5">
+    <header class="mt-3 mb-5 border-b border-white/15 pb-4 sm:mt-6 sm:mb-8 sm:pb-6 md:mb-10 md:pb-8">
+      <h1 class="font-display text-2xl font-bold leading-tight sm:text-3xl md:text-5xl">{track.title}</h1>
+      <p class="mt-2 text-sm leading-relaxed text-white/70 sm:mt-3 sm:text-base md:mt-4 md:text-lg line-clamp-3 sm:line-clamp-none">{track.description}</p>
+      <div class="mt-3 flex flex-wrap items-center gap-2 sm:mt-5 sm:gap-3">
         <p class="text-copper text-xs uppercase tracking-widest">
           {coreCount} {coreCount === 1 ? 'stop' : 'stops'}
           {supplementalItems.length > 0 && ` · ${supplementalItems.length} optional`}
@@ -39,14 +39,14 @@ const coreCount = coreItems.length;
         )}
       </div>
       {(track.tags?.length ?? 0) > 0 && (
-        <p class="text-[10px] uppercase tracking-wider text-white/35 mt-4">
+        <p class="mt-2 text-[10px] uppercase tracking-wider text-white/35 sm:mt-4">
           Themes: {track.tags!.join(' · ')}
         </p>
       )}
     </header>
 
     {coreCount > 0 && (
-      <section aria-label="Track sequence" class="space-y-4">
+      <section aria-label="Track sequence" class="space-y-1.5 sm:space-y-2">
         {coreItems.map((item, index) => (
           <TrackItemCard
             item={item}
@@ -59,12 +59,12 @@ const coreCount = coreItems.length;
     )}
 
     {supplementalItems.length > 0 && (
-      <section aria-label="Supplemental suggestions" class="mt-12 pt-8 border-t border-white/10">
-        <header class="mb-5">
-          <h2 class="font-display text-xl md:text-2xl text-white/90">If you want more</h2>
-          <p class="text-white/45 text-sm mt-1">Optional board games and video games — not required to follow the track.</p>
+      <section aria-label="Supplemental suggestions" class="mt-6 border-t border-white/10 pt-4 sm:mt-10 sm:pt-6 md:mt-12 md:pt-8">
+        <header class="mb-2 sm:mb-4">
+          <h2 class="font-display text-lg text-white/90 sm:text-xl md:text-2xl">If you want more</h2>
+          <p class="mt-0.5 text-xs text-white/45 sm:mt-1 sm:text-sm">Optional board games and video games — not required to follow the track.</p>
         </header>
-        <div class="space-y-4">
+        <div class="space-y-1.5 sm:space-y-2">
           {supplementalItems.map((item) => (
             <TrackItemCard
               item={item}

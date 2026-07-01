@@ -64,6 +64,93 @@ body {
   .rushtv-cta--request .rushtv-cta-spinner {
     @apply hidden;
   }
+
+  .rushtv-cta--compact {
+    @apply min-h-0 h-8 px-2 py-0.5 text-[10px] tracking-wider;
+  }
+
+  .track-item-row {
+    @apply flex items-start gap-2 p-2 sm:gap-3 sm:p-3;
+  }
+
+  .track-item-thumb {
+    width: 48px;
+    height: 72px;
+  }
+
+  .track-item-card--supplemental .track-item-thumb {
+    width: 40px;
+    height: 60px;
+  }
+
+  @media (min-width: 640px) {
+    .track-item-thumb {
+      width: 56px;
+      height: 84px;
+    }
+
+    .track-item-card--supplemental .track-item-thumb {
+      width: 48px;
+      height: 72px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .track-item-thumb {
+      width: 64px;
+      height: 96px;
+    }
+
+    .track-item-card--supplemental .track-item-thumb {
+      width: 56px;
+      height: 84px;
+    }
+  }
+
+  .track-item-badge {
+    @apply inline-block border border-white/20 px-1.5 py-px text-[9px] uppercase tracking-wider text-white/50 sm:text-[10px];
+  }
+
+  .track-item-title {
+    @apply mt-0.5 text-sm leading-snug line-clamp-2 sm:text-base md:text-lg md:line-clamp-none;
+  }
+
+  .track-item-meta {
+    @apply mt-0.5 text-[11px] text-white/55 sm:text-xs;
+  }
+
+  .track-item-extras {
+    @apply mt-1 pl-0;
+  }
+
+  .track-item-note {
+    @apply text-[11px] leading-snug text-white/45 line-clamp-1;
+  }
+
+  .track-item-link {
+    @apply text-[10px] uppercase tracking-wider text-copper transition-colors hover:text-copper/80;
+  }
+
+  .track-item-courtesy {
+    @apply text-[9px] text-white/30 transition-colors hover:text-copper/70;
+  }
+
+  .track-item-details {
+    @apply border-t border-white/5 px-3 pb-3 pt-2 sm:px-4;
+    margin-left: calc(48px + 0.5rem);
+  }
+
+  @media (min-width: 640px) {
+    .track-item-details {
+      margin-left: calc(56px + 0.75rem);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .track-item-details {
+      margin-left: calc(64px + 0.75rem);
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
