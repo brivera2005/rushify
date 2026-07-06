@@ -9,9 +9,8 @@ import { fileURLToPath } from 'node:url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const TRACKS_PATH = join(__dirname, '..', 'src', 'data', 'tracks.json');
 
-/** Index display order (prestige first, fun/kids/games last). */
-const DISPLAY_ORDER = [
-  // Tier 1 — most discerning first
+/** Hand-picked elite set — tier-1 prestige + best teens picks only. */
+const CURATED_TRACK_IDS = new Set([
   'existential-ai',
   'surreal-sci-fi',
   'architecture-of-tragedy',
@@ -34,72 +33,13 @@ const DISPLAY_ORDER = [
   'silent-apocalypse',
   'conspiratorial-backrooms',
   'gonzo-journalism',
-  // Tier 2 — substantive genre paths
-  'dark-fantasy-foundations',
-  'digital-frontier',
-  'transhuman-ascent',
-  'noir-shadow',
-  'time-as-weapon',
-  'space-opera-scale',
-  'cognitive-warfare',
-  'tech-nomad-cyber-warfare',
-  'primal-frontier',
-  'anatomy-of-the-job',
-  'western-requiem',
-  'perfect-sound',
-  'roots-of-rhythm',
-  'sovereign-analytical-edge',
-  'satirical-mirror',
-  'corporate-machine',
-  'culinary-obsession',
-  'suburban-decay',
-  'anatomy-of-retribution',
-  'subterranean-unconscious',
-  'flesh-transformed',
-  'lost-artifacts',
-  'eco-collapse',
-  'abyssal-trench',
-  'existential-ai-v2',
-  'surreal-sci-fi-v2',
-  'dark-fantasy-v2',
-  'digital-frontier-v2',
-  'transhuman-ascent-v2',
-  'perfect-sound-v2',
-  'roots-of-rhythm-v2',
-  'sovereign-analytical-v2',
-  'anatomy-of-the-job-v2',
-  'western-requiem-v2',
-  'architecture-of-tragedy-v2',
-  'craft-legacy-v2',
-  'epic-fantasy-tapestry',
-  'dark-fantasy-campaign',
-  'cosmic-horror-isolation',
-  'grimdark-ascendant',
-  'horror-evolution',
-  'automation-engine',
-  'indie-artisan',
-  'digital-frontier-branching',
-  'sovereign-analytical-mix',
-  // Tier 3 — teens, kids, games
-  'high-school-satire-teens',
   'gothic-wonder-teens',
   'elevated-dystopia-teens',
-  'retro-mystery-teens',
-  'first-chills-teens',
   'mythic-quests-teens',
-  'gateway-fantasy',
-  'saturday-morning-worlds',
-  'stem-wonders',
-  'adventure-first',
-  'folklore-legends-kids',
-  'cosmic-journeys-kids',
-  'wilderness-call-kids',
-  'inventors-tinkerers-kids',
-  'picture-book-pals-kids',
-  'tabletop-legends',
-  'pure-video-game-vibe',
-  'pure-board-game-engine',
-];
+]);
+
+/** Index display order (prestige first, teens last). */
+const DISPLAY_ORDER = [...CURATED_TRACK_IDS];
 
 /** @type {Record<string, 1|2|3>} */
 const TIERS = {
@@ -281,7 +221,13 @@ function mergeTags(existing, extra) {
 }
 
 function main() {
-  const tracks = JSON.parse(readFileSync(TRACKS_PATH, 'utf8'));
+  let tracks = JSON.parse(readFileSync(TRACKS_PATH, 'utf8'));
+  const before = tracks.length;
+  tracks = tracks.filter((t) => CURATED_TRACK_IDS.has(t.id));
+  if (tracks.length < before) {
+    console.log(`Curated: kept ${tracks.length} of ${before} tracks`);
+  }
+
   let missing = 0;
   const orderIndex = Object.fromEntries(DISPLAY_ORDER.map((id, i) => [id, i + 1]));
 
@@ -302,6 +248,11 @@ function main() {
       extra.push(...V2_EXTRA);
     }
     track.tags = mergeTags(track.tags, extra);
+
+    if (track.relatedTrackIds?.length) {
+      track.relatedTrackIds = track.relatedTrackIds.filter((id) => CURATED_TRACK_IDS.has(id));
+      if (!track.relatedTrackIds.length) delete track.relatedTrackIds;
+    }
   }
 
   if (missing) {

@@ -6,20 +6,34 @@ import { BRANCHING_TRACKS } from './branching-tracks.mjs';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const TRACKS_PATH = join(__dirname, '..', 'src', 'data', 'tracks.json');
 
-const V2_RELATIONS = [
-  ['existential-ai', 'existential-ai-v2'],
-  ['surreal-sci-fi', 'surreal-sci-fi-v2'],
-  ['dark-fantasy-foundations', 'dark-fantasy-v2'],
-  ['digital-frontier', 'digital-frontier-v2'],
-  ['transhuman-ascent', 'transhuman-ascent-v2'],
-  ['perfect-sound', 'perfect-sound-v2'],
-  ['roots-of-rhythm', 'roots-of-rhythm-v2'],
-  ['sovereign-analytical-edge', 'sovereign-analytical-v2'],
-  ['anatomy-of-the-job', 'anatomy-of-the-job-v2'],
-  ['western-requiem', 'western-requiem-v2'],
-  ['architecture-of-tragedy', 'architecture-of-tragedy-v2'],
-  ['craft-and-legacy', 'craft-legacy-v2'],
-];
+/** Must match apply-track-meta.mjs — elite curated set only. */
+const CURATED_TRACK_IDS = new Set([
+  'existential-ai',
+  'surreal-sci-fi',
+  'architecture-of-tragedy',
+  'cosmic-horror',
+  'dystopian-bureaucracy',
+  'generational-epic',
+  'true-crime-systemic-failure',
+  'fourth-estate',
+  'art-of-dialogue',
+  'cosmic-inevitability',
+  'cinematic-meta-narrative',
+  'imperial-collapse',
+  'cold-war-paranoia',
+  'unreliable-perspective',
+  'folk-horror-pagan',
+  'fractured-timeline',
+  'ancient-myths-remade',
+  'philosophical-martial-arts',
+  'craft-and-legacy',
+  'silent-apocalypse',
+  'conspiratorial-backrooms',
+  'gonzo-journalism',
+  'gothic-wonder-teens',
+  'elevated-dystopia-teens',
+  'mythic-quests-teens',
+]);
 
 const NEW_TRACKS = [
   {"id":"existential-ai-v2","title":"Existential AI: The Ghost in the Shell","description":"Deepening the split between synthetic biology and spiritual legacy. What remains when the biological shell is gone?","tags":["v2","sci-fi","ai","philosophy","film","books","cyberpunk"],"relatedTrackIds":["existential-ai"],"sequence":[{"id":"eai2-book-1","type":"book","title":"I, Robot","author":"Isaac Asimov"},{"id":"eai2-film-1","type":"movie","title":"Ghost in the Shell","year":1995},{"id":"eai2-film-2","type":"movie","title":"A.I. Artificial Intelligence","year":2001},{"id":"eai2-film-3","type":"movie","title":"Bicentennial Man","year":1999}]},
@@ -125,35 +139,24 @@ function ensureItemIds(track) {
 }
 
 function applyRelations(tracks) {
-  const byId = Object.fromEntries(tracks.map((t) => [t.id, t]));
-  for (const [v1, v2] of V2_RELATIONS) {
-    if (byId[v1] && !byId[v1].relatedTrackIds) {
-      byId[v1].relatedTrackIds = [v2];
-    }
-    if (byId[v2] && !byId[v2].relatedTrackIds?.includes(v1)) {
-      byId[v2].relatedTrackIds = [...(byId[v2].relatedTrackIds || []), v1];
-    }
-  }
   return tracks;
 }
 
 function main() {
   let tracks = JSON.parse(readFileSync(TRACKS_PATH, 'utf8'));
+  tracks = tracks.filter((t) => CURATED_TRACK_IDS.has(t.id));
   const existingIds = new Set(tracks.map((t) => t.id));
 
-  for (const track of [...NEW_TRACKS, ...GAP_TRACKS, ...BRANCHING_TRACKS]) {
+  const mergeCandidates = [...NEW_TRACKS, ...GAP_TRACKS, ...BRANCHING_TRACKS].filter((t) =>
+    CURATED_TRACK_IDS.has(t.id),
+  );
+
+  for (const track of mergeCandidates) {
     if (!existingIds.has(track.id)) {
       tracks.push({ ...track });
       existingIds.add(track.id);
     }
   }
-
-  tracks = tracks.map((track) => {
-    if (track.id === 'existential-ai' && !track.relatedTrackIds) {
-      return { ...track, relatedTrackIds: ['existential-ai-v2'] };
-    }
-    return track;
-  });
 
   tracks = tracks.map(ensureItemIds);
   tracks = applyRelations(tracks);
