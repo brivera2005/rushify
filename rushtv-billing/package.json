@@ -1,0 +1,23 @@
+{
+  "name": "rushtv-billing",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=rushtv-billing --branch=main",
+    "deploy:preview": "npm run build && wrangler pages deploy dist --project-name=rushtv-billing --branch=preview"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.7.0",
+    "stripe": "^18.5.0",
+    "tailwindcss": "^3.4.17"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250708.0",
+    "wrangler": "^4.14.0"
+  }
+}

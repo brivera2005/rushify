@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rush-canvas: #222021;
+  --rush-elevated: #2a2829;
+  --rush-surface: #2f2d2e;
+  --rush-border: rgba(255, 255, 255, 0.08);
+  --rush-foreground: #f4f6fb;
+  --rush-muted: #9aa3b8;
+  --rush-gradient-start: #8b5cf6;
+  --rush-gradient-end: #38bdf8;
+  --rush-accent-rgb: 139 92 246;
+  --rush-accent-secondary-rgb: 56 189 248;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer components {
+  .card-surface {
+    @apply border border-white/10 bg-white/[0.02] transition-[border-color,box-shadow] duration-200 ease-out;
+  }
+
+  .card-surface:hover {
+    @apply border-accent/40;
+  }
+
+  .brand-gradient {
+    background: linear-gradient(135deg, var(--rush-gradient-start), var(--rush-gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .btn-primary {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold uppercase tracking-widest text-white transition-all duration-200;
+    background: linear-gradient(135deg, var(--rush-gradient-start), var(--rush-gradient-end));
+    box-shadow: 0 0 24px rgb(var(--rush-accent-rgb) / 0.25);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 0 32px rgb(var(--rush-accent-rgb) / 0.35);
+  }
+
+  .btn-primary:disabled {
+    @apply cursor-not-allowed opacity-60;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-[48px] items-center justify-center rounded-xl border border-white/15 px-6 py-3 text-sm font-medium text-white/80 transition-colors hover:border-accent/50 hover:text-white;
+  }
+
+  .feature-icon {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-accent/30 bg-accent/10 text-accent;
+  }
+}
+
+.bg-hero-glow {
+  background:
+    radial-gradient(circle at top left, rgb(var(--rush-accent-rgb) / 0.22), transparent 34%),
+    radial-gradient(circle at top right, rgb(var(--rush-accent-secondary-rgb) / 0.16), transparent 32%),
+    radial-gradient(circle at bottom, rgb(var(--rush-accent-rgb) / 0.08), transparent 38%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    transform: none;
+  }
+}

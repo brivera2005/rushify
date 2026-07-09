@@ -1,0 +1,15 @@
+name = "rushtv-billing"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+# Create namespace: npx wrangler kv namespace create SUBSCRIBERS_KV
+# Then paste id / preview_id below and set Stripe secrets in Pages dashboard.
+[[kv_namespaces]]
+binding = "SUBSCRIBERS_KV"
+id = "00000000000000000000000000000000"
+preview_id = "00000000000000000000000000000000"
+
+[vars]
+PUBLIC_APP_URL = "https://rushtv-billing.pages.dev"
+STRIPE_STATEMENT_DESCRIPTOR = "RUSH* FAMILY MEDIA"

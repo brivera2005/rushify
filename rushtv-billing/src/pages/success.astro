@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Welcome to RushTV Family Access">
+  <main class="mx-auto flex min-h-screen max-w-2xl flex-col items-center justify-center px-5 py-16 text-center">
+    <div class="card-surface rounded-3xl p-8 shadow-glow sm:p-10">
+      <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-accent/30 bg-accent/10 text-3xl text-accent">
+        ✓
+      </div>
+      <h1 class="mt-6 text-3xl font-bold">You're in!</h1>
+      <p class="mt-4 text-muted">
+        Your RushTV Family Access subscription is active. Check your email for Stripe receipt details
+        and next steps from your host.
+      </p>
+      <div class="mt-8 space-y-3 text-sm text-muted">
+        <p>During your trial, explore live TV, on-demand titles, requests, and the Tracks portal.</p>
+        <p>Need help getting set up on TV or mobile? Reach out to the person who invited you.</p>
+      </div>
+      <a href="/" class="btn-secondary mt-8 inline-flex">Back to home</a>
+    </div>
+  </main>
+</BaseLayout>
