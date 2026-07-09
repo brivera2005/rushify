@@ -2,11 +2,13 @@ import {
   isFreeSubscriberEmail,
   lifetimeCheckoutResponse,
 } from '../lib/free-subscribers';
+import { parseReferralCodeParam } from '../lib/referrals';
 import { createCheckoutSession } from '../lib/stripe';
 import { jsonResponse, normalizeEmail, type Env } from '../lib/env';
 
 interface CheckoutBody {
   email?: string;
+  referralCode?: string;
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
@@ -26,6 +28,9 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   const email = body.email?.trim() || undefined;
+  const referralCode =
+    parseReferralCodeParam(body.referralCode) ??
+    parseReferralCodeParam(new URL(request.url).searchParams.get('ref'));
   if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return jsonResponse({ error: 'Enter a valid email address.' }, 400);
   }
@@ -35,7 +40,7 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
   }
 
   try {
-    const session = await createCheckoutSession(env, email);
+    const session = await createCheckoutSession(env, email, referralCode ?? undefined);
     if (!session.url) {
       return jsonResponse({ error: 'Unable to start checkout.' }, 500);
     }
@@ -55,6 +60,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
 
   const url = new URL(request.url);
   const emailParam = url.searchParams.get('email')?.trim() || undefined;
+  const referralCode = parseReferralCodeParam(url.searchParams.get('ref'));
   if (emailParam && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailParam)) {
     return jsonResponse({ error: 'Enter a valid email address.' }, 400);
   }
@@ -64,7 +70,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   }
 
   try {
-    const session = await createCheckoutSession(env, emailParam);
+    const session = await createCheckoutSession(env, emailParam, referralCode ?? undefined);
     if (!session.url) {
       return jsonResponse({ error: 'Unable to start checkout.' }, 500);
     }

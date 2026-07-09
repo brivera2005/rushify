@@ -246,6 +246,63 @@ Each subscriber is stored under:
 - `subscriber:customer:{cus_id}` — email lookup for webhooks
 - `subscribers:active` — cached list of active/trialing emails
 
+### Referral program (KV)
+
+| Key | Value |
+|-----|-------|
+| `referral:{CODE}` | referrer email (e.g. `RUSH-AB12` → `family@example.com`) |
+| `subscriber:referral:{email}` | `{ referralCode, referredBy?, activeReferralCount }` |
+| `referrer:{email}:referred` | JSON array of referred subscriber emails |
+| `referrer:{email}:credit-ledger` | `{ pendingCents, updatedAt }` — MVP accrual before Stripe balance apply |
+
+Share URL format:
+
+```
+https://rushtv-billing.pages.dev/?ref=RUSH-AB12
+```
+
+### GET `/api/referral/status?email=user@example.com`
+
+Requires `Authorization: Bearer SUBSCRIBER_API_SECRET` when configured.
+
+Response:
+
+```json
+{
+  "code": "RUSH-AB12",
+  "shareUrl": "https://rushtv-billing.pages.dev/?ref=RUSH-AB12",
+  "activeReferrals": 2,
+  "monthlyCreditCents": 1000,
+  "capCents": 2000
+}
+```
+
+- `activeReferrals` — referred subscribers with Stripe status `active` or `trialing` (lifetime allowlist referrals excluded from credit math)
+- `monthlyCreditCents` — `min(activeReferrals × $5, $20)`; `0` for lifetime referrers
+- Codes are created on first successful checkout webhook
+
+### GET `/api/referral/validate?code=RUSH-AB12`
+
+Public validation for the landing page banner.
+
+### Checkout attribution
+
+Pass `?ref=RUSH-AB12` on the landing page or checkout redirect. The code is stored in Stripe Checkout Session metadata as `referral_code` and applied on `checkout.session.completed`.
+
+### Monthly referral credits (Phase 2)
+
+MVP tracks accrual in KV (`referrer:{email}:credit-ledger`) when a referred subscriber's `invoice.paid` webhook fires. To apply credits to the referrer's next invoice, use [Stripe Customer Balance](https://docs.stripe.com/billing/customer/balance):
+
+```bash
+stripe customer_balance_transactions create \
+  --customer cus_REFERRER \
+  --amount=-1000 \
+  --currency=usd \
+  --description="RushTV referral credit"
+```
+
+Negative `amount` adds credit. Run monthly (cron) or after reviewing `credit-ledger` keys in KV. Constants: `REFERRAL_CREDIT_CENTS=500`, `REFERRAL_CREDIT_CAP_CENTS=2000` in `functions/lib/referrals.ts`.
+
 To inspect KV:
 
 ```bash

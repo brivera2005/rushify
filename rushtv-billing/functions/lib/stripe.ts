@@ -14,6 +14,7 @@ export function getStripe(env: Env): Stripe {
 export async function createCheckoutSession(
   env: Env,
   email?: string,
+  referralCode?: string,
 ): Promise<Stripe.Checkout.Session> {
   if (!env.STRIPE_PRICE_ID) {
     throw new Error('STRIPE_PRICE_ID is not configured');
@@ -38,6 +39,7 @@ export async function createCheckoutSession(
     billing_address_collection: 'auto',
     metadata: {
       product: 'rushtv-family',
+      ...(referralCode ? { referral_code: referralCode } : {}),
     },
   });
 }

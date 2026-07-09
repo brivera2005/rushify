@@ -3,6 +3,13 @@ import Stripe from 'stripe';
 import { isFreeSubscriberEmail } from '../../lib/free-subscribers';
 import { jsonResponse, normalizeEmail, type Env } from '../../lib/env';
 import {
+  attributeReferral,
+  ensureReferralCode,
+  parseReferralCodeParam,
+  recordReferralCreditAccrual,
+  refreshReferrerCounts,
+} from '../../lib/referrals';
+import {
   resolveEmailFromCustomer,
   retrieveSubscription,
   subscriptionToRecord,
@@ -32,6 +39,8 @@ async function upsertFromSubscription(
   }
 
   await saveSubscriber(env, subscriptionToRecord(email, customerId, subscription));
+  await ensureReferralCode(env, email, customerId);
+  await refreshReferrerCounts(env, email);
 }
 
 export const onRequestPost: PagesFunction<Env> = async (context) => {
@@ -73,11 +82,31 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
             : session.subscription?.id;
 
         if (subscriptionId) {
-          await upsertFromSubscription(
-            env,
-            subscriptionId,
-            session.customer_details?.email ?? session.customer_email,
-          );
+          const emailHint =
+            session.customer_details?.email ?? session.customer_email;
+          await upsertFromSubscription(env, subscriptionId, emailHint);
+
+          const customerId =
+            typeof session.customer === 'string'
+              ? session.customer
+              : session.customer?.id;
+          const resolvedEmail = emailHint
+            ? normalizeEmail(emailHint)
+            : customerId
+              ? await resolveEmailFromCustomer(env, customerId, null)
+              : null;
+
+          if (resolvedEmail) {
+            const referralCode = parseReferralCodeParam(
+              session.metadata?.referral_code,
+            );
+            if (referralCode) {
+              await attributeReferral(env, resolvedEmail, referralCode);
+            }
+            if (customerId) {
+              await ensureReferralCode(env, resolvedEmail, customerId);
+            }
+          }
         }
         break;
       }
@@ -109,6 +138,13 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 
         if (subscriptionId) {
           await upsertFromSubscription(env, subscriptionId, invoice.customer_email);
+        }
+
+        if (event.type === 'invoice.paid' && invoice.customer_email) {
+          await recordReferralCreditAccrual(
+            env,
+            normalizeEmail(invoice.customer_email),
+          );
         }
         break;
       }

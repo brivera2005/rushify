@@ -1,13 +1,7 @@
 import { authorizeSubscriberApi } from '../../lib/auth';
-import {
-  isFreeSubscriberEmail,
-  lifetimeSubscriberStatusResponse,
-} from '../../lib/free-subscribers';
+import { isFreeSubscriberEmail } from '../../lib/free-subscribers';
 import { jsonResponse, normalizeEmail, type Env } from '../../lib/env';
-import {
-  getSubscriberByEmail,
-  subscriberStatusResponse,
-} from '../../lib/subscribers';
+import { getReferralStatus } from '../../lib/referrals';
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
   const { request, env } = context;
@@ -23,7 +17,7 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
     return jsonResponse(
       {
         error: 'Missing email query parameter.',
-        usage: 'GET /api/subscriber/status?email=user@example.com',
+        usage: 'GET /api/referral/status?email=user@example.com',
         note: 'Protect with Authorization: Bearer SUBSCRIBER_API_SECRET when configured.',
       },
       400,
@@ -31,10 +25,11 @@ export const onRequestGet: PagesFunction<Env> = async (context) => {
   }
 
   const normalized = normalizeEmail(email);
-  if (isFreeSubscriberEmail(env, normalized)) {
-    return jsonResponse(lifetimeSubscriberStatusResponse(normalized));
-  }
+  const status = await getReferralStatus(
+    env,
+    normalized,
+    isFreeSubscriberEmail(env, normalized) ? `lifetime:${normalized}` : undefined,
+  );
 
-  const record = await getSubscriberByEmail(env, normalized);
-  return jsonResponse(subscriberStatusResponse(record));
+  return jsonResponse(status);
 };

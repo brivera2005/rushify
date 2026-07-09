@@ -56,6 +56,9 @@ const features = [
           <a href="#subscribe" class="btn-primary">Start 7-day free trial</a>
           <p class="text-sm text-muted">Then $39.99/month · cancel anytime</p>
         </div>
+        <p id="referral-banner" class="mt-4 hidden rounded-xl border border-accent-secondary/30 bg-accent-secondary/10 px-4 py-3 text-sm text-accent-secondary">
+          Referred by a friend — 7-day free trial
+        </p>
       </div>
     </section>
 
@@ -137,6 +140,23 @@ const features = [
     emailInput.value = prefillEmail;
   }
 
+  const referralBanner = document.getElementById('referral-banner') as HTMLParagraphElement | null;
+  const referralCode = new URL(window.location.href).searchParams.get('ref')?.trim().toUpperCase() ?? '';
+  const referralPattern = /^RUSH-[A-Z0-9]{4}$/;
+
+  if (referralCode && referralPattern.test(referralCode)) {
+    fetch(`/api/referral/validate?code=${encodeURIComponent(referralCode)}`)
+      .then((response) => response.json())
+      .then((data: { valid?: boolean }) => {
+        if (data.valid && referralBanner) {
+          referralBanner.classList.remove('hidden');
+        }
+      })
+      .catch(() => {
+        // Ignore validation errors — checkout still accepts the code server-side.
+      });
+  }
+
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (!button || !errorEl) return;
@@ -152,7 +172,12 @@ const features = [
       const response = await fetch('/api/checkout', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          email,
+          ...(referralCode && referralPattern.test(referralCode)
+            ? { referralCode }
+            : {}),
+        }),
       });
 
       const data = (await response.json()) as {
