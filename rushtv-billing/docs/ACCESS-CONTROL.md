@@ -11,7 +11,22 @@ Authorization: Bearer {SUBSCRIBER_API_SECRET}
 
 Returns `{ active: boolean, status: string, ... }`.
 
-**Active** when `status` is `trialing` or `active`.
+**Active** when `status` is `trialing` or `active`, or when `plan` is `lifetime`.
+
+### Lifetime allowlist
+
+Hardcoded lifetime emails (see `functions/lib/free-subscribers.ts`) always return:
+
+```json
+{
+  "active": true,
+  "plan": "lifetime",
+  "trial": false,
+  "email": "family@example.com"
+}
+```
+
+tv-media-hub / any client should treat `plan === "lifetime"` (or `active === true`) as allowed access. No Stripe subscription is created for these emails.
 
 ## Recommended integration pattern
 
@@ -53,7 +68,7 @@ For paid family access, **fail closed**:
 
 - API error → treat as inactive (show "subscription required" screen)
 - `past_due` / `canceled` → inactive
-- `trialing` / `active` → allow
+- `trialing` / `active` / `plan: "lifetime"` → allow
 
 ## Future enhancements
 

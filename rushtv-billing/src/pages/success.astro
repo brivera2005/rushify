@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const isLifetime = Astro.url.searchParams.get('lifetime') === '1';
 ---
 
 <BaseLayout title="Welcome to RushTV Family Access">
@@ -9,14 +11,28 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         ✓
       </div>
       <h1 class="mt-6 text-3xl font-bold">You're in!</h1>
-      <p class="mt-4 text-muted">
-        Your RushTV Family Access subscription is active. Check your email for Stripe receipt details
-        and next steps from your host.
-      </p>
-      <div class="mt-8 space-y-3 text-sm text-muted">
-        <p>During your trial, explore live TV, on-demand titles, requests, and the Tracks portal.</p>
-        <p>Need help getting set up on TV or mobile? Reach out to the person who invited you.</p>
-      </div>
+      {isLifetime ? (
+        <>
+          <p class="mt-4 text-muted">
+            You have lifetime RushTV Family Access — no subscription or billing required.
+          </p>
+          <div class="mt-8 space-y-3 text-sm text-muted">
+            <p>Explore live TV, on-demand titles, requests, and the Tracks portal anytime.</p>
+            <p>Need help getting set up on TV or mobile? Reach out to your RushTV host.</p>
+          </div>
+        </>
+      ) : (
+        <>
+          <p class="mt-4 text-muted">
+            Your RushTV Family Access subscription is active. Check your email for Stripe receipt details
+            and next steps from your host.
+          </p>
+          <div class="mt-8 space-y-3 text-sm text-muted">
+            <p>During your trial, explore live TV, on-demand titles, requests, and the Tracks portal.</p>
+            <p>Need help getting set up on TV or mobile? Reach out to the person who invited you.</p>
+          </div>
+        </>
+      )}
       <a href="/" class="btn-secondary mt-8 inline-flex">Back to home</a>
     </div>
   </main>

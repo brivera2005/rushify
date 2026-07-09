@@ -141,7 +141,18 @@ const features = [
         body: JSON.stringify({ email }),
       });
 
-      const data = (await response.json()) as { url?: string; error?: string };
+      const data = (await response.json()) as {
+        url?: string;
+        error?: string;
+        lifetimeAccess?: boolean;
+        message?: string;
+      };
+
+      if (data.lifetimeAccess && data.url) {
+        window.location.href = data.url;
+        return;
+      }
+
       if (!response.ok || !data.url) {
         throw new Error(data.error ?? 'Unable to start checkout.');
       }

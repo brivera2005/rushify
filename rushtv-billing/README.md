@@ -104,7 +104,9 @@ In Cloudflare Dashboard → Workers & Pages → **rushtv-billing** → Settings 
 | `STRIPE_PRICE_ID` | Secret or Text | `price_...` |
 | `PUBLIC_APP_URL` | Text | `https://rushtv-billing.pages.dev` |
 | `SUBSCRIBER_API_SECRET` | Secret | Long random string for status API |
+| `FREE_SUBSCRIBER_EMAILS` | Text | Comma-separated lifetime access emails (host/family) |
 | `STRIPE_STATEMENT_DESCRIPTOR` | Text | `RUSH* FAMILY MEDIA` |
+| `FREE_SUBSCRIBER_EMAILS` | Text | Optional comma-separated extra lifetime emails |
 
 ### 3. Deploy
 
@@ -182,6 +184,32 @@ Response example:
 ```
 
 See `docs/ACCESS-CONTROL.md` for tv-media-hub wiring notes.
+
+---
+
+## Lifetime free access (allowlist)
+
+Some family accounts have **lifetime access** — they are never charged and always return `active: true` from the status API.
+
+Hardcoded in `functions/lib/free-subscribers.ts` (`DEFAULT_FREE_SUBSCRIBER_EMAILS`):
+
+- `brivera2005@gmail.com`
+- `riverastreams@gmail.com`
+- `ranchorivera@gmail.com`
+- `clearbillingservices@gmail.com`
+- `aloofluffa@gmail.com`
+
+Optional env override: set `FREE_SUBSCRIBER_EMAILS` to a comma-separated list of additional emails (merged with the defaults).
+
+### Behavior
+
+| Endpoint | Allowlisted email |
+|----------|-------------------|
+| `GET /api/subscriber/status` | Returns `{ active: true, plan: "lifetime", trial: false, email }` — no Stripe/KV lookup |
+| `POST /api/checkout` | Skips Stripe; returns `{ lifetimeAccess: true, message, url }` redirecting to `/success?lifetime=1` |
+| Stripe webhooks | Ignored — will not create or downgrade KV records for allowlisted emails |
+
+Emails are matched case-insensitively after trim/lowercase normalization.
 
 ---
 
