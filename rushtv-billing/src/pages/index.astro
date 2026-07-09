@@ -111,9 +111,17 @@ const features = [
       </div>
     </section>
 
-    <section class="mt-10 text-center text-xs text-muted">
+    <section class="mt-10 text-center text-xs leading-relaxed text-muted">
       <p>Questions? Reply to your invite email or contact your RushTV host.</p>
       <p class="mt-2">RushTV Family Access is a private friends-and-family service.</p>
+      <p class="mx-auto mt-6 max-w-2xl">
+        RushTV is a media player only and does not host or distribute content. You supply your own
+        legal sources. RushTV is not affiliated with any third-party content service.
+      </p>
+      <p class="mx-auto mt-3 max-w-2xl">
+        Your subscription helps keep the family server running with maintenance, upgrades, storage,
+        and new features added over time.
+      </p>
     </section>
   </main>
 </BaseLayout>
@@ -122,6 +130,12 @@ const features = [
   const form = document.getElementById('checkout-form') as HTMLFormElement | null;
   const button = document.getElementById('checkout-button') as HTMLButtonElement | null;
   const errorEl = document.getElementById('checkout-error') as HTMLParagraphElement | null;
+  const emailInput = form?.querySelector('#email') as HTMLInputElement | null;
+
+  const prefillEmail = new URL(window.location.href).searchParams.get('email')?.trim();
+  if (prefillEmail && emailInput) {
+    emailInput.value = prefillEmail;
+  }
 
   form?.addEventListener('submit', async (event) => {
     event.preventDefault();

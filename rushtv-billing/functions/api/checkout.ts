@@ -47,14 +47,24 @@ export const onRequestPost: PagesFunction<Env> = async (context) => {
 };
 
 export const onRequestGet: PagesFunction<Env> = async (context) => {
-  const { env } = context;
+  const { request, env } = context;
 
   if (!env.STRIPE_SECRET_KEY || !env.STRIPE_PRICE_ID) {
     return jsonResponse({ error: 'Billing is not configured yet.' }, 503);
   }
 
+  const url = new URL(request.url);
+  const emailParam = url.searchParams.get('email')?.trim() || undefined;
+  if (emailParam && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailParam)) {
+    return jsonResponse({ error: 'Enter a valid email address.' }, 400);
+  }
+
+  if (emailParam && isFreeSubscriberEmail(env, normalizeEmail(emailParam))) {
+    return Response.redirect(lifetimeCheckoutResponse(env).url, 303);
+  }
+
   try {
-    const session = await createCheckoutSession(env);
+    const session = await createCheckoutSession(env, emailParam);
     if (!session.url) {
       return jsonResponse({ error: 'Unable to start checkout.' }, 500);
     }

@@ -153,7 +153,13 @@ Response:
 
 ### GET `/api/checkout`
 
-Direct redirect to Stripe Checkout (no email prefill).
+Direct redirect to Stripe Checkout. Optional `?email=` prefills `customer_email`:
+
+```
+GET /api/checkout?email=family@example.com
+```
+
+Allowlisted lifetime emails redirect to `/success?lifetime=1` instead of Stripe.
 
 ### POST `/api/webhooks/stripe`
 
@@ -184,6 +190,25 @@ Response example:
 ```
 
 See `docs/ACCESS-CONTROL.md` for tv-media-hub wiring notes.
+
+### TV app QR checkout flow
+
+```
+RushTV Settings → Subscription
+  QR URL (no email):  https://rushtv-billing.pages.dev
+  QR URL (email set): https://rushtv-billing.pages.dev/api/checkout?email=...
+        │
+        ▼
+Phone opens Stripe Checkout (7-day trial, $39.99/mo)
+        │
+        ▼
+Stripe webhook → KV subscriber record
+        │
+        ▼
+RushTV polls GET /api/subscriber/status?email=…  (Authorization: Bearer SUBSCRIBER_API_SECRET)
+```
+
+Landing page `/?email=…` also prefills the checkout form when opened directly.
 
 ---
 
